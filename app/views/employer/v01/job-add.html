@@ -1,0 +1,284 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Add a vacancy
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+      text: "Back",
+      href: "job-list"
+    }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% call govukFieldset({
+        legend: {
+          text: "Add a vacancy",
+          classes: "govuk-fieldset__legend--l",
+          isPageHeading: true
+        }
+      }) %}
+
+      {{ govukInput({
+        label: {
+          text: "Job title"
+        },
+        classes: "govuk-input--width-20",
+        id: "job-title",
+        name: "job title"
+      }) }}
+
+      {{ govukSelect({
+        id: "sort",
+        name: "sort",
+        label: {
+          text: "Job type"
+        },
+        hint: {
+          text: "Select which industry sector the job is in."
+        },
+        items: [
+          {
+            value: "Administration",
+            text: "Administration"
+          },
+          {
+            value: "Animal Care",
+            text: "Animal Care"
+          },
+          {
+            value: "Beauty and Wellbeing",
+            text: "Beauty & Wellbeing"
+          },
+          {
+            value: "Business and Finance",
+            text: "Business & Finance"
+          },
+          {
+            value: "Computing, Technology and Digital",
+            text: "Computing, Technology & Digital"
+          },
+          {
+            value: "Construction and Trades",
+            text: "Construction & Trades"
+          },
+          {
+            value: "Creative and Media",
+            text: "Creative & Media"
+          },
+          {
+            value: "Delivery and Storage",
+            text: "Delivery & Storage"
+          },
+          {
+            value: "Emergency and Uniform Services",
+            text: "Emergency & Uniform Services"
+          },
+          {
+            value: "Engineering and Maintenance",
+            text: "Engineering & Maintenance"
+          },
+          {
+            value: "Environmentand Land",
+            text: "Environment & Land"
+          },
+          {
+            value: "Government Services",
+            text: "Government Services"
+          },
+          {
+            value: "Healthcare",
+            text: "Healthcare"
+          },
+          {
+            value: "Home Services",
+            text: "Home Services"
+          },
+          {
+            value: "Hospitality and Food",
+            text: "Hospitality & Food"
+          },
+          {
+            value: "Law and Legal",
+            text: "Law & Legal"
+          },
+          {
+            value: "Managerial",
+            text: "Managerial"
+          },
+          {
+            value: "Manufacturing",
+            text: "Manufacturing"
+          },
+          {
+            value: "Retail and Sales",
+            text: "Retail & Sales"
+          },
+          {
+            value: "Science and Research",
+            text: "Science & Research"
+          },
+          {
+            value: "Social Care",
+            text: "Social Care"
+          },
+          {
+            value: "Sports and Leisure",
+            text: "Sports & Leisure"
+          },
+          {
+            value: "Teaching and Education",
+            text: "Teaching & Education"
+          },
+          {
+            value: "Transport",
+            text: "Transport"
+          },
+          {
+            value: "Travel and Tourism",
+            text: "Travel & Tourism"
+          }
+        ]
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Employer job reference (if provided)"
+        },
+        classes: "govuk-input--width-10",
+        id: "employer-ref",
+        name: "employer-ref"
+      }) }}
+
+      <h2 class="govuk-heading-l">Location</h2>
+
+      {{ govukInput({
+        label: {
+          text: "Number of vacancies at this location"
+        },
+        classes: "govuk-input--width-10",
+        id: "number-vacancies",
+        name: "number-vacancies"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Referral cap per vacancy"
+        },
+        classes: "govuk-input--width-10",
+        id: "referral-cap",
+        name: "referral-cap"
+      }) }}
+
+      {{ govukRadios({
+        idPrefix: "public-transport",
+        name: "public-transport",
+        fieldset: {
+          legend: {
+            text: "Is public transport available to this location?",
+            isPageHeading: false
+          }
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes"
+          },
+          {
+            value: "no",
+            text: "No"
+          },
+          {
+            value: "dont know",
+            text: "Don't know"
+          }
+        ]
+      }) }}
+
+      {{ govukInput({
+        label: {
+          html: 'Building and street <span class="govuk-visually-hidden">line 1 of 2</span>'
+        },
+        id: "address-line-1",
+        name: "address-line-1"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          html: '<span class="govuk-visually-hidden">Building and street line 2 of 2</span>'
+        },
+        id: "address-line-2",
+        name: "address-line-2"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Town or city"
+        },
+        classes: "govuk-!-width-two-thirds",
+        id: "address-town",
+        name: "address-town"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "County"
+        },
+        classes: "govuk-!-width-two-thirds",
+        id: "address-county",
+        name: "address-county"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Postcode"
+        },
+        classes: "govuk-input--width-10",
+        id: "address-postcode",
+        name: "address-postcode"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Contact name"
+        },
+        classes: "govuk-input--width-10",
+        id: "contact-name",
+        name: "contact-name"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Telephone"
+        },
+        classes: "govuk-input--width-10",
+        id: "telephone",
+        name: "telephone"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Email"
+        },
+        classes: "govuk-input--width-10",
+        id: "email",
+        name: "email"
+      }) }}
+
+    {% endcall %}
+
+
+
+      {{ govukButton({
+        text: "Continue",
+        href: "job-add-2"
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}

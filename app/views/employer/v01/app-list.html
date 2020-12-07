@@ -30,13 +30,13 @@
       <ol class="app-task-list">
         <li>
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">1. </span> Read and sign the grant application form
+            <span class="app-task-list__section-number">1. </span> Read and agree to the grant assessment form terms &amp; conditions
           </h2>
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
                 <a href="grant-form" aria-describedby="grant-form-status">
-                  Grant application form
+                  Agree to grant assessment form terms &amp; conditions
                 </a>
               </span>
               <strong class="govuk-tag app-task-list__tag" id="grant-form-status">Completed</strong>
@@ -51,7 +51,7 @@
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
-                <a href="#" aria-describedby="contact-details-status">
+                <a href="job-list" aria-describedby="contact-details-status">
                   Enter vacancy details
                 </a>
               </span>
@@ -76,6 +76,13 @@
           </ul>
         </li>
       </ol>
+
+      {{ govukButton({
+        text: "Submit application",
+        href: "app-sent"
+      }) }}
+
+
     </div>
   </div>
 
