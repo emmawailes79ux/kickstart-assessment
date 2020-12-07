@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Registration complete
+{% endblock %}
+
+{% block beforeContent %}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+        Kickstart applications
+      </h1>
+      <p><b>ART AND SCULPTURE LTD</b><br>
+        Company number: 11721900</p>
+      <hr>
+
+      <h2 class="govuk-heading-m">
+        Your applications
+      </h2>
+
+      <ol class="app-task-list">
+        <li>
+          <ul class="app-task-list__items application-list">
+            <li class="app-task-list__item application-list">
+              <span class="app-task-list__task-name">
+                <a href="app-list" aria-describedby="grant-form-status">
+                  FG 75792334
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="grant-form-status">In progress</strong>
+            </li>
+            <li class="app-task-list__item application-list">
+              <span class="app-task-list__task-name">
+                <a href="app-list" aria-describedby="grant-form-status">
+                  RT 7817919
+                </a>
+              </span>
+              <strong class="govuk-tag app-task-list__tag" id="grant-form-status">Completed</strong>
+            </li>
+            <li class="app-task-list__item application-list">
+              <span class="app-task-list__task-name">
+                <a href="app-list" aria-describedby="grant-form-status">
+                  RT 7817919
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag--red app-task-list__tag" id="grant-form-status">Rejected</strong>
+            </li>
+            <li class="app-task-list__item application-list">
+              <span class="app-task-list__task-name">
+                <a href="app-list" aria-describedby="grant-form-status">
+                  UY 78240008
+                </a>
+              </span>
+              <strong class="govuk-tag app-task-list__tag" id="grant-form-status">Completed</strong>
+            </li>
+          </ul>
+
+    </div>
+  </div>
+
+{% endblock %}
