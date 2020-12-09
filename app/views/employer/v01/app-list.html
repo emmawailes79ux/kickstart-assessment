@@ -39,7 +39,7 @@
                   Agree to grant assessment form terms &amp; conditions
                 </a>
               </span>
-              <strong class="govuk-tag app-task-list__tag" id="grant-form-status">Completed</strong>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="grant-form-status">Not started</strong>
             </li>
           </ul>
         </li>
@@ -79,7 +79,8 @@
 
       {{ govukButton({
         text: "Submit application",
-        href: "app-sent"
+        href: "app-sent",
+        classes: "govuk-button--secondary"
       }) }}
 
 

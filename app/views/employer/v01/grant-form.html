@@ -1,0 +1,37 @@
+{% extends "layout-header-links.html" %}
+
+{% block pageTitle %}
+  Kickstart application task list
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+      text: "Back",
+      href: "app-list"
+    }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+        Grant offer declaration
+      </h1>
+
+      <p class="govuk-body">By submitting the following form you agree that:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>you have read and agree to the terms in the <a href="grant-offer.pdf" target="_blank">Grant Offer Letter</a></li>
+        <li>you have read and agree to the <a href="kickstart-terms.pdf" target="_blank">Terms &amp; conditions.</a>
+      </ul>
+
+      {{ govukButton({
+        text: "I agree to the terms",
+        href: "app-list"
+      }) }}
+
+      <p class="govuk-body"><a href="app-list">I do not agree to the terms</a></p>
+    </div>
+  </div>
+
+{% endblock %}
