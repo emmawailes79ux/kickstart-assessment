@@ -1,7 +1,7 @@
 {% extends "layout-header-links.html" %}
 
 {% block pageTitle %}
-  Kickstart application task list
+  Kickstart task list
 {% endblock %}
 
 {% block beforeContent %}
@@ -16,21 +16,19 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-l">
-        Kickstart application
+        Kickstart Scheme
       </h1>
       <p><b>ART AND SCULPTURE LTD</b><br>
         Company number: 11721900</p>
-      <p><b>Application reference number:</b> FG 75792334</p>
+      <p><b>Application ID:</b> KS 12345678</p>
 
       <hr>
-
-      <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Application incomplete</h2>
-      <p class="govuk-body govuk-!-margin-bottom-7">You have completed 1 of 3 sections.</p>
+      <p class="govuk-body govuk-!-margin-bottom-7">You have completed 1 of 4 sections.</p>
 
       <ol class="app-task-list">
         <li>
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">1. </span> Read and agree to the grant assessment form terms &amp; conditions
+            <span class="app-task-list__section-number">1. </span> Read and agree to the grant agreement
           </h2>
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
@@ -46,13 +44,13 @@
 
         <li>
           <h2 class="app-task-list__section">
-            <span class="app-task-list__section-number">2. </span> List vacancies
+            <span class="app-task-list__section-number">2. </span> Add vacancies
           </h2>
           <ul class="app-task-list__items">
             <li class="app-task-list__item">
               <span class="app-task-list__task-name">
                 <a href="job-list" aria-describedby="contact-details-status">
-                  Enter vacancy details
+                  Add vacancy details
                 </a>
               </span>
               <strong class="govuk-tag govuk-tag--blue app-task-list__tag" id="contact-details-status">In progress</strong>
@@ -78,7 +76,7 @@
       </ol>
 
       {{ govukButton({
-        text: "Submit application",
+        text: "Submit",
         href: "app-sent",
         classes: "govuk-button--secondary"
       }) }}

@@ -1,0 +1,62 @@
+{% extends "layout-header-links.html" %}
+
+{% block pageTitle %}
+  Add signatories
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+      text: "Back",
+      href: "bank-details"
+    }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+        Kickstart application
+      </h1>
+      <p><b>ART AND SCULPTURE LTD</b><br>
+        Company number: 11721900</p>
+      <p><b>Application reference number:</b> FG 75792334</p>
+
+      <hr>
+
+      {{ govukRadios({
+        classes: "govuk-radios--inline",
+        idPrefix: "changed-name",
+        name: "changed-name",
+        fieldset: {
+          legend: {
+            text: "Have you changed your name?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          text: "This includes changing your last name or spelling your name differently."
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes",
+            href="#"
+          },
+          {
+            value: "no",
+            text: "No",
+            href="#"
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Save bank details",
+        href: "app-list"
+      }) }}
+    </div>
+  </div>
+
+{% endblock %}

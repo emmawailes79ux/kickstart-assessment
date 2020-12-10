@@ -1,7 +1,7 @@
 {% extends "layout-header-links.html" %}
 
 {% block pageTitle %}
-  Kickstart application task list
+  Kickstart Scheme vacancy list
 {% endblock %}
 
 {% block beforeContent %}
@@ -20,7 +20,7 @@
       </h1>
       <p><b>ART AND SCULPTURE LTD</b><br>
         Company number: 11721900</p>
-      <p><b>Application reference number:</b> FG 75792334</p>
+      <p><b>Application ID:</b> KS 12345678</p>
 
       <hr>
 
@@ -35,13 +35,13 @@
         firstCellIsHeader: false,
         head: [
           {
-            text: "Job title"
+            text: "Role"
           },
           {
             text: "Number of vacancies"
           },
           {
-            text: "Area/town/city"
+            text: "Location"
           },
           {
             text: "Postcode"
@@ -246,7 +246,7 @@
       }) }}
 
       {{ govukButton({
-        text: "Mark vacancy list as complete",
+        text: "Save",
         href: "app-list"
       }) }}
 
