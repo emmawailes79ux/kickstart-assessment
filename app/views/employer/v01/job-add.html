@@ -154,6 +154,54 @@
         name: "employer-ref"
       }) }}
 
+      {% set signatory %}
+        {{ govukInput({
+          id: "contact-by-email",
+          name: "contact-by-email",
+          type: "email",
+          spellcheck: false,
+          classes: "govuk-!-width-one-third",
+          label: {
+            text: "Referral cap per vacancy"
+          }
+        }) }}
+
+
+
+        {% endset -%}
+
+
+        {{ govukRadios({
+          idPrefix: "contact",
+          name: "contact",
+          fieldset: {
+            legend: {
+              text: "Do you want a referral limit for each vacancy?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: "A referral is made when we recommend your job placement to a candidate. This does not guarantee the candidate will put in an application."
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes",
+              conditional: {
+                html: signatory
+              }
+            },
+            {
+              value: "no",
+              text: "No"
+            }
+          ]
+        }) }}
+
+
+
+
       <h2 class="govuk-heading-l">Location 1</h2>
 
       {{ govukRadios({
@@ -223,52 +271,6 @@
         id: "number-vacancies",
         name: "number-vacancies"
       }) }}
-
-
-      {% set signatory %}
-        {{ govukInput({
-          id: "contact-by-email",
-          name: "contact-by-email",
-          type: "email",
-          spellcheck: false,
-          classes: "govuk-!-width-one-third",
-          label: {
-            text: "Referral cap per vacancy"
-          }
-        }) }}
-
-
-
-        {% endset -%}
-
-
-        {{ govukRadios({
-          idPrefix: "contact",
-          name: "contact",
-          fieldset: {
-            legend: {
-              text: "Do you want to set a max referral limit?",
-              isPageHeading: false,
-              classes: "govuk-fieldset__legend--m"
-            }
-          },
-          hint: {
-            text: "A referral is made when we recommend your job placement to a candidate.  This does not guarantee the candidate will put in an application."
-          },
-          items: [
-            {
-              value: "yes",
-              text: "Yes",
-              conditional: {
-                html: signatory
-              }
-            },
-            {
-              value: "no",
-              text: "No"
-            }
-          ]
-        }) }}
 
 
 
