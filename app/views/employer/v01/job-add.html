@@ -25,7 +25,7 @@
 
       {{ govukInput({
         label: {
-          text: "Job title"
+          text: "Role"
         },
         classes: "govuk-input--width-20",
         id: "job-title",
@@ -36,7 +36,7 @@
         id: "sort",
         name: "sort",
         label: {
-          text: "Job type"
+          text: "Industry sector"
         },
         hint: {
           text: "Select which industry sector the job is in."
@@ -154,7 +154,66 @@
         name: "employer-ref"
       }) }}
 
-      <h2 class="govuk-heading-l">Location</h2>
+      <h2 class="govuk-heading-l">Location 1</h2>
+
+      {{ govukRadios({
+        idPrefix: "where-do-you-live",
+        name: "role-base",
+        fieldset: {
+          legend: {
+            text: "Role base",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: "Select one option"
+        },
+        items: [
+          {
+            value: "remote-working",
+            text: "Remote working"
+          },
+          {
+            value: "office",
+            text: "Office/business location"
+          },
+          {
+            value: "field-based",
+            text: "Field-based"
+          },
+          {
+            value: "combination",
+            text: "Combination (remote/office/field)"
+          }
+        ]
+      }) }}
+
+      {{ govukRadios({
+        classes: "govuk-radios--inline",
+        idPrefix: "local-national",
+        name: "local-national",
+        fieldset: {
+          legend: {
+            text: "Local or national",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: "Select one option"
+        },
+        items: [
+          {
+            value: "local",
+            text: "Local"
+          },
+          {
+            value: "national",
+            text: "National"
+          }
+        ]
+      }) }}
 
       {{ govukInput({
         label: {
@@ -165,22 +224,63 @@
         name: "number-vacancies"
       }) }}
 
-      {{ govukInput({
-        label: {
-          text: "Referral cap per vacancy"
-        },
-        classes: "govuk-input--width-10",
-        id: "referral-cap",
-        name: "referral-cap"
-      }) }}
+
+      {% set signatory %}
+        {{ govukInput({
+          id: "contact-by-email",
+          name: "contact-by-email",
+          type: "email",
+          spellcheck: false,
+          classes: "govuk-!-width-one-third",
+          label: {
+            text: "Referral cap per vacancy"
+          }
+        }) }}
+
+
+
+        {% endset -%}
+
+
+        {{ govukRadios({
+          idPrefix: "contact",
+          name: "contact",
+          fieldset: {
+            legend: {
+              text: "Do you want to set a max referral limit?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: "A referral is made when we recommend your job placement to a candidate.  This does not guarantee the candidate will put in an application."
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes",
+              conditional: {
+                html: signatory
+              }
+            },
+            {
+              value: "no",
+              text: "No"
+            }
+          ]
+        }) }}
+
+
+
 
       {{ govukRadios({
         idPrefix: "public-transport",
         name: "public-transport",
         fieldset: {
           legend: {
-            text: "Is public transport available to this location?",
-            isPageHeading: false
+            text: "Is public transport available?",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
           }
         },
         items: [
@@ -193,8 +293,8 @@
             text: "No"
           },
           {
-            value: "dont know",
-            text: "Don't know"
+            value: "do not know",
+            text: "Do not know"
           }
         ]
       }) }}
@@ -271,10 +371,16 @@
 
     {% endcall %}
 
+    {{ govukButton({
+      text: "Add another location",
+      href: "",
+      classes: "govuk-button--secondary"
+    }) }}
 
+    <br>
 
       {{ govukButton({
-        text: "Continue",
+        text: "Next",
         href: "job-add-2"
       }) }}
 

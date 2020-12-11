@@ -78,6 +78,67 @@
         spellcheck: false
       }) }}
 
+
+
+
+
+
+      {% set signatory %}
+        {{ govukInput({
+          id: "contact-by-email",
+          name: "contact-by-email",
+          type: "email",
+          spellcheck: false,
+          classes: "govuk-!-width-full",
+          label: {
+            text: "Name"
+          }
+        }) }}
+
+        {{ govukInput({
+          id: "cemail",
+          name: "cemail",
+          type: "email",
+          spellcheck: false,
+          classes: "govuk-!-width-full",
+          label: {
+            text: "Email"
+          }
+        }) }}
+
+        <p style="margin-top: 15px;"><a href="#">Add another signatory</a></p>
+
+        {% endset -%}
+
+
+        {{ govukRadios({
+          idPrefix: "contact",
+          name: "contact",
+          fieldset: {
+            legend: {
+              text: "Do you want to add an authorised signatory to this bank acount?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes",
+              conditional: {
+                html: signatory
+              }
+            },
+            {
+              value: "no",
+              text: "No"
+            }
+          ]
+        }) }}
+
+
+
+
       {{ govukButton({
         text: "Save bank details",
         href: "app-list"

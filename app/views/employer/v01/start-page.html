@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Kickstart Scheme
+{% endblock %}
+
+{% block beforeContent %}
+
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Kickstart Scheme</h1>
+
+      <p class="govuk-body">Only use this service if you have already received an email confirming that you have been approved to apply for the Kickstart Scheme.</p>
+
+      <p class="govuk-body">This service will ask you for the following:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>to sign the Grant Agreement offer</li>
+        <li>to provide your bank details</li>
+        <li>to list the vacancies</li>
+      </ul>
+
+      <p class="govuk-body">You will asked to register for the service first.</p>
+
+      {{ govukButton({
+        text: "Start now",
+        href: "sign-in",
+        classes: "govuk-!-margin-top-2 govuk-!-margin-bottom-8",
+        isStartButton: true
+      }) }}
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+    </div>
+  </div>
+{% endblock %}
