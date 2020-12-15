@@ -1,0 +1,39 @@
+{% extends "layout-header-links.html" %}
+
+{% block pageTitle %}
+  Submitted successfully
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+      text: "Back",
+      href: "app-home"
+    }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {{ govukPanel({
+        titleText: "Submitted successfully",
+        html: "Your application ID<br><strong>KS 12345678</strong>"
+      }) }}
+
+      <p class="govuk-body">We have sent you a confirmation email.</p>
+
+      <h2 class="govuk-heading-m">What happens next</h2>
+
+      <p class="govuk-body">
+        We will review your details. This can take up to 14 days.
+      </p>
+      <p class="govuk-body">
+        We will let you know when your vacancies are live.
+      </p>
+      <p class="govuk-body">
+        You can view the status of this submission anytime by signing in again. <br>
+        <a href="app-home-04">View status</a>
+      </p>
+
+    </div>
+  </div>
+{% endblock %}
