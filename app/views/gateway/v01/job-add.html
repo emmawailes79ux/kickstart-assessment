@@ -23,6 +23,28 @@
         }
       }) %}
 
+      {{ govukSelect({
+        id: "sort",
+        name: "sort",
+        label: {
+          text: "Employer"
+        },
+        items: [
+          {
+            value: "Administration",
+            text: "Arts and Sculpture Ltd"
+          },
+          {
+            value: "Beauty and Wellbeing",
+            text: "Skies The Limit Ltd"
+          },
+          {
+            value: "Travel and Tourism",
+            text: "Digby's Diner"
+          }
+        ]
+      }) }}
+
       {{ govukInput({
         label: {
           text: "Role"
