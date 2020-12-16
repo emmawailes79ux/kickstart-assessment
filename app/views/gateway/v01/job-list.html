@@ -20,11 +20,15 @@
         Vacancies
       </h1>
 
-      <p class="govuk-body">Add the details of the <b>34 Kickstart vacancies</b> that you have been applied for.</p>
+      <p class="govuk-body">Add the details of the <b>34 Kickstart vacancies</b> for the <b>3 employers</b> that you have been applied for.</p>
+
+
+      <h2 class="govuk-heading-m">Arts and Sculpture Ltd.</h2>
 
       {{ govukButton({
         text: "Add a role",
-        href: "job-add"
+        href: "job-add",
+        classes: "govuk-button--secondary"
       }) }}
 
 
@@ -78,48 +82,6 @@
               html: "<a href='job-detail'>Junior exhibition designer</a>"
             },
             {
-              text: "1"
-            },
-            {
-              text: "Wakefield"
-            },
-            {
-              text: "WF1 5AW"
-            },
-            {
-              html: "<a href='#'>Duplicate</a>"
-            },
-            {
-              html: "<a href='#'>Delete</a>"
-            }
-          ],
-
-          [
-            {
-              html: "<a href='job-detail'>Admissions assistant</a>"
-            },
-            {
-              text: "6"
-            },
-            {
-              text: "Leeds"
-            },
-            {
-              text: "LS1 3AA"
-            },
-            {
-              html: "<a href='#'>Duplicate</a>"
-            },
-            {
-              html: "<a href='#'>Delete</a>"
-            }
-          ],
-
-          [
-            {
-              html: "<a href='job-detail'>Admissions assistant</a>"
-            },
-            {
               text: "3"
             },
             {
@@ -138,58 +100,74 @@
 
           [
             {
-              html: "<a href='job-detail'>Waiter</a>"
+              html: ""
             },
             {
-              text: "9"
+              html: "<b>5 / 6</b>"
             },
             {
-              text: "Leeds"
+              text: ""
             },
             {
-              text: "LS1 3AA"
+              text: ""
             },
             {
-              html: "<a href='#'>Duplicate</a>"
+              html: ""
             },
             {
-              html: "<a href='#'>Delete</a>"
+              html: ""
             }
-          ],
+          ]
+        ]
+      }) }}
 
+      <hr>
+
+      <h2 class="govuk-heading-m">Skies The Limit Ltd.</h2>
+
+      {{ govukButton({
+        text: "Add a role",
+        href: "job-add",
+        classes: "govuk-button--secondary"
+      }) }}
+
+
+
+      {{ govukTable({
+        firstCellIsHeader: false,
+        head: [
+          {
+            text: "Role"
+          },
+          {
+            text: "Number of vacancies"
+          },
+          {
+            text: "Location"
+          },
+          {
+            text: "Postcode"
+          },
+          {
+            text: ""
+          },
+          {
+            text: ""
+          }
+        ],
+        rows: [
           [
             {
-              html: "<a href='job-detail'>Waiter</a>"
+              html: "<a href='job-detail'>Labourer</a>"
             },
             {
               text: "5"
             },
             {
-              text: "Leeds"
+              text: "Mutliple"
             },
             {
-              text: "LS1 3AA"
-            },
-            {
-              html: "<a href='#'>Duplicate</a>"
-            },
-            {
-              html: "<a href='#'>Delete</a>"
-            }
-          ],
-
-          [
-            {
-              html: "<a href='job-detail'>Barista</a>"
-            },
-            {
-              text: "2"
-            },
-            {
-              text: "Leeds"
-            },
-            {
-              text: "LS1 3AA"
+              text: "- -"
             },
             {
               html: "<a href='#'>Duplicate</a>"
@@ -201,37 +179,58 @@
 
           [
             {
-              html: "<a href='job-detail'>Barista</a>"
+              html: "<a href='job-detail'>Security officer</a>"
+            },
+            {
+              text: "3"
+            },
+            {
+              text: "Tynemouth"
+            },
+            {
+              text: "NE30 2LB"
+            },
+            {
+              html: "<a href='#'>Duplicate</a>"
+            },
+            {
+              html: "<a href='#'>Delete</a>"
+            }
+          ],
+
+          [
+            {
+              html: "<a href='job-detail'>Junior admin</a>"
+            },
+            {
+              text: "6"
+            },
+            {
+              text: "Tynemouth"
+            },
+            {
+              text: "NE30 2LB"
+            },
+            {
+              html: "<a href='#'>Duplicate</a>"
+            },
+            {
+              html: "<a href='#'>Delete</a>"
+            }
+          ],
+
+          [
+            {
+              html: "<a href='job-detail'>Forklift driver</a>"
             },
             {
               text: "1"
             },
             {
-              text: "Wakefield"
+              text: "Gateshead"
             },
             {
-              text: "WF1 5AW"
-            },
-            {
-              html: "<a href='#'>Duplicate</a>"
-            },
-            {
-              html: "<a href='#'>Delete</a>"
-            }
-          ],
-
-          [
-            {
-              html: "<a href='job-detail'>Trainee chef<a>"
-            },
-            {
-              text: "2"
-            },
-            {
-              text: "Wakefield"
-            },
-            {
-              text: "WF4 4LG"
+              text: "NE10 0AU"
             },
             {
               html: "<a href='#'>Duplicate</a>"
@@ -246,7 +245,107 @@
               html: ""
             },
             {
-              html: "<b>29 / 34</b>"
+              html: "<b>15 / 19</b>"
+            },
+            {
+              text: ""
+            },
+            {
+              text: ""
+            },
+            {
+              html: ""
+            },
+            {
+              html: ""
+            }
+          ]
+        ]
+      }) }}
+
+      <hr>
+
+      <h2 class="govuk-heading-m">Digby's Diner</h2>
+
+      {{ govukButton({
+        text: "Add a role",
+        href: "job-add",
+        classes: "govuk-button--secondary"
+      }) }}
+
+
+
+      {{ govukTable({
+        firstCellIsHeader: false,
+        head: [
+          {
+            text: "Role"
+          },
+          {
+            text: "Number of vacancies"
+          },
+          {
+            text: "Location"
+          },
+          {
+            text: "Postcode"
+          },
+          {
+            text: ""
+          },
+          {
+            text: ""
+          }
+        ],
+        rows: [
+          [
+            {
+              html: "<a href='job-detail'>Waiting staff</a>"
+            },
+            {
+              text: "5"
+            },
+            {
+              text: "Crosby"
+            },
+            {
+              text: "L23 6UG"
+            },
+            {
+              html: "<a href='#'>Duplicate</a>"
+            },
+            {
+              html: "<a href='#'>Delete</a>"
+            }
+          ],
+
+          [
+            {
+              html: "<a href='job-detail'>Junior barista</a>"
+            },
+            {
+              text: "2"
+            },
+            {
+              text: "Crosby"
+            },
+            {
+              text: "L23 6UG"
+            },
+            {
+              html: "<a href='#'>Duplicate</a>"
+            },
+            {
+              html: "<a href='#'>Delete</a>"
+            }
+          ],
+
+          [
+            {
+              html: ""
+            },
+            {
+              html: "<b>7 / 9</b>"
             },
             {
               text: ""
