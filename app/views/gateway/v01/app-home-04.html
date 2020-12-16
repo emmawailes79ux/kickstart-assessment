@@ -1,0 +1,53 @@
+{% extends "layout-header-links.html" %}
+
+{% block pageTitle %}
+  Application home
+{% endblock %}
+
+{% block beforeContent %}
+<style>
+  .app-example-wrapper {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    }
+  .app-example {
+    position: relative;
+    border: 1px solid #b1b4b6;
+    padding: 15px;
+    }
+  .app-example h2 strong {
+    float: right;
+  }
+  .app-example button {
+    margin-bottom: 0;
+  }
+</style>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+        Kickstart Scheme
+      </h1>
+      <p><b>ART AND SCULPTURE LTD</b><br>
+        Company number: 11721900</p>
+      <hr>
+
+      <div class="app-example-wrapper">
+        <div class="app-example">
+          <h2 class="govuk-heading-s">KS12345678 <strong class="govuk-tag govuk-tag--blue">
+            PENDING
+          </strong></h2>
+          <p class="govuk-body"><b>34 vacancies</b></p>
+          <p class="govuk-body">We will email you when this is complete.</p>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+{% endblock %}

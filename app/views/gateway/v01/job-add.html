@@ -1,0 +1,397 @@
+{% extends "layout-header-links.html" %}
+
+{% block pageTitle %}
+  Add a role
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+      text: "Back",
+      href: "job-list"
+    }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% call govukFieldset({
+        legend: {
+          html: "<span class='govuk-caption-l'>Step 3 of 3</span>Add a role",
+          classes: "govuk-fieldset__legend--l",
+          isPageHeading: true
+        }
+      }) %}
+
+      {{ govukInput({
+        label: {
+          text: "Role"
+        },
+        classes: "govuk-input--width-20",
+        id: "job-title",
+        name: "job title"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Number of vacancies"
+        },
+        hint: {
+          text: "This is the number of vacancies for this role in this location."
+        },
+        classes: "govuk-input--width-4",
+        id: "width-4",
+        name: "width-4"
+      }) }}
+
+      {{ govukSelect({
+        id: "sort",
+        name: "sort",
+        label: {
+          text: "Industry sector"
+        },
+        hint: {
+          text: "Select which industry sector the job is in."
+        },
+        items: [
+          {
+            value: "Administration",
+            text: "Administration"
+          },
+          {
+            value: "Animal Care",
+            text: "Animal Care"
+          },
+          {
+            value: "Beauty and Wellbeing",
+            text: "Beauty & Wellbeing"
+          },
+          {
+            value: "Business and Finance",
+            text: "Business & Finance"
+          },
+          {
+            value: "Computing, Technology and Digital",
+            text: "Computing, Technology & Digital"
+          },
+          {
+            value: "Construction and Trades",
+            text: "Construction & Trades"
+          },
+          {
+            value: "Creative and Media",
+            text: "Creative & Media"
+          },
+          {
+            value: "Delivery and Storage",
+            text: "Delivery & Storage"
+          },
+          {
+            value: "Emergency and Uniform Services",
+            text: "Emergency & Uniform Services"
+          },
+          {
+            value: "Engineering and Maintenance",
+            text: "Engineering & Maintenance"
+          },
+          {
+            value: "Environmentand Land",
+            text: "Environment & Land"
+          },
+          {
+            value: "Government Services",
+            text: "Government Services"
+          },
+          {
+            value: "Healthcare",
+            text: "Healthcare"
+          },
+          {
+            value: "Home Services",
+            text: "Home Services"
+          },
+          {
+            value: "Hospitality and Food",
+            text: "Hospitality & Food"
+          },
+          {
+            value: "Law and Legal",
+            text: "Law & Legal"
+          },
+          {
+            value: "Managerial",
+            text: "Managerial"
+          },
+          {
+            value: "Manufacturing",
+            text: "Manufacturing"
+          },
+          {
+            value: "Retail and Sales",
+            text: "Retail & Sales"
+          },
+          {
+            value: "Science and Research",
+            text: "Science & Research"
+          },
+          {
+            value: "Social Care",
+            text: "Social Care"
+          },
+          {
+            value: "Sports and Leisure",
+            text: "Sports & Leisure"
+          },
+          {
+            value: "Teaching and Education",
+            text: "Teaching & Education"
+          },
+          {
+            value: "Transport",
+            text: "Transport"
+          },
+          {
+            value: "Travel and Tourism",
+            text: "Travel & Tourism"
+          }
+        ]
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Employer job reference (if provided)"
+        },
+        classes: "govuk-input--width-10",
+        id: "employer-ref",
+        name: "employer-ref"
+      }) }}
+
+      {% set signatory %}
+        {{ govukInput({
+          id: "contact-by-email",
+          name: "contact-by-email",
+          type: "email",
+          spellcheck: false,
+          classes: "govuk-!-width-one-third",
+          label: {
+            text: "Referral cap per vacancy"
+          }
+        }) }}
+
+
+
+        {% endset -%}
+
+
+        {{ govukRadios({
+          idPrefix: "contact",
+          name: "contact",
+          fieldset: {
+            legend: {
+              text: "Do you want a referral limit for each vacancy?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: "A referral is made when we recommend your job placement to a candidate. This does not guarantee the candidate will put in an application."
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes",
+              conditional: {
+                html: signatory
+              }
+            },
+            {
+              value: "no",
+              text: "No"
+            }
+          ]
+        }) }}
+
+
+
+
+      <h2 class="govuk-heading-l">Location</h2>
+
+      {{ govukRadios({
+        idPrefix: "where-do-you-live",
+        name: "role-base",
+        fieldset: {
+          legend: {
+            text: "Role base",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: "Select one option"
+        },
+        items: [
+          {
+            value: "remote-working",
+            text: "Remote working"
+          },
+          {
+            value: "office",
+            text: "Office/business location"
+          },
+          {
+            value: "field-based",
+            text: "Field-based"
+          },
+          {
+            value: "combination",
+            text: "Combination (remote/office/field)"
+          }
+        ]
+      }) }}
+
+      {{ govukRadios({
+        classes: "govuk-radios--inline",
+        idPrefix: "local-national",
+        name: "local-national",
+        fieldset: {
+          legend: {
+            text: "Local or national",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: "Select one option"
+        },
+        items: [
+          {
+            value: "local",
+            text: "Local"
+          },
+          {
+            value: "national",
+            text: "National"
+          }
+        ]
+      }) }}
+
+
+      {{ govukRadios({
+        idPrefix: "public-transport",
+        name: "public-transport",
+        fieldset: {
+          legend: {
+            text: "Is public transport available?",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes"
+          },
+          {
+            value: "no",
+            text: "No"
+          },
+          {
+            value: "do not know",
+            text: "Do not know"
+          }
+        ]
+      }) }}
+
+      {{ govukInput({
+        label: {
+          html: 'Building and street <span class="govuk-visually-hidden">line 1 of 2</span>'
+        },
+        id: "address-line-1",
+        name: "address-line-1"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          html: '<span class="govuk-visually-hidden">Building and street line 2 of 2</span>'
+        },
+        id: "address-line-2",
+        name: "address-line-2"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Town or city"
+        },
+        classes: "govuk-!-width-two-thirds",
+        id: "address-town",
+        name: "address-town"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "County"
+        },
+        classes: "govuk-!-width-two-thirds",
+        id: "address-county",
+        name: "address-county"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Postcode"
+        },
+        classes: "govuk-input--width-10",
+        id: "address-postcode",
+        name: "address-postcode"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Contact name"
+        },
+        classes: "govuk-input--width-10",
+        id: "contact-name",
+        name: "contact-name"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Telephone"
+        },
+        classes: "govuk-input--width-10",
+        id: "telephone",
+        name: "telephone"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Email"
+        },
+        classes: "govuk-input--width-10",
+        id: "email",
+        name: "email"
+      }) }}
+
+    {% endcall %}
+
+    {{ govukInsetText({
+      text: "If a role requires the employee to base themselves from multiple locations to fulfil their role then add a location here."
+    }) }}
+
+    {{ govukButton({
+      text: "Add another location",
+      href: "",
+      classes: "govuk-button--secondary"
+    }) }}
+
+    <br>
+
+      {{ govukButton({
+        text: "Next",
+        href: "job-add-2"
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}
