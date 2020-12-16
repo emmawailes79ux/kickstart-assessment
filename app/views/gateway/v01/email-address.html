@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Email address
+{% endblock %}
+
+{% block beforeContent %}
+
+{% endblock %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <form action="email-code" method="post">
+                {{ govukFieldset({
+                    legend: {
+                        html: "Enter your email address",
+                        classes: "govuk-fieldset__legend--l",
+                        isPageHeading: true
+                    }
+                })}}
+
+                <p>This must the same email address as the one that you originally signed up to the Kickstart Scheme with.</p>
+
+                {{ govukInput({
+                    label: {
+                        text: "Email address"
+                    },
+                    id: "register-email-address",
+                    name: "register-email-address",
+                    classes: "govuk-!-width-two-thirds"
+                }) }}
+
+                {{ govukButton({
+                    text: "Continue"
+                }) }}
+
+            </form>
+        </div>
+    </div>
+{% endblock %}
