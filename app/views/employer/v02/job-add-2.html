@@ -1,0 +1,182 @@
+{% extends "layout-header-links.html" %}
+
+{% block pageTitle %}
+  Add a vacancy
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+      text: "Back",
+      href: "job-add-2"
+    }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% call govukFieldset({
+        legend: {
+          html: "<span class='govuk-caption-l'>Step 3 of 3</span>Add a vacancy",
+          classes: "govuk-fieldset__legend--l",
+          isPageHeading: true
+        }
+      }) %}
+
+      {{ govukTextarea({
+        name: "more-detail",
+        id: "more-detail",
+        label: {
+          text: "Job summary",
+          classes: "govuk-label--m",
+          isPageHeading: true
+        },
+        hint: {
+          text: "Enter a brief description of the role and duties"
+        }
+      }) }}
+
+      <h2 class="govuk-heading-l">Dates</h2>
+
+      {{ govukDateInput({
+        id: "start-date",
+        namePrefix: "start-date",
+        fieldset: {
+          legend: {
+            text: "Anticipated start date",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: "For example, 12 11 2007"
+        }
+      }) }}
+
+      {{ govukDateInput({
+        id: "end-date",
+        namePrefix: "end-date",
+        fieldset: {
+          legend: {
+            text: "Anticipated end date",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: "For example, 12 11 2007"
+        }
+      }) }}
+
+
+      <h2 class="govuk-heading-l">Working hours</h2>
+
+      {{ govukInput({
+        label: {
+          text: "Total hours per week"
+        },
+        classes: "govuk-input--width-10",
+        id: "total-hours",
+        name: "total-hours"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Days"
+        },
+        classes: "govuk-input--width-10",
+        id: "days",
+        name: "days"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Hours"
+        },
+        classes: "govuk-input--width-10",
+        id: "hours",
+        name: "hours"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Pay",
+          classes: "govuk-label--l",
+          isPageHeading: false
+        },
+        hint: {
+          text: "For example, enter 'minimum wage' or £ per hour"
+        },
+        classes: "govuk-input--width-10",
+        id: "event-name",
+        name: "event-name"
+      }) }}
+
+      {{ govukTextarea({
+        name: "skills",
+        id: "skills",
+        label: {
+          text: "Skills needed",
+          classes: "govuk-label--l",
+          isPageHeading: false
+        },
+        hint: {
+          text: "List the skills, experience and qualifications that the claimant will need to do this job."
+        }
+      }) }}
+
+      {{ govukTextarea({
+        name: "how-apply",
+        id: "how-apply",
+        label: {
+          text: "How to apply",
+          classes: "govuk-label--l",
+          isPageHeading: false
+        },
+        hint: {
+          text: "For example, whether a CV or covering letter are needed, forms to fill in, how the application should be sent."
+        }
+      }) }}
+
+      {{ govukDateInput({
+        id: "closing-date",
+        namePrefix: "closing-date",
+        fieldset: {
+          legend: {
+            text: "Closing date",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: "For example, 12 11 2007"
+        }
+      }) }}
+
+      {{ govukTextarea({
+        name: "additional-support",
+        id: "additional-support",
+        label: {
+          text: "What support will you provide to the claimant to help their empoyability?",
+          classes: "govuk-label--m",
+          isPageHeading: false
+        },
+        hint: {
+          text: "For example, coaching and mentoring."
+        }
+      }) }}
+
+
+    {% endcall %}
+
+
+
+      {{ govukButton({
+        text: "Continue",
+        href: "job-detail"
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}
