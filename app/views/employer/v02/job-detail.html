@@ -1,7 +1,7 @@
 {% extends "layout-header-links.html" %}
 
 {% block pageTitle %}
-  Add a vacancy
+  Confirm role details
 {% endblock %}
 
 {% block beforeContent %}
@@ -56,6 +56,23 @@
           },
           {
             key: {
+              text: "Number of vacancies"
+            },
+            value: {
+              text: "2"
+            },
+            actions: {
+              items: [
+                {
+                  href: "job-add",
+                  text: "Change",
+                  visuallyHiddenText: "number of vacancies"
+                }
+              ]
+            }
+          },
+          {
+            key: {
               text: "Sector"
             },
             value: {
@@ -97,23 +114,6 @@
       {{ govukSummaryList({
         classes: 'govuk-!-margin-bottom-9',
         rows: [
-          {
-            key: {
-              text: "Number of vacancies"
-            },
-            value: {
-              text: "2"
-            },
-            actions: {
-              items: [
-                {
-                  href: "job-add",
-                  text: "Change",
-                  visuallyHiddenText: "number of vacancies"
-                }
-              ]
-            }
-          },
           {
             key: {
               text: "Referral cap"

@@ -1,13 +1,13 @@
 {% extends "layout-header-links.html" %}
 
 {% block pageTitle %}
-  Add a vacancy
+  Add a role
 {% endblock %}
 
 {% block beforeContent %}
     {{ govukBackLink({
       text: "Back",
-      href: "job-add-2"
+      href: "job-add"
     }) }}
 {% endblock %}
 
@@ -17,7 +17,7 @@
     <div class="govuk-grid-column-two-thirds">
       {% call govukFieldset({
         legend: {
-          html: "<span class='govuk-caption-l'>Step 3 of 3</span>Add a vacancy",
+          html: "<span class='govuk-caption-l'>Step 3 of 3</span>Add a role",
           classes: "govuk-fieldset__legend--l",
           isPageHeading: true
         }
@@ -84,6 +84,9 @@
         label: {
           text: "Days"
         },
+        hint: {
+          text: "For example, enter 'flexible' or 'Mon to Fri'"
+        },
         classes: "govuk-input--width-10",
         id: "days",
         name: "days"
@@ -92,6 +95,9 @@
       {{ govukInput({
         label: {
           text: "Hours"
+        },
+        hint: {
+          text: "For example, enter 'flexible' or '9 to 5'"
         },
         classes: "govuk-input--width-10",
         id: "hours",
