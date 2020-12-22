@@ -1,0 +1,57 @@
+{% extends "layout-header-links.html" %}
+
+{% block pageTitle %}
+  Grant Offer Agreement
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+      text: "Back",
+      href: "app-home"
+    }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">Step 1 of 3</span>
+      <h1 class="govuk-heading-l">
+        Grant Offer Agreement
+      </h1>
+
+      {{ govukCheckboxes({
+        idPrefix: "terms",
+        name: "terms",
+        classes: "govuk-checkboxes--small",
+        fieldset: {
+          legend: {
+            text: "To continue with the Kickstart Scheme you must agree to the following:",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        items: [
+          {
+            value: "grant-offer",
+            html: "I have read and agree to the terms in the <a href='#' target='_blank'>Grant Offer Letter.</a>"
+          },
+          {
+            value: "terms",
+            html: "I have read and agree to the terms in the <a href='#' target='_blank'>Terms &amp; conditions.</a>"
+          }
+        ]
+      }) }}
+
+      <p class="govuk-body">We will email you a copy of the Grant Offer letter and the Terms &amp; conditions.</p>
+
+      {{ govukButton({
+        text: "I agree to the terms",
+        href: "bank-details"
+      }) }}
+
+      <p class="govuk-body"><a href="app-home">I do not agree to the terms</a></p>
+    </div>
+  </div>
+
+{% endblock %}

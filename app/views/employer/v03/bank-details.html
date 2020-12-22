@@ -1,0 +1,145 @@
+{% extends "layout-header-links.html" %}
+
+{% block pageTitle %}
+  Provide payment details
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+      text: "Back",
+      href: "app-home-02"
+    }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">Step 2 of 3</span>
+      <h1 class="govuk-heading-l">
+        Provide payment details
+      </h1>
+
+      <p class="govuk-body">This is the account that DWP will pay into.</p>
+
+      {{ govukInput({
+        label: {
+          text: "Name on the account"
+        },
+        id: "name-on-the-account",
+        name: "name-on-the-account",
+        spellcheck: false
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Sort code"
+        },
+        classes: "govuk-input--width-5",
+        hint: {
+          text: "Must be 6 digits long"
+        },
+        id: "sort-code",
+        name: "sort-code",
+        inputmode: "numeric",
+        pattern: "[0-9]*",
+        spellcheck: false
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Account number"
+        },
+        classes: "govuk-input--width-10",
+        hint: {
+          text: "Must be between 6 and 8 digits long"
+        },
+        id: "account-number",
+        name: "account-number",
+        inputmode: "numeric",
+        pattern: "[0-9]*",
+        spellcheck: false
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Building society roll number (if you have one)"
+        },
+        classes: "govuk-input--width-10",
+        hint: {
+          text: "You can find it on your card, statement or passbook"
+        },
+        id: "roll-number",
+        name: "roll-number",
+        spellcheck: false
+      }) }}
+
+
+
+
+
+
+      {% set signatory %}
+        {{ govukInput({
+          id: "contact-by-email",
+          name: "contact-by-email",
+          type: "email",
+          spellcheck: false,
+          classes: "govuk-!-width-full",
+          label: {
+            text: "Name"
+          }
+        }) }}
+
+        {{ govukInput({
+          id: "cemail",
+          name: "cemail",
+          type: "email",
+          spellcheck: false,
+          classes: "govuk-!-width-full",
+          label: {
+            text: "Email"
+          }
+        }) }}
+
+        <p style="margin-top: 15px;" class="govuk-body"><a href="#">Add another signatory</a></p>
+
+        {% endset -%}
+
+
+        {{ govukRadios({
+          idPrefix: "contact",
+          name: "contact",
+          fieldset: {
+            legend: {
+              text: "Do you want to add an authorised signatory to this bank acount?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes",
+              conditional: {
+                html: signatory
+              }
+            },
+            {
+              value: "no",
+              text: "No"
+            }
+          ]
+        }) }}
+
+
+      {{ govukButton({
+        text: "Continue and save bank details",
+        href: "job-list"
+      }) }}
+
+      <p class="govuk-body"><a href="app-home-02">Back to home</a></p>
+    </div>
+  </div>
+
+{% endblock %}
