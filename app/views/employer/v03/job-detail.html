@@ -15,8 +15,10 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-      <span class="govuk-caption-l">Step 3 of 3</span>
-      <h1 class="govuk-heading-l">Role summary</h1>
+      <span class="govuk-caption-l">Add a role</span>
+      <h1 class="govuk-heading-l">Summary</h1>
+
+      <h2 class="govuk-heading-m">Role details</h2>
 
       {{ govukSummaryList({
         classes: 'govuk-!-margin-bottom-9',
@@ -26,7 +28,7 @@
               text: "Employer"
             },
             value: {
-              text: "ART AND SCULPTURE LTD"
+              text: "Art and Sculpture Ltd"
             },
             actions: {
               items: [
@@ -104,16 +106,7 @@
                 }
               ]
             }
-          }
-        ]
-      }) }}
-
-
-      <h2 class="govuk-heading-m">Location</h2>
-
-      {{ govukSummaryList({
-        classes: 'govuk-!-margin-bottom-9',
-        rows: [
+          },
           {
             key: {
               text: "Referral cap"
@@ -127,6 +120,118 @@
                   href: "job-add",
                   text: "Change",
                   visuallyHiddenText: "referral cap"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Job summary"
+            },
+            value: {
+              text: "Your role as a Junior Exhibition Designer will be predominantly be to support the leading curators and designers in Leeds Art Gallery and the Henry Moore Institute. This a rare opportunity to get access to one of the country's leading art galleries with an expectation that you will learn on the job. Previous coputer skills are necessary as there will be certain amount of data entry. This role is likely to be highly sort after."
+            },
+            actions: {
+              items: [
+                {
+                  href: "job-add-2",
+                  text: "Change",
+                  visuallyHiddenText: "job summary"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Skills needed"
+            },
+            value: {
+              text: "Communication, time keeping, basic computer skills, an appreciation and understanding of art."
+            },
+            actions: {
+              items: [
+                {
+                  href: "job-add-2",
+                  text: "Change",
+                  visuallyHiddenText: "skills"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Employment support"
+            },
+            value: {
+              text: "We train and support all our employees to grow confidence and knowledge in the art world."
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "email"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "How to apply"
+            },
+            value: {
+              text: "CVs emailed to s.almarez@leedsartgallery.co.uk"
+            },
+            actions: {
+              items: [
+                {
+                  href: "job-add-2",
+                  text: "Change",
+                  visuallyHiddenText: "how to apply"
+                }
+              ]
+            }
+          }
+          
+        ]
+      }) }}
+
+
+      <h2 class="govuk-heading-m">Location</h2>
+
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+          {
+            key: {
+              text: "Role base"
+            },
+            value: {
+              html: "Office/business location"
+            },
+            actions: {
+              items: [
+                {
+                  href: "job-add",
+                  text: "Change",
+                  visuallyHiddenText: "address"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Local or National"
+            },
+            value: {
+              html: "Local"
+            },
+            actions: {
+              items: [
+                {
+                  href: "job-add",
+                  text: "Change",
+                  visuallyHiddenText: "address"
                 }
               ]
             }
@@ -198,32 +303,32 @@
                 }
               ]
             }
-          }
-        ]
-      }) }}
-
-      <h2 class="govuk-heading-m">Job details</h2>
-
-      {{ govukSummaryList({
-        classes: 'govuk-!-margin-bottom-9',
-        rows: [
+          },
           {
             key: {
-              text: "Job summary"
+              text: "Public transport available"
             },
             value: {
-              text: "Your role as a Junior Exhibition Designer will be predominantly be to support the leading curators and designers in Leeds Art Gallery and the Henry Moore Institute. This a rare opportunity to get access to one of the country's leading art galleries with an expectation that you will learn on the job. Previous coputer skills are necessary as there will be certain amount of data entry. This role is likely to be highly sort after."
+              text: "Yes"
             },
             actions: {
               items: [
                 {
-                  href: "job-add-2",
+                  href: "job-add",
                   text: "Change",
-                  visuallyHiddenText: "job summary"
+                  visuallyHiddenText: "email"
                 }
               ]
             }
-          },
+          }
+        ]
+      }) }}
+
+      <h2 class="govuk-heading-m">Dates and pay</h2>
+
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
           {
             key: {
               text: "Anticipated start date"
@@ -254,6 +359,23 @@
                   href: "job-add-2",
                   text: "Change",
                   visuallyHiddenText: "end date"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Closing date for applications"
+            },
+            value: {
+              text: "31/12/20"
+            },
+            actions: {
+              items: [
+                {
+                  href: "job-add",
+                  text: "Change",
+                  visuallyHiddenText: "deadline"
                 }
               ]
             }
@@ -325,98 +447,13 @@
                 }
               ]
             }
-          },
-          {
-            key: {
-              text: "Skills needed"
-            },
-            value: {
-              text: "Communication, time keeping, basic computer skills, an appreciation and understanding of art."
-            },
-            actions: {
-              items: [
-                {
-                  href: "job-add-2",
-                  text: "Change",
-                  visuallyHiddenText: "skills"
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              text: "How to apply"
-            },
-            value: {
-              text: "CVs emailed to s.almarez@leedsartgallery.co.uk"
-            },
-            actions: {
-              items: [
-                {
-                  href: "job-add-2",
-                  text: "Change",
-                  visuallyHiddenText: "how to apply"
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              text: "Application deadline"
-            },
-            value: {
-              text: "31/12/20"
-            },
-            actions: {
-              items: [
-                {
-                  href: "job-add",
-                  text: "Change",
-                  visuallyHiddenText: "deadline"
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              text: "Public Transport"
-            },
-            value: {
-              text: "Yes"
-            },
-            actions: {
-              items: [
-                {
-                  href: "job-add",
-                  text: "Change",
-                  visuallyHiddenText: "phone"
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              text: "Employment support"
-            },
-            value: {
-              text: "We train and support all our employees to grow confidence and knowledge in the art world."
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "email"
-                }
-              ]
-            }
           }
         ]
       }) }}
 
       {{ govukButton({
-        text: "Confirm vacancy",
-        href: "job-list"
+        text: "Confirm role",
+        href: "role-added"
       }) }}
 
     </div>
