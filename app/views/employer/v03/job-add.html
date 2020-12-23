@@ -25,16 +25,21 @@
 
       {{ govukInput({
         label: {
-          text: "Role"
+          text: "Role title",
+          classes: "govuk-label--m",
+          isPageHeading: false
         },
         classes: "govuk-input--width-20",
         id: "job-title",
         name: "job title"
       }) }}
 
+
       {{ govukInput({
         label: {
-          text: "Number of vacancies"
+          text: "Number of vacancies",
+          classes: "govuk-label--m",
+          isPageHeading: false
         },
         hint: {
           text: "This is the number of vacancies for this role in this location."
@@ -44,11 +49,43 @@
         name: "width-4"
       }) }}
 
+
+       {{ govukRadios({
+          idPrefix: "contact",
+          name: "contact",
+          fieldset: {
+            legend: {
+              text: "Do you want a referral limit for each vacancy?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: "A referral is made when we recommend your job placement to a candidate. This does not guarantee the candidate will put in an application."
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes",
+              conditional: {
+                html: signatory
+              }
+            },
+            {
+              value: "no",
+              text: "No"
+            }
+          ]
+        }) }}
+
+
       {{ govukSelect({
         id: "sort",
         name: "sort",
         label: {
-          text: "Industry sector"
+          text: "Industry sector",
+          classes: "govuk-label--m",
+          isPageHeading: false
         },
         items: [
           {
@@ -155,8 +192,10 @@
       }) }}
 
       {{ govukInput({
-        label: {
-          text: "Employer job reference (if provided)"
+       label: {
+          text: "Employer job reference (if provided)",
+          classes: "govuk-label--m",
+          isPageHeading: false
         },
         hint: {
             text: "Add any internal reference number you have for this vacancy. We will use this when communicating with you about this vacancy."
@@ -166,103 +205,34 @@
         name: "employer-ref"
       }) }}
 
-      {% set signatory %}
-        {{ govukInput({
-          id: "contact-by-email",
-          name: "contact-by-email",
-          type: "email",
-          spellcheck: false,
-          classes: "govuk-!-width-one-third",
-          label: {
-            text: "Referral cap per vacancy"
-          }
-        }) }}
+  
+      <h2 class="govuk-heading-m">Contact</h2>
 
-
-
-        {% endset -%}
-
-
-        {{ govukRadios({
-          idPrefix: "contact",
-          name: "contact",
-          fieldset: {
-            legend: {
-              text: "Do you want a referral limit for each vacancy?",
-              isPageHeading: false,
-              classes: "govuk-fieldset__legend--m"
-            }
-          },
-          hint: {
-            text: "A referral is made when we recommend your job placement to a candidate. This does not guarantee the candidate will put in an application."
-          },
-          items: [
-            {
-              value: "yes",
-              text: "Yes",
-              conditional: {
-                html: signatory
-              }
-            },
-            {
-              value: "no",
-              text: "No"
-            }
-          ]
-        }) }}
-
-
-        {{ govukTextarea({
-        name: "more-detail",
-        id: "more-detail",
+      {{ govukInput({
         label: {
-          text: "Job summary",
-          classes: "govuk-label--m",
-          isPageHeading: true
+          text: "Contact name"
         },
-        hint: {
-          text: "Enter a brief description of the role and duties."
-        }
+        classes: "govuk-input--width-20",
+        id: "contact-name",
+        name: "contact-name"
       }) }}
 
-
-       {{ govukTextarea({
-        name: "skills",
-        id: "skills",
+      {{ govukInput({
         label: {
-          text: "Skills needed",
-          classes: "govuk-label--m",
-          isPageHeading: false
+          text: "Telephone"
         },
-        hint: {
-          text: "List the skills, experience and qualifications that the claimant will need to do this job."
-        }
+        classes: "govuk-input--width-20",
+        id: "telephone",
+        name: "telephone"
       }) }}
 
-      {{ govukTextarea({
-        name: "additional-support",
-        id: "additional-support",
+      {{ govukInput({
         label: {
-          text: "What support will you provide to the claimant to help their employability?",
-          classes: "govuk-label--m",
-          isPageHeading: false
+          text: "Email address" 
         },
-        hint: {
-          text: "For example, coaching and mentoring."
-        }
-      }) }}
-
-      {{ govukTextarea({
-        name: "how-apply",
-        id: "how-apply",
-        label: {
-          text: "How to apply",
-          classes: "govuk-label--m",
-          isPageHeading: false
-        },
-        hint: {
-          text: "For example, whether a CV or covering letter are needed, forms to fill in, how the application should be sent."
-        }
+        classes: "govuk-input--width-20",
+        id: "email",
+        name: "email"
       }) }}
 
       

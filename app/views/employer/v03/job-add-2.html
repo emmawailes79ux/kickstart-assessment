@@ -17,182 +17,71 @@
     <div class="govuk-grid-column-two-thirds">
       {% call govukFieldset({
         legend: {
-          html: "<span class='govuk-caption-l'>Add a role</span>Location",
+          html: "<span class='govuk-caption-l'>Add a role</span>Vacancy advert details",
           classes: "govuk-fieldset__legend--l",
           isPageHeading: true
         }
       }) %}
 
       
-      {{ govukRadios({
-        idPrefix: "where-do-you-live",
-        name: "role-base",
-        fieldset: {
-          legend: {
-            text: "Where is this vacancy based?",
-            isPageHeading: false,
-            classes: "govuk-fieldset__legend--m"
-          }
-        },
-        items: [
-          {
-            value: "remote-working",
-            text: "Remote working"
-          },
-          {
-            value: "office",
-            text: "Office/business location"
-          },
-          {
-            value: "field-based",
-            text: "Field-based"
-          },
-          {
-            value: "combination",
-            text: "Combination (remote/office/field)"
-          }
-        ]
-      }) }}
-
-      {{ govukRadios({
-        classes: "govuk-radios",
-        idPrefix: "local-national",
-        name: "local-national",
-        fieldset: {
-          legend: {
-            text: "Local or national",
-            isPageHeading: false,
-            classes: "govuk-fieldset__legend--m"
-          }
-        },
-        items: [
-          {
-            value: "local",
-            text: "Local"
-          },
-          {
-            value: "national",
-            text: "National"
-          }
-        ]
-      }) }}
-
-      <h2 class="govuk-heading-m">Location address</h2>
-
-      {{ govukInput({
+      {{ govukTextarea({
+        name: "more-detail",
+        id: "more-detail",
         label: {
-          html: 'Building and street <span class="govuk-visually-hidden">line 1 of 2</span>'
+          text: "Job summary",
+          classes: "govuk-label--m",
+          isPageHeading: true
         },
-        id: "address-line-1",
-        name: "address-line-1"
+        hint: {
+          text: "Enter a brief description of the role and duties."
+        }
       }) }}
 
-      {{ govukInput({
-        label: {
-          html: '<span class="govuk-visually-hidden">Building and street line 2 of 2</span>'
-        },
-        id: "address-line-2",
-        name: "address-line-2"
-      }) }}
-
-      {{ govukInput({
-        label: {
-          text: "Town or city"
-        },
-        classes: "govuk-!-width-two-thirds",
-        id: "address-town",
-        name: "address-town"
-      }) }}
-
-      {{ govukInput({
-        label: {
-          text: "County"
-        },
-        classes: "govuk-!-width-two-thirds",
-        id: "address-county",
-        name: "address-county"
-      }) }}
-
-      {{ govukInput({
-        label: {
-          text: "Postcode"
-        },
-        classes: "govuk-input--width-10",
-        id: "address-postcode",
-        name: "address-postcode"
-      }) }}
-
-
-      <h2 class="govuk-heading-m">Kickstart contact for this location</h2>
-
-      {{ govukInput({
-        label: {
-          text: "Contact name"
-        },
-        classes: "govuk-input--width-20",
-        id: "contact-name",
-        name: "contact-name"
-      }) }}
-
-      {{ govukInput({
-        label: {
-          text: "Telephone"
-        },
-        classes: "govuk-input--width-20",
-        id: "telephone",
-        name: "telephone"
-      }) }}
-
-      {{ govukInput({
-        label: {
-          text: "Email address" 
-        },
-        classes: "govuk-input--width-20",
-        id: "email",
-        name: "email"
-      }) }}
-
-    {% endcall %}
-
-    {{ govukRadios({
-        idPrefix: "public-transport",
-        name: "public-transport",
-        fieldset: {
-          legend: {
-            text: "Is the location accessible via public transport?",
-            isPageHeading: false,
-            classes: "govuk-fieldset__legend--m"
-          }
-        },
-        items: [
-          {
-            value: "yes",
-            text: "Yes"
-          },
-          {
-            value: "no",
-            text: "No"
-          },
-          {
-            value: "do not know",
-            text: "Do not know"
-          }
-        ]
-      }) }}
-
-    {{ govukInsetText({
-      text: "If a role requires the employee to base themselves from multiple locations to fulfil their role then add a location here."
-    }) }}
-
-    {{ govukButton({
-      text: "Add another location",
-      href: "",
-      classes: "govuk-button--secondary"
-    }) }}
 
       
 
-      
+
+       {{ govukTextarea({
+        name: "skills",
+        id: "skills",
+        label: {
+          text: "Skills needed",
+          classes: "govuk-label--m",
+          isPageHeading: false
+        },
+        hint: {
+          text: "List the skills, experience and qualifications that the claimant will need to do this job."
+        }
+      }) }}
+
+      {{ govukTextarea({
+        name: "additional-support",
+        id: "additional-support",
+        label: {
+          text: "What support will you provide to the claimant to help their employability?",
+          classes: "govuk-label--m",
+          isPageHeading: false
+        },
+        hint: {
+          text: "For example, coaching and mentoring."
+        }
+      }) }}
+
+     
+      {{ govukTextarea({
+        name: "how-apply",
+        id: "how-apply",
+        label: {
+          text: "How to apply",
+          classes: "govuk-label--m",
+          isPageHeading: false
+        },
+        hint: {
+          text: "For example, whether a CV or covering letter are needed, forms to fill in, how the application should be sent."
+        }
+      }) }}
+
+{% endcall %}
 
     <br>
 

@@ -7,7 +7,7 @@
 {% block beforeContent %}
     {{ govukBackLink({
       text: "Back",
-      href: "job-add-2"
+      href: "job-add-4"
     }) }}
 {% endblock %}
 
@@ -123,7 +123,17 @@
                 }
               ]
             }
-          },
+          }
+          ]
+      }) }}
+
+
+
+
+          <h2 class="govuk-heading-m">Vacancy advert details</h2>
+           {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
           {
             key: {
               text: "Job summary"
