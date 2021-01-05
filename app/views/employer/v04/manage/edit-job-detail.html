@@ -1,0 +1,189 @@
+{% extends "layout-header-links.html" %}
+
+{% block pageTitle %}
+  Edit role details
+{% endblock %}
+
+{% block beforeContent %}
+    {% include 'includes/back-button.njk' %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l govuk-!-display-inline-block">Edit role details</h1>
+
+
+          {{ govukInput({
+            label: {
+              text: "Role title",
+              classes: "govuk-label--m",
+              isPageHeading: false
+            },
+            classes: "govuk-input--width-20",
+            id: "job-title",
+            name: "job title",
+            value: "Junior Exhibition Designer"
+          }) }}
+
+
+          {{ govukInput({
+            label: {
+              text: "Number of vacancies",
+              classes: "govuk-label--m",
+              isPageHeading: false
+            },
+            classes: "govuk-input--width-4",
+            id: "width-4",
+            name: "width-4",
+            value: "2"
+          }) }}
+
+
+          {{ govukInput({
+            label: {
+              text: "Referral limit",
+              classes: "govuk-label--m",
+              isPageHeading: false
+            },
+            classes: "govuk-input--width-4",
+            id: "width-4",
+            name: "width-4",
+            value: "50"
+          }) }}
+
+
+{{ govukSelect({
+        id: "sort",
+        name: "sort",
+        label: {
+          text: "Industry sector",
+          classes: "govuk-label--m",
+          isPageHeading: false
+        },
+        items: [
+          {
+            value: "Administration",
+            text: "Administration"
+          },
+          {
+            value: "Animal Care",
+            text: "Animal Care"
+          },
+          {
+            value: "Beauty and Wellbeing",
+            text: "Beauty & Wellbeing"
+          },
+          {
+            value: "Business and Finance",
+            text: "Business & Finance"
+          },
+          {
+            value: "Computing, Technology and Digital",
+            text: "Computing, Technology & Digital"
+          },
+          {
+            value: "Construction and Trades",
+            text: "Construction & Trades"
+          },
+          {
+            value: "Creative and Media",
+            text: "Creative & Media",
+            selected: true
+          },
+          {
+            value: "Delivery and Storage",
+            text: "Delivery & Storage"
+          },
+          {
+            value: "Emergency and Uniform Services",
+            text: "Emergency & Uniform Services"
+          },
+          {
+            value: "Engineering and Maintenance",
+            text: "Engineering & Maintenance"
+          },
+          {
+            value: "Environmentand Land",
+            text: "Environment & Land"
+          },
+          {
+            value: "Government Services",
+            text: "Government Services"
+          },
+          {
+            value: "Healthcare",
+            text: "Healthcare"
+          },
+          {
+            value: "Home Services",
+            text: "Home Services"
+          },
+          {
+            value: "Hospitality and Food",
+            text: "Hospitality & Food"
+          },
+          {
+            value: "Law and Legal",
+            text: "Law & Legal"
+          },
+          {
+            value: "Managerial",
+            text: "Managerial"
+          },
+          {
+            value: "Manufacturing",
+            text: "Manufacturing"
+          },
+          {
+            value: "Retail and Sales",
+            text: "Retail & Sales"
+          },
+          {
+            value: "Science and Research",
+            text: "Science & Research"
+          },
+          {
+            value: "Social Care",
+            text: "Social Care"
+          },
+          {
+            value: "Sports and Leisure",
+            text: "Sports & Leisure"
+          },
+          {
+            value: "Teaching and Education",
+            text: "Teaching & Education"
+          },
+          {
+            value: "Transport",
+            text: "Transport"
+          },
+          {
+            value: "Travel and Tourism",
+            text: "Travel & Tourism"
+          }
+        ]
+      }) }}
+
+      {{ govukInput({
+       label: {
+          text: "Employer job reference (if provided)",
+          classes: "govuk-label--m",
+          isPageHeading: false
+        },
+        classes: "govuk-input--width-10",
+        id: "employer-ref",
+        name: "employer-ref",
+        value: "ASKS1"
+      }) }}
+
+      
+
+           
+
+    </div>
+  </div>
+
+{% endblock %}

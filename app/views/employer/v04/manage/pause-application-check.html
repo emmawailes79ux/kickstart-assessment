@@ -1,0 +1,45 @@
+{% extends "layout-header-links.html" %}
+
+{% block pageTitle %}
+    Are you sure you want to pause the application?
+{% endblock %}
+
+{% block beforeContent %}
+    {% include 'includes/back-button.njk' %}
+{% endblock %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <form id="form" method="post" action="pause-application-check">
+                {{ govukRadios({
+                    classes: "govuk-radios",
+                    idPrefix: "pause-application",
+                    name: "pause-application",
+                    fieldset: {
+                        legend: {
+                            text: "Are you sure you want to pause the application?",
+                            isPageHeading: true,
+                            classes: "govuk-fieldset__legend--l"
+                        }
+                    },
+                  
+                    items: [
+                        {
+                            value: "yes",
+                            text: "Yes, pause the application"
+                        },
+                        {
+                            value: "no",
+                            text: "No"
+                        }
+                    ]
+                }) }}
+
+                <button type="submit" class="govuk-button govuk-!-margin-right-1" id="submit">Continue</button>
+
+                <a href="javascript:window.history.back()" class="govuk-button govuk-button--secondary">Cancel</a>
+            </form>
+        </div>
+    </div>
+{% endblock %}

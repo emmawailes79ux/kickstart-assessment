@@ -1,0 +1,45 @@
+{% extends "layout-header-links.html" %}
+
+{% block pageTitle %}
+    Are you sure you want to pause the role?
+{% endblock %}
+
+{% block beforeContent %}
+    {% include 'includes/back-button.njk' %}
+{% endblock %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <form id="form" method="post" action="pause-role-check">
+                {{ govukRadios({
+                    classes: "govuk-radios",
+                    idPrefix: "pause-role",
+                    name: "pause-role",
+                    fieldset: {
+                        legend: {
+                            text: "Are you sure you want to pause the role?",
+                            isPageHeading: true,
+                            classes: "govuk-fieldset__legend--l"
+                        }
+                    },
+                    
+                    items: [
+                        {
+                            value: "yes",
+                            text: "Yes, pause the role"
+                        },
+                        {
+                            value: "no",
+                            text: "No"
+                        }
+                    ]
+                }) }}
+
+                <button type="submit" class="govuk-button govuk-!-margin-right-1" id="submit">Continue</button>
+
+                <a href="javascript:window.history.back()" class="govuk-button govuk-button--secondary">Cancel</a>
+            </form>
+        </div>
+    </div>
+{% endblock %}
