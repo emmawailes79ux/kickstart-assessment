@@ -181,7 +181,86 @@
 
       
 
-           
+      {{ govukInput({
+        label: {
+          text: "Contact name"
+        },
+        classes: "govuk-input--width-20",
+        id: "contact-name",
+        name: "contact-name",
+        value: "Seb Almarez"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Telephone"
+        },
+        classes: "govuk-input--width-20",
+        id: "telephone",
+        name: "telephone",
+        value: "07787137356"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Email address" 
+        },
+        classes: "govuk-input--width-20",
+        id: "email",
+        name: "email",
+        value: "s.almarez@leedsartgallery.co.uk"
+      }) }}
+
+
+      {{ govukTextarea({
+        label: {
+          text: "Job summary",
+          classes: "govuk-label--m",
+          isPageHeading: true
+        },
+        name: "more-detail",
+        id: "more-detail",
+        value: "Your role as a Junior Exhibition Designer will be predominantly be to support the leading curatorsand designers in Leeds Art Gallery and the Henry Moore Institute. This a rare opportunity to get access to one of the country's leading art galleries with an expectation that you will learn on the job. Previous coputer skills are necessary as there will be certain amount of data entry. This role is likely to be highly sort after. "
+      }) }}
+
+
+       {{ govukTextarea({
+        name: "skills",
+        id: "skills",
+        value: "Communication, time keeping, basic computer skills, an appreciation and understanding of art.",
+        label: {
+          text: "Skills needed",
+          classes: "govuk-label--m",
+          isPageHeading: false
+        }
+      }) }}
+
+
+      {{ govukTextarea({
+        name: "additional-support",
+        id: "additional-support",
+        value: "We train and support all our employees to grow confidence and knowledge in the art world.",
+        label: {
+          text: "What support will you provide to the claimant to help their employability?",
+          classes: "govuk-label--m",
+          isPageHeading: false
+        }
+      }) }}
+
+      {{ govukTextarea({
+        name: "how-apply",
+        id: "how-apply",
+        value: "CVs emailed to s.almarez@leedsartgallery.co.uk",
+        label: {
+          text: "How to apply",
+          classes: "govuk-label--m",
+          isPageHeading: false
+        }
+      }) }}
+
+      {{ govukButton({
+        text: "Save and continue"
+      }) }}     
 
     </div>
   </div>
