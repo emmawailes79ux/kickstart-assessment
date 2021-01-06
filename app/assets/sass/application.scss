@@ -131,3 +131,27 @@ a.pagination__link:focus {
     float: right;
   }
 }
+
+
+/**
+ * V2 cards with background colour
+ */
+.govuk-cards::after,
+.govuk-cards--2::after,
+.govuk-cards--3::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.govuk-cards--2__item {
+    box-sizing: border-box;
+    border: 1px solid #b1b4b6;
+    background-color: #f3f2f1;
+    padding: 20px;
+    margin-bottom: 20px;
+    float: left;
+
+    :last-child {
+        margin-bottom: 0;
+    }
