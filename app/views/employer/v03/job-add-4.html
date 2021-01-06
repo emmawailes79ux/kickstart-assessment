@@ -17,67 +17,19 @@
     <div class="govuk-grid-column-two-thirds">
       {% call govukFieldset({
         legend: {
-          html: "<span class='govuk-caption-l'>Add a role</span>Dates and pay",
+          html: "<span class='govuk-caption-l'>Add a role</span>Hours and pay",
           classes: "govuk-fieldset__legend--l",
           isPageHeading: true
         }
       }) %}
 
-      
 
-
-      {{ govukDateInput({
-        id: "start-date",
-        namePrefix: "start-date",
-        fieldset: {
-          legend: {
-            text: "Anticipated start date",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--m"
-          }
-        },
-        hint: {
-          text: "For example, 12 11 2007"
-        }
-      }) }}
-
-      {{ govukDateInput({
-        id: "end-date",
-        namePrefix: "end-date",
-        fieldset: {
-          legend: {
-            text: "Anticipated end date",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--m"
-          }
-        },
-        hint: {
-          text: "For example, 12 11 2007"
-        }
-      }) }}
-
-
-      {{ govukDateInput({
-        id: "closing-date",
-        namePrefix: "closing-date",
-        fieldset: {
-          legend: {
-            text: "Closing date for applications",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--m"
-          }
-        },
-        hint: {
-          text: "For example, 12 11 2007"
-        }
-      }) }}
-
-
-      <h2 class="govuk-heading-m">Working hours</h2>
 
       {{ govukInput({
         label: {
-          text: "Total hours per week"
+          text: "Total hours per week",
+          classes: "govuk-label--m",
+          isPageHeading: false
         },
         hint: {
           text: "The kickstart scheme requires a minimum of 25 hours per week"
@@ -129,11 +81,11 @@
         name: "event-name"
       }) }}
 
-     
 
-      
 
-      
+
+
+
 
 
     {% endcall %}

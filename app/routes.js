@@ -72,3 +72,15 @@ router.post('/employer/v04/manage/pause-role-check', function (req, res) {
     res.redirect('/employer/v04/manage/job-detail')
   }
 });
+
+router.post('/employer/v03/job-add-3a', function (req, res) {
+  const editChoice = req.session.data['remote']
+
+  if (editChoice === 'yes') {
+    res.redirect('/employer/v03/job-add-4')
+  } else if (editChoice === 'part') {
+    res.redirect('/employer/v03/job-add-3b')
+  } else if (editChoice === 'not') {
+    res.redirect('/employer/v03/job-add-3b')
+  }
+});

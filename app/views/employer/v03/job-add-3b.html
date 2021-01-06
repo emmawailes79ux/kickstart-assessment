@@ -1,0 +1,134 @@
+{% extends "layout-header-links.html" %}
+
+{% block pageTitle %}
+  Add a role
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+      text: "Back",
+      href: "job-add-2"
+    }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% call govukFieldset({
+        legend: {
+          html: "<span class='govuk-caption-l'>Add a role</span>Location",
+          classes: "govuk-fieldset__legend--l",
+          isPageHeading: true
+        }
+      }) %}
+
+      {{ govukRadios({
+        classes: "govuk-radios",
+        idPrefix: "local-national",
+        name: "local-national",
+        fieldset: {
+          legend: {
+            text: "Do you want to advertise this role nationally or locally?",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+        {
+          value: "national",
+          text: "Nationally"
+        },
+        {
+            value: "local",
+            text: "Locally"
+          }
+
+        ]
+      }) }}
+
+      {{ govukCheckboxes({
+        idPrefix: "waste",
+        name: "waste",
+        fieldset: {
+          legend: {
+            text: "Where type of locations can the job based from?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: "Select all that apply."
+        },
+        items: [
+          {
+            value: "remote-working",
+            text: "Remote working"
+          },
+          {
+            value: "office",
+            text: "Office/business location"
+          },
+          {
+            value: "field-based",
+            text: "Field-based"
+          },
+          {
+            value: "tranport",
+            text: "Transport & delivery (remote/office/field)"
+          }
+        ]
+      }) }}
+
+
+      {% set multipleLocations %}
+        {{ govukInput({
+          id: "multiple-locations",
+          name: "multiple-locations",
+          spellcheck: false,
+          classes: "govuk-!-width-one-third",
+          label: {
+            text: "How many?"
+          }
+        }) }}
+        {% endset -%}
+
+        {{ govukRadios({
+          idPrefix: "contact",
+          name: "contact",
+          fieldset: {
+            legend: {
+              text: "Does this role require the employee to work from multiple locations?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: "Select one option."
+          },
+          items: [
+            {
+              value: "multiple",
+              text: "Yes, more than one location",
+              conditional: {
+                html: multipleLocations
+              }
+            },
+            {
+              value: "one-location",
+              text: "No, only one location"
+            }
+          ]
+        }) }}
+
+{% endcall %}
+
+      {{ govukButton({
+        text: "Continue",
+        href: "job-add-3b"
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}

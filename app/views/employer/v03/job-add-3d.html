@@ -24,58 +24,8 @@
       }) %}
 
 
-      {{ govukRadios({
-        idPrefix: "where-do-you-live",
-        name: "role-base",
-        fieldset: {
-          legend: {
-            text: "Where is this vacancy based?",
-            isPageHeading: false,
-            classes: "govuk-fieldset__legend--m"
-          }
-        },
-        items: [
-          {
-            value: "remote-working",
-            text: "Remote working"
-          },
-          {
-            value: "office",
-            text: "Office/business location"
-          },
-          {
-            value: "field-based",
-            text: "Field-based"
-          },
-          {
-            value: "combination",
-            text: "Combination (remote/office/field)"
-          }
-        ]
-      }) }}
 
-      {{ govukRadios({
-        classes: "govuk-radios",
-        idPrefix: "local-national",
-        name: "local-national",
-        fieldset: {
-          legend: {
-            text: "Local or national",
-            isPageHeading: false,
-            classes: "govuk-fieldset__legend--m"
-          }
-        },
-        items: [
-          {
-            value: "local",
-            text: "Local"
-          },
-          {
-            value: "national",
-            text: "National"
-          }
-        ]
-      }) }}
+
 
       <h2 class="govuk-heading-m">Location address</h2>
 
@@ -132,7 +82,7 @@
         name: "public-transport",
         fieldset: {
           legend: {
-            text: "Is the location accessible via public transport?",
+            text: "Can this role be accessed by public transport or does the employee need to have their own transport?",
             isPageHeading: false,
             classes: "govuk-fieldset__legend--m"
           }
@@ -140,15 +90,15 @@
         items: [
           {
             value: "yes",
-            text: "Yes"
+            text: "Public transport available"
           },
           {
-            value: "no",
+            value: "They will need their own transport",
             text: "No"
           },
           {
-            value: "do not know",
-            text: "Do not know"
+            value: "Not-relevant",
+            text: "Not relevant"
           }
         ]
       }) }}
