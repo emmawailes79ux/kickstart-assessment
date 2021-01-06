@@ -95,7 +95,7 @@
                   text: "Closing date for job applications"
                 },
                 value: {
-                  text: "10 February 2021"
+                  text: "8 January 2021"
                 },
                 actions: {
                   items: [
@@ -113,7 +113,7 @@
 
       <form id="form" method="post" action="job-detail">
 
-       {{ govukRadios({
+        {{ govukRadios({
           idPrefix: "manage-role",
           name: "manage-role",
           fieldset: {
@@ -125,15 +125,15 @@
           },
           items: [
             {
-              value: "pause-role",
+              value: "place-referral",
               text: "Place a referral"
             },
             {
-              value: "pause-role",
+              value: "closing-date",
               text: "Change closing date for job applications"
             },
             {
-              value: "pause-role",
+              value: "referral-limit",
               text: "Change referral limit"
             },
             {

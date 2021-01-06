@@ -12,7 +12,9 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-l">Andy Clarke</h1>
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-0 govuk-!-padding-bottom-2">Andy Clarke</h1>
+
+        <strong class="govuk-tag govuk-tag--green govuk-!-margin-bottom-5">Placed</strong>
 
           {{ govukSummaryList({
             classes: ' ',
@@ -27,10 +29,18 @@
               },
               {
                 key: {
-                  text: "Date of Referral"
+                  text: "Date of referral"
                 },
                 value: {
-                  text: "13 December 20"
+                  text: "10 December 2020"
+                }
+              },
+              {
+                key: {
+                  text: "Date of placement"
+                },
+                value: {
+                  text: "6 February 2020"
                 }
               },
               {
@@ -53,16 +63,39 @@
           }) }}
 
     
+      <form id="form" method="post" action="#">
 
-      
-
-        {{ govukButton({
-          text: "Place in vacancy",
-          href: "placement-confirm"
+       {{ govukRadios({
+          idPrefix: "manage-placement",
+          name: "manage-placement",
+          fieldset: {
+            legend: {
+              text: "Manage this placement",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "pause-placement",
+              text: "Pause"
+            },
+            {
+              value: "cancel-role",
+              text: "Cancel"
+            },
+            {
+              value: "edit-role",
+              text: "Terminate "
+            }
+          ]
         }) }}
 
+        {{ govukButton({
+          text: "Continue"
+        }) }}
 
-        
+      </form>
 
         <p class="govuk-body govuk-!-margin-top-9"><a href="../app-home">Back to home</a></p>
        

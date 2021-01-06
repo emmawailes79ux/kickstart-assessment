@@ -48,6 +48,12 @@ router.post('/employer/v04/manage/job-detail', function (req, res) {
     res.redirect('/employer/v04/manage/pause-role-check')
   } else if (editChoice === 'cancel-role') {
     res.redirect('/employer/v04/manage/cancel-role-check')
+  } else if (editChoice === 'place-referral') {
+    res.redirect('/employer/v04/manage/referrals')
+  } else if (editChoice === 'closing-date') {
+    res.redirect('/employer/v04/manage/closing-date')
+  } else if (editChoice === 'referral-limit') {
+    res.redirect('/employer/v04/manage/referral-limit')
   }
 });
 
