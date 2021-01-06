@@ -15,13 +15,15 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-l govuk-!-display-inline-block">Junior Exhibition Designer</h1>
+        <h1 class="govuk-heading-l">Junior Exhibition Designer</h1>
 
-        <!--
-        <button class="govuk-button govuk-!-display-inline-block" style="float:right" data-module="govuk-button">
-          Edit role details
-        </button>
-        -->
+      
+
+        {{ govukButton({
+          text: "Edit role details",
+          href: "edit-job-detail"
+        }) }}
+        
 
           {{ govukSummaryList({
             classes: ' ',
@@ -32,6 +34,32 @@
                 },
                 value: {
                   text: "2"
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "#",
+                      text: "Change",
+                      visuallyHiddenText: "name"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "Placements"
+                },
+                value: {
+                  text: "2"
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "#",
+                      text: "View",
+                      visuallyHiddenText: "name"
+                    }
+                  ]
                 }
               },
               {
@@ -40,6 +68,49 @@
                 },
                 value: {
                   text: "43"
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "#",
+                      text: "View",
+                      visuallyHiddenText: "name"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "Referral limit"
+                },
+                value: {
+                  text: "50"
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "#",
+                      text: "Change",
+                      visuallyHiddenText: "name"
+                    }
+                  ]
+                }
+              },
+               {
+                key: {
+                  text: "Closing date for job applications"
+                },
+                value: {
+                  text: "10 February 2021"
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "#",
+                      text: "Change",
+                      visuallyHiddenText: "name"
+                    }
+                  ]
                 }
               },
               {
@@ -79,10 +150,6 @@
           },
           items: [
             {
-              value: "edit-role",
-              text: "Edit role details"
-            },
-            {
               value: "pause-role",
               text: "Pause role"
             },
@@ -104,6 +171,9 @@
 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
         <h2 class="govuk-heading-m">Referrals</h2>
+
+
+
 
 
         {{ govukTable({

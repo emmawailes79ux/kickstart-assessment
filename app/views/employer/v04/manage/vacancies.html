@@ -1,7 +1,7 @@
 {% extends "layout-header-links.html" %}
 
 {% block pageTitle %}
-  Manage live vacancies
+  Manage vacancies
 {% endblock %}
 
 {% block beforeContent %}
@@ -15,14 +15,14 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-      <span class="govuk-caption-l">KS24684321 </span>
-      <h1 class="govuk-heading-l">
-         Manage live vacancies
-      </h1>
-      {{govukTag({
+      <span class="govuk-caption-l">KS24684321 {{govukTag({
           text: "Live",
-          classes: "govuk-tag--blue govuk-!-margin-bottom-6" 
-        })}}
+          classes: "govuk-tag--blue" 
+        })}}</span>
+      <h1 class="govuk-heading-l">
+         Manage vacancies
+      </h1>
+      
       
 
       {{ govukTable({
@@ -35,19 +35,28 @@
             text: "Vacancies"
           },
           {
-            text: "Referalls"
+            text: "Placements"
+          },
+          {
+            text: "Referrals"
           },
           {
             text: "Location"
           },
           {
             text: "Postcode"
+          },
+          {
+            text: "Status"
           }
         ],
         rows: [
           [
             {
               html: "<a href='job-detail'>Junior exhibition designer</a>"
+            },
+            {
+              text: "2"
             },
             {
               text: "2"
@@ -60,6 +69,9 @@
             },
             {
               text: "LS1 3AA"
+            },
+            {
+              html: '<strong class="govuk-tag govuk-tag--green">Filled</strong>'
             }
           ],
 
@@ -71,6 +83,9 @@
               text: "1"
             },
             {
+              text: "0"
+            },
+            {
               text: "25"
             },
             {
@@ -78,6 +93,9 @@
             },
             {
               text: "WF1 5AW"
+            },
+            {
+              html: '<strong class="govuk-tag govuk-tag--blue">Live</strong>'
             }
           ],
 
@@ -89,6 +107,9 @@
               text: "6"
             },
             {
+              text: "2"
+            },
+            {
               text: "45"
             },
             {
@@ -96,6 +117,9 @@
             },
             {
               text: "LS1 3AA"
+            },
+            {
+              html: '<strong class="govuk-tag govuk-tag--blue">Live</strong>'
             }
           ],
 
@@ -107,6 +131,9 @@
               text: "3"
             },
             {
+              text: "0"
+            },
+            {
               text: "27"
             },
             {
@@ -114,6 +141,9 @@
             },
             {
               text: "WF1 5AW"
+            },
+            {
+              html: '<strong class="govuk-tag govuk-tag--red">Referall limit</strong>'
             }
           ],
 
@@ -125,6 +155,9 @@
               text: "9"
             },
             {
+              text: "0"
+            },
+            {
               text: "121"
             },
             {
@@ -132,6 +165,9 @@
             },
             {
               text: "LS1 3AA"
+            },
+            {
+              html: '<strong class="govuk-tag govuk-tag--blue">Live</strong>'
             }
           ],
 
@@ -141,190 +177,11 @@
             },
             {
               text: "5"
-            },
-            {
-              text: "58"
-            },
-            {
-              text: "Leeds"
-            },
-            {
-              text: "LS1 3AA"
-            }
-          ],
-
-          [
-            {
-              html: "<a href='job-detail'>Barista</a>"
-            },
-            {
-              text: "2"
-            },
-            {
-              text: "27"
-            },
-            {
-              text: "Leeds"
-            },
-            {
-              text: "LS1 3AA"
-            }
-          ],
-
-          [
-            {
-              html: "<a href='job-detail'>Barista</a>"
-            },
-            {
-              text: "1"
-            },
-            {
-              text: "18"
-            },
-            {
-              text: "Wakefield"
-            },
-            {
-              text: "WF1 5AW"
-            }
-          ],
-
-          [
-            {
-              html: "<a href='job-detail'>Trainee chef<a>"
-            },
-            {
-              text: "2"
-            },
-            {
-              text: "37"
-            },
-            {
-              text: "Wakefield"
-            },
-            {
-              text: "WF4 4LG"
-            }
-          ],
-
-          [
-            {
-              html: "<a href='job-detail'>Trainee chef<a>"
-            },
-            {
-              text: "2"
-            },
-            {
-              text: "37"
-            },
-            {
-              text: "Wakefield"
-            },
-            {
-              text: "WF4 4LG"
-            }
-          ],
-
-
-
-           [
-            {
-              html: "<a href='job-detail'>Junior exhibition designer</a>"
-            },
-            {
-              text: "2"
-            },
-            {
-              text: "11"
-            },
-            {
-              text: "Leeds"
-            },
-            {
-              text: "LS1 3AA"
-            }
-          ],
-
-          [
-            {
-              html: "<a href='job-detail'>Junior exhibition designer</a>"
-            },
-            {
-              text: "1"
-            },
-            {
-              text: "25"
-            },
-            {
-              text: "Wakefield"
-            },
-            {
-              text: "WF1 5AW"
-            }
-          ],
-
-          [
-            {
-              html: "<a href='job-detail'>Admissions assistant</a>"
-            },
-            {
-              text: "6"
-            },
-            {
-              text: "45"
-            },
-            {
-              text: "Leeds"
-            },
-            {
-              text: "LS1 3AA"
-            }
-          ],
-
-          [
-            {
-              html: "<a href='job-detail'>Admissions assistant</a>"
             },
             {
               text: "3"
             },
             {
-              text: "27"
-            },
-            {
-              text: "Wakefield"
-            },
-            {
-              text: "WF1 5AW"
-            }
-          ],
-
-          [
-            {
-              html: "<a href='job-detail'>Waiter</a>"
-            },
-            {
-              text: "9"
-            },
-            {
-              text: "121"
-            },
-            {
-              text: "Leeds"
-            },
-            {
-              text: "LS1 3AA"
-            }
-          ],
-
-          [
-            {
-              html: "<a href='job-detail'>Waiter</a>"
-            },
-            {
-              text: "5"
-            },
-            {
               text: "58"
             },
             {
@@ -332,12 +189,18 @@
             },
             {
               text: "LS1 3AA"
+            },
+            {
+              html: '<strong class="govuk-tag govuk-tag--blue">Live</strong>'
             }
           ],
 
           [
             {
               html: "<a href='job-detail'>Barista</a>"
+            },
+            {
+              text: "2"
             },
             {
               text: "2"
@@ -350,6 +213,9 @@
             },
             {
               text: "LS1 3AA"
+            },
+            {
+              html: '<strong class="govuk-tag govuk-tag--green">Filled</strong>'
             }
           ],
 
@@ -359,6 +225,9 @@
             },
             {
               text: "1"
+            },
+            {
+              text: "0"
             },
             {
               text: "18"
@@ -368,6 +237,9 @@
             },
             {
               text: "WF1 5AW"
+            },
+            {
+              html: '<strong class="govuk-tag govuk-tag--blue">Live</strong>'
             }
           ],
 
@@ -379,6 +251,9 @@
               text: "2"
             },
             {
+              text: "0"
+            },
+            {
               text: "37"
             },
             {
@@ -386,6 +261,9 @@
             },
             {
               text: "WF4 4LG"
+            },
+            {
+              html: '<strong class="govuk-tag govuk-tag--blue">Live</strong>'
             }
           ],
 
@@ -395,172 +273,11 @@
             },
             {
               text: "2"
-            },
-            {
-              text: "37"
-            },
-            {
-              text: "Wakefield"
-            },
-            {
-              text: "WF4 4LG"
-            }
-          ],
-
-
-
-           [
-            {
-              html: "<a href='job-detail'>Kitchen assistant</a>"
-            },
-            {
-              text: "2"
-            },
-            {
-              text: "11"
-            },
-            {
-              text: "Leeds"
-            },
-            {
-              text: "LS1 3AA"
-            }
-          ],
-
-          [
-            {
-              html: "<a href='job-detail'>Kitchen assistant</a>"
             },
             {
               text: "1"
             },
             {
-              text: "25"
-            },
-            {
-              text: "Wakefield"
-            },
-            {
-              text: "WF1 5AW"
-            }
-          ],
-
-          [
-            {
-              html: "<a href='job-detail'>Admissions assistant</a>"
-            },
-            {
-              text: "6"
-            },
-            {
-              text: "45"
-            },
-            {
-              text: "Leeds"
-            },
-            {
-              text: "LS1 3AA"
-            }
-          ],
-
-          [
-            {
-              html: "<a href='job-detail'>Admissions assistant</a>"
-            },
-            {
-              text: "3"
-            },
-            {
-              text: "27"
-            },
-            {
-              text: "Wakefield"
-            },
-            {
-              text: "WF1 5AW"
-            }
-          ],
-
-          [
-            {
-              html: "<a href='job-detail'>Waiter</a>"
-            },
-            {
-              text: "9"
-            },
-            {
-              text: "121"
-            },
-            {
-              text: "Leeds"
-            },
-            {
-              text: "LS1 3AA"
-            }
-          ],
-
-          [
-            {
-              html: "<a href='job-detail'>Waiter</a>"
-            },
-            {
-              text: "5"
-            },
-            {
-              text: "58"
-            },
-            {
-              text: "Leeds"
-            },
-            {
-              text: "LS1 3AA"
-            }
-          ],
-
-          [
-            {
-              html: "<a href='job-detail'>Barista</a>"
-            },
-            {
-              text: "2"
-            },
-            {
-              text: "27"
-            },
-            {
-              text: "Leeds"
-            },
-            {
-              text: "LS1 3AA"
-            }
-          ],
-
-          [
-            {
-              html: "<a href='job-detail'>Barista</a>"
-            },
-            {
-              text: "1"
-            },
-            {
-              text: "18"
-            },
-            {
-              text: "Wakefield"
-            },
-            {
-              text: "WF1 5AW"
-            }
-          ],
-
-          [
-            {
-              html: "<a href='job-detail'>Trainee chef<a>"
-            },
-            {
-              text: "2"
-            },
-            {
               text: "37"
             },
             {
@@ -568,45 +285,13 @@
             },
             {
               text: "WF4 4LG"
-            }
-          ],
-
-          [
-            {
-              html: "<a href='job-detail'>Trainee chef<a>"
             },
             {
-              text: "2"
-            },
-            {
-              text: "37"
-            },
-            {
-              text: "Wakefield"
-            },
-            {
-              text: "WF4 4LG"
-            }
-          ],
-
-
-          [
-            {
-              html: "<a href='job-detail'>Trainee chef<a>"
-            },
-            {
-              text: "2"
-            },
-            {
-              text: "37"
-            },
-            {
-              text: "Wakefield"
-            },
-            {
-              text: "WF4 4LG"
+              html: '<strong class="govuk-tag govuk-tag--blue">Live</strong>'
             }
           ]
+
+
 
 
 

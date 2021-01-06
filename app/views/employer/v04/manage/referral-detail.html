@@ -41,7 +41,7 @@
                   text: "Email address"
                 },
                 value: {
-                  text: "Leeds"
+                  text: "mick.brown76@gmail.com"
                 }
               },
               {
@@ -57,34 +57,10 @@
 
     
 
-       {{ govukRadios({
-          idPrefix: "manage-referral",
-          name: "manage-referral",
-          fieldset: {
-            legend: {
-              text: "Manage referral",
-              isPageHeading: false,
-              classes: "govuk-fieldset__legend--m"
-            }
-          },
-          items: [
-            {
-              value: "application-pause",
-              text: "Invite for interview"
-            },
-            {
-              value: "application-cancel",
-              text: "Reject referral"
-            },
-            {
-              value: "application-cancel",
-              text: "Place in vacancy"
-            }
-          ]
-        }) }}
+      
 
         {{ govukButton({
-          text: "Continue",
+          text: "Place in vacancy",
           href: " "
         }) }}
 
