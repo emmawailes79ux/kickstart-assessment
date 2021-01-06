@@ -74,7 +74,7 @@ router.post('/employer/v04/manage/pause-role-check', function (req, res) {
 });
 
 router.post('/employer/v03/job-add-3a', function (req, res) {
-  const editChoice = req.session.data['remote']
+  const editChoice = req.session.data['remote-role']
 
   if (editChoice === 'yes') {
     res.redirect('/employer/v03/job-add-4')
