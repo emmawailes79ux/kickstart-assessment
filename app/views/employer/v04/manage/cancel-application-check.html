@@ -12,6 +12,19 @@
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
             <form id="form" method="post" action="cancel-application-check">
+
+               <!-- {% set reasonHtml %}
+                    {{ govukTextarea({
+                    name: "reason",
+                    id: "reason",
+                    label: {
+                        text: "Enter a reason for cancelling the application",
+                        classes: "govuk-label--s",
+                        isPageHeading: true
+                    }
+                    }) }}
+                {% endset -%}
+
                 {{ govukRadios({
                     classes: "govuk-radios",
                     idPrefix: "cancel-application",
@@ -29,18 +42,65 @@
                     items: [
                         {
                             value: "yes",
-                            text: "Yes, cancel the application"
+                            text: "Yes, cancel the application and delete all the vacancies",
+                            conditional: {
+                                html: reasonHtml
+                            }
                         },
                         {
                             value: "no",
                             text: "No"
                         }
                     ]
-                }) }}
+                }) }}-->
+
+
+
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-fieldset__heading">
+                            Are you sure you want to cancel the application?
+                        </h1>
+                        </legend>
+
+                        {{ govukWarningText({
+                        text: "This action cannot be undone.",
+                        iconFallbackText: "Warning"
+                        }) }}
+                                            
+                        <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact">
+                            <label class="govuk-label govuk-radios__label" for="contact">
+                                Yes, cancel the application and delete all the vacancies
+                            </label>
+                        </div>
+                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+                            
+
+                            <div class="govuk-form-group">
+                                <label class="govuk-label govuk-label--s" for="more-detail">
+                                    Enter a reason for cancelling the application
+                                </label>
+                                <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+                            </div>
+
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone" data-aria-controls="conditional-contact-2">
+                            <label class="govuk-label govuk-radios__label" for="contact-2">
+                            No
+                            </label>
+                        </div>
+                       
+                        </div>
+
+                    </fieldset>
+                    </div>
 
                 <button type="submit" class="govuk-button govuk-!-margin-right-1" id="submit">Continue</button>
 
-                <a href="javascript:window.history.back()" class="govuk-button govuk-button--secondary">Cancel (Need different button here!!!)</a>
             </form>
         </div>
     </div>
