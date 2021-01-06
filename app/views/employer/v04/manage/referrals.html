@@ -1,0 +1,414 @@
+{% extends "layout-header-links.html" %}
+
+{% block pageTitle %}
+  Referrals
+{% endblock %}
+
+{% block beforeContent %}
+    {% include 'includes/back-button.njk' %}
+{% endblock %}
+
+{% block content %}
+
+        <h2 class="govuk-heading-l">Referrals</h2>
+
+        {{ govukTable({
+        firstCellIsHeader: false,
+        head: [
+          {
+            text: "Name"
+          },
+          {
+            text: "Date"
+          },
+          {
+            text: "Intro ID"
+          },
+          {
+            text: "Email address"
+          },
+          {
+            text: "Status"
+          }
+        ],
+        rows: [
+          [
+            {
+              html: "<a href='referral-detail'>Mick Brown</a>"
+            },
+            {
+              text: "10 Dec 20"
+            },
+            {
+              text: "AS1234"
+            },
+            {
+              text: "mick.brown76@gmail.com"
+            },
+            {
+              text: "Referred by DWP"
+            }
+          ],
+
+          [
+            {
+              html: "<a href=' '>Matt Hayes</a>"
+            },
+            {
+              text: "11 Dec 20"
+            },
+            {
+              text: "AS1235"
+            },
+            {
+              text: "m.hayes@yahoo.com"
+            },
+            {
+              text: "Referred by DWP"
+            }
+          ],
+
+          [
+            {
+              html: "<a href=' '>Marina Gibson</a>"
+            },
+            {
+              text: "11 Dec 20"
+            },
+            {
+              text: "AS1236"
+            },
+            {
+              text: "marinag@outlook.com"
+            },
+            {
+              text: "Referred by DWP"
+            }
+          ],
+
+          [
+            {
+              html: "<a href=' '>John Wilson</a>"
+            },
+            {
+              text: "11 Dec 20"
+            },
+            {
+              text: "AS1237"
+            },
+            {
+              text: "thejohnwilson@hotmail.com"
+            },
+            {
+              text: "Referred by DWP"
+            }
+          ],
+
+          [
+            {
+              html: "<a href=' '>April Vokey</a>"
+            },
+            {
+              text: "12 Dec 20"
+            },
+            {
+              text: "AS1238"
+            },
+            {
+              text: "aprilvokey@gmail.com"
+            },
+            {
+              text: "Referred by DWP"
+            }
+          ],
+
+          [
+            {
+              html: "<a href=' '>Paul Young</a>"
+            },
+            {
+              text: "12 Dec 20"
+            },
+            {
+              text: "AS1239"
+            },
+            {
+              text: "paul.young@outlook.com"
+            },
+            {
+              text: "Referred by DWP"
+            }
+          ],
+
+          [
+            {
+              html: "<a href=' '>Oliver Edwards</a>"
+            },
+            {
+              text: "12 Dec 20"
+            },
+            {
+              text: "AS1240"
+            },
+            {
+              text: "oliedwards@gmail.com"
+            },
+            {
+              text: "Referred by DWP"
+            }
+          ],
+
+          [
+            {
+              html: "<a href=' '>Phil Jones</a>"
+            },
+            {
+              text: "12 Dec 20"
+            },
+            {
+              text: "AS1241"
+            },
+            {
+              text: "phil.jones82@outlook.com"
+            },
+            {
+              text: "Referred by DWP"
+            }
+          ],
+
+          [
+            {
+              html: "<a href=' '>Andy Clarke</a>"
+            },
+            {
+              text: "13 Dec 20"
+            },
+            {
+              text: "AS1242"
+            },
+            {
+              text: "andrew.clarke79@gmail.com"
+            },
+            {
+              text: "Referred by DWP"
+            }
+          ],
+
+          [
+            {
+              html: "<a href=' '>Sarah Brown</a>"
+            },
+            {
+              text: "13 Dec 20"
+            },
+            {
+              text: "AS1243"
+            },
+            {
+              text: "sarah.brown@yahoo.com"
+            },
+            {
+              text: "Referred by DWP"
+            }
+          ],
+
+          [
+            {
+              html: "<a href=' '>Harpal Singh</a>"
+            },
+            {
+              text: "14 Dec 20"
+            },
+            {
+              text: "AS1244"
+            },
+            {
+              text: "harpalsingh@gmail.com"
+            },
+            {
+              text: "Referred by DWP"
+            }
+          ],
+
+
+          [
+            {
+              html: "<a href=' '>Claudia Darga</a>"
+            },
+            {
+              text: "14 Dec 20"
+            },
+            {
+              text: "AS1245"
+            },
+            {
+              text: "claudia.dd@gmail.com"
+            },
+            {
+              text: "Referred by DWP"
+            }
+          ],
+
+
+          [
+            {
+              html: "<a href=' '>Rasna Ladd</a>"
+            },
+            {
+              text: "14 Dec 20"
+            },
+            {
+              text: "AS1246"
+            },
+            {
+              text: "rasna.ladd@outlook.com"
+            },
+            {
+              text: "Referred by DWP"
+            }
+          ],
+
+
+          [
+            {
+              html: "<a href=' '>Vipin Ghoyal</a>"
+            },
+            {
+              text: "14 Dec 20"
+            },
+            {
+              text: "AS1247"
+            },
+            {
+              text: "vipin.ghoyal@gmail.com"
+            },
+            {
+              text: "Referred by DWP"
+            }
+          ],
+
+
+          [
+            {
+              html: "<a href=' '>Emma Davies</a>"
+            },
+            {
+              text: "14 Dec 20"
+            },
+            {
+              text: "AS1248"
+            },
+            {
+              text: "emma.davies@icloud.com"
+            },
+            {
+              text: "Referred by DWP"
+            }
+          ],
+
+
+          [
+            {
+              html: "<a href=' '>Haroon Latif</a>"
+            },
+            {
+              text: "14 Dec 20"
+            },
+            {
+              text: "AS1249"
+            },
+            {
+              text: "h.latif@yahoo.co.uk"
+            },
+            {
+              text: "Referred by DWP"
+            }
+          ],
+
+
+          [
+            {
+              html: "<a href=' '>Julie Stanley</a>"
+            },
+            {
+              text: "14 Dec 20"
+            },
+            {
+              text: "AS1250"
+            },
+            {
+              text: "julie.stanley@gmail.com"
+            },
+            {
+              text: "Referred by DWP"
+            }
+          ],
+
+
+          [
+            {
+              html: "<a href=' '>Adrian Royle</a>"
+            },
+            {
+              text: "15 Dec 20"
+            },
+            {
+              text: "AS1251"
+            },
+            {
+              text: "a.royle@gmail.com"
+            },
+            {
+              text: "Referred by DWP"
+            }
+          ],
+
+
+          [
+            {
+              html: "<a href=' '>Joe Kelly</a>"
+            },
+            {
+              text: "15 Dec 20"
+            },
+            {
+              text: "AS1252"
+            },
+            {
+              text: "jkleeds@gmail.com"
+            },
+            {
+              text: "Referred by DWP"
+            }
+          ],
+
+
+          [
+            {
+              html: "<a href=' '>Amy Wilson</a>"
+            },
+            {
+              text: "15 Dec 20"
+            },
+            {
+              text: "AS1253"
+            },
+            {
+              text: "amywilson@gmail.com"
+            },
+            {
+              text: "Referred by DWP"
+            }
+          ]
+
+        ]
+        }) }}
+
+
+        <p class="govuk-body govuk-!-margin-top-9"><a href="../app-home">Back to home</a></p>
+           
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -5,10 +5,7 @@
 {% endblock %}
 
 {% block beforeContent %}
-    {{ govukBackLink({
-      text: "Back",
-      href: "job-detail"
-    }) }}
+    {% include 'includes/back-button.njk' %}
 {% endblock %}
 
 {% block content %}
