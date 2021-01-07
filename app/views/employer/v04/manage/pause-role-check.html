@@ -12,6 +12,20 @@
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
             <form id="form" method="post" action="pause-role-check">
+
+                {% set pauseHtml %}
+                {{ govukTextarea({
+                name: "more-detail",
+                id: "more-detail",
+                label: {
+                    text: "Enter a reason for pausing the role",
+                    classes: "govuk-label--s",
+                    isPageHeading: true
+                }
+                }) }}
+                {% endset -%}
+
+
                 {{ govukRadios({
                     classes: "govuk-radios",
                     idPrefix: "pause-role",
@@ -27,7 +41,10 @@
                     items: [
                         {
                             value: "yes",
-                            text: "Yes, pause the role"
+                            text: "Yes, pause the role",
+                            conditional: {
+                                html: pauseHtml
+                            }
                         },
                         {
                             value: "no",
