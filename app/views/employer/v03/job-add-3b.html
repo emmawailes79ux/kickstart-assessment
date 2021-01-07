@@ -15,13 +15,7 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      {% call govukFieldset({
-        legend: {
-          html: "<span class='govuk-caption-l'>Add a role</span>Location",
-          classes: "govuk-fieldset__legend--l",
-          isPageHeading: true
-        }
-      }) %}
+      <form id="form" method="post" action="job-add-3b">
 
       {{ govukRadios({
         classes: "govuk-radios",
@@ -29,9 +23,9 @@
         name: "local-national",
         fieldset: {
           legend: {
-            text: "Do you want to advertise this role nationally or locally?",
-            isPageHeading: false,
-            classes: "govuk-fieldset__legend--m"
+            html: "<span class='govuk-caption-l'>Add a role</span>Do you want to advertise this role nationally or locally?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
           }
         },
         items: [
@@ -80,22 +74,9 @@
         ]
       }) }}
 
-
-      {% set multipleLocations %}
-        {{ govukInput({
-          id: "multiple-locations",
-          name: "multiple-locations",
-          spellcheck: false,
-          classes: "govuk-!-width-one-third",
-          label: {
-            text: "How many?"
-          }
-        }) }}
-        {% endset -%}
-
         {{ govukRadios({
-          idPrefix: "contact",
-          name: "contact",
+          idPrefix: "multiple-locations",
+          name: "multiple-locations",
           fieldset: {
             legend: {
               text: "Does this role require the employee to work from multiple locations?",
@@ -104,15 +85,12 @@
             }
           },
           hint: {
-            text: "Select one option."
+            text: "If they will spend the majority of their time at one location but travel to other locations on occasion then select 'No, only one location'."
           },
           items: [
             {
               value: "multiple",
-              text: "Yes, more than one location",
-              conditional: {
-                html: multipleLocations
-              }
+              text: "Yes, more than one location"
             },
             {
               value: "one-location",
@@ -121,13 +99,9 @@
           ]
         }) }}
 
-{% endcall %}
+        <button type="submit" class="govuk-button govuk-!-margin-right-1" id="submit">Continue</button>
 
-      {{ govukButton({
-        text: "Continue",
-        href: "job-add-3b"
-      }) }}
-
+      </form>
     </div>
   </div>
 

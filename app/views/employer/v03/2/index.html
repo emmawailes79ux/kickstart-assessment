@@ -1,0 +1,111 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="moj-add-another">
+
+    <h1 class="govuk-heading-xl moj-add-another__heading" tabindex="-1">What health conditions, illnesses, disabilities or injuries do you have?</h1>
+
+    <p>You can add more than one condition if you need to.</p>
+
+    <form action="done" method="post" novalidate>
+
+      {% call govukFieldset({
+        classes: 'moj-add-another__item',
+        legend: {
+          text: 'Condition',
+          classes: 'moj-add-another__title govuk-fieldset__legend--m',
+          isPageHeading: false
+        }
+      }) %}
+
+      {{ govukInput({
+        id: 'condition-0--name-',
+        name: 'condition-0--name-',
+        label: {
+          html: 'Name of condition',
+          classes: 'govuk-!-font-weight-bold'
+        },
+        hint: {
+          text: "Put what’s on your current fit note (you might call this a ‘sick note’), if you have one."
+        },
+        attributes: {
+          'data-name': 'condition-%index%--name-',
+          'data-id': 'condition-%index%--name-'
+        }
+      }) }}
+
+      {{ govukDateInput({
+        id: "date-of-birth",
+        fieldset: {
+          legend: {
+            text: "When it first started (this can be an estimate)",
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        hint: {
+          text: "For example, 30 3 1997"
+        },
+        items: [
+          {
+            id: "condition-0--dob--day-",
+            name: "condition-0--dob--day-",
+            label: "Day",
+            classes: "govuk-input--width-2",
+            attributes: {
+              'data-name': 'condition-%index%--dob--day-',
+              'data-id': 'condition-%index%--dob--day-'
+            }
+          },
+          {
+            id: "condition-0--dob--month-",
+            name: "condition-0--dob--month-",
+            label: "Month",
+            classes: "govuk-input--width-2",
+            attributes: {
+              'data-name': 'condition-%index%--dob--month-',
+              'data-id': 'condition-%index%--dob--month-'
+            }
+          },
+          {
+            id: "condition-0--dob--year-",
+            name: "condition-0--dob--year-",
+            label: "Year",
+            classes: "govuk-input--width-2",
+            attributes: {
+              'data-name': 'condition-%index%--dob--year-',
+              'data-id': 'condition-%index%--dob--year-'
+            }
+          }
+        ]
+      }) }}
+
+      {% endcall %}
+
+      <div class="moj-button-action">
+        {{ govukButton({
+          text: 'Add another condition',
+          classes: 'govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4'
+        }) }}
+      </div>
+
+      <div class="moj-button-action">
+        {{ govukButton({
+          text: 'Continue'
+        }) }}
+      </div>
+
+      </form>
+
+    </div>{# /moj-add-another #}
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

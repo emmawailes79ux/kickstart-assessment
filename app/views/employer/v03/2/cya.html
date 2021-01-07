@@ -1,0 +1,124 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds-from-desktop">
+
+    <h1 class="govuk-heading-xl">Check your answers before sending your application</h1>
+
+    <h2 class="govuk-heading-l">Personal details</h2>
+
+    <dl class="govuk-summary-list">
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Fred Flintstone
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#" id="name">
+            Change<span class="govuk-visually-hidden"> name</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date of birth
+        </dt>
+        <dd class="govuk-summary-list__value">
+          11 November 1982
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="date-of-birth?edit" id="date-of-birth">
+            Change<span class="govuk-visually-hidden"> date of birth</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Home address
+        </dt>
+        <dd class="govuk-summary-list__value">
+          41 Street Lane<br>
+          Leeds<br>
+          LS1 1DD<br>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="address?edit" id="address">
+            Change<span class="govuk-visually-hidden"> home address</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Mobile phone number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          No
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="mobile?edit" id="mobile">
+            Change<span class="govuk-visually-hidden"> mobile phone number</span>
+          </a>
+        </dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Phone number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          No
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="other-number?edit" id="other-number">
+            Change<span class="govuk-visually-hidden"> phone number</span>
+          </a>
+        </dd>
+      </div>
+
+    </dl>
+
+    <h2 class="govuk-heading-l">Your health conditions</h2>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Condition
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <ul class="govuk-list">
+            <li style="margin-bottom: 15px">{{ data['condition[0][first_name]'] }}<br>
+            Started 1 January 2001</li>
+            <li style="margin-bottom: 15px">Condition 2<br>
+            Started 1 January 2001</li>
+            <li style="margin-bottom: 15px">Condition 3<br>
+            Started 1 January 2001</li>
+          </ul>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> name</span>
+          </a>
+        </dd>
+      </div>
+    </dl>
+
+    <a class="govuk-button" data-module="govuk-button" href="done">
+      Continue
+    </a>
+
+  </div>
+</div>
+
+{% endblock %}

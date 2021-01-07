@@ -23,72 +23,85 @@
         }
       }) %}
 
-      {{ govukRadios({
-        classes: "govuk-radios",
-        idPrefix: "local-national",
-        name: "local-national",
+
+
+
+
+      <h2 class="govuk-heading-m">Location address</h2>
+
+      {{ govukInput({
+        label: {
+          html: 'Building and street <span class="govuk-visually-hidden">line 1 of 2</span>'
+        },
+        id: "address-line-1",
+        name: "address-line-1"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          html: '<span class="govuk-visually-hidden">Building and street line 2 of 2</span>'
+        },
+        id: "address-line-2",
+        name: "address-line-2"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Town or city"
+        },
+        classes: "govuk-!-width-two-thirds",
+        id: "address-town",
+        name: "address-town"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "County"
+        },
+        classes: "govuk-!-width-two-thirds",
+        id: "address-county",
+        name: "address-county"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Postcode"
+        },
+        classes: "govuk-input--width-10",
+        id: "address-postcode",
+        name: "address-postcode"
+      }) }}
+
+
+
+
+    {% endcall %}
+
+    {{ govukRadios({
+        idPrefix: "public-transport",
+        name: "public-transport",
         fieldset: {
           legend: {
-            text: "Do you want to advertise this role nationally or locally?",
+            text: "Can this role be accessed by public transport or does the employee need to have their own transport?",
             isPageHeading: false,
             classes: "govuk-fieldset__legend--m"
           }
         },
         items: [
-        {
-          value: "national",
-          text: "Nationally"
-        },
-        {
-            value: "local",
-            text: "Locally"
+          {
+            value: "yes",
+            text: "Public transport available"
+          },
+          {
+            value: "They will need their own transport",
+            text: "No"
+          },
+          {
+            value: "Not-relevant",
+            text: "Not relevant"
           }
-
         ]
       }) }}
-
-
-      {% set multipleLocations %}
-        {{ govukInput({
-          id: "multiple-locations",
-          name: "multiple-locations",
-          spellcheck: false,
-          classes: "govuk-!-width-one-third",
-          label: {
-            text: "How many?"
-          }
-        }) }}
-        {% endset -%}
-
-        {{ govukRadios({
-          idPrefix: "contact",
-          name: "contact",
-          fieldset: {
-            legend: {
-              text: "Does this role require the employee to work from multiple locations?",
-              isPageHeading: true,
-              classes: "govuk-fieldset__legend--m"
-            }
-          },
-          hint: {
-            text: "Select one option."
-          },
-          items: [
-            {
-              value: "multiple",
-              text: "Yes, more than one location",
-              conditional: {
-                html: multipleLocations
-              }
-            },
-            {
-              value: "one-location",
-              text: "No, only one location"
-            }
-          ]
-        }) }}
-
-{% endcall %}
 
       {{ govukButton({
         text: "Continue",
