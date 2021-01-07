@@ -90,3 +90,13 @@ router.post('/employer/v03/job-add-3a', function (req, res) {
     res.redirect('/employer/v03/job-add-3b')
   }
 });
+
+router.post('/employer/v03/job-add-3b', function (req, res) {
+  const editChoice = req.session.data['multiple-locations']
+
+  if (editChoice === 'multiple') {
+    res.redirect('/employer/v03/job-add-3d')
+  } else if (editChoice === 'one-location') {
+    res.redirect('/employer/v03/job-add-3c')
+  }
+});
