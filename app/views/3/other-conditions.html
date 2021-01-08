@@ -1,0 +1,115 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+GOV.UK Prototype Kit
+{% endblock %}
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% block beforeContent %}
+<a href="javascript:history.back()" rel="prev" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+<script type="text/javascript">
+  module.exports = {
+
+    bind: function (app) {
+
+      app.get('/', function (req, res) {
+        res.render('index');
+      });
+
+      app.get('/examples/template-data', function (req, res) {
+        res.render('examples/template-data', { 'name' : 'Foo' });
+      });
+
+      // Includes
+
+      require('./routes/3.js')(app);
+
+    }
+  }
+</script>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">Conditions you have told us about</h1>
+
+    <dl class="govuk-summary-list" style="width: 100%">
+
+      {% for item in conditions %}
+
+      <form action="/3/delete-condition" method="post" novalidate>
+
+        <input name="index" type="hidden" value="{{loop.index0}}" />
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key" style="width: 40%">
+            {{ item.name | capitalize }}
+          </dt>
+          <dd class="govuk-summary-list__value" style="width: 20%">
+            First started:<br>
+            {{ item.day }} / {{ item.month }} / {{ item.year }}
+          </dd>
+          <dd class="govuk-summary-list__actions" style="width: 20%">
+
+            {% if loop.length <= 1 %}
+              <a class="govuk-link" href="condition?index={{loop.index0}}">
+                Change<span class="govuk-visually-hidden"> {{ item.name }}</span>
+              </a>
+            {% else %}
+              <ul class="govuk-summary-list__actions-list">
+                <li class="govuk-summary-list__actions-list-item">
+                  <a class="govuk-link" href="condition?index={{loop.index0}}">
+                    Change<span class="govuk-visually-hidden"> {{ item.name }}</span>
+                  </a>
+                </li>
+                <li class="govuk-summary-list__actions-list-item">
+                  <button class="link-button">Delete<span class="govuk-visually-hidden"> {{ item.name }}</span></button>
+                </li>
+              </ul>
+            {% endif %}
+
+          </dd>
+        </div>
+
+      </form>
+
+      {% endfor %}
+
+    </dl>
+
+    <form class="form" action="/3/other-conditions" method="post">
+
+      <h2 class="govuk-heading-l">Do you have any other conditions?</h2>
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="yes" name="question" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="yes">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="no" name="question" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="no">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <button class="govuk-button">Continue</button>
+
+    </form>
+
+  </div>
+</div>
+{% endblock %}

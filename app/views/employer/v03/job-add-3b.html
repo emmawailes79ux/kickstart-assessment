@@ -7,7 +7,7 @@
 {% block beforeContent %}
     {{ govukBackLink({
       text: "Back",
-      href: "job-add-2"
+      href: "job-add-3a"
     }) }}
 {% endblock %}
 
@@ -28,6 +28,9 @@
             classes: "govuk-fieldset__legend--l"
           }
         },
+        hint: {
+          text: "Only select 'Nationally' if you can employ people from all over the country."
+        },
         items: [
         {
           value: "national",
@@ -46,7 +49,7 @@
         name: "waste",
         fieldset: {
           legend: {
-            text: "Where type of locations can the job based from?",
+            text: "Where can this role take place?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--m"
           }
@@ -69,7 +72,7 @@
           },
           {
             value: "tranport",
-            text: "Transport & delivery (remote/office/field)"
+            text: "Transport & delivery"
           }
         ]
       }) }}

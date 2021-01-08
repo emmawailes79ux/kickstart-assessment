@@ -235,54 +235,6 @@
         name: "email"
       }) }}
 
-<h2 class="govuk-heading-l">Dates</h2>
-
-      {{ govukDateInput({
-        id: "start-date",
-        namePrefix: "start-date",
-        fieldset: {
-          legend: {
-            text: "Anticipated start date",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--m"
-          }
-        },
-        hint: {
-          text: "For example, 12 11 2007"
-        }
-      }) }}
-
-      {{ govukDateInput({
-        id: "end-date",
-        namePrefix: "end-date",
-        fieldset: {
-          legend: {
-            text: "Anticipated end date",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--m"
-          }
-        },
-        hint: {
-          text: "For example, 12 11 2007"
-        }
-      }) }}
-
-
-      {{ govukDateInput({
-        id: "closing-date",
-        namePrefix: "closing-date",
-        fieldset: {
-          legend: {
-            text: "Closing date for applications",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--m"
-          }
-        },
-        hint: {
-          text: "For example, 12 11 2007"
-        }
-      }) }}
-
 
 {% endcall %}
 
@@ -293,7 +245,7 @@
 
       {{ govukButton({
         text: "Continue",
-        href: "job-add-2"
+        href: "job-add-1"
       }) }}
 
     </div>
