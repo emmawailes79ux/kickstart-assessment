@@ -14,26 +14,7 @@ GOV.UK Prototype Kit
 {% endblock %}
 
 {% block content %}
-<script type="text/javascript">
-  module.exports = {
 
-    bind: function (app) {
-
-      app.get('/', function (req, res) {
-        res.render('index');
-      });
-
-      app.get('/examples/template-data', function (req, res) {
-        res.render('examples/template-data', { 'name' : 'Foo' });
-      });
-
-      // Includes
-
-      require('./routes/3.js')(app);
-
-    }
-  }
-</script>
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
