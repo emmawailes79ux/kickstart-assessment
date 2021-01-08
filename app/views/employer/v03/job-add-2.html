@@ -28,7 +28,7 @@
         name: "more-detail",
         id: "more-detail",
         label: {
-          text: "Job summary",
+          text: "About the role",
           classes: "govuk-label--m",
           isPageHeading: true
         },
@@ -37,15 +37,24 @@
         }
       }) }}
 
-
-
-
+      {{ govukTextarea({
+        name: "about-us",
+        id: "about-us",
+        label: {
+          text: "Tell us about your company",
+          classes: "govuk-label--m",
+          isPageHeading: true
+        },
+        hint: {
+          text: "This is your chance to sell your company to the applicant."
+        }
+      }) }}
 
        {{ govukTextarea({
         name: "skills",
         id: "skills",
         label: {
-          text: "Skills needed",
+          text: "What are you looking for?",
           classes: "govuk-label--m",
           isPageHeading: false
         },
@@ -58,12 +67,12 @@
         name: "additional-support",
         id: "additional-support",
         label: {
-          text: "What support will you provide to the claimant to help their employability?",
+          text: "What can we offer you?",
           classes: "govuk-label--m",
           isPageHeading: false
         },
         hint: {
-          text: "For example, coaching and mentoring."
+          text: "What support will you provide to the claimant to help their employability? For example, coaching and mentoring."
         }
       }) }}
 
