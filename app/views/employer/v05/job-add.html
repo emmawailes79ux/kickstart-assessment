@@ -1,7 +1,7 @@
 {% extends "layout-header-links.html" %}
 
 {% block pageTitle %}
-  Add a role
+  Add a vacancy
 {% endblock %}
 
 {% block beforeContent %}
@@ -17,7 +17,7 @@
     <div class="govuk-grid-column-two-thirds">
       {% call govukFieldset({
         legend: {
-          html: "<span class='govuk-caption-l'>Add a role</span>Role details",
+          html: "<span class='govuk-caption-l'>Add a vacancy</span>Vacancy details",
           classes: "govuk-fieldset__legend--l",
           isPageHeading: true
         }
@@ -25,7 +25,7 @@
 
       {{ govukInput({
         label: {
-          text: "Role title",
+          text: "Job title",
           classes: "govuk-label--m",
           isPageHeading: false
         },
@@ -49,6 +49,18 @@
         name: "width-4"
       }) }}
 
+      {% set referral %}
+      {{ govukInput({
+        label: {
+          text: "Referral limit",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--m"
+        },
+        classes: "govuk-input--width-5",
+        id: "width-5",
+        name: "width-5"
+        }) }}
+        {% endset -%}
 
        {{ govukRadios({
           idPrefix: "contact",
@@ -68,7 +80,7 @@
               value: "yes",
               text: "Yes",
               conditional: {
-                html: signatory
+                html: referral
               }
             },
             {
@@ -191,9 +203,12 @@
         ]
       }) }}
 
+
+
+      {% set jobref %}
       {{ govukInput({
        label: {
-          text: "Employer job reference (optional)",
+          text: "Employer job reference",
           classes: "govuk-label--m",
           isPageHeading: false
         },
@@ -204,6 +219,35 @@
         id: "employer-ref",
         name: "employer-ref"
       }) }}
+        {% endset -%}
+
+       {{ govukRadios({
+          idPrefix: "job-ref",
+          name: "job-ref",
+          fieldset: {
+            legend: {
+              text: "Do you want give a job reference?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: "This job reference isn't used by DWP. This is your employer job reference if you have one."
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes",
+              conditional: {
+                html: jobref
+              }
+            },
+            {
+              value: "no",
+              text: "No"
+            }
+          ]
+        }) }}
 
 
       <h2 class="govuk-heading-m">Contact</h2>
