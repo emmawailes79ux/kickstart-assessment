@@ -1,0 +1,82 @@
+{% extends "layout-header-links.html" %}
+
+{% block pageTitle %}
+  Referrals
+{% endblock %}
+
+{% block beforeContent %}
+    {% include 'includes/back-button.njk' %}
+{% endblock %}
+
+{% block content %}
+
+        <h2 class="govuk-heading-l">Placements</h2>
+
+        {{ govukTable({
+        firstCellIsHeader: false,
+        head: [
+          {
+            text: "Name"
+          },
+          {
+            text: "Date"
+          },
+          {
+            text: "Intro ID"
+          },
+          {
+            text: "Email address"
+          },
+          {
+            text: "Status"
+          }
+        ],
+        rows: [
+          [
+            {
+              html: "<a href='placement-detail'>David White</a>"
+            },
+            {
+              text: "10 Dec 20"
+            },
+            {
+              text: "AS2457"
+            },
+            {
+              text: "david.white@gmail.com"
+            },
+            {
+              html: '<strong class="govuk-tag govuk-tag--green">Placed</strong>'
+            }
+          ],
+
+          [
+            {
+              html: "<a href='placement-detail-paused'>Fiona Brown</a>"
+            },
+            {
+              text: "11 Dec 20"
+            },
+            {
+              text: "AS1276"
+            },
+            {
+              text: "fionabrown@yahoo.com"
+            },
+            {
+              html: '<strong class="govuk-tag govuk-tag--yellow">Paused</strong>'
+            }
+          ]
+
+         
+        ]
+        }) }}
+
+
+        <p class="govuk-body govuk-!-margin-top-9"><a href="../app-home">Back to home</a></p>
+           
+
+    </div>
+  </div>
+
+{% endblock %}

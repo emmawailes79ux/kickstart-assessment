@@ -1,0 +1,270 @@
+{% extends "layout-header-links.html" %}
+
+{% block pageTitle %}
+  Edit role details
+{% endblock %}
+
+{% block beforeContent %}
+    {% include 'includes/back-button.njk' %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l govuk-!-display-inline-block">Edit role details</h1>
+
+
+          {{ govukInput({
+            label: {
+              text: "Role title",
+              classes: "govuk-label--m",
+              isPageHeading: false
+            },
+            classes: "govuk-input--width-20",
+            id: "job-title",
+            name: "job title",
+            value: "Waiter"
+          }) }}
+
+
+          {{ govukInput({
+            label: {
+              text: "Number of vacancies",
+              classes: "govuk-label--m",
+              isPageHeading: false
+            },
+            classes: "govuk-input--width-4",
+            id: "width-4",
+            name: "width-4",
+            value: "9"
+          }) }}
+
+
+          {{ govukInput({
+            label: {
+              text: "Referral limit",
+              classes: "govuk-label--m",
+              isPageHeading: false
+            },
+            classes: "govuk-input--width-4",
+            id: "width-4",
+            name: "width-4",
+            value: "50"
+          }) }}
+
+
+{{ govukSelect({
+        id: "sort",
+        name: "sort",
+        label: {
+          text: "Industry sector",
+          classes: "govuk-label--m",
+          isPageHeading: false
+        },
+        items: [
+          {
+            value: "Administration",
+            text: "Administration"
+          },
+          {
+            value: "Animal Care",
+            text: "Animal Care"
+          },
+          {
+            value: "Beauty and Wellbeing",
+            text: "Beauty & Wellbeing"
+          },
+          {
+            value: "Business and Finance",
+            text: "Business & Finance"
+          },
+          {
+            value: "Computing, Technology and Digital",
+            text: "Computing, Technology & Digital"
+          },
+          {
+            value: "Construction and Trades",
+            text: "Construction & Trades"
+          },
+          {
+            value: "Creative and Media",
+            text: "Creative & Media"
+            
+          },
+          {
+            value: "Delivery and Storage",
+            text: "Delivery & Storage"
+          },
+          {
+            value: "Emergency and Uniform Services",
+            text: "Emergency & Uniform Services"
+          },
+          {
+            value: "Engineering and Maintenance",
+            text: "Engineering & Maintenance"
+          },
+          {
+            value: "Environmentand Land",
+            text: "Environment & Land"
+          },
+          {
+            value: "Government Services",
+            text: "Government Services"
+          },
+          {
+            value: "Healthcare",
+            text: "Healthcare"
+          },
+          {
+            value: "Home Services",
+            text: "Home Services"
+          },
+          {
+            value: "Hospitality and Food",
+            text: "Hospitality & Food",
+            selected: true
+          },
+          {
+            value: "Law and Legal",
+            text: "Law & Legal"
+          },
+          {
+            value: "Managerial",
+            text: "Managerial"
+          },
+          {
+            value: "Manufacturing",
+            text: "Manufacturing"
+          },
+          {
+            value: "Retail and Sales",
+            text: "Retail & Sales"
+          },
+          {
+            value: "Science and Research",
+            text: "Science & Research"
+          },
+          {
+            value: "Social Care",
+            text: "Social Care"
+          },
+          {
+            value: "Sports and Leisure",
+            text: "Sports & Leisure"
+          },
+          {
+            value: "Teaching and Education",
+            text: "Teaching & Education"
+          },
+          {
+            value: "Transport",
+            text: "Transport"
+          },
+          {
+            value: "Travel and Tourism",
+            text: "Travel & Tourism"
+          }
+        ]
+      }) }}
+
+      {{ govukInput({
+       label: {
+          text: "Employer job reference (if provided)",
+          classes: "govuk-label--m",
+          isPageHeading: false
+        },
+        classes: "govuk-input--width-10",
+        id: "employer-ref",
+        name: "employer-ref",
+        value: "AS-W-Leeds"
+      }) }}
+
+      
+
+      {{ govukInput({
+        label: {
+          text: "Contact name"
+        },
+        classes: "govuk-input--width-20",
+        id: "contact-name",
+        name: "contact-name",
+        value: "Seb Almarez"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Telephone"
+        },
+        classes: "govuk-input--width-20",
+        id: "telephone",
+        name: "telephone",
+        value: "07787137356"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Email address" 
+        },
+        classes: "govuk-input--width-20",
+        id: "email",
+        name: "email",
+        value: "s.almarez@leedsartgallery.co.uk"
+      }) }}
+
+
+      {{ govukTextarea({
+        label: {
+          text: "Job summary",
+          classes: "govuk-label--m",
+          isPageHeading: true
+        },
+        name: "more-detail",
+        id: "more-detail",
+        value: "Waiters or Waitresses are responsible for taking orders and serving food and beverages to guests. They play an important role in guest satisfaction as they are also responsible for checking on customers to ensure that they are enjoying their meals and take action to correct any problems."
+      }) }}
+
+
+       {{ govukTextarea({
+        name: "skills",
+        id: "skills",
+        value: "Basic Maths, Verbal Communication, Customer Service, Teamwork",
+        label: {
+          text: "Skills needed",
+          classes: "govuk-label--m",
+          isPageHeading: false
+        }
+      }) }}
+
+
+      {{ govukTextarea({
+        name: "additional-support",
+        id: "additional-support",
+        value: "We train and support all our employees to grow confidence and knowledge in the restaurant world.",
+        label: {
+          text: "What support will you provide to the claimant to help their employability?",
+          classes: "govuk-label--m",
+          isPageHeading: false
+        }
+      }) }}
+
+      {{ govukTextarea({
+        name: "how-apply",
+        id: "how-apply",
+        value: "CVs emailed to s.almarez@leedsartgallery.co.uk",
+        label: {
+          text: "How to apply",
+          classes: "govuk-label--m",
+          isPageHeading: false
+        }
+      }) }}
+
+      {{ govukButton({
+        text: "Save and continue",
+        href: "role-details-updated-confirm"
+      }) }}     
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Registration complete
+{% endblock %}
+
+{% block beforeContent %}
+
+{% endblock %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+             {{ govukPanel({
+                titleText: "Registration complete"
+            }) }}
+
+            <p>You can now sign in to the Kickstart Scheme.</p>
+
+
+            {{ govukButton({
+                text: "Continue",
+                href: "sign-in"
+            }) }}
+    </div>
+{% endblock %}

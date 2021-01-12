@@ -1,0 +1,130 @@
+{% extends "layout-header-links.html" %}
+
+{% block pageTitle %}
+  Add a role
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+      text: "Back",
+      href: "job-add-3b"
+    }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% call govukFieldset({
+        legend: {
+          html: "<span class='govuk-caption-l'>Add a role</span>Location",
+          classes: "govuk-fieldset__legend--l",
+          isPageHeading: true
+        }
+      }) %}
+
+
+
+
+
+      <h2 class="govuk-heading-m">Location address</h2>
+
+      {{ govukInput({
+        label: {
+          html: 'Building and street <span class="govuk-visually-hidden">line 1 of 2</span>'
+        },
+        id: "address-line-1",
+        name: "address-line-1"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          html: '<span class="govuk-visually-hidden">Building and street line 2 of 2</span>'
+        },
+        id: "address-line-2",
+        name: "address-line-2"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Town or city"
+        },
+        classes: "govuk-!-width-two-thirds",
+        id: "address-town",
+        name: "address-town"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "County"
+        },
+        classes: "govuk-!-width-two-thirds",
+        id: "address-county",
+        name: "address-county"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Postcode"
+        },
+        classes: "govuk-input--width-10",
+        id: "address-postcode",
+        name: "address-postcode"
+      }) }}
+
+
+
+
+    {% endcall %}
+
+    {{ govukRadios({
+        idPrefix: "public-transport",
+        name: "public-transport",
+        fieldset: {
+          legend: {
+            text: "Can this role be accessed by public transport or does the employee need to have their own transport?",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Public transport available"
+          },
+          {
+            value: "They will need their own transport",
+            text: "No"
+          },
+          {
+            value: "Not-relevant",
+            text: "Not relevant"
+          }
+        ]
+      }) }}
+
+    {{ govukInsetText({
+      text: "If a role requires the employee to base themselves from multiple locations to fulfil their role then add a location here."
+    }) }}
+
+    {{ govukButton({
+      text: "Add another location",
+      href: "",
+      classes: "govuk-button--secondary"
+    }) }}
+
+
+
+
+
+    <br>
+
+      {{ govukButton({
+        text: "Continue",
+        href: "job-add-4"
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}
