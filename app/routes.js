@@ -150,7 +150,7 @@ router.post('/employer/v05/manage/job-detail', function (req, res) {
   } else if (editChoice === 'cancel-role') {
     res.redirect('/employer/v05/manage/cancel-role-check')
   } else if (editChoice === 'place-referral') {
-    res.redirect('/employer/v05/manage/referrals')
+    res.redirect('/employer/v05/manage/referrals-place-in-role')
   } else if (editChoice === 'closing-date') {
     res.redirect('/employer/v05/manage/closing-date')
   } else if (editChoice === 'referral-limit') {
