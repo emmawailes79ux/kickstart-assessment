@@ -32,21 +32,6 @@
         }
       }) }}
 
-      {{ govukDateInput({
-        id: "end-date",
-        namePrefix: "end-date",
-        fieldset: {
-          legend: {
-            text: "Anticipated end date",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--m"
-          }
-        },
-        hint: {
-          text: "For example, 12 11 2021"
-        }
-      }) }}
-
       {% set closingDate %}
       {{ govukDateInput({
         id: "closing-date",

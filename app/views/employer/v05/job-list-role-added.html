@@ -15,6 +15,21 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
+
+      {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+
+      {% set html %}
+        <p class="govuk-notification-banner__heading">
+          'Junior exhibition designer' added successfully
+        </p>
+
+      {% endset %}
+
+      {{ govukNotificationBanner({
+        html: html,
+        type: 'success'
+      }) }}
+
       <span class="govuk-caption-l">Step 3 of 3</span>
       <h1 class="govuk-heading-l">
         Add your vacancies
@@ -23,7 +38,7 @@
       <p class="govuk-body">Add the role details for the <b>34 Kickstart vacancies</b> that you have applied for.</p>
 
       {{ govukButton({
-        text: "Add a role",
+        text: "Add a vacancy",
         href: "job-add"
       }) }}
 
@@ -43,6 +58,9 @@
           },
           {
             text: "Postcode"
+          },
+          {
+            text: ""
           },
           {
             text: ""
@@ -69,6 +87,9 @@
               html: "<a href='#'>Duplicate</a>"
             },
             {
+              html: "<a href='#'>Edit</a>"
+            },
+            {
               html: "<a href='#'>Delete</a>"
             }
           ],
@@ -84,6 +105,9 @@
             },
             {
               text: ""
+            },
+            {
+              html: ""
             },
             {
               html: ""

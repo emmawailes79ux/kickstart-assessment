@@ -1,7 +1,7 @@
 {% extends "layout-header-links.html" %}
 
 {% block pageTitle %}
-  Add a role
+  Add a vacancy
 {% endblock %}
 
 {% block beforeContent %}
@@ -22,7 +22,7 @@
         name: "remote-role",
         fieldset: {
           legend: {
-            html: "<span class='govuk-caption-l'>Add a role</span>Is the role 100% remote working?",
+            html: "<span class='govuk-caption-l'>Add a vacancy</span>Is this a remote working role?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--l"
           }
@@ -30,15 +30,15 @@
         items: [
           {
             value: "yes",
-            text: "Yes, 100% remote working at all times"
+            text: "Yes"
           },
           {
             value: "part",
-            text: "No, there will be some on-site work"
+            text: "No"
           },
           {
             value: "not",
-            text: "No, this requires the employee to be on site at all times"
+            text: "Itʼs a combination of remote and on-site"
           }
         ]
       }) }}

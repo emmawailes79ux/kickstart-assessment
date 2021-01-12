@@ -77,32 +77,6 @@
 
     {% endcall %}
 
-    {{ govukRadios({
-        idPrefix: "public-transport",
-        name: "public-transport",
-        fieldset: {
-          legend: {
-            text: "Can this role be accessed by public transport or does the employee need to have their own transport?",
-            isPageHeading: false,
-            classes: "govuk-fieldset__legend--m"
-          }
-        },
-        items: [
-          {
-            value: "yes",
-            text: "Public transport available"
-          },
-          {
-            value: "They will need their own transport",
-            text: "No"
-          },
-          {
-            value: "Not-relevant",
-            text: "Not relevant"
-          }
-        ]
-      }) }}
-
       {{ govukButton({
         text: "Continue",
         href: "job-add-4"
