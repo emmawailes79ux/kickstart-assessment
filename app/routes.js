@@ -155,6 +155,8 @@ router.post('/employer/v05/manage/job-detail', function (req, res) {
     res.redirect('/employer/v05/manage/closing-date')
   } else if (editChoice === 'referral-limit') {
     res.redirect('/employer/v05/manage/referral-limit')
+  } else if (editChoice === 'change-vacancies') {
+    res.redirect('/employer/v05/manage/vacancies')
   }
 });
 
