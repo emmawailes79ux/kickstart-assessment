@@ -27,7 +27,7 @@
 
 
 
-      <h2 class="govuk-heading-m">Location address</h2>
+      <h2 class="govuk-heading-m">Primary location</h2>
 
       {{ govukInput({
         label: {
@@ -72,50 +72,61 @@
         name: "address-postcode"
       }) }}
 
+      <h2 class="govuk-heading-m">Secondary location</h2>
+
+      {{ govukInput({
+        label: {
+          html: 'Building and street <span class="govuk-visually-hidden">line 1 of 2</span>'
+        },
+        id: "address-line-1-b",
+        name: "address-line-1-b"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          html: '<span class="govuk-visually-hidden">Building and street line 2 of 2</span>'
+        },
+        id: "address-line-2-b",
+        name: "address-line-2-b"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Town or city"
+        },
+        classes: "govuk-!-width-two-thirds",
+        id: "address-town-b",
+        name: "address-town-b"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "County"
+        },
+        classes: "govuk-!-width-two-thirds",
+        id: "address-county-b",
+        name: "address-county-b"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Postcode"
+        },
+        classes: "govuk-input--width-10",
+        id: "address-postcode-b",
+        name: "address-postcode-b"
+      }) }}
+
 
 
 
     {% endcall %}
-
-    {{ govukRadios({
-        idPrefix: "public-transport",
-        name: "public-transport",
-        fieldset: {
-          legend: {
-            text: "Can this role be accessed by public transport or does the employee need to have their own transport?",
-            isPageHeading: false,
-            classes: "govuk-fieldset__legend--m"
-          }
-        },
-        items: [
-          {
-            value: "yes",
-            text: "Public transport available"
-          },
-          {
-            value: "They will need their own transport",
-            text: "No"
-          },
-          {
-            value: "Not-relevant",
-            text: "Not relevant"
-          }
-        ]
-      }) }}
-
-    {{ govukInsetText({
-      text: "If a role requires the employee to base themselves from multiple locations to fulfil their role then add a location here."
-    }) }}
 
     {{ govukButton({
       text: "Add another location",
       href: "",
       classes: "govuk-button--secondary"
     }) }}
-
-
-
-
 
     <br>
 

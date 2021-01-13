@@ -22,23 +22,26 @@
         name: "remote-role",
         fieldset: {
           legend: {
-            html: "<span class='govuk-caption-l'>Add a vacancy</span>Is this a remote working role?",
+            html: "<span class='govuk-caption-l'>Add a vacancy</span>Where will this job be based?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--l"
           }
         },
+        hint: {
+          text: "Think about whether this job can be done remotely and ehat flexibility you can offer."
+        },
         items: [
           {
             value: "yes",
-            text: "Yes"
+            text: "Working remotely/at home at all times"
           },
           {
             value: "part",
-            text: "No"
+            text: "Required to work on-site at all times"
           },
           {
             value: "not",
-            text: "Itʼs a combination of remote and on-site"
+            text: "A mix of remote and on-site work"
           }
         ]
       }) }}

@@ -17,40 +17,14 @@
     <div class="govuk-grid-column-two-thirds">
       <form id="form" method="post" action="job-add-3b">
 
-      {{ govukRadios({
-        classes: "govuk-radios",
-        idPrefix: "local-national",
-        name: "local-national",
-        fieldset: {
-          legend: {
-            html: "<span class='govuk-caption-l'>Add a vacancy</span>Do you want to advertise this job locally?",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--l"
-          }
-        },
-        hint: {
-          text: "Only click 'No' if you can employ people from all over the country for this job."
-        },
-        items: [
-        {
-          value: "local",
-          text: "Yes, I only want people close by to the location"
-        },
-        {
-            value: "national",
-            text: "No, I can employ people from all over the UK for this job"
-          }
-        ]
-      }) }}
-
         {{ govukRadios({
           idPrefix: "multiple-locations",
           name: "multiple-locations",
           fieldset: {
             legend: {
-              text: "Does this job require the employee to work from multiple locations?",
-              isPageHeading: false,
-              classes: "govuk-fieldset__legend--m"
+              html: "<span class='govuk-caption-l'>Add a vacancy</span>Does this role require the employee to work from multiple locations?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
             }
           },
           hint: {

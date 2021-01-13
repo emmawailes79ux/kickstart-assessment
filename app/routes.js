@@ -188,13 +188,23 @@ router.post('/employer/v05/job-add-3a', function (req, res) {
   if (editChoice === 'yes') {
     res.redirect('/employer/v05/job-add-4')
   } else if (editChoice === 'part') {
-    res.redirect('/employer/v05/job-add-3b')
+    res.redirect('/employer/v05/job-add-3b-locally')
   } else if (editChoice === 'not') {
     res.redirect('/employer/v05/job-add-3b')
   }
 });
 
 router.post('/employer/v05/job-add-3b', function (req, res) {
+  const editChoice = req.session.data['multiple-locations']
+
+  if (editChoice === 'multiple') {
+    res.redirect('/employer/v05/job-add-3d')
+  } else if (editChoice === 'one-location') {
+    res.redirect('/employer/v05/job-add-3c')
+  }
+});
+
+router.post('/employer/v05/job-add-3b-locally', function (req, res) {
   const editChoice = req.session.data['multiple-locations']
 
   if (editChoice === 'multiple') {
