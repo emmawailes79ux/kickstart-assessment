@@ -20,7 +20,7 @@
         Provide payment details
       </h1>
 
-      <p class="govuk-body">This is the bank account that DWP will pay Kickstart payments into.</p>
+      <p class="govuk-body">This is the bank account into which your DWP Kickstart payments will be paid.</p>
 
       {{ govukInput({
         label: {
@@ -75,66 +75,8 @@
       }) }}
 
 
-
-
-
-
-      {% set signatory %}
-        {{ govukInput({
-          id: "contact-by-email",
-          name: "contact-by-email",
-          type: "email",
-          spellcheck: false,
-          classes: "govuk-!-width-full",
-          label: {
-            text: "Name"
-          }
-        }) }}
-
-        {{ govukInput({
-          id: "cemail",
-          name: "cemail",
-          type: "email",
-          spellcheck: false,
-          classes: "govuk-!-width-full",
-          label: {
-            text: "Email"
-          }
-        }) }}
-
-        <p style="margin-top: 15px;" class="govuk-body"><a href="#">Add another signatory</a></p>
-
-        {% endset -%}
-
-
-        {{ govukRadios({
-          idPrefix: "contact",
-          name: "contact",
-          fieldset: {
-            legend: {
-              text: "Do you want to add an authorised signatory to this bank acount?",
-              isPageHeading: false,
-              classes: "govuk-fieldset__legend--m"
-            }
-          },
-          items: [
-            {
-              value: "yes",
-              text: "Yes",
-              conditional: {
-                html: signatory
-              }
-            },
-            {
-              value: "no",
-              text: "No"
-            }
-          ]
-        }) }}
-
-
       {{ govukButton({
-        text: "Continue and save bank details",
+        text: "Save and continue",
         href: "job-list-empty"
       }) }}
 

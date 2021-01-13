@@ -1,7 +1,7 @@
 {% extends "layout-header-links.html" %}
 
 {% block pageTitle %}
-  Confirm role details
+  Confirm vacancy details
 {% endblock %}
 
 {% block beforeContent %}
@@ -15,10 +15,10 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-      <span class="govuk-caption-l">Add a role</span>
+      <span class="govuk-caption-l">Add a vacancy</span>
       <h1 class="govuk-heading-l">Summary</h1>
 
-      <h2 class="govuk-heading-m">Role details</h2>
+      <h2 class="govuk-heading-m">Job details</h2>
 
       {{ govukSummaryList({
         classes: 'govuk-!-margin-bottom-9',
@@ -202,7 +202,7 @@
               ]
             }
           }
-          
+
         ]
       }) }}
 
@@ -462,8 +462,8 @@
       }) }}
 
       {{ govukButton({
-        text: "Confirm role",
-        href: "role-added"
+        text: "Confirm vacancy",
+        href: "job-list-role-added"
       }) }}
 
     </div>

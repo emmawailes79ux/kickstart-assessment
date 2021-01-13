@@ -1,7 +1,7 @@
 {% extends "layout-header-links.html" %}
 
 {% block pageTitle %}
-  Add a role
+  Add a vacancy
 {% endblock %}
 
 {% block beforeContent %}
@@ -15,14 +15,14 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-l"><span class='govuk-caption-l'>Add a role</span>Dates</h1>
+      <h1 class="govuk-heading-l"><span class='govuk-caption-l'>Add a vacancy</span>Dates</h1>
 
       {{ govukDateInput({
         id: "start-date",
         namePrefix: "start-date",
         fieldset: {
           legend: {
-            text: "Anticipated start date",
+            text: "When does the job start?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--m"
           }
@@ -32,20 +32,50 @@
         }
       }) }}
 
+      {% set advertisingDate %}
       {{ govukDateInput({
-        id: "end-date",
-        namePrefix: "end-date",
+        id: "advertising-date",
+        namePrefix: "advertising-date",
         fieldset: {
           legend: {
-            text: "Anticipated end date",
+            text: "What date do you want the job advert to go live",
             isPageHeading: true,
-            classes: "govuk-fieldset__legend--m"
+            classes: "govuk-fieldset__legend--s"
           }
         },
         hint: {
-          text: "For example, 12 11 2021"
+          text: "For example, 12 03 2021"
         }
       }) }}
+      {% endset -%}
+
+      {{ govukRadios({
+         idPrefix: "contact",
+         name: "contact",
+         fieldset: {
+           legend: {
+             text: "When do you want to start advertising this vacancy?",
+             isPageHeading: false,
+             classes: "govuk-fieldset__legend--m"
+           }
+         },
+         hint: {
+           text: "This is to be used when you want to advertise for a vacancy in the future."
+         },
+         items: [
+           {
+             value: "asap",
+             text: "As soon as possible"
+           },
+           {
+             value: "setDate",
+             text: "Set a date in the future",
+             conditional: {
+               html: advertisingDate
+             }
+           }
+         ]
+       }) }}
 
       {% set closingDate %}
       {{ govukDateInput({
@@ -55,7 +85,7 @@
           legend: {
             text: "Closing date for applications",
             isPageHeading: true,
-            classes: "govuk-fieldset__legend--m"
+            classes: "govuk-fieldset__legend--s"
           }
         },
         hint: {

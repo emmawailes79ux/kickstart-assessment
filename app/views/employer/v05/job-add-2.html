@@ -1,7 +1,7 @@
 {% extends "layout-header-links.html" %}
 
 {% block pageTitle %}
-  Add a role
+  Add a vacancy
 {% endblock %}
 
 {% block beforeContent %}
@@ -17,7 +17,7 @@
     <div class="govuk-grid-column-two-thirds">
       {% call govukFieldset({
         legend: {
-          html: "<span class='govuk-caption-l'>Add a role</span>Vacancy advert details",
+          html: "<span class='govuk-caption-l'>Add a vacancy</span>Vacancy advert",
           classes: "govuk-fieldset__legend--l",
           isPageHeading: true
         }
@@ -34,6 +34,19 @@
         },
         hint: {
           text: "Enter a brief description of the role and duties."
+        }
+      }) }}
+
+      {{ govukInput({
+        id: "vacancy-ad",
+        name: "vacancy-ad",
+        label: {
+          text: "Vacancy advert URL",
+          classes: "govuk-label--m",
+          isPageHeading: true
+        },
+        hint: {
+          text: "If you have a URL on your website advertising the role, enter it here."
         }
       }) }}
 
