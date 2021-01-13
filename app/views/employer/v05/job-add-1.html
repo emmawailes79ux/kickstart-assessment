@@ -22,7 +22,7 @@
         namePrefix: "start-date",
         fieldset: {
           legend: {
-            text: "Anticipated start date",
+            text: "When does the job start?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--m"
           }
@@ -32,6 +32,51 @@
         }
       }) }}
 
+      {% set advertisingDate %}
+      {{ govukDateInput({
+        id: "advertising-date",
+        namePrefix: "advertising-date",
+        fieldset: {
+          legend: {
+            text: "What date do you want the job advert to go live",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        hint: {
+          text: "For example, 12 03 2021"
+        }
+      }) }}
+      {% endset -%}
+
+      {{ govukRadios({
+         idPrefix: "contact",
+         name: "contact",
+         fieldset: {
+           legend: {
+             text: "When do you want to start advertising this vacancy?",
+             isPageHeading: false,
+             classes: "govuk-fieldset__legend--m"
+           }
+         },
+         hint: {
+           text: "This is to be used when you want to advertise for a vacancy in the future."
+         },
+         items: [
+           {
+             value: "asap",
+             text: "As soon as possible"
+           },
+           {
+             value: "setDate",
+             text: "Set a date in the future",
+             conditional: {
+               html: advertisingDate
+             }
+           }
+         ]
+       }) }}
+
       {% set closingDate %}
       {{ govukDateInput({
         id: "closing-date",
@@ -40,7 +85,7 @@
           legend: {
             text: "Closing date for applications",
             isPageHeading: true,
-            classes: "govuk-fieldset__legend--m"
+            classes: "govuk-fieldset__legend--s"
           }
         },
         hint: {
