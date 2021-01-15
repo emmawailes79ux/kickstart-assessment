@@ -1,0 +1,212 @@
+{% extends "layout-header-links.html" %}
+
+{% block pageTitle %}
+  Manage vacancies
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+      text: "Back",
+      href: "../app-home-adverts"
+    }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <span class="govuk-caption-l">KS24684321</span>
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-0 govuk-!-padding-bottom-2">
+         Manage vacancy adverts
+      </h1>
+
+      <strong class="govuk-tag govuk-tag--blue govuk-!-margin-bottom-5">Live</strong>
+
+      {{ govukTable({
+        firstCellIsHeader: false,
+        head: [
+          {
+            text: "Vacancy ID"
+          },
+          {
+            text: "Vacancy"
+          },
+          {
+            text: "Location"
+          },
+          {
+            text: "Start date"
+          },
+          {
+            text: "Referral limit"
+          },
+          {
+            text: ""
+          },
+          {
+            text: "Status"
+          }
+        ],
+        rows: [
+          [
+            {
+              html: "<div class='govuk-checkboxes govuk-checkboxes--small'>
+                      <div class='govuk-checkboxes__item'>
+                        <input class='govuk-checkboxes__input' id='box1' name='box1' type='checkbox' value='box1'>
+                        <label class='govuk-label govuk-checkboxes__label' for='box1'>VX79327
+                        </label>
+                      </div>
+                    </div>"
+            },
+            {
+              html: "Junior exhibition designer"
+            },
+            {
+              text: "Leeds"
+            },
+            {
+              html: "Not set"
+            },
+            {
+              html: "None"
+            },
+            {
+              html: "<a href='advert-job-start' >Manage</a>"
+            },
+            {
+              html: '<strong class="govuk-tag govuk-tag--grey">Not Live</strong>'
+            }
+          ],
+          [
+            {
+              html: "<div class='govuk-checkboxes govuk-checkboxes--small'>
+                      <div class='govuk-checkboxes__item'>
+                        <input class='govuk-checkboxes__input' id='box2' name='box2' type='checkbox' value='box2'>
+                        <label class='govuk-label govuk-checkboxes__label' for='box2'>VX79328
+                        </label>
+                      </div>
+                    </div>"
+            },
+            {
+              html: "Junior exhibition designer"
+            },
+            {
+              text: "Leeds"
+            },
+            {
+              html: "Not set"
+            },
+            {
+              html: "None"
+            },
+            {
+              html: "<a href='advert-job-start' >Manage</a>"
+            },
+            {
+              html: '<strong class="govuk-tag govuk-tag--grey">Not Live</strong>'
+            }
+          ],
+          [
+            {
+              html: "<div class='govuk-checkboxes govuk-checkboxes--small'>
+                      <div class='govuk-checkboxes__item'>
+                        <input class='govuk-checkboxes__input' id='box3' name='box3' type='checkbox' value='box3'>
+                        <label class='govuk-label govuk-checkboxes__label' for='box3'>VX79329
+                        </label>
+                      </div>
+                    </div>"
+            },
+            {
+              html: "Junior exhibition designer"
+            },
+            {
+              text: "Leeds"
+            },
+            {
+              html: "Not set"
+            },
+            {
+              html: "None"
+            },
+            {
+              html: "<a href='advert-job-start' >Manage</a>"
+            },
+            {
+              html: '<strong class="govuk-tag govuk-tag--grey">Not Live</strong>'
+            }
+          ],
+          [
+            {
+              html: "<div class='govuk-checkboxes govuk-checkboxes--small'>
+                      <div class='govuk-checkboxes__item'>
+                        <input class='govuk-checkboxes__input' id='box4' name='box4' type='checkbox' value='box4'>
+                        <label class='govuk-label govuk-checkboxes__label' for='box4'>VX79330
+                        </label>
+                      </div>
+                    </div>"
+            },
+            {
+              html: "Junior exhibition designer"
+            },
+            {
+              text: "Leeds"
+            },
+            {
+              html: "Not set"
+            },
+            {
+              html: "None"
+            },
+            {
+              html: "<a href='advert-job-start' >Manage</a>"
+            },
+            {
+              html: '<strong class="govuk-tag govuk-tag--grey">Not Live</strong>'
+            }
+          ],
+          [
+            {
+              html: "<div class='govuk-checkboxes govuk-checkboxes--small'>
+                      <div class='govuk-checkboxes__item'>
+                        <input class='govuk-checkboxes__input' id='box5' name='box5' type='checkbox' value='box5'>
+                        <label class='govuk-label govuk-checkboxes__label' for='box5'>VX79331
+                        </label>
+                      </div>
+                    </div>"
+            },
+            {
+              html: "Junior exhibition designer"
+            },
+            {
+              text: "Leeds"
+            },
+            {
+              html: "12/02/21"
+            },
+            {
+              html: "None"
+            },
+            {
+              html: "<a href='advert-job-start' >Manage</a>"
+            },
+            {
+              html: '<strong class="govuk-tag govuk-tag--blue">Live</strong>'
+            }
+          ]
+        ]
+      }) }}
+
+
+      <form action="vacancies" id="form" method="post" >
+          {{ govukButton({
+            text: "Put vacancies live"
+          }) }}
+        </form>
+
+
+      <p class="govuk-body govuk-!-margin-top-9"><a href="../app-home">Back to home</a></p>
+
+    </div>
+  </div>
+
+{% endblock %}

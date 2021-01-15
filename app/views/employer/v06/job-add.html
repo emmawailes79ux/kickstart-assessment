@@ -49,47 +49,6 @@
         name: "width-4"
       }) }}
 
-      {% set referral %}
-      {{ govukInput({
-        label: {
-          text: "Referral limit",
-          isPageHeading: false,
-          classes: "govuk-fieldset__legend--m"
-        },
-        classes: "govuk-input--width-5",
-        id: "width-5",
-        name: "width-5"
-        }) }}
-        {% endset -%}
-
-       {{ govukRadios({
-          idPrefix: "contact",
-          name: "contact",
-          fieldset: {
-            legend: {
-              text: "Do you want a referral limit for each vacancy?",
-              isPageHeading: false,
-              classes: "govuk-fieldset__legend--m"
-            }
-          },
-          hint: {
-            text: "A referral is made when we recommend your job placement to a candidate. This does not guarantee the candidate will put in an application."
-          },
-          items: [
-            {
-              value: "yes",
-              text: "Yes",
-              conditional: {
-                html: referral
-              }
-            },
-            {
-              value: "no",
-              text: "No"
-            }
-          ]
-        }) }}
-
 
       {{ govukSelect({
         id: "sort",

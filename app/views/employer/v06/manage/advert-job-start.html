@@ -1,0 +1,137 @@
+{% extends "layout-header-links.html" %}
+
+{% block pageTitle %}
+  Put vacancy live
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+      text: "Back",
+      href: "vacancy-adverts"
+    }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l"><span class='govuk-caption-l'>Put vacancy live</span>Dates</h1>
+
+      {{ govukDateInput({
+        id: "start-date",
+        namePrefix: "start-date",
+        fieldset: {
+          legend: {
+            text: "When does the job start?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: "For example, 12 01 2021"
+        }
+      }) }}
+
+      {% set advertisingDate %}
+      {{ govukDateInput({
+        id: "advertising-date",
+        namePrefix: "advertising-date",
+        fieldset: {
+          legend: {
+            text: "What date do you want the job advert to go live",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        hint: {
+          text: "For example, 12 03 2021"
+        }
+      }) }}
+      {% endset -%}
+
+      {{ govukRadios({
+         idPrefix: "contact",
+         name: "contact",
+         fieldset: {
+           legend: {
+             text: "When do you want to start advertising this vacancy?",
+             isPageHeading: false,
+             classes: "govuk-fieldset__legend--m"
+           }
+         },
+         hint: {
+           text: "This is to be used when you want to advertise for a vacancy in the future."
+         },
+         items: [
+           {
+             value: "asap",
+             text: "As soon as possible"
+           },
+           {
+             value: "setDate",
+             text: "Set a date in the future",
+             conditional: {
+               html: advertisingDate
+             }
+           }
+         ]
+       }) }}
+
+      {% set closingDate %}
+      {{ govukDateInput({
+        id: "closing-date",
+        namePrefix: "closing-date",
+        fieldset: {
+          legend: {
+            text: "Closing date for applications",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        hint: {
+          text: "For example, 12 03 2021"
+        }
+      }) }}
+      {% endset -%}
+
+      {{ govukRadios({
+         idPrefix: "contact",
+         name: "contact",
+         fieldset: {
+           legend: {
+             text: "Do you want to set a closing date for job applications?",
+             isPageHeading: false,
+             classes: "govuk-fieldset__legend--m"
+           }
+         },
+         hint: {
+           text: "Once the closing date has passed you will not receive anymore referrals or applications."
+         },
+         items: [
+           {
+             value: "yes",
+             text: "Yes",
+             conditional: {
+               html: closingDate
+             }
+           },
+           {
+             value: "no",
+             text: "No"
+           }
+         ]
+       }) }}
+
+
+
+
+
+      {{ govukButton({
+        text: "Continue",
+        href: "advert-referral"
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}
