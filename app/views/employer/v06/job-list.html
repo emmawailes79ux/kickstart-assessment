@@ -1,0 +1,278 @@
+{% extends "layout-header-links.html" %}
+
+{% block pageTitle %}
+  Vacancies
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+      text: "Back",
+      href: "app-home-03"
+    }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <span class="govuk-caption-l">Step 3 of 3</span>
+      <h1 class="govuk-heading-l">
+        Vacancies
+      </h1>
+
+      <p class="govuk-body">Add the details of the <b>34 Kickstart vacancies</b> that you have applied for.</p>
+
+      {{ govukButton({
+        text: "Add a vacancy",
+        href: "job-add"
+      }) }}
+
+
+
+      {{ govukTable({
+        firstCellIsHeader: false,
+        head: [
+          {
+            text: "Job title"
+          },
+          {
+            text: "Number of vacancies"
+          },
+          {
+            text: "Location"
+          },
+          {
+            text: "Postcode"
+          },
+          {
+            text: ""
+          },
+          {
+            text: ""
+          }
+        ],
+        rows: [
+          [
+            {
+              html: "<a href='job-detail'>Junior exhibition designer</a>"
+            },
+            {
+              text: "2"
+            },
+            {
+              text: "Leeds"
+            },
+            {
+              text: "LS1 3AA"
+            },
+            {
+              html: "<a href='#'>Duplicate</a>"
+            },
+            {
+              html: "<a href='#'>Delete</a>"
+            }
+          ],
+
+          [
+            {
+              html: "<a href='job-detail'>Junior exhibition designer</a>"
+            },
+            {
+              text: "1"
+            },
+            {
+              text: "Wakefield"
+            },
+            {
+              text: "WF1 5AW"
+            },
+            {
+              html: "<a href='#'>Duplicate</a>"
+            },
+            {
+              html: "<a href='#'>Delete</a>"
+            }
+          ],
+
+          [
+            {
+              html: "<a href='job-detail'>Admissions assistant</a>"
+            },
+            {
+              text: "6"
+            },
+            {
+              text: "Leeds"
+            },
+            {
+              text: "LS1 3AA"
+            },
+            {
+              html: "<a href='#'>Duplicate</a>"
+            },
+            {
+              html: "<a href='#'>Delete</a>"
+            }
+          ],
+
+          [
+            {
+              html: "<a href='job-detail'>Admissions assistant</a>"
+            },
+            {
+              text: "3"
+            },
+            {
+              text: "Wakefield"
+            },
+            {
+              text: "WF1 5AW"
+            },
+            {
+              html: "<a href='#'>Duplicate</a>"
+            },
+            {
+              html: "<a href='#'>Delete</a>"
+            }
+          ],
+
+          [
+            {
+              html: "<a href='job-detail'>Waiter</a>"
+            },
+            {
+              text: "9"
+            },
+            {
+              text: "Leeds"
+            },
+            {
+              text: "LS1 3AA"
+            },
+            {
+              html: "<a href='#'>Duplicate</a>"
+            },
+            {
+              html: "<a href='#'>Delete</a>"
+            }
+          ],
+
+          [
+            {
+              html: "<a href='job-detail'>Waiter</a>"
+            },
+            {
+              text: "5"
+            },
+            {
+              text: "Leeds"
+            },
+            {
+              text: "LS1 3AA"
+            },
+            {
+              html: "<a href='#'>Duplicate</a>"
+            },
+            {
+              html: "<a href='#'>Delete</a>"
+            }
+          ],
+
+          [
+            {
+              html: "<a href='job-detail'>Barista</a>"
+            },
+            {
+              text: "2"
+            },
+            {
+              text: "Leeds"
+            },
+            {
+              text: "LS1 3AA"
+            },
+            {
+              html: "<a href='#'>Duplicate</a>"
+            },
+            {
+              html: "<a href='#'>Delete</a>"
+            }
+          ],
+
+          [
+            {
+              html: "<a href='job-detail'>Barista</a>"
+            },
+            {
+              text: "1"
+            },
+            {
+              text: "Wakefield"
+            },
+            {
+              text: "WF1 5AW"
+            },
+            {
+              html: "<a href='#'>Duplicate</a>"
+            },
+            {
+              html: "<a href='#'>Delete</a>"
+            }
+          ],
+
+          [
+            {
+              html: "<a href='job-detail'>Trainee chef<a>"
+            },
+            {
+              text: "2"
+            },
+            {
+              text: "Wakefield"
+            },
+            {
+              text: "WF4 4LG"
+            },
+            {
+              html: "<a href='#'>Duplicate</a>"
+            },
+            {
+              html: "<a href='#'>Delete</a>"
+            }
+          ],
+
+          [
+            {
+              html: ""
+            },
+            {
+              html: "<b>29 / 34</b>"
+            },
+            {
+              text: ""
+            },
+            {
+              text: ""
+            },
+            {
+              html: ""
+            },
+            {
+              html: ""
+            }
+          ]
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Submit vacancies",
+        href: "app-sent",
+        classes: "govuk-button--secondary"
+      }) }}
+
+      <p class="govuk-body"><a href="app-home-03">Back to home</a></p>
+
+    </div>
+  </div>
+
+{% endblock %}

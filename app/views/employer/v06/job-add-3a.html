@@ -1,0 +1,56 @@
+{% extends "layout-header-links.html" %}
+
+{% block pageTitle %}
+  Add a vacancy
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+      text: "Back",
+      href: "job-add-1"
+    }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form id="form" method="post" action="job-add-3a">
+
+      {{ govukRadios({
+        idPrefix: "remote-role",
+        name: "remote-role",
+        fieldset: {
+          legend: {
+            html: "<span class='govuk-caption-l'>Add a vacancy</span>Where will this job be based?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          text: "Think about whether this job can be done remotely and ehat flexibility you can offer."
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Working remotely/at home at all times"
+          },
+          {
+            value: "part",
+            text: "Required to work on-site at all times"
+          },
+          {
+            value: "not",
+            text: "A mix of remote and on-site work"
+          }
+        ]
+      }) }}
+
+      <button type="submit" class="govuk-button govuk-!-margin-right-1" id="submit">Continue</button>
+
+</form>
+
+    </div>
+  </div>
+
+{% endblock %}

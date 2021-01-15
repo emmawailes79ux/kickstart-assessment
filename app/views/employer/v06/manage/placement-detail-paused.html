@@ -1,0 +1,110 @@
+{% extends "layout-header-links.html" %}
+
+{% block pageTitle %}
+  Referall detail
+{% endblock %}
+
+{% block beforeContent %}
+    {% include 'includes/back-button.njk' %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">Junior Exhibition Designer, Leeds</span>
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-0 govuk-!-padding-bottom-2">Fiona Brown</h1>
+
+        <strong class="govuk-tag govuk-tag--yellow govuk-!-margin-bottom-5">Paused</strong>
+
+          {{ govukSummaryList({
+            classes: ' ',
+            rows: [
+              {
+                key: {
+                  text: "Intro ID"
+                },
+                value: {
+                  text: "AS1276"
+                }
+              },
+              {
+                key: {
+                  text: "Date of Referral"
+                },
+                value: {
+                  text: "11 December 2020"
+                }
+              },
+              {
+                key: {
+                  text: "Start date in role"
+                },
+                value: {
+                  text: "11 January 2021"
+                }
+              },
+              {
+                key: {
+                  text: "Date placement was paused"
+                },
+                value: {
+                  text: "13 January 2021"
+                }
+              },
+              {
+                key: {
+                  text: "Email address"
+                },
+                value: {
+                  text: "fionabrown@yahoo.com"
+                }
+              },
+              {
+                key: {
+                  text: "Phone number"
+                },
+                value: {
+                  text: "07786347275"
+                }
+              }
+              ]
+          }) }}
+
+    
+      <form id="form" method="post" action="#">
+
+       {{ govukRadios({
+          idPrefix: "manage-placement",
+          name: "manage-placement",
+          fieldset: {
+            legend: {
+              text: "Manage this placement",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "unpause-placement",
+              text: "Unpause"
+            },
+            {
+              value: "cancel-role",
+              text: "Cancel"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+        <p class="govuk-body govuk-!-margin-top-9"><a href="../app-home">Back to home</a></p>
+       
+    </div>
+  </div>
+
+{% endblock %}

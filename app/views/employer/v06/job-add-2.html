@@ -1,0 +1,118 @@
+{% extends "layout-header-links.html" %}
+
+{% block pageTitle %}
+  Add a vacancy
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+      text: "Back",
+      href: "job-add"
+    }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% call govukFieldset({
+        legend: {
+          html: "<span class='govuk-caption-l'>Add a vacancy</span>Vacancy advert",
+          classes: "govuk-fieldset__legend--l",
+          isPageHeading: true
+        }
+      }) %}
+
+
+      {{ govukTextarea({
+        name: "more-detail",
+        id: "more-detail",
+        label: {
+          text: "About the role",
+          classes: "govuk-label--m",
+          isPageHeading: true
+        },
+        hint: {
+          text: "Enter a brief description of the role and duties."
+        }
+      }) }}
+
+      {{ govukInput({
+        id: "vacancy-ad",
+        name: "vacancy-ad",
+        label: {
+          text: "Vacancy advert URL",
+          classes: "govuk-label--m",
+          isPageHeading: true
+        },
+        hint: {
+          text: "If you have a URL on your website advertising the role, enter it here."
+        }
+      }) }}
+
+      {{ govukTextarea({
+        name: "about-us",
+        id: "about-us",
+        label: {
+          text: "Tell us about your company",
+          classes: "govuk-label--m",
+          isPageHeading: true
+        },
+        hint: {
+          text: "This is your chance to sell your company to the applicant."
+        }
+      }) }}
+
+       {{ govukTextarea({
+        name: "skills",
+        id: "skills",
+        label: {
+          text: "What are you looking for?",
+          classes: "govuk-label--m",
+          isPageHeading: false
+        },
+        hint: {
+          text: "List the skills, experience and qualifications that the claimant will need to do this job."
+        }
+      }) }}
+
+      {{ govukTextarea({
+        name: "additional-support",
+        id: "additional-support",
+        label: {
+          text: "What can you offer the claimant?",
+          classes: "govuk-label--m",
+          isPageHeading: false
+        },
+        hint: {
+          text: "What support will you provide to the claimant to help their employability? For example, coaching and mentoring."
+        }
+      }) }}
+
+
+      {{ govukTextarea({
+        name: "how-apply",
+        id: "how-apply",
+        label: {
+          text: "How to apply",
+          classes: "govuk-label--m",
+          isPageHeading: false
+        },
+        hint: {
+          text: "For example, whether a CV or covering letter are needed, forms to fill in, how the application should be sent."
+        }
+      }) }}
+
+{% endcall %}
+
+    <br>
+
+      {{ govukButton({
+        text: "Continue",
+        href: "job-add-1"
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}
