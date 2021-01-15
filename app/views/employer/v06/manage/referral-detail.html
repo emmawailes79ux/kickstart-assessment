@@ -27,6 +27,14 @@
               },
               {
                 key: {
+                  text: "Referred for"
+                },
+                value: {
+                  text: "Junior Exhibition Designer, Leeds"
+                }
+              },
+              {
+                key: {
                   text: "Date of Referral"
                 },
                 value: {
@@ -54,12 +62,27 @@
 
     
 
+      <h2 class="govuk-heading-m">Place this referral in the role</h2>
+
+        {{ govukDateInput({
+            id: "start-date",
+            namePrefix: "start-date",
+            fieldset: {
+              legend: {
+                text: "Enter the date they will start work",
+                classes: "govuk-fieldset__legend--s"
+              }
+            },
+            hint: {
+              text: "For example, 27 3 2007"
+            }
+          }) }}
       
 
-        {{ govukButton({
-          text: "Place in vacancy",
-          href: " "
-        }) }}
+          {{ govukButton({
+            text: "Place in role",
+            href: "placement-confirm"
+          }) }}
 
 
         <p class="govuk-body govuk-!-margin-top-9"><a href="../app-home">Back to home</a></p>

@@ -1,0 +1,73 @@
+{% extends "layout-header-links.html" %}
+
+{% block pageTitle %}
+  Request changes to your application
+{% endblock %}
+
+{% block beforeContent %}
+    {% include 'includes/back-button.njk' %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <span class="govuk-caption-l">KS24684321</span>
+      <h1 class="govuk-heading-l">Request changes to your application</h1>
+
+
+      
+      <form id="form" method="post" action="job-detail">
+
+       {{ govukRadios({
+          idPrefix: "manage-role",
+          name: "manage-role",
+          fieldset: {
+            legend: {
+              text: "What changes do you want to make?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+             {
+              value: " ",
+              text: "Request additional vacancies"
+            },
+            {
+              value: " ",
+              text: "Change the allocation of my vacancies"
+            },
+            {
+              value: " ",
+              text: "Pause some of my roles"
+            },
+            {
+              value: " ",
+              text: "Cancel some of my roles"
+            },
+            {
+              value: " ",
+              text: "Pause application"
+            },
+            {
+              value: " ",
+              text: "Cancel application"
+            }
+            
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+
+
+
+    </div>
+  </div>
+
+{% endblock %}

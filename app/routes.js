@@ -269,6 +269,8 @@ router.post('/employer/v06/manage/job-detail', function (req, res) {
     res.redirect('/employer/v06/manage/referral-limit')
   } else if (editChoice === 'change-vacancies') {
     res.redirect('/employer/v06/manage/vacancies')
+  } else if (editChoice === 'manage-placements') {
+    res.redirect('/employer/v06/manage/placements')
   }
 });
 

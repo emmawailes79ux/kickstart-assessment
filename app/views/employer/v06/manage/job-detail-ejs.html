@@ -13,7 +13,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-        <h1 class="govuk-heading-l govuk-!-margin-bottom-0 govuk-!-padding-bottom-2">Waiter</h1>
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-0 govuk-!-padding-bottom-2">Waiter, Leeds</h1>
         <p>Employer job ref: AS-W-Leeds</p>
         <strong class="govuk-tag govuk-tag--blue govuk-!-margin-bottom-5">Live</strong>
 
@@ -35,9 +35,19 @@
                   text: "Placements"
                 },
                 value: {
-                  text: "0"
+                  text: "3"
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "referrals",
+                      text: "View",
+                      visuallyHiddenText: "name"
+                    }
+                  ]
                 }
               },
+              
               {
                 key: {
                   text: "Referrals"
@@ -93,6 +103,10 @@
               text: "Place someone in this role"
             },
             {
+              value: "manage-placements",
+              text: "View the people you have placed in this role"
+            },
+            {
               value: "change-vacancies",
               text: "Change number of vacancies"
             },
@@ -105,17 +119,18 @@
               text: "Change referral limit"
             },
             {
+              value: "edit-role",
+              text: "Edit role details"
+            },
+            {
               value: "pause-role",
               text: "Pause role"
             },
             {
               value: "cancel-role",
               text: "Cancel role"
-            },
-            {
-              value: "edit-role",
-              text: "Edit role details"
             }
+            
           ]
         }) }}
 

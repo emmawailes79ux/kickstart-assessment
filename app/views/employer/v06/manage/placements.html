@@ -1,7 +1,7 @@
 {% extends "layout-header-links.html" %}
 
 {% block pageTitle %}
-  Referrals
+  Placements
 {% endblock %}
 
 {% block beforeContent %}
@@ -12,6 +12,11 @@
         <span class="govuk-caption-l">Junior Exhibition Designer, Leeds</span>
         <h1 class="govuk-heading-l">Placements</h1>
 
+        <p class="govuk-!-margin-bottom-3">You have <strong>3</strong> vacancies remaining for this role</p>
+        <p><a href="referrals-place-in-role">Place someone in this role</a></p>
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
         {{ govukTable({
         firstCellIsHeader: false,
         head: [
@@ -19,10 +24,13 @@
             text: "Name"
           },
           {
+            text: "Intro ID"
+          },
+          {
             text: "Start date"
           },
           {
-            text: "Intro ID"
+            text: "End date"
           },
           {
             text: "Email address"
@@ -37,10 +45,13 @@
               html: "<a href='placement-detail'>David White</a>"
             },
             {
+              text: "AS2457"
+            },
+            {
               text: "11 Jan 21"
             },
             {
-              text: "AS2457"
+              text: "11 Jun 21"
             },
             {
               text: "david.white@gmail.com"
@@ -55,10 +66,13 @@
               html: "<a href='placement-detail-paused'>Fiona Brown</a>"
             },
             {
+              text: "AS1276"
+            },
+            {
               text: "11 Jan 21"
             },
             {
-              text: "AS1276"
+              text: "11 Jun 21"
             },
             {
               text: "fionabrown@yahoo.com"

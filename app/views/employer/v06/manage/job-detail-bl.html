@@ -13,9 +13,9 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-        <h1 class="govuk-heading-l govuk-!-margin-bottom-0 govuk-!-padding-bottom-2">Junior admin clerk, Wakefield</h1>
-        <p>Employer job ref: AS-JEC-Wakefield</p>
-        <strong class="govuk-tag govuk-tag--red govuk-!-margin-bottom-5">Referral limit</strong>
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-0 govuk-!-padding-bottom-2">Barista, Leeds</h1>
+        <p>Employer job ref: AS-B-Leeds	<br>	</p>
+        <strong class="govuk-tag govuk-tag--green govuk-!-margin-bottom-5">Filled</strong>
 
 
           {{ govukSummaryList({
@@ -27,7 +27,7 @@
                   text: "Vacancies"
                 },
                 value: {
-                  text: "3"
+                  text: "0"
                 }
               },
               {
@@ -35,7 +35,16 @@
                   text: "Placements"
                 },
                 value: {
-                  text: "0"
+                  text: "2"
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "placements-barista",
+                      text: "View",
+                      visuallyHiddenText: "name"
+                    }
+                  ]
                 }
               },
               {
@@ -43,7 +52,7 @@
                   text: "Referrals"
                 },
                 value: {
-                  text: "49"
+                  text: "43"
                 },
                 actions: {
                   items: [
@@ -89,24 +98,8 @@
           },
           items: [
             {
-              value: "place-referral",
-              text: "Place someone in this role"
-            },
-            {
-              value: "change-vacancies",
-              text: "Change number of vacancies"
-            },
-            {
-              value: "closing-date",
-              text: "Change closing date for job applications"
-            },
-            {
-              value: "referral-limit",
-              text: "Change referral limit"
-            },
-            {
-              value: "edit-role",
-              text: "Edit role details"
+              value: "manage-placements",
+              text: "View the people you have placed in this role"
             },
             {
               value: "pause-role",
