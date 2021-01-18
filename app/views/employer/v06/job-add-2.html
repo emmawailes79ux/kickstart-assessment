@@ -28,12 +28,12 @@
         name: "more-detail",
         id: "more-detail",
         label: {
-          text: "About the role",
+          text: "About the job",
           classes: "govuk-label--m",
           isPageHeading: true
         },
         hint: {
-          text: "Enter a brief description of the role and duties."
+          text: "Enter a brief description of the job and duties."
         }
       }) }}
 
@@ -46,7 +46,7 @@
           isPageHeading: true
         },
         hint: {
-          text: "If you have a URL on your website advertising the role, enter it here."
+          text: "If you have a URL on your website advertising the job, enter it here."
         }
       }) }}
 
@@ -63,24 +63,11 @@
         }
       }) }}
 
-       {{ govukTextarea({
-        name: "skills",
-        id: "skills",
-        label: {
-          text: "What are you looking for?",
-          classes: "govuk-label--m",
-          isPageHeading: false
-        },
-        hint: {
-          text: "List the skills, experience and qualifications that the claimant will need to do this job."
-        }
-      }) }}
-
       {{ govukTextarea({
         name: "additional-support",
         id: "additional-support",
         label: {
-          text: "What can you offer the claimant?",
+          text: "What can you offer the Kickstarter?",
           classes: "govuk-label--m",
           isPageHeading: false
         },
@@ -88,6 +75,19 @@
           text: "What support will you provide to the claimant to help their employability? For example, coaching and mentoring."
         }
       }) }}
+
+      {{ govukTextarea({
+       name: "skills",
+       id: "skills",
+       label: {
+         text: "What are you looking for?",
+         classes: "govuk-label--m",
+         isPageHeading: false
+       },
+       hint: {
+         text: "List the skills, experience and qualifications that the claimant will need to do this job."
+       }
+     }) }}
 
 
       {{ govukTextarea({
