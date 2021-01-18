@@ -15,14 +15,9 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      {% call govukFieldset({
-        legend: {
-          html: "<span class='govuk-caption-l'>Add a vacancy</span>Hours and pay",
-          classes: "govuk-fieldset__legend--l",
-          isPageHeading: true
-        }
-      }) %}
 
+    <span class="govuk-caption-l">Add a vacancy</span>
+    <h1 class="govuk-heading-l">Hours and pay</h1>
 
 
       {{ govukInput({
@@ -132,6 +127,27 @@
        </div>
        {% endset -%}
 
+       {% set shiftShow %}
+       {{ govukRadios({
+         idPrefix: "remote-role",
+         name: "remote-role",
+         items: [
+           {
+             value: "yes",
+             text: "Morning shifts"
+           },
+           {
+             value: "part",
+             text: "Back shifts"
+           },
+           {
+             value: "not",
+             text: "Night shifts"
+           }
+         ]
+       }) }}
+       {% endset -%}
+
        {{ govukRadios({
           idPrefix: "hours",
           name: "hours",
@@ -156,6 +172,13 @@
               conditional: {
                 html: hoursShow
               }
+            },
+              {
+                value: "shift-work",
+                text: "Shift work",
+                conditional: {
+                  html: shiftShow
+                }
             }
           ]
         }) }}
@@ -201,13 +224,6 @@
          }) }}
 
 
-
-
-
-
-
-
-    {% endcall %}
 
 
 
