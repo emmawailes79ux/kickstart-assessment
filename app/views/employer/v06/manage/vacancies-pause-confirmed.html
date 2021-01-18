@@ -15,6 +15,21 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
+
+      {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+
+        {% set html %}
+          <p class="govuk-notification-banner__heading">
+            'Barista, Leeds' Paused
+          </p>
+
+        {% endset %}
+
+        {{ govukNotificationBanner({
+          html: html,
+          type: 'success'
+        }) }}
+
       <span class="govuk-caption-l">KS24684321</span>
       <h1 class="govuk-heading-l govuk-!-margin-bottom-0 govuk-!-padding-bottom-2">
          Manage vacancies
@@ -212,7 +227,7 @@
               text: "LS1 3AA"
             },
             {
-              html: '<strong class="govuk-tag govuk-tag--green">Filled</strong>'
+              html: '<strong class="govuk-tag govuk-tag--yellow">Paused</strong>'
             }
           ],
 
