@@ -256,7 +256,7 @@ router.post('/employer/v06/manage/job-detail', function (req, res) {
   const editChoice = req.session.data['manage-role']
 
   if (editChoice === 'edit-role') {
-    res.redirect('/employer/v06/manage/edit-job-detail')
+    res.redirect('/employer/v06/manage/edit-job-detail-tables')
   } else if (editChoice === 'pause-role') {
     res.redirect('/employer/v06/manage/pause-role-check')
   } else if (editChoice === 'cancel-role') {
@@ -272,6 +272,19 @@ router.post('/employer/v06/manage/job-detail', function (req, res) {
   } else if (editChoice === 'manage-placements') {
     res.redirect('/employer/v06/manage/placements')
   }
+});
+
+
+router.post('/employer/v06/manage/job-detail-bl', function (req, res) {
+  const editChoice = req.session.data['manage-role-filled']
+
+  if (editChoice === 'manage-placements') {
+    res.redirect('/employer/v06/manage/placements-barista')
+  } else if (editChoice === 'pause-role') {
+    res.redirect('/employer/v06/manage/pause-role-check')
+  } else if (editChoice === 'cancel-role') {
+    res.redirect('/employer/v06/manage/cancel-role-check')
+  } 
 });
 
 
