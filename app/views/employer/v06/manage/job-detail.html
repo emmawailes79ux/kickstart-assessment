@@ -1,7 +1,7 @@
 {% extends "layout-header-links.html" %}
 
 {% block pageTitle %}
-  Role details
+  Job details
 {% endblock %}
 
 {% block beforeContent %}
@@ -91,7 +91,7 @@
           name: "manage-role",
           fieldset: {
             legend: {
-              text: "Manage this role",
+              text: "Manage this job",
               isPageHeading: false,
               classes: "govuk-fieldset__legend--m"
             }
@@ -99,11 +99,11 @@
           items: [
             {
               value: "place-referral",
-              text: "Place someone in this role"
+              text: "Place someone in this job"
             },
             {
               value: "manage-placements",
-              text: "View the people you have placed in this role"
+              text: "View the people you have placed in this job"
             },
              {
               value: "change-vacancies",
@@ -119,15 +119,15 @@
             },
             {
               value: "edit-role",
-              text: "Edit role details"
+              text: "Edit job details"
             },
             {
               value: "pause-role",
-              text: "Pause role"
+              text: "Pause job"
             },
             {
               value: "cancel-role",
-              text: "Cancel role"
+              text: "Cancel job"
             }
             
           ]
