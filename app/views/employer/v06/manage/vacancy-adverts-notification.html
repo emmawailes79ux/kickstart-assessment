@@ -15,15 +15,29 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
+
+      {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+
+      {% set html %}
+        <p class="govuk-notification-banner__heading">
+          5 vacancies have been put live successfully
+        </p>
+
+      {% endset %}
+
+      {{ govukNotificationBanner({
+        html: html,
+        type: 'success'
+      }) }}
+
+
       <span class="govuk-caption-l">KS24684321</span>
       <h1 class="govuk-heading-l govuk-!-margin-bottom-0 govuk-!-padding-bottom-2">
          Manage vacancy adverts
       </h1>
-      <div class="govuk-grid-row">
-        <div class="govuk-grid-column-two-thirds">
-          <p class="govuk-body ">To put your vacancies live you will need to set a start date. You can also set a referral limit and a closing date for job applications.</p>
-        </div>
-      </div>
+
+      <strong class="govuk-tag govuk-tag--blue govuk-!-margin-bottom-5">Live</strong>
+
       <script language="JavaScript">
         function toggle(source) {
           checkboxes = document.getElementsByName('box');
@@ -84,7 +98,7 @@
               text: "Leeds"
             },
             {
-              html: "Not set"
+              html: "12/02/21"
             },
             {
               html: "None"
@@ -93,7 +107,7 @@
               html: "<a href='advert-job-start' >Push live</a>"
             },
             {
-              html: '<strong class="govuk-tag govuk-tag--grey">Not Live</strong>'
+              html: '<strong class="govuk-tag govuk-tag--blue">Live</strong>'
             }
           ],
           [
@@ -113,7 +127,7 @@
               text: "Leeds"
             },
             {
-              html: "Not set"
+              html: "12/02/21"
             },
             {
               html: "None"
@@ -122,7 +136,7 @@
               html: "<a href='advert-job-start' >Push live</a>"
             },
             {
-              html: '<strong class="govuk-tag govuk-tag--grey">Not Live</strong>'
+              html: '<strong class="govuk-tag govuk-tag--blue">Live</strong>'
             }
           ],
           [
@@ -142,7 +156,7 @@
               text: "Leeds"
             },
             {
-              html: "Not set"
+              html: "12/02/21"
             },
             {
               html: "None"
@@ -151,7 +165,7 @@
               html: "<a href='advert-job-start' >Push live</a>"
             },
             {
-              html: '<strong class="govuk-tag govuk-tag--grey">Not Live</strong>'
+              html: '<strong class="govuk-tag govuk-tag--blue">Live</strong>'
             }
           ],
           [
@@ -171,7 +185,7 @@
               text: "Leeds"
             },
             {
-              html: "Not set"
+              html: "12/02/21"
             },
             {
               html: "None"
@@ -180,7 +194,7 @@
               html: "<a href='advert-job-start' >Push live</a>"
             },
             {
-              html: '<strong class="govuk-tag govuk-tag--grey">Not Live</strong>'
+              html: '<strong class="govuk-tag govuk-tag--blue">Live</strong>'
             }
           ],
           [
@@ -200,7 +214,7 @@
               text: "Leeds"
             },
             {
-              html: "Not set"
+              html: "12/02/21"
             },
             {
               html: "None"
@@ -209,7 +223,7 @@
               html: "<a href='advert-job-start' >Push live</a>"
             },
             {
-              html: '<strong class="govuk-tag govuk-tag--grey">Not Live</strong>'
+              html: '<strong class="govuk-tag govuk-tag--blue">Live</strong>'
             }
           ],
 
