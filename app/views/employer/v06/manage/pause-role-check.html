@@ -1,7 +1,7 @@
 {% extends "layout-header-links.html" %}
 
 {% block pageTitle %}
-    Are you sure you want to pause the role?
+    Are you sure you want to pause the job?
 {% endblock %}
 
 {% block beforeContent %}
@@ -18,7 +18,7 @@
                 name: "more-detail",
                 id: "more-detail",
                 label: {
-                    text: "Enter a reason for pausing the role",
+                    text: "Enter a reason for pausing the job",
                     classes: "govuk-label--s",
                     isPageHeading: true
                 }
@@ -32,7 +32,7 @@
                     name: "pause-role",
                     fieldset: {
                         legend: {
-                            text: "Are you sure you want to pause the role?",
+                            text: "Are you sure you want to pause the job?",
                             isPageHeading: true,
                             classes: "govuk-fieldset__legend--l"
                         }
@@ -41,7 +41,7 @@
                     items: [
                         {
                             value: "yes",
-                            text: "Yes, pause the role",
+                            text: "Yes, pause the job",
                             conditional: {
                                 html: pauseHtml
                             }
