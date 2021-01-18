@@ -13,18 +13,14 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
+      <span class="govuk-caption-l">Junior Exhibition Designer, Leeds</span>
+      <h1 class="govuk-heading-l">Change your closing date for job applications</h1>
       <form id="form" method="post" action="job-detail">
 
        {{ govukDateInput({
         id: "closing-date",
         namePrefix: "closing-date",
-        fieldset: {
-          legend: {
-            text: "Change your closing date for job applications",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--l"
-          }
-        },
+        
         hint: {
           text: "For example, 12 11 2021"
         },
