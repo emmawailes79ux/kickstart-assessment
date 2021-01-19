@@ -12,10 +12,10 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <span class="govuk-caption-l">Junior Exhibition Designer, Leeds</span>
-        <h1 class="govuk-heading-l govuk-!-margin-bottom-0 govuk-!-padding-bottom-2">Fiona Brown</h1>
+      <span class="govuk-caption-l">Trainee Chef, Wakefield</span>
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-0 govuk-!-padding-bottom-2">Michael Quinn</h1>
 
-        <strong class="govuk-tag govuk-tag--yellow govuk-!-margin-bottom-5">Paused</strong>
+        <strong class="govuk-tag govuk-tag--green govuk-!-margin-bottom-5">Placed</strong>
 
           {{ govukSummaryList({
             classes: ' ',
@@ -25,15 +25,15 @@
                   text: "Intro ID"
                 },
                 value: {
-                  text: "AS1276"
+                  text: "AS1242"
                 }
               },
               {
                 key: {
-                  text: "Date of Referral"
+                  text: "Date of referral"
                 },
                 value: {
-                  text: "11 December 2020"
+                  text: "10 December 2020"
                 }
               },
               {
@@ -49,23 +49,7 @@
                   text: "End date"
                 },
                 value: {
-                  text: "11 June 2021"
-                }
-              },
-              {
-                key: {
-                  text: "Date placement was paused"
-                },
-                value: {
-                  text: "13 January 2021"
-                }
-              },
-              {
-                key: {
-                  text: "Reason for pause"
-                },
-                value: {
-                  text: "Job not currently viable during lockdown "
+                  text: "14 June 2021"
                 }
               },
               {
@@ -73,7 +57,7 @@
                   text: "Email address"
                 },
                 value: {
-                  text: "fionabrown@yahoo.com"
+                  text: "michael.quinn@yahoo.com"
                 }
               },
               {
@@ -81,18 +65,18 @@
                   text: "Phone number"
                 },
                 value: {
-                  text: "07786347275"
+                  text: "07787147323"
                 }
               }
               ]
           }) }}
 
     
-      <form id="form" method="post" action="placement-detail-paused">
+      <form id="form" method="post" action="placement-detail-mq">
 
        {{ govukRadios({
-          idPrefix: "manage-placement-paused",
-          name: "manage-placement-paused",
+          idPrefix: "manage-placement",
+          name: "manage-placement",
           fieldset: {
             legend: {
               text: "Manage this placement",
@@ -102,11 +86,11 @@
           },
           items: [
             {
-              value: "unpause-placement",
-              text: "Unpause"
+              value: "pause-placement",
+              text: "Pause"
             },
             {
-              value: "cancel-role",
+              value: "cancel-placement",
               text: "Cancel"
             }
           ]
