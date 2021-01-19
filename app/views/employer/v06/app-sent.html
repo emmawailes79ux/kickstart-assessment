@@ -5,6 +5,30 @@
 {% endblock %}
 
 {% block beforeContent %}
+<style>
+  .guidance-layout {
+    word-wrap: break-word;
+    background-color: #005EA5;
+    padding: 50px 30px 30px;
+    display: block;
+    }
+    .guidance-layout h1, .guidance-layout p, .guidance-layout ul, .guidance-layout h2, .guidance-layout .govuk-summary-list, .guidance-layout .govuk-caption-m{
+        color:#fff;
+    }
+    .guidance-layout .govuk-button, .guidance-layout .drop-area__btn, .guidance-layout .js-enabled .dft-fu__add-file-btn, .js-enabled .guidance-layout .dft-fu__add-file-btn {
+        color: #005EA5;
+        background-color: #fff;
+    }
+    .guidance-layout .govuk-warning-text{
+        color:#fff;
+    }
+    .guidance-layout .govuk-warning-text__icon{
+        border: 3px solid #fff;
+        border-radius: 50%;
+        color: #005EA5;
+        background: #fff;
+    }
+    </style>
     {{ govukBackLink({
       text: "Back",
       href: "app-home"
@@ -12,14 +36,11 @@
 {% endblock %}
 
 {% block content %}
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      {{ govukPanel({
-        titleText: "Submitted successfully",
-        html: "Your application ID<br><strong>KS 12345678</strong>"
-      }) }}
 
-      <p class="govuk-body">We have sent you a confirmation email.</p>
+  <div class="govuk-grid-row guidance-layout" style="margin-right:0; margin-left:0">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">You vacancies have been submitted successfully</h1>
+      <p class="govuk-body">Your application ID: <strong>KS 12345678</strong><br>We have sent you a confirmation email.</p>
 
       <h2 class="govuk-heading-m">What happens next</h2>
 
@@ -34,9 +55,10 @@
       </p>
       <p class="govuk-body">
         You can view the status of this submission anytime by signing in again. <br>
-        <a href="app-home-04">View status</a>
+        <a href="app-home-04" style="font-weight: bold; text-decoration: underline; color: white;">View status</a>
       </p>
 
     </div>
   </div>
+
 {% endblock %}

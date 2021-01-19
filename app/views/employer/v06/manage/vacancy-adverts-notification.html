@@ -36,8 +36,6 @@
          Manage vacancy adverts
       </h1>
 
-      <strong class="govuk-tag govuk-tag--blue govuk-!-margin-bottom-5">Live</strong>
-
       <script language="JavaScript">
         function toggle(source) {
           checkboxes = document.getElementsByName('box');
@@ -814,7 +812,8 @@
 
       <form action="vacancies" id="form" method="post" >
           {{ govukButton({
-            text: "Put vacancies live"
+            text: "Put vacancies live",
+            href: "advert-job-start"
           }) }}
         </form>
 
