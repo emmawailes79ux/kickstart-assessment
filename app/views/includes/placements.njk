@@ -1,0 +1,73 @@
+<p class="govuk-!-margin-bottom-3">You have <strong>3</strong> vacancies remaining for this job</p>
+        <p><a href="referrals-place-in-role">Place someone in this job</a></p>
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+        {{ govukTable({
+        firstCellIsHeader: false,
+        head: [
+          {
+            text: "Name"
+          },
+          {
+            text: "Intro ID"
+          },
+          {
+            text: "Start date"
+          },
+          {
+            text: "End date"
+          },
+          {
+            text: "Email address"
+          },
+          {
+            text: "Status"
+          }
+        ],
+        rows: [
+          [
+            {
+              html: "<a href='placement-detail'>David White</a>"
+            },
+            {
+              text: "AS2457"
+            },
+            {
+              text: "11 Jan 21"
+            },
+            {
+              text: "11 Jun 21"
+            },
+            {
+              text: "david.white@gmail.com"
+            },
+            {
+              html: '<strong class="govuk-tag govuk-tag--green">Placed</strong>'
+            }
+          ],
+
+          [
+            {
+              html: "<a href='placement-detail-paused'>Fiona Brown</a>"
+            },
+            {
+              text: "AS1276"
+            },
+            {
+              text: "11 Jan 21"
+            },
+            {
+              text: "11 Jun 21"
+            },
+            {
+              text: "fionabrown@yahoo.com"
+            },
+            {
+              html: '<strong class="govuk-tag govuk-tag--yellow">Paused</strong>'
+            }
+          ]
+
+         
+        ]
+        }) }}
