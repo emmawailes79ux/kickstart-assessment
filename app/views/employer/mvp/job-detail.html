@@ -1,0 +1,472 @@
+{% extends "layout-header-links.html" %}
+
+{% block pageTitle %}
+  Confirm vacancy details
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+      text: "Back",
+      href: "job-add-4"
+    }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <span class="govuk-caption-l">Add a vacancy</span>
+      <h1 class="govuk-heading-l">Summary</h1>
+
+      <h2 class="govuk-heading-m">Job details</h2>
+
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+          {
+            key: {
+              text: "Employer"
+            },
+            value: {
+              text: "Art and Sculpture Ltd"
+            },
+            actions: {
+              items: [
+                {
+                  text: " ",
+                  visuallyHiddenText: "employer"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Role"
+            },
+            value: {
+              text: "Junior Exhibition Designer"
+            },
+            actions: {
+              items: [
+                {
+                  href: "job-add",
+                  text: "Change",
+                  visuallyHiddenText: "role"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Number of vacancies"
+            },
+            value: {
+              text: "2"
+            },
+            actions: {
+              items: [
+                {
+                  href: "job-add",
+                  text: "Change",
+                  visuallyHiddenText: "number of vacancies"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Sector"
+            },
+            value: {
+              text: "Travel & Tourism"
+            },
+            actions: {
+              items: [
+                {
+                  href: "job-add",
+                  text: "Change",
+                  visuallyHiddenText: "sector"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Employer reference"
+            },
+            value: {
+              text: "AS 00918"
+            },
+            actions: {
+              items: [
+                {
+                  href: "job-add",
+                  text: "Change",
+                  visuallyHiddenText: "emp-ref"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Referral cap"
+            },
+            value: {
+              text: "10"
+            },
+            actions: {
+              items: [
+                {
+                  href: "job-add",
+                  text: "Change",
+                  visuallyHiddenText: "referral cap"
+                }
+              ]
+            }
+          }
+          ]
+      }) }}
+
+
+
+
+          <h2 class="govuk-heading-m">Vacancy advert details</h2>
+           {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+          {
+            key: {
+              text: "Job summary"
+            },
+            value: {
+              text: "Your role as a Junior Exhibition Designer will be predominantly be to support the leading curators and designers in Leeds Art Gallery and the Henry Moore Institute. This a rare opportunity to get access to one of the country's leading art galleries with an expectation that you will learn on the job. Previous coputer skills are necessary as there will be certain amount of data entry. This role is likely to be highly sort after."
+            },
+            actions: {
+              items: [
+                {
+                  href: "job-add-2",
+                  text: "Change",
+                  visuallyHiddenText: "job summary"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Skills needed"
+            },
+            value: {
+              text: "Communication, time keeping, basic computer skills, an appreciation and understanding of art."
+            },
+            actions: {
+              items: [
+                {
+                  href: "job-add-2",
+                  text: "Change",
+                  visuallyHiddenText: "skills"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Employment support"
+            },
+            value: {
+              text: "We train and support all our employees to grow confidence and knowledge in the art world."
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "email"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "How to apply"
+            },
+            value: {
+              text: "CVs emailed to s.almarez@leedsartgallery.co.uk"
+            },
+            actions: {
+              items: [
+                {
+                  href: "job-add-2",
+                  text: "Change",
+                  visuallyHiddenText: "how to apply"
+                }
+              ]
+            }
+          }
+
+        ]
+      }) }}
+
+
+      <h2 class="govuk-heading-m">Location</h2>
+
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+          {
+            key: {
+              text: "Role base"
+            },
+            value: {
+              html: "Office/business location"
+            },
+            actions: {
+              items: [
+                {
+                  href: "job-add",
+                  text: "Change",
+                  visuallyHiddenText: "address"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Local or National"
+            },
+            value: {
+              html: "Local"
+            },
+            actions: {
+              items: [
+                {
+                  href: "job-add",
+                  text: "Change",
+                  visuallyHiddenText: "address"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Address"
+            },
+            value: {
+              html: "Leeds Art Gallery<br> The Headrow<br>Leeds<br>LS1 3AA"
+            },
+            actions: {
+              items: [
+                {
+                  href: "job-add",
+                  text: "Change",
+                  visuallyHiddenText: "address"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Contact name"
+            },
+            value: {
+              text: "Sergio Almarez"
+            },
+            actions: {
+              items: [
+                {
+                  href: "job-add",
+                  text: "Change",
+                  visuallyHiddenText: "contact name"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Phone"
+            },
+            value: {
+              text: "0113 321 4321"
+            },
+            actions: {
+              items: [
+                {
+                  href: "job-add",
+                  text: "Change",
+                  visuallyHiddenText: "phone"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Email"
+            },
+            value: {
+              text: "S.Almarez@leedsartgallery.co.uk"
+            },
+            actions: {
+              items: [
+                {
+                  href: "job-add",
+                  text: "Change",
+                  visuallyHiddenText: "email"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Public transport available"
+            },
+            value: {
+              text: "Yes"
+            },
+            actions: {
+              items: [
+                {
+                  href: "job-add",
+                  text: "Change",
+                  visuallyHiddenText: "email"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <h2 class="govuk-heading-m">Dates and pay</h2>
+
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+          {
+            key: {
+              text: "Anticipated start date"
+            },
+            value: {
+              text: "01/02/2021"
+            },
+            actions: {
+              items: [
+                {
+                  href: "job-add-2",
+                  text: "Change",
+                  visuallyHiddenText: "start date"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Anticipated end date"
+            },
+            value: {
+              text: "01/08/2021"
+            },
+            actions: {
+              items: [
+                {
+                  href: "job-add-2",
+                  text: "Change",
+                  visuallyHiddenText: "end date"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Closing date for applications"
+            },
+            value: {
+              text: "31/12/20"
+            },
+            actions: {
+              items: [
+                {
+                  href: "job-add",
+                  text: "Change",
+                  visuallyHiddenText: "deadline"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Hours per week"
+            },
+            value: {
+              text: "24"
+            },
+            actions: {
+              items: [
+                {
+                  href: "job-add-2",
+                  text: "Change",
+                  visuallyHiddenText: "hours"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Days"
+            },
+            value: {
+              text: "Monday - Saturday"
+            },
+            actions: {
+              items: [
+                {
+                  href: "job-add-2",
+                  text: "Change",
+                  visuallyHiddenText: "days"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Hours"
+            },
+            value: {
+              text: "9am to 5pm, 3 days a week, variable"
+            },
+            actions: {
+              items: [
+                {
+                  href: "job-add-2",
+                  text: "Change",
+                  visuallyHiddenText: "start date"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Pay"
+            },
+            value: {
+              text: "National minimum wage"
+            },
+            actions: {
+              items: [
+                {
+                  href: "job-add-2",
+                  text: "Change",
+                  visuallyHiddenText: "pay"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Confirm vacancy",
+        href: "job-list-role-added"
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}
