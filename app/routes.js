@@ -5,6 +5,43 @@ const router = express.Router()
 
 module.exports = router
 
+////// mvp //////////////////////////////////
+
+router.post('/employer/mvp/job-add-3a', function (req, res) {
+  const editChoice = req.session.data['remote-role']
+
+  if (editChoice === 'yes') {
+    res.redirect('/employer/mvp/job-add-4')
+  } else if (editChoice === 'part') {
+    res.redirect('/employer/mvp/job-add-3b-locally')
+  } else if (editChoice === 'not') {
+    res.redirect('/employer/mvp/job-add-3b')
+  }
+});
+
+router.post('/employer/mvp/job-add-3b', function (req, res) {
+  const editChoice = req.session.data['multiple-locations']
+
+  if (editChoice === 'multiple') {
+    res.redirect('/employer/mvp/job-add-3d')
+  } else if (editChoice === 'one-location') {
+    res.redirect('/employer/mvp/job-add-3c')
+  }
+});
+
+router.post('/employer/mvp/job-add-3b-locally', function (req, res) {
+  const editChoice = req.session.data['multiple-locations']
+
+  if (editChoice === 'multiple') {
+    res.redirect('/employer/mvp/job-add-3d')
+  } else if (editChoice === 'one-location') {
+    res.redirect('/employer/mvp/job-add-3c')
+  }
+});
+
+////// mvp //////////////////////////////////
+
+
 
 router.post('/employer/v05/manage/vacancies', function (req, res) {
   const editChoice = req.session.data['manage-application']
@@ -284,7 +321,7 @@ router.post('/employer/v06/manage/job-detail-bl', function (req, res) {
     res.redirect('/employer/v06/manage/pause-role-check')
   } else if (editChoice === 'cancel-role') {
     res.redirect('/employer/v06/manage/cancel-role-check')
-  } 
+  }
 });
 
 
