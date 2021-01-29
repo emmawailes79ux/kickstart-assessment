@@ -16,15 +16,15 @@
             <form action="app-home" method="post">
                 {{ govukFieldset({
                     legend: {
-                        html: 'Sign in',
+                        html: 'Manage Kickstart Scheme Applications',
                         classes: "govuk-fieldset__legend--l",
                         isPageHeading: true
                     }
                 })}}
 
-                <p class="govuk-body">You can only register for a Kickstart Scheme account if you’ve received email confirmation that your application has been approved.</p>
+                <!-- <p class="govuk-body">You can only register for a Kickstart Scheme account if you’ve received email confirmation that your application has been approved.</p> -->
 
-                <p class="govuk-body">Once you have registered you will be asked to submit your job placement vacancies.</p>
+                <!-- <p class="govuk-body">Once you have registered you will be asked to submit your job placement vacancies.</p> -->
 
                 {{ govukInput({
                     label: {
@@ -37,30 +37,33 @@
 
                 {{ govukInput({
                     label: {
-                        text: "Password"
+                        text: "Kickstart application number"
                     },
-                    id: "user-password",
-                    name: "user-password",
+                    id: "ks-application-number",
+                    name: "ks-application-number",
                     classes: "govuk-!-width-two-thirds",
-                    type: "password"
+                    type: "password",
+                    hint: {
+                        text: "Your Kickstart application number is 10 characters long and starts with 'KS'."
+                    }
                 }) }}
 
                 {{ govukButton({
                     text: "Continue"
                 }) }}
 
-                <p><a href="email-address">Register now</a> if you do not have sign in details already.</p>
+                <!--p><a href="email-address">Register now</a> if you do not have sign in details already.</p-->
 
-                <h2 class="govuk-heading-m">Problems signing in</h2>
+                <!--h2 class="govuk-heading-m">Problems signing in</h2-->
 
-                <ul class="govuk-list signin">
-                    <li>
+                <!-- <ul class="govuk-list signin"> -->
+                    <!-- <li>
                         <a href="#" class="govuk-link">I forgot my password</a>
-                    </li>
+                    </li> -->
                     <!--li>
                         <a href="account-recovery/access" class="govuk-link">I cannot access the email or mobile phone number I use to sign in</a>
                     </li-->
-                </ul>
+                <!-- </ul> -->
             </form>
         </div>
     </div>
