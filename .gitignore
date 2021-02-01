@@ -112,3 +112,10 @@ lib/extensions/_extensions.scss
 app/views/.DS_Store
 app/.DS_Store
 .DS_Store
+lib/extensions/_extensions.scss
+public/stylesheets/application-ie8.css
+public/stylesheets/application.css
+public/stylesheets/docs-ie8.css
+public/stylesheets/docs.css
+public/stylesheets/unbranded-ie8.css
+public/stylesheets/unbranded.css
