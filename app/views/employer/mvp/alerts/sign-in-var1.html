@@ -10,6 +10,15 @@
 
 
 {% block content %}
+    {{ govukErrorSummary({
+    titleText: "There is a problem",
+    errorList: [
+      {
+        text: "You need to enter your email address",
+        href: "#email-address-error"
+      }
+    ]
+    }) }}
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
 
@@ -28,7 +37,10 @@
                     },
                     id: "email-address",
                     name: "email-address",
-                    classes: "govuk-!-width-two-thirds"
+                    classes: "govuk-!-width-two-thirds",
+                    errorMessage: {
+                      text: "You need to enter your email address"
+                    }
                 }) }}
 
                 {{ govukInput({

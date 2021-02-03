@@ -10,6 +10,15 @@
 
 
 {% block content %}
+    {{ govukErrorSummary({
+    titleText: "There is a problem",
+    errorList: [
+      {
+        text: "Your Kickstart application number will be 'KS' and then 8 numbers",
+        href: "#ks-application-number-error"
+      }
+    ]
+    }) }}
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
 
@@ -41,6 +50,9 @@
                     type: "password",
                     hint: {
                         text: "Your Kickstart application number is 10 characters long and starts with 'KS'."
+                    },
+                    errorMessage: {
+                        text: "Your Kickstart application number will be 'KS' and then 8 numbers"
                     }
                 }) }}
 
