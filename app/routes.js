@@ -11,7 +11,7 @@ router.post('/employer/mvp/job-add-3a', function (req, res) {
   const editChoice = req.session.data['remote-role']
 
   if (editChoice === 'yes') {
-    res.redirect('/employer/mvp/job-add-4')
+    res.redirect('/employer/mvp/job-add-3c')
   } else if (editChoice === 'part') {
     res.redirect('/employer/mvp/job-add-3b-locally')
   } else if (editChoice === 'not') {
