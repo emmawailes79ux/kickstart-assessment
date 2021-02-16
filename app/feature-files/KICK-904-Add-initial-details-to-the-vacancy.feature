@@ -11,6 +11,7 @@ Flow:
 
 # Job Title
 
+
 Scenario: User enters a job title that is less than 100 characters and does not contain any special characters or integers
   Given that the User adds a job title that is less than 100 characters
   And does not contain any special characters or integers
@@ -76,6 +77,7 @@ Scenario: User enters special characters or letters in the "Number of Vacancies"
   And an error summary heading is shown as "There is a problem"
   And an error summary list descriptive link is shown as "Please enter a valid number of vacancies for this role"
 
+@KICK-904
 Scenario: User enters a number greater than the total number of vacancies that the employer is allowed for this application
   Given that the User enters a number of vacancies that exceeds what was agreed in the initial application
   When the User clicks "Continue"
@@ -294,6 +296,7 @@ Scenario: User does not enter an email address
 
 # Sign Out
 
+@KICK-904
 Scenario: User can sign out
   Given that a User is within the Applicant service
   When the User clicks the 'Sign out' Link
