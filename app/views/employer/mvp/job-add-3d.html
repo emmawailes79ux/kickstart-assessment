@@ -23,10 +23,6 @@
         }
       }) %}
 
-
-
-
-
       <h2 class="govuk-heading-m">Primary location</h2>
 
       {{ govukInput({
@@ -72,6 +68,32 @@
         name: "address-postcode"
       }) }}
 
+      {{ govukRadios({
+          idPrefix: "public-transport",
+          name: "public-transport",
+          fieldset: {
+            legend: {
+              text: "Is the location accessible via public transport?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes"
+            },
+            {
+              value: "no",
+              text: "No"
+            },
+            {
+              value: "do not know",
+              text: "Do not know"
+            }
+          ]
+        }) }}
+
       <h2 class="govuk-heading-m">Secondary location</h2>
 
       {{ govukInput({
@@ -116,6 +138,32 @@
         id: "address-postcode-b",
         name: "address-postcode-b"
       }) }}
+
+      {{ govukRadios({
+          idPrefix: "public-transport-2",
+          name: "public-transport-2",
+          fieldset: {
+            legend: {
+              text: "Is the location accessible via public transport?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes"
+            },
+            {
+              value: "no",
+              text: "No"
+            },
+            {
+              value: "do not know",
+              text: "Do not know"
+            }
+          ]
+        }) }}
 
 
 

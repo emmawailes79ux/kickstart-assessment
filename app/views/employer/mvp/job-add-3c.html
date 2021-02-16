@@ -23,10 +23,6 @@
         }
       }) %}
 
-
-
-
-
       <h2 class="govuk-heading-m">Location address</h2>
 
       {{ govukInput({
@@ -71,6 +67,32 @@
         id: "address-postcode",
         name: "address-postcode"
       }) }}
+
+      {{ govukRadios({
+          idPrefix: "public-transport",
+          name: "public-transport",
+          fieldset: {
+            legend: {
+              text: "Is the location accessible via public transport?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes"
+            },
+            {
+              value: "no",
+              text: "No"
+            },
+            {
+              value: "do not know",
+              text: "Do not know"
+            }
+          ]
+        }) }}
 
 
 
