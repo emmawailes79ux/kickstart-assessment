@@ -140,10 +140,11 @@ Scenario: User does not answer the Closing Date question
   And an error summary heading is shown as "There is a problem"
   And an error summary list descriptive link is shown as "Please select if you want to set a closing date for applications"
 
-Scenario: User chooses not to set a Closing Date
-  Given that the User is setting the Closing Date to 'No'
-  When the User clicks the "Continue" button
-  Then the Closing Date is valid
+Scenario: User chooses not to set a Closing Date 
+  Given that the User is setting the Closing Date to 'No' 
+  When the User clicks the "Continue" button 
+  Then the Closing Date is valid 
+  And the Closing Date must be automatically set to 12 weeks in the future 
 
 Scenario: User wants to set a Closing Date
   Given that the User wants to set a Closing Date
