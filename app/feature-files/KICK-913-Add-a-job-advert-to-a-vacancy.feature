@@ -41,6 +41,17 @@ Scenario: User enters under 100 characters into the "About the Job" field
   And an error summary heading is shown as "There is a problem"
   And an error summary list descriptive link is shown as "Please describe the job in at least 100 characters or more"
 
+Scenario Outline: User enters a value into the "About the Job" that contains special characters or any other non-alphanumeric values
+  Given that I am a User who enters a value that contains special characters or any other non-alphanumeric values for <About the Job>
+  When I click "Continue"
+  Then the <About the Job> is invalid
+  And an error summary heading is shown as "There is a problem"
+  And an error summary list descriptive link is shown as "Please do not include any special characters in describing this job"
+
+  Examples:
+  | <About the Job>                              | <Displayed Text>                                                      |
+  | "A great job within the ret@il sector..."    | "Please do not include any special characters in describing this job" |
+
 # What are you looking for
 
 Scenario: User does not enter anything into the "What are you looking for?" Field
@@ -63,6 +74,17 @@ Scenario: User enters under 100 characters into the "What are you looking for?" 
   Then the "What are you looking for?" field is invalid
   And an error summary heading is shown as "There is a problem"
   And an error summary list descriptive link is shown as "Please describe what you are looking for in at least 100 characters or more"
+
+Scenario Outline: User enters a value in the "What are you looking for" field field that contains special characters or any other non-alphanumeric values
+  Given that I am a User who enters a value that contains special characters or any other non-alphanumeric values for <What are you looking for>
+  When I click "Continue"
+  Then the <What are you looking for> field is invalid
+  And an error summary heading is shown as "There is a problem"
+  And an error summary list descriptive link is shown as "Please do not include any special characters in describing this job"
+
+  Examples:
+  | <What are you looking for>                                     | <Displayed Text>                                                                      |
+  | "A great candidate with experience in the ret@il sector..."    | "Please do not include any special characters in describing what you are looking for" |
 
 # Tell us about your company
 
@@ -87,6 +109,17 @@ Scenario: User enters under 100 characters into the "Tell us about your company"
   And an error summary heading is shown as "There is a problem"
   And an error summary list descriptive link is shown as "Please describe your company in at least 100 characters or more"
 
+Scenario Outline: User enters a value in the "Tell us about your company" field that contains special characters or any other non-alphanumeric values
+  Given that I am a User who enters a value that contains special characters or any other non-alphanumeric values for <Tell us about your company>
+  When I click "Continue"
+  Then the <Tell us about your company> field is invalid
+  And an error summary heading is shown as "There is a problem"
+  And an error summary list descriptive link is shown as "Please do not include any special characters in describing your company"
+
+  Examples:
+  | <Tell us about your company>                 | <Displayed Text>                                                          |
+  | "A great company in the ret@il sector..."    | "Please do not include any special characters in describing your company" |
+
 # What can you offer the Kickstarter?
 
 Scenario: User does not enter anything into the "What can you offer the Kickstarter?" field
@@ -108,6 +141,17 @@ Scenario: User enters under 100 characters into the "What can you offer the Kick
   Then the "What can you offer the Kickstarter" field is invalid
   And an error summary heading is shown as "There is a problem"
   And an error summary list descriptive link is shown as "Please describe what you can offer Kickstarter in at least 100 characters or more"
+
+Scenario Outline: User enters a value in the "What can you offer the Kickstarter?" field that contains special characters or any other non-alphanumeric values
+  Given that I am a User who enters a value that contains special characters or any other non-alphanumeric values for <What can you offer the Kickstarter>
+  When I click "Continue"
+  Then the <What can you offer the Kickstarter> field is invalid
+  And an error summary heading is shown as "There is a problem"
+  And an error summary list descriptive link is shown as "Please do not include any special characters in describing what you can offer the Kickstarter"
+
+  Examples:
+  | <What can you offer the Kickstarter>                | <Displayed Text>                                                                                |
+  | "A great job experience in the ret@il sector..."    | "Please do not include any special characters in describing what you can offer the Kickstarter" |
 
 # How to Apply
 
@@ -131,6 +175,19 @@ Scenario: User enters under 100 characters into the "How to Apply" field
   Then the "How to Apply" field is invalid
   And an error summary heading is shown as "How to Apply"
   And an error summary list descriptive link is shown as "Please describe how to apply in 100 characters or more"
+
+Scenario Outline: User enters a value in the "How to Apply?" field that contains special characters or any other non-alphanumeric values
+  Given that I am a User who enters a value that contains special characters or any other non-alphanumeric values for <How to Apply>
+  When I click "Continue"
+  Then the <How to Apply> field is invalid
+  And an error summary heading is shown as "There is a problem"
+  And an error summary list descriptive link is shown as "Please do not include any special characters in describing how to apply for this job"
+
+  Examples:
+  | <What can you offer the Kickstarter>                | <Displayed Text>                                                                       |
+  | "A great job experience in the ret@il sector..."    | "Please do not include any special characters in describing how to apply for this job" |
+
+# Continue
 
 Scenario: User has completed all form fields and clicks "Continue"
   Given that the User has completed all the form fields appropriately
