@@ -292,6 +292,49 @@ Scenario: User does not enter an email address
   Then the email address is invalid
   And an error summary heading is shown as "There is a problem"
   And an error summary list descriptive link is shown as "Please enter an email address for this vacancy"
+  
+# Confirm Email Address 
+
+Scenario: User enters a different email address in the Confirm Email Address field to what was entered in the Email Address field 
+  Given that the User enters a different email address in the Confirm Email Address field to what was entered in the Email Address field 
+  When the User clicks "Continue" 
+  Then the email address is invalid 
+  And an error summary heading is shown as "There is a problem" 
+  And an error summary list descriptive link is shown as "The email addresses do not match" 
+
+Scenario: User enters the same email address in the Confirm Email Address field as what was entered in the Email Address field 
+  Given that the User enters the same email address in the Confirm Email Address field as what was entered in the Email Address field 
+  And the email addresses are both valid 
+  When the User clicks "Continue" 
+  Then the Confirm Email Address field is valid 
+
+Scenario: User enters an invalid email address that deviates from the syntax 
+  Given that the User enters an email address that deviates from the syntax (name@example.com) 
+  When the User clicks "Continue" 
+  Then the email address is invalid 
+  And an error summary heading is shown as "There is a problem" 
+  And an error summary list descriptive link is shown as "Please enter a valid email address for this vacancy" 
+
+Scenario: User enters an email address longer than 100 characters 
+  Given that the User enters an email address that is longer than 100 characters 
+  When the User clicks "Continue" 
+  Then the email address is invalid 
+  And an error summary heading is shown as "There is a problem" 
+  And an error summary list descriptive link is shown as "Please enter an email address shorter than 100 characters for this vacancy" 
+
+Scenario: User enters an email address shorter than 10 characters 
+  Given that the User enters an email address that is shorter than 10 characters 
+  When the User clicks "Continue" 
+  Then the email address is invalid 
+  And an error summary heading is shown as "There is a problem" 
+  And an error summary list descriptive link is shown as "Please enter a valid email address for this vacancy" 
+
+Scenario: User does not enter an email address 
+  Given that the User does not enter an email address 
+  When the User clicks "Continue" 
+  Then the email address is invalid 
+  And an error summary heading is shown as "There is a problem" 
+  And an error summary list descriptive link is shown as "Please enter an email address for this vacancy" 
 
 # Sign Out
 
