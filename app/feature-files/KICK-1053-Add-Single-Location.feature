@@ -163,6 +163,25 @@ Scenario Outline: User enters an invalid postcode value for the Postcode field
   | <Postcode>             | <Displayed Text>                                 |
   | WC2H 7LTa              | "Please enter a valid postcode for this vacancy" |
 
+
+#Public Transport 
+
+Scenario: User selects "Yes" on whether public transport is available 
+  Given that I am User who selects "Yes" on the is public transport available question 
+  When I click "Continue" 
+  Then the "Is the location accessible via public transport" field is valid 
+
+Scenario: User selects "No" on whether public transport is available 
+  Given that I am User who selects "No" on the is public transport available question 
+  When I click "Continue" 
+  Then the "Is the location accessible via public transport" field is valid 
+
+Scenario: User selects "Do not know" on whether public transport is available 
+  Given that I am User who selects "Do not know" on the is public transport available question 
+  When I click "Continue" 
+  Then the "Is the location accessible via public transport" field is valid 
+
+
 # Continue
 
 Scenario: User clicks "Continue" after filling out all the form fields properly
