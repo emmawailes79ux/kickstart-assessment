@@ -94,6 +94,7 @@ Scenario: User selects "No" to whether they want to set a referral limit
   Given that the User is adding Role Details
   When a User has selected "No" on the referral limit question
   Then the referral limit is valid
+  And the referral limit must be automatically set to 9999
 
 Scenario: User selects "Yes" to whether they want to set a referral limit and the referral limit number field is displayed
   Given that the User is adding Role Details
