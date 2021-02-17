@@ -118,6 +118,13 @@ Scenario: User sets the Advertising Start Date to be a date in the past
   And an error summary heading is shown as "There is a problem"
   And an error summary list descriptive link is shown as "Please set the advertising start date to a date in the future"
 
+Scenario: User sets the Advertising Start Date to be later than the Closing Date
+  Given that the User has selected the Advertising Start Date to be later than the Closing Date
+  When the User clicks the "Continue" button
+  Then the Advertising Start Date will be invalid
+  And an error summary heading is shown as "There is a problem"
+  And an error summary list descriptive link is shown as "Your advertising start date cannot exceed the closing date"
+
 Scenario: User sets the Advertising Start Date less than one month in the future
   Given that the User has set the Advertising Start Date to a date less than one month in the future
   When the User clicks the "Continue" button
@@ -179,6 +186,13 @@ Scenario: User sets the Closing Date for applications to be a date in the past
   Then the Closing Date will be invalid
   And an error summary heading is shown as "There is a problem"
   And an error summary list descriptive link is shown as "Please set the closing date for applications to a date at least one month in the future"
+
+Scenario: User sets the Closing Date to be earlier than the Advertising Start Date 
+  Given that the User has selected the Closing Date to be earlier than the Advertising Start Date 
+  When the User clicks the "Continue" button 
+  Then the Closing Date will be invalid
+  And an error summary heading is shown as "There is a problem" 
+  And an error summary list descriptive link is shown as "Your vacancy cannot close before it starts being advertised" 
 
 Scenario: User set the Closing Date for applications to a date at least one month in the future
   Given that the User selects "Yes"  to the closing date question
