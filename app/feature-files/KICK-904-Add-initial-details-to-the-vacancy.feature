@@ -11,13 +11,16 @@ Flow:
 
 # Job Title
 
-
+@KICK-904
+@KICK-110
 Scenario: User enters a job title that is less than 100 characters and does not contain any special characters or integers
   Given that the User adds a job title that is less than 100 characters
   And does not contain any special characters or integers
   When the User clicks "Continue"
   Then the job title is valid
 
+@KICK-904
+@KICK-110
 Scenario: User enters a job title that is more than 100 characters
   Given that the User that is more than 100 characters
   When the User clicks "Continue"
@@ -25,6 +28,8 @@ Scenario: User enters a job title that is more than 100 characters
   And an error summary heading is shown as "There is a problem"
   And an error summary list descriptive link is shown as "Please enter a job title smaller than 100 characters"
 
+@KICK-904
+@KICK-110
 Scenario: User enters a job title that contains special characters or integers
   Given that the User that is more than 100 characters
   When the User clicks "Continue"
@@ -32,6 +37,8 @@ Scenario: User enters a job title that contains special characters or integers
   And an error summary heading is shown as "There is a problem"
   And an error summary list descriptive link is shown as "Please enter a job title that does not contain any special characters or numbers"
 
+@KICK-904
+@KICK-110
 Scenario: User doesn't enter a job title
   Given that the User does not enter a job title
   When the User clicks "Continue"
@@ -41,6 +48,8 @@ Scenario: User doesn't enter a job title
 
 # Number of Vacancies
 
+@KICK-904
+@KICK-110
 Scenario: User enters a valid number of vacancies in the "Number of Vacancies" field
   Given that the User enters a number of vacancies that is greater than or equal to 1
   And less than or equal to 9999
@@ -49,6 +58,8 @@ Scenario: User enters a valid number of vacancies in the "Number of Vacancies" f
   When the User clicks "Continue"
   Then the vacancy number is valid
 
+@KICK-904
+@KICK-110
 Scenario: User does not enter a number of vacancies in the "Number of Vacancies" field
   Given that the User does not enter a number of vacancies
   When the User clicks "Continue"
@@ -56,6 +67,8 @@ Scenario: User does not enter a number of vacancies in the "Number of Vacancies"
   And an error summary heading is shown as "There is a problem"
   And an error summary list descriptive link is shown as "Please enter the number of vacancies for this role"
 
+@KICK-904
+@KICK-110
 Scenario: User enters a number of vacancies that is "0" in the "Number of Vacancies" field
   Given that the User enters a number of vacancies that is "0"
   When the User clicks "Continue"
@@ -63,6 +76,8 @@ Scenario: User enters a number of vacancies that is "0" in the "Number of Vacanc
   And an error summary heading is shown as "There is a problem"
   And an error summary list descriptive link is shown as "You must have at least one vacancy for this role"
 
+@KICK-904
+@KICK-110
 Scenario: User enters a number of vacancies that is greater than 9999 in the "Number of Vacancies" field
   Given that the User enters a number of vacancies that is greater than 9999
   When the User clicks "Continue"
@@ -70,6 +85,8 @@ Scenario: User enters a number of vacancies that is greater than 9999 in the "Nu
   And an error summary heading is shown as "There is a problem"
   And an error summary list descriptive link is shown as "The number of vacancies cannot exceed 9999"
 
+@KICK-904
+@KICK-110
 Scenario: User enters special characters or letters in the "Number of Vacancies" field
   Given that the User enters special characters or letters in the "Number of Vacancies" field
   When the User clicks "Continue"
@@ -85,6 +102,8 @@ Scenario: User enters a number greater than the total number of vacancies that t
 
 # Referral Limit
 
+@KICK-904
+@KICK-110
 Scenario: User does not select whether they want a referral limit
   Given that the User is adding Role Details
   When a User has not selected whether they want to set a referral limit
@@ -92,17 +111,23 @@ Scenario: User does not select whether they want a referral limit
   And an error summary heading is shown as "There is a problem"
   And an error summary list descriptive link is shown as "Please select whether you would like to set a referral limit"
 
+@KICK-904
+@KICK-110
 Scenario: User selects "No" to whether they want to set a referral limit
   Given that the User is adding Role Details
   When a User has selected "No" on the referral limit question
   Then the referral limit is valid
   And the referral limit must be automatically set to 9999
 
+@KICK-904
+@KICK-110
 Scenario: User selects "Yes" to whether they want to set a referral limit and the referral limit number field is displayed
   Given that the User is adding Role Details
   When a User has selected "Yes" on the referral limit question
   Then the referral limit form field must be displayed
 
+@KICK-904
+@KICK-110
 Scenario: User has chosen "Yes" to set a referral limit but has not entered anything into the referral limit number field
   Given that the User has chosen "Yes" to set a referral limit but has not entered anything into the referral limit  number field
   When a User clicks "Continue"
@@ -110,6 +135,8 @@ Scenario: User has chosen "Yes" to set a referral limit but has not entered anyt
   And an error summary heading is shown as "There is a problem"
   And an error summary list descriptive link is shown as "Please enter a referral limit for this vacancy"
 
+@KICK-904
+@KICK-110
 Scenario: User has chosen to set a referral limit by selecting "Yes" and has entered a valid referral limit in the referral limit number field
   Given that the User has chosen "Yes" to set a referral limit And has entered a value greater than or equal to 1
   And less than 9999
@@ -118,6 +145,8 @@ Scenario: User has chosen to set a referral limit by selecting "Yes" and has ent
   When a User clicks "Continue"
   Then the referral limit is valid
 
+@KICK-904
+@KICK-110
 Scenario: User has chosen to set a referral limit by selecting "Yes" but has entered "0" into the referral limit number field
   Given that the User has chosen "Yes" to set a referral limit
   But has entered "0" into the referral limit number field
@@ -126,6 +155,8 @@ Scenario: User has chosen to set a referral limit by selecting "Yes" but has ent
   And an error summary heading is shown as "There is a problem"
   And an error summary list descriptive link is shown as "Your referral limit cannot be 0"
 
+@KICK-904
+@KICK-110
 Scenario: User has chosen to set a referral limit by selecting "Yes" but has entered a value greater than 9999
   Given that the User has chosen to set a referral limit by selecting "Yes"
   And a User has entered a value greater than 9999
@@ -133,6 +164,8 @@ Scenario: User has chosen to set a referral limit by selecting "Yes" but has ent
   And an error summary heading is shown as "There is a problem"
   And an error summary list descriptive link is shown as "Your referral limit cannot be greater than 9999"
 
+@KICK-904
+@KICK-110
 Scenario: User has chosen "Yes" to set a referral limit but has entered a value that contains special characters or a letter
   Given that the User has chosen to set a referral limit by selecting "Yes"
   And a User has entered a value that contains special characters or a letter
@@ -143,21 +176,29 @@ Scenario: User has chosen "Yes" to set a referral limit but has entered a value 
 
 # Internal Job Reference
 
+@KICK-904
+@KICK-110
 Scenario: User does not answer the internal job reference number question
   Given that the User does not answer the internal job reference number question
   When the User clicks "Continue"
   Then the User must receive feedback requiring them to answer the internal job reference number question "Please state whether you want to enter a job reference number"
 
+@KICK-904
+@KICK-110
 Scenario: User chooses to provide an internal job reference number by selecting "Yes" and the job reference form field is displayed
   Given that the User chooses to provide an internal job reference number by selecting "Yes"
   When the User clicks "Continue"
   Then the User must receive feedback requiring them to Industry sector: "Please select a valid industry sector"
 
+@KICK-904
+@KICK-110
 Scenario: User chooses not to provide an internal job reference number by selecting "No"
   Given that the User chooses not to provide an internal job reference number by selecting "No"
   When the User clicks "Continue"
   Then the internal job reference is valid
 
+@KICK-904
+@KICK-110
 Scenario: User has chosen to set an internal job reference number by selecting "Yes" but has not entered anything into the employer job reference field
   Given that the User has chosen to set an internal job reference number by selecting "Yes" but has not entered anything into the employer job reference field
   When the User clicks "Continue"
@@ -165,6 +206,8 @@ Scenario: User has chosen to set an internal job reference number by selecting "
   And an error summary heading is shown as "There is a problem"
   And an error summary list descriptive link is shown as "Please enter a job reference number"
 
+@KICK-904
+@KICK-110
 Scenario: User has chosen to set an internal job reference number by selecting "Yes" but has entered more than 12 characters in the employer job reference
   Given that the User has chosen to set an internal job reference number by selecting "Yes" but has entered more than 12 characters into the employer job reference field
   When the User clicks "Continue"
@@ -174,11 +217,15 @@ Scenario: User has chosen to set an internal job reference number by selecting "
 
 # Industry sector
 
+@KICK-904
+@KICK-1109
 Scenario: When the page first loads the 'Industry sector' drop-down field is set to 'Please select one'
   Given that the User is adding Role Details
   When the User has not selected the "Industry sector" drop-down
   Then the "Industry sector" drop-down must be set to "Please select one"
 
+@KICK-904
+@KICK-1109
 Scenario: User doesn't choose a value within the 'Industry sector" form field
   Given that the User does not select a value within the "Industry Sector" form field
   When the User clicks "Continue"
@@ -186,6 +233,8 @@ Scenario: User doesn't choose a value within the 'Industry sector" form field
 
 # Contact name
 
+@KICK-904
+@KICK-1109
 Scenario: User enters a valid contact name that is less than 100 characters and does not contain any special characters or integers
   Given that the User adds a Contact Name that is less than 100 characters
   And does not contain any special characters or integers
@@ -194,6 +243,8 @@ Scenario: User enters a valid contact name that is less than 100 characters and 
   When the User clicks "Continue"
   Then the Contact Name is valid
 
+@KICK-904
+@KICK-1109
 Scenario: User enters a Contact Name longer than 100 characters
   Given that the User adds a Contact Name that is longer than 100 characters
   When the User clicks "Continue"
@@ -201,6 +252,8 @@ Scenario: User enters a Contact Name longer than 100 characters
   And an error summary heading is shown as "There is a problem"
   And an error summary list descriptive link is shown as "The contact name cannot exceed 100 characters"
 
+@KICK-904
+@KICK-1109
 Scenario: User enters a Contact Name with special characters
   Given that the User adds a Contact Name that has special characters
   When the User clicks "Continue"
@@ -208,6 +261,8 @@ Scenario: User enters a Contact Name with special characters
   And an error summary heading is shown as "There is a problem"
   And an error summary list descriptive link is shown as "The contact name cannot contain special characters"
 
+@KICK-904
+@KICK-1109
 Scenario: User does not enter a contact name
   Given that the User does not enter a contact name
   When the User clicks "Continue"
@@ -217,6 +272,8 @@ Scenario: User does not enter a contact name
 
 # Contact number
 
+@KICK-904
+@KICK-1109
 Scenario: User enters a valid contact number that is less than 12 digits and more than 10 digits
   Given that the User adds a Contact Name that is less than 12 digits
   And more than 10 digits
@@ -224,6 +281,8 @@ Scenario: User enters a valid contact number that is less than 12 digits and mor
   When the User clicks "Continue"
   Then the Contact Number is valid
 
+@KICK-904
+@KICK-1109
 Scenario: User enters a Contact Number longer than 12 digits
   Given that the User adds a <Contact Name> that is longer than 12 characters
   When the User clicks "Continue"
@@ -231,6 +290,8 @@ Scenario: User enters a Contact Number longer than 12 digits
   And an error summary heading is shown as "There is a problem"
   And an error summary list descriptive link is shown as "Contact numbers cannot be longer than 12 digits"
 
+@KICK-904
+@KICK-1109
 Scenario: User enters a Contact Number smaller than 10 digits
   Given that the User adds a <Contact Name> that is less than 10 characters
   When the User clicks "Continue"
@@ -238,6 +299,8 @@ Scenario: User enters a Contact Number smaller than 10 digits
   And an error summary heading is shown as "There is a problem"
   And an error summary list descriptive link is shown as "Contact numbers cannot be smaller than 10 digits"
 
+@KICK-904
+@KICK-1109
 Scenario: User enters a Contact Number with characters that are not integers
   Given that the User adds a Contact Name that has characters that are not integers
   When the User clicks "Continue"
@@ -245,6 +308,8 @@ Scenario: User enters a Contact Number with characters that are not integers
   And an error summary heading is shown as "There is a problem"
   And an error summary list descriptive link is shown as "Please enter a valid contact number for this vacancy"
 
+@KICK-904
+@KICK-1109
 Scenario: User enters a contact number that contains a 070, 09, 0843, 0844, 0845, 0870, 0871, 0872, 0873, 01, 02, 03, 030, or 0345 prefix
   Given that the User enters a contact number containing a 070, 09, 0843, 0844, 0845, 0870, 0871, 0872, 0873, 01, 02, 03, 030, or 0345 prefix
   When the user clicks 'Continue'
@@ -252,6 +317,8 @@ Scenario: User enters a contact number that contains a 070, 09, 0843, 0844, 0845
   And an error summary heading is shown as "There is a problem"
   And an error summary list descriptive link is shown as "Please enter a valid contact number for this vacancy"
 
+@KICK-904
+@KICK-1109
 Scenario: User does not enter a contact number
   Given that the User does not enter a contact number
   When the User clicks "Continue"
@@ -261,12 +328,16 @@ Scenario: User does not enter a contact number
 
 # Email address
 
+@KICK-904
+@KICK-1109
 Scenario: User enters a valid email address
   Given that the User adds a valid email address that aligns to the syntax (name@example.com)
   And is shorter than 100 characters
   When the User clicks "Continue"
   Then the Contact Email Address is valid
 
+@KICK-904
+@KICK-1109
 Scenario: User enters an invalid email address that deviates from the syntax
   Given that the User enters an email address that deviates from the syntax (name@example.com)
   When the User clicks "Continue"
@@ -274,6 +345,8 @@ Scenario: User enters an invalid email address that deviates from the syntax
   And an error summary heading is shown as "There is a problem"
   And an error summary list descriptive link is shown as "Please enter a valid email address for this vacancy"
 
+@KICK-904
+@KICK-1109
 Scenario: User enters an email address longer than 100 characters
   Given that the User enters an email address that is longer than 100 characters
   When the User clicks "Continue"
@@ -281,6 +354,8 @@ Scenario: User enters an email address longer than 100 characters
   And an error summary heading is shown as "There is a problem"
   And an error summary list descriptive link is shown as "Please enter an email address shorter than 100 characters for this vacancy"
 
+@KICK-904
+@KICK-1109
 Scenario: User enters an email address shorter than 10 characters
   Given that the User enters an email address that is shorter than 10 characters
   When the User clicks "Continue"
@@ -288,6 +363,8 @@ Scenario: User enters an email address shorter than 10 characters
   And an error summary heading is shown as "There is a problem"
   And an error summary list descriptive link is shown as "Please enter a valid email address for this vacancy"
 
+@KICK-904
+@KICK-1109
 Scenario: User does not enter an email address
   Given that the User does not enter an email address
   When the User clicks "Continue"
