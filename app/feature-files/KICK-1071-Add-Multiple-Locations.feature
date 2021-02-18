@@ -181,6 +181,23 @@ Scenario: User enters the same location twice or more
   And an error summary heading is shown as "There is a problem"
   And an error summary list descriptive link is shown as "You cannot enter the same location twice"
 
+#Public Transport 
+
+Scenario: User selects "Yes" on whether public transport is available 
+  Given that I am User who selects "Yes" on the is public transport available question 
+  When I click "Continue" 
+  Then the "Is the location accessible via public transport" field is valid 
+
+Scenario: User selects "No" on whether public transport is available 
+  Given that I am User who selects "No" on the is public transport available question 
+  When I click "Continue" 
+  Then the "Is the location accessible via public transport" field is valid 
+
+Scenario: User selects "Do not know" on whether public transport is available 
+  Given that I am User who selects "Do not know" on the is public transport available question 
+  When I click "Continue" 
+  Then the "Is the location accessible via public transport" field is valid 
+
 # Continue
 
 Scenario: User clicks "Continue" after filling out all the form fields properly
