@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Email code
+  Phone security code
 {% endblock %}
 
 {% block beforeContent %}
@@ -11,11 +11,11 @@
 {% block content %}
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-            <h1 class="govuk-heading-l">We have sent you an email with your security code</h1>
+            <h1 class="govuk-heading-l">We have sent a security code to <br>07776 567234</h1>
 
             <p>It should take one minute to arrive.</p>
 
-            <form action="password" method="post" class="form">
+            <form action="sign-in" method="post" class="form">
                 <div class="govuk-form-group govuk-!-margin-top-6">
                     <label class="govuk-label" for="email-security-code">
                         Security code
@@ -28,7 +28,7 @@
                 }) }}
             </form>
 
-            <p><a href="resend-email">I did not get the email</a></p>
+            <!--p><a href="resend-email">I did not get the text</a></p-->
         </div>
     </div>
 {% endblock %}

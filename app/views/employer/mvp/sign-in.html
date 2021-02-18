@@ -14,39 +14,36 @@
         <div class="govuk-grid-column-two-thirds">
 
             <form action="sign-in-2fa" method="post">
-                {{ govukFieldset({
-                    legend: {
-                        html: 'Sign in to the Kickstart Scheme',
-                        classes: "govuk-fieldset__legend--l",
-                        isPageHeading: true
-                    }
-                })}}
+              {{ govukFieldset({
+                  legend: {
+                      html: 'Sign in to the Kickstart Scheme',
+                      classes: "govuk-fieldset__legend--l",
+                      isPageHeading: true
+                  }
+              })}}
 
-                {{ govukInput({
-                    label: {
-                        text: "Email address"
-                    },
-                    id: "email-address",
-                    name: "email-address",
-                    classes: "govuk-!-width-two-thirds"
-                }) }}
+              {{ govukInput({
+                  label: {
+                      text: "Email address"
+                  },
+                  id: "email-address",
+                  name: "email-address",
+                  classes: "govuk-!-width-two-thirds"
+              }) }}
 
-                {{ govukInput({
-                    label: {
-                        text: "Kickstart application number"
-                    },
-                    id: "ks-application-number",
-                    name: "ks-application-number",
-                    classes: "govuk-!-width-two-thirds",
-                    type: "password",
-                    hint: {
-                        text: "Your Kickstart application number is 10 characters long and starts with 'KS'."
-                    }
-                }) }}
+              {{ govukInput({
+                  label: {
+                      text: "Password"
+                  },
+                  id: "password",
+                  name: "password",
+                  classes: "govuk-!-width-two-thirds",
+                  type: "password"
+              }) }}
 
-                {{ govukButton({
-                    text: "Continue"
-                }) }}
+              {{ govukButton({
+                  text: "Continue"
+              }) }}
 
                 <!--p><a href="email-address">Register now</a> if you do not have sign in details already.</p-->
 
