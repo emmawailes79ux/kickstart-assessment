@@ -17,7 +17,7 @@
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-l"><span class='govuk-caption-l'>Add a vacancy</span>Dates</h1>
 
-      {% set startDate %}
+      <!-- {% set startDate %}
       {{ govukDateInput({
         id: "start-date",
         namePrefix: "start-date",
@@ -57,7 +57,7 @@
              }
            }
          ]
-       }) }}
+       }) }} -->
 
       {% set advertisingDate %}
       {{ govukDateInput({
@@ -67,7 +67,7 @@
           legend: {
             text: "What date do you want the vacancy advert to go live",
             isPageHeading: true,
-            classes: "govuk-fieldset__legend--s"
+            classes: "govuk-fieldset__legend--m"
           }
         },
         hint: {

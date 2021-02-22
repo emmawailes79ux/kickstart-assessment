@@ -13,7 +13,7 @@ router.post('/employer/mvp/job-add-3a', function (req, res) {
   if (editChoice === 'yes') {
     res.redirect('/employer/mvp/job-add-3c')
   } else if (editChoice === 'part') {
-    res.redirect('/employer/mvp/job-add-3b-locally')
+    res.redirect('/employer/mvp/job-add-3c')
   } else if (editChoice === 'not') {
     res.redirect('/employer/mvp/job-add-3b')
   }
