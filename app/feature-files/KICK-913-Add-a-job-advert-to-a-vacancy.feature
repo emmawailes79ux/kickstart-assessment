@@ -187,6 +187,29 @@ Scenario Outline: User enters a value in the "How to Apply?" field that contains
   | <What can you offer the Kickstarter>                | <Displayed Text>                                                                       |
   | "A great job experience in the ret@il sector..."    | "Please do not include any special characters in describing how to apply for this job" |
 
+# Special Characters
+
+Scenario: User enters characters that deviate from the accepted syntax for all form fields, i.e. "a-zA-Z0-9.,;#£$: !@€%^&*()_<>/+"?~`§{}|\n\r'- (\n is tab and \r is a new line)"
+  Given that the User has completed the form fields by entering a <value> that deviates from the syntax
+  When the User clicks "Continue"
+  Then the User must be receive feedback requiring them to fill in the <value> appropriately
+  And an error summary heading is shown as "There is a problem"
+  And an error summary list descriptive link is shown as "Please make sure your entry does not contain any special characters"
+
+ Examples: 
+  | <Value>                 | <Validity> | 
+  | • this is an advert |    Invalid     | 
+
+Scenario: User enters an apostrophe styled ’ instead of '
+  Given that the User has completed the form fields by entering an apostrophe styled ’ instead of '
+  When the User clicks "Continue"
+  Then the System must replace the improper apostrophes with the proper apostrophe type
+
+ Examples: 
+  | <Value>                 | <Validity> | 
+  | it's a good job       |    Valid         | 
+  | it’s a good job       |    Invalid       | 
+
 # Continue
 
 Scenario: User has completed all form fields and clicks "Continue"
