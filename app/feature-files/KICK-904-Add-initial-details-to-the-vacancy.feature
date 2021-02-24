@@ -26,7 +26,7 @@ Scenario: User enters a job title that is more than 100 characters
   When the User clicks "Continue"
   Then the job title is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please enter a job title smaller than 100 characters"
+  And an error summary list descriptive link is shown as "Enter a job title less than 100 characters"
 
 @KICK-904
 @KICK-110
@@ -35,7 +35,7 @@ Scenario: User enters a job title that contains special characters or integers
   When the User clicks "Continue"
   Then the job title is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please enter a job title that does not contain any special characters or numbers"
+  And an error summary list descriptive link is shown as "Enter a job title that does not contain any special characters or numbers"
 
 @KICK-904
 @KICK-110
@@ -65,7 +65,7 @@ Scenario: User does not enter a number of vacancies in the "Number of Vacancies"
   When the User clicks "Continue"
   Then the vacancy number is not valid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please enter the number of vacancies for this role"
+  And an error summary list descriptive link is shown as "Enter the number of vacancies for this role"
 
 @KICK-904
 @KICK-110
@@ -74,7 +74,7 @@ Scenario: User enters a number of vacancies that is "0" in the "Number of Vacanc
   When the User clicks "Continue"
   Then the vacancy number is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "You must have at least one vacancy for this role"
+  And an error summary list descriptive link is shown as "There must be at least one vacancy for this role"
 
 @KICK-904
 @KICK-110
@@ -83,7 +83,7 @@ Scenario: User enters a number of vacancies that is greater than 9999 in the "Nu
   When the User clicks "Continue"
   Then the vacancy number is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "The number of vacancies cannot exceed 9999"
+  And an error summary list descriptive link is shown as "The maximum number of vacancies is 9999"
 
 @KICK-904
 @KICK-110
@@ -92,13 +92,13 @@ Scenario: User enters special characters or letters in the "Number of Vacancies"
   When the User clicks "Continue"
   Then the vacancy number is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please enter a valid number of vacancies for this role"
+  And an error summary list descriptive link is shown as "The number of vacancies must be a number"
 
 @KICK-904
 Scenario: User enters a number greater than the total number of vacancies that the employer is allowed for this application
   Given that the User enters a number of vacancies that exceeds what was agreed in the initial application
   When the User clicks "Continue"
-  Then the User must receive feedback requiring them to adjust their number stating: "The number of vacancies cannot exceed what was agreed in the initial application"
+  Then the User must receive feedback requiring them to adjust their number stating: "The number of vacancies cannot be more than the number agreed in the Grant Agreement form"
 
 # Referral Limit
 
@@ -109,7 +109,7 @@ Scenario: User does not select whether they want a referral limit
   When a User has not selected whether they want to set a referral limit
   Then the vacancy number is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please select whether you would like to set a referral limit"
+  And an error summary list descriptive link is shown as "Select if you would like to set a referral limit"
 
 @KICK-904
 @KICK-110
@@ -133,7 +133,7 @@ Scenario: User has chosen "Yes" to set a referral limit but has not entered anyt
   When a User clicks "Continue"
   Then the referral limit number field is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please enter a referral limit for this vacancy"
+  And an error summary list descriptive link is shown as "Enter a referral limit for this vacancy"
 
 @KICK-904
 @KICK-110
