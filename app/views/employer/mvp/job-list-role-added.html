@@ -5,7 +5,15 @@
 {% endblock %}
 
 {% block beforeContent %}
-    {{ govukBackLink({
+    <!-- <style>
+      .govuk-table__header, .govuk-table__cell {
+        padding: 3px 10px 5px 0px;
+        vertical-align: middle;
+        }
+      }
+  </style> -->
+
+  {{ govukBackLink({
       text: "Back",
       href: "app-home"
     }) }}
@@ -43,6 +51,22 @@
       }) }}
 
 
+      <script language="JavaScript">
+        function toggle(source) {
+          checkboxes = document.getElementsByName('box');
+          for(var i=0, n=checkboxes.length;i<n;i++) {
+            checkboxes[i].checked = source.checked;
+          }
+        }
+      </script>
+
+      <div class='govuk-checkboxes govuk-checkboxes--small'>
+        <div class='govuk-checkboxes__item'>
+          <input class='govuk-checkboxes__input' id='select-all' name='box' type='checkbox' value='select-all'  onClick='toggle(this)'>
+          <label class='govuk-label govuk-checkboxes__label' for='select-all'>Select all
+          </label>
+        </div>
+      </div>
 
       {{ govukTable({
         firstCellIsHeader: false,
@@ -51,10 +75,10 @@
             text: "Job title"
           },
           {
-            text: "Number of vacancies"
+            html: "No. of<br>vacancies"
           },
           {
-            text: "Start date"
+            html: "Advertising<br>date"
           },
           {
             text: "Location"
@@ -67,18 +91,21 @@
           },
           {
             text: ""
+          },
+          {
+            text: "Status"
           }
         ],
         rows: [
           [
             {
-              html: "<a href='job-detail'>Junior exhibition designer</a>"
+              html: "Admin clerk"
             },
             {
               text: "2"
             },
             {
-              text: "04/03/21"
+              text: "19/10/21"
             },
             {
               text: "Leeds"
@@ -91,6 +118,67 @@
             },
             {
               html: "<a href='#'>Delete</a>"
+            },
+            {
+              html: '<strong class="govuk-tag govuk-tag--grey">Incomplete</strong>'
+            }
+          ],
+          [
+            {
+              html: "<div class='govuk-checkboxes govuk-checkboxes--small'>
+                      <div class='govuk-checkboxes__item'>
+                        <input class='govuk-checkboxes__input' id='box1' name='box' type='checkbox' value='box1'>
+                        <label class='govuk-label govuk-checkboxes__label' for='box1'>Trainee tree surgeon
+                        </label>
+                      </div>
+                    </div>"
+            },
+            {
+              text: "2"
+            },
+            {
+              text: "11/03/21"
+            },
+            {
+              text: "Wakefield"
+            },
+            {
+              text: "WF1 5AW"
+            },
+            {
+              html: "<a href='#'>Edit</a>"
+            },
+            {
+              html: "<a href='#'>Delete</a>"
+            },
+            {
+              html: '<strong class="govuk-tag govuk-tag--green">Ready to submit</strong>'
+            }
+          ],
+          [
+            {
+              html: "<a href='#'>Junior exhibition designer</a>"
+            },
+            {
+              text: "3"
+            },
+            {
+              text: "04/03/21"
+            },
+            {
+              text: "Leeds"
+            },
+            {
+              text: "LS1 3AA"
+            },
+            {
+              html: ""
+            },
+            {
+              html: ""
+            },
+            {
+              html: '<strong class="govuk-tag govuk-tag--blue">Submitted</strong>'
             }
           ],
           [
@@ -98,13 +186,19 @@
               html: ""
             },
             {
-              html: "<b>2 / 34</b>"
+              html: "<b>7 / 34</b>"
             },
             {
               text: ""
             },
             {
               text: ""
+            },
+            {
+              html: ""
+            },
+            {
+              html: ""
             },
             {
               html: ""
