@@ -162,7 +162,7 @@ Scenario: User has chosen to set a referral limit by selecting "Yes" but has ent
   And a User has entered a value greater than 9999
   Then the referral limit number field is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Your referral limit cannot be greater than 9999"
+  And an error summary list descriptive link is shown as "The maximum referral limit is 9999"
 
 @KICK-904
 @KICK-110
@@ -172,7 +172,7 @@ Scenario: User has chosen "Yes" to set a referral limit but has entered a value 
   When a User clicks "Continue"
   Then the referral limit number field is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please enter a valid referral limit"
+  And an error summary list descriptive link is shown as "The referral limit must be a number"
 
 # Internal Job Reference
 
@@ -181,14 +181,14 @@ Scenario: User has chosen "Yes" to set a referral limit but has entered a value 
 Scenario: User does not answer the internal job reference number question
   Given that the User does not answer the internal job reference number question
   When the User clicks "Continue"
-  Then the User must receive feedback requiring them to answer the internal job reference number question "Please state whether you want to enter a job reference number"
+  Then the User must receive feedback requiring them to answer the internal job reference number question "Select if you would like to enter a job reference number"
 
 @KICK-904
 @KICK-110
 Scenario: User chooses to provide an internal job reference number by selecting "Yes" and the job reference form field is displayed
   Given that the User chooses to provide an internal job reference number by selecting "Yes"
   When the User clicks "Continue"
-  Then the User must receive feedback requiring them to Industry sector: "Please select a valid industry sector"
+  Then the User must receive feedback requiring them to Industry sector: "Select a valid industry sector"
 
 @KICK-904
 @KICK-110
