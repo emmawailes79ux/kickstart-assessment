@@ -5,13 +5,24 @@
 {% endblock %}
 
 {% block beforeContent %}
-    <!-- <style>
+    <style>
       .govuk-table__header, .govuk-table__cell {
-        padding: 3px 10px 5px 0px;
+        padding: 8px 10px 8px 0px;
         vertical-align: middle;
         }
       }
-  </style> -->
+
+      .govuk-table__header, .govuk-table__cell .govuk-checkboxes__label:after {
+        top: 1px;
+        left: 9px;
+        width: 23px;
+        height: 12px;
+      }
+
+      .govuk-checkboxes--small .govuk-checkboxes__item {
+        min-height: 1 !important;
+      }
+  </style>
 
   {{ govukBackLink({
       text: "Back",
@@ -61,7 +72,7 @@
       </script>
 
       <div class='govuk-checkboxes govuk-checkboxes--small'>
-        <div class='govuk-checkboxes__item'>
+        <div class='govuk-checkboxes__item' style='min-height:1;'>
           <input class='govuk-checkboxes__input' id='select-all' name='box' type='checkbox' value='select-all'  onClick='toggle(this)'>
           <label class='govuk-label govuk-checkboxes__label' for='select-all'>Select all
           </label>
@@ -71,6 +82,9 @@
       {{ govukTable({
         firstCellIsHeader: false,
         head: [
+          {
+            text: ""
+          },
           {
             text: "Job title"
           },
@@ -98,6 +112,9 @@
         ],
         rows: [
           [
+            {
+              text: ""
+            },
             {
               html: "Admin clerk"
             },
@@ -128,10 +145,12 @@
               html: "<div class='govuk-checkboxes govuk-checkboxes--small'>
                       <div class='govuk-checkboxes__item'>
                         <input class='govuk-checkboxes__input' id='box1' name='box' type='checkbox' value='box1'>
-                        <label class='govuk-label govuk-checkboxes__label' for='box1'>Trainee tree surgeon
-                        </label>
+                        <label class='govuk-label govuk-checkboxes__label' for='box1'></label>
                       </div>
                     </div>"
+            },
+            {
+              html: "Trainee tree surgeon"
             },
             {
               text: "2"
@@ -152,10 +171,13 @@
               html: "<a href='#'>Delete</a>"
             },
             {
-              html: '<strong class="govuk-tag govuk-tag--green">Ready to submit</strong>'
+              html: '<strong class="govuk-tag govuk-tag--green">Ready</strong>'
             }
           ],
           [
+            {
+              text: ""
+            },
             {
               html: "<a href='#'>Junior exhibition designer</a>"
             },
@@ -182,6 +204,9 @@
             }
           ],
           [
+            {
+              text: ""
+            },
             {
               html: ""
             },

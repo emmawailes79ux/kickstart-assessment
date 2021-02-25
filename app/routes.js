@@ -19,16 +19,6 @@ router.post('/employer/mvp/job-add-3a', function (req, res) {
   }
 });
 
-router.post('/employer/mvp/job-add-3b', function (req, res) {
-  const editChoice = req.session.data['multiple-locations']
-
-  if (editChoice === 'multiple') {
-    res.redirect('/employer/mvp/job-add-3d')
-  } else if (editChoice === 'one-location') {
-    res.redirect('/employer/mvp/job-add-3c')
-  }
-});
-
 router.post('/employer/mvp/job-add-3b-locally', function (req, res) {
   const editChoice = req.session.data['multiple-locations']
 
