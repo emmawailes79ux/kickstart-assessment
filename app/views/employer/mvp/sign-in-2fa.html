@@ -13,13 +13,11 @@
         <div class="govuk-grid-column-two-thirds">
             <form action="job-list-empty" method="post">
 
-                <h1 class="govuk-heading-l">We have sent you a security code to your registered phone</h1>
-
-                <p>It should take one minute to arrive.</p>
+                <h1 class="govuk-heading-l">Enter the code from your Authenticator app</h1>
 
                 <div class="govuk-form-group govuk-!-margin-top-6">
                     <label class="govuk-label" for="2fa-code">
-                        Security code
+                        One-time code
                     </label>
                     <input class="govuk-input govuk-input--width-10" id="signin-code" name="signin-code" type="text">
                 </div>
@@ -28,7 +26,7 @@
                     text: "Continue"
                 }) }}
 
-                <!-- <p><a href="sign-in-resend-2fa" class="govuk-link">I did not get an email</a></p> -->
+                <p>Having trouble? <a href="sign-in" class="govuk-link">Sign in again</a></p>
 
 
                 <!-- <p><a href="account-recovery/access" class="govuk-link">I cannot access the mobile phone number I use to sign in</a></p> -->
