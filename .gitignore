@@ -119,3 +119,6 @@ public/stylesheets/docs-ie8.css
 public/stylesheets/docs.css
 public/stylesheets/unbranded-ie8.css
 public/stylesheets/unbranded.css
+lib/extensions/_extensions.scss
+public/stylesheets/docs-ie8.css
+public/stylesheets/docs.css
