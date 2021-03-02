@@ -20,7 +20,7 @@
       }
 
       .govuk-checkboxes--small .govuk-checkboxes__item {
-        min-height: 1 !important;
+        min-height: 40px !important;
       }
   </style>
 
@@ -171,7 +171,7 @@
               html: "<a href='#'>Delete</a>"
             },
             {
-              html: '<strong class="govuk-tag govuk-tag--green">Ready</strong>'
+              html: '<strong class="govuk-tag govuk-tag--green">Ready to submit</strong>'
             }
           ],
           [
@@ -240,7 +240,7 @@
 
       {{ govukButton({
         text: "Submit vacancies",
-        href: "app-sent",
+        href: "job-list-roles-submitted",
         classes: "govuk-button--secondary"
       }) }}
 
