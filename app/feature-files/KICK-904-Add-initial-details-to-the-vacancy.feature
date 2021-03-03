@@ -147,13 +147,13 @@ Scenario: User has chosen to set a referral limit by selecting "Yes" and has ent
 
 @KICK-904
 @KICK-110
-Scenario: User has chosen to set a referral limit by selecting "Yes" but has entered "0" into the referral limit number field
+Scenario: User has chosen to set a referral limit by selecting "Yes" but has entered a number less than "10"
   Given that the User has chosen "Yes" to set a referral limit
-  But has entered "0" into the referral limit number field
+  But has entered a number less than "10" into the referral limit number field
   When a User clicks "Continue"
   Then the referral limit number field is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Your referral limit cannot be 0"
+  And an error summary list descriptive link is shown as "Your referral limit cannot be less than 10"
 
 @KICK-904
 @KICK-110
