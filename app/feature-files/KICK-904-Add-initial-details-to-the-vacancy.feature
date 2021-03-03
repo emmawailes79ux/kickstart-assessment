@@ -288,7 +288,7 @@ Scenario: User enters a Contact Number longer than 12 digits
   When the User clicks "Continue"
   Then the Contact Number is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Contact numbers cannot be longer than 12 digits"
+  And an error summary list descriptive link is shown as "Contact numbers must be shorter than 12 digits"
 
 @KICK-904
 @KICK-1109
@@ -297,7 +297,7 @@ Scenario: User enters a Contact Number smaller than 10 digits
   When the User clicks "Continue"
   Then the Contact Number is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Contact numbers cannot be smaller than 10 digits"
+  And an error summary list descriptive link is shown as "Contact numbers must be longer than 10 digits"
 
 @KICK-904
 @KICK-1109
@@ -306,7 +306,7 @@ Scenario: User enters a Contact Number with characters that are not integers
   When the User clicks "Continue"
   Then the Contact Name is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please enter a valid contact number for this vacancy"
+  And an error summary list descriptive link is shown as "Enter a valid contact number for this vacancy"
 
 @KICK-904
 @KICK-1109
@@ -315,7 +315,7 @@ Scenario: User enters a contact number that contains a 070, 09, 0843, 0844, 0845
   When the user clicks 'Continue'
   Then the Contact Number is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please enter a valid contact number for this vacancy"
+  And an error summary list descriptive link is shown as "Enter a valid contact number for this vacancy"
 
 @KICK-904
 @KICK-1109
@@ -324,7 +324,7 @@ Scenario: User does not enter a contact number
   When the User clicks "Continue"
   Then the Contact Number is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please enter a contact number for this vacancy"
+  And an error summary list descriptive link is shown as "Enter a contact number for this vacancy"
 
 # Email address
 
@@ -343,7 +343,7 @@ Scenario: User enters an invalid email address that deviates from the syntax
   When the User clicks "Continue"
   Then the email address is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please enter a valid email address for this vacancy"
+  And an error summary list descriptive link is shown as "Enter a valid email address for this vacancy"
 
 @KICK-904
 @KICK-1109
@@ -352,7 +352,7 @@ Scenario: User enters an email address longer than 100 characters
   When the User clicks "Continue"
   Then the email address is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please enter an email address shorter than 100 characters for this vacancy"
+  And an error summary list descriptive link is shown as "Enter an email address shorter than 100 characters for this vacancy"
 
 @KICK-904
 @KICK-1109
@@ -361,7 +361,7 @@ Scenario: User enters an email address shorter than 10 characters
   When the User clicks "Continue"
   Then the email address is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please enter a valid email address for this vacancy"
+  And an error summary list descriptive link is shown as "Enter a valid email address for this vacancy"
 
 @KICK-904
 @KICK-1109
@@ -370,7 +370,7 @@ Scenario: User does not enter an email address
   When the User clicks "Continue"
   Then the email address is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please enter an email address for this vacancy"
+  And an error summary list descriptive link is shown as "Enter an email address for this vacancy"
   
 # Confirm Email Address 
 
@@ -392,28 +392,28 @@ Scenario: User enters an invalid email address that deviates from the syntax
   When the User clicks "Continue" 
   Then the email address is invalid 
   And an error summary heading is shown as "There is a problem" 
-  And an error summary list descriptive link is shown as "Please enter a valid email address for this vacancy" 
+  And an error summary list descriptive link is shown as "Enter a valid email address for this vacancy" 
 
 Scenario: User enters an email address longer than 100 characters 
   Given that the User enters an email address that is longer than 100 characters 
   When the User clicks "Continue" 
   Then the email address is invalid 
   And an error summary heading is shown as "There is a problem" 
-  And an error summary list descriptive link is shown as "Please enter an email address shorter than 100 characters for this vacancy" 
+  And an error summary list descriptive link is shown as "Enter an email address shorter than 100 characters for this vacancy" 
 
 Scenario: User enters an email address shorter than 10 characters 
   Given that the User enters an email address that is shorter than 10 characters 
   When the User clicks "Continue" 
   Then the email address is invalid 
   And an error summary heading is shown as "There is a problem" 
-  And an error summary list descriptive link is shown as "Please enter a valid email address for this vacancy" 
+  And an error summary list descriptive link is shown as "Enter a valid email address for this vacancy" 
 
 Scenario: User does not enter an email address 
   Given that the User does not enter an email address 
   When the User clicks "Continue" 
   Then the email address is invalid 
   And an error summary heading is shown as "There is a problem" 
-  And an error summary list descriptive link is shown as "Please enter an email address for this vacancy" 
+  And an error summary list descriptive link is shown as "Enter an email address for this vacancy" 
 
 # Sign Out
 
