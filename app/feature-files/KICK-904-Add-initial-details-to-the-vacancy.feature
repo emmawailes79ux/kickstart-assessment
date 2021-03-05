@@ -44,7 +44,7 @@ Scenario: User doesn't enter a job title
   When the User clicks "Continue"
   Then the job title is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please enter a job title"
+  And an error summary list descriptive link is shown as "Enter a job title"
 
 # Number of Vacancies
 
