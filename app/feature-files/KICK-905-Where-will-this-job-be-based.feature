@@ -26,7 +26,7 @@ Given that the User does not select where this job will be based
 When the user clicks the Continue button
 Then the form is not valid
 And an error summary heading is shown as "There is a problem"
-And an error summary list descriptive link is shown as "Please select an option"
+And an error summary list descriptive link is shown as "Select an option"
 
 
 Scenario: User selects that the job requires the employee to work on site at all times
