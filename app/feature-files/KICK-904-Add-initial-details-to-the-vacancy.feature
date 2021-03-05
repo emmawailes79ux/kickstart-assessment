@@ -229,7 +229,7 @@ Scenario: When the page first loads the 'Industry sector' drop-down field is set
 Scenario: User doesn't choose a value within the 'Industry sector" form field
   Given that the User does not select a value within the "Industry Sector" form field
   When the User clicks "Continue"
-  Then the User must receive feedback requiring them to Industry sector: "Please select a valid industry sector"
+  Then the User must receive feedback requiring them to Industry sector: "Select a valid industry sector"
 
 # Contact name
 
@@ -306,7 +306,7 @@ Scenario: User enters a Contact Number with characters that are not integers
   When the User clicks "Continue"
   Then the Contact Name is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Enter a valid contact number for this vacancy"
+  And an error summary list descriptive link is shown as "Enter a valid contact number"
 
 @KICK-904
 @KICK-1109
