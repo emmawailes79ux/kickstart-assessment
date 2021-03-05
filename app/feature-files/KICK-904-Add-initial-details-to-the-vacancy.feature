@@ -26,7 +26,7 @@ Scenario: User enters a job title that is more than 100 characters
   When the User clicks "Continue"
   Then the job title is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Enter a job title less than 100 characters"
+  And an error summary list descriptive link is shown as "Enter a job title that is less than 100 characters"
 
 @KICK-904
 @KICK-110
@@ -35,7 +35,7 @@ Scenario: User enters a job title that contains special characters or integers
   When the User clicks "Continue"
   Then the job title is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Enter a job title that does not contain any special characters or numbers"
+  And an error summary list descriptive link is shown as "Job title must only include letters a to z, hypens, spaces and apostrophes"
 
 @KICK-904
 @KICK-110
@@ -92,7 +92,7 @@ Scenario: User enters special characters or letters in the "Number of Vacancies"
   When the User clicks "Continue"
   Then the vacancy number is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "The number of vacancies must be a number"
+  And an error summary list descriptive link is shown as "The number of vacancies must be a number, like 3"
 
 @KICK-904
 Scenario: User enters a number greater than the total number of vacancies that the employer is allowed for this application
@@ -109,7 +109,7 @@ Scenario: User does not select whether they want a referral limit
   When a User has not selected whether they want to set a referral limit
   Then the vacancy number is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Select if you would like to set a referral limit"
+  And an error summary list descriptive link is shown as "Select yes if you would like to set a referral limit"
 
 @KICK-904
 @KICK-110
@@ -172,7 +172,7 @@ Scenario: User has chosen "Yes" to set a referral limit but has entered a value 
   When a User clicks "Continue"
   Then the referral limit number field is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "The referral limit must be a number"
+  And an error summary list descriptive link is shown as "The referral limit must be a number, like 10"
 
 # Internal Job Reference
 
@@ -204,7 +204,7 @@ Scenario: User has chosen to set an internal job reference number by selecting "
   When the User clicks "Continue"
   Then the job reference number field is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please enter a job reference number"
+  And an error summary list descriptive link is shown as "Enter a job reference number"
 
 @KICK-904
 @KICK-110
@@ -213,7 +213,7 @@ Scenario: User has chosen to set an internal job reference number by selecting "
   When the User clicks "Continue"
   Then the job reference number field is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please enter a job reference number"
+  And an error summary list descriptive link is shown as "Enter a job reference number"
 
 # Industry sector
 
@@ -250,7 +250,7 @@ Scenario: User enters a Contact Name longer than 100 characters
   When the User clicks "Continue"
   Then the Contact Name is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "The contact name cannot exceed 100 characters"
+  And an error summary list descriptive link is shown as "Contact name must be 100 characters or fewer"
 
 @KICK-904
 @KICK-1109
@@ -259,7 +259,7 @@ Scenario: User enters a Contact Name with special characters
   When the User clicks "Continue"
   Then the Contact Name is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "The contact name cannot contain special characters"
+  And an error summary list descriptive link is shown as "Contact name must only include letters a to z, hypens, spaces and apostrophes"
 
 @KICK-904
 @KICK-1109
@@ -268,7 +268,7 @@ Scenario: User does not enter a contact name
   When the User clicks "Continue"
   Then the Contact Name is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please enter a contact name for this vacancy"
+  And an error summary list descriptive link is shown as "Enter a contact name for this vacancy"
 
 # Contact number
 
@@ -315,7 +315,7 @@ Scenario: User enters a contact number that contains a 070, 09, 0843, 0844, 0845
   When the user clicks 'Continue'
   Then the Contact Number is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Enter a valid contact number for this vacancy"
+  And an error summary list descriptive link is shown as "Enter a valid contact number"
 
 @KICK-904
 @KICK-1109
@@ -324,7 +324,7 @@ Scenario: User does not enter a contact number
   When the User clicks "Continue"
   Then the Contact Number is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Enter a contact number for this vacancy"
+  And an error summary list descriptive link is shown as "Enter a contact number"
 
 # Email address
 
@@ -343,7 +343,7 @@ Scenario: User enters an invalid email address that deviates from the syntax
   When the User clicks "Continue"
   Then the email address is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Enter a valid email address for this vacancy"
+  And an error summary list descriptive link is shown as "Enter a valid email address"
 
 @KICK-904
 @KICK-1109
@@ -352,7 +352,7 @@ Scenario: User enters an email address longer than 100 characters
   When the User clicks "Continue"
   Then the email address is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Enter an email address shorter than 100 characters for this vacancy"
+  And an error summary list descriptive link is shown as "Enter an email address that is shorter than 100 characters"
 
 @KICK-904
 @KICK-1109
@@ -361,7 +361,7 @@ Scenario: User enters an email address shorter than 10 characters
   When the User clicks "Continue"
   Then the email address is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Enter a valid email address for this vacancy"
+  And an error summary list descriptive link is shown as "Enter an email address that is longer than 10 characters"
 
 @KICK-904
 @KICK-1109
@@ -370,7 +370,7 @@ Scenario: User does not enter an email address
   When the User clicks "Continue"
   Then the email address is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Enter an email address for this vacancy"
+  And an error summary list descriptive link is shown as "Enter an email address"
   
 # Confirm Email Address 
 
@@ -392,28 +392,28 @@ Scenario: User enters an invalid email address that deviates from the syntax
   When the User clicks "Continue" 
   Then the email address is invalid 
   And an error summary heading is shown as "There is a problem" 
-  And an error summary list descriptive link is shown as "Enter a valid email address for this vacancy" 
+  And an error summary list descriptive link is shown as "Enter a valid email address" 
 
 Scenario: User enters an email address longer than 100 characters 
   Given that the User enters an email address that is longer than 100 characters 
   When the User clicks "Continue" 
   Then the email address is invalid 
   And an error summary heading is shown as "There is a problem" 
-  And an error summary list descriptive link is shown as "Enter an email address shorter than 100 characters for this vacancy" 
+  And an error summary list descriptive link is shown as "Enter an email address that is shorter than 100 characters" 
 
 Scenario: User enters an email address shorter than 10 characters 
   Given that the User enters an email address that is shorter than 10 characters 
   When the User clicks "Continue" 
   Then the email address is invalid 
   And an error summary heading is shown as "There is a problem" 
-  And an error summary list descriptive link is shown as "Enter a valid email address for this vacancy" 
+  And an error summary list descriptive link is shown as "Enter a valid email address" 
 
 Scenario: User does not enter an email address 
   Given that the User does not enter an email address 
   When the User clicks "Continue" 
   Then the email address is invalid 
   And an error summary heading is shown as "There is a problem" 
-  And an error summary list descriptive link is shown as "Enter an email address for this vacancy" 
+  And an error summary list descriptive link is shown as "Enter an email address" 
 
 # Sign Out
 
