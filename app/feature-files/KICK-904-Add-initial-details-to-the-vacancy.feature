@@ -26,7 +26,7 @@ Scenario: User enters a job title that is more than 100 characters
   When the User clicks "Continue"
   Then the job title is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Enter a job title less than 100 characters"
+  And an error summary list descriptive link is shown as "Enter a job title that is less than 100 characters"
 
 @KICK-904
 @KICK-110
@@ -35,7 +35,7 @@ Scenario: User enters a job title that contains special characters or integers
   When the User clicks "Continue"
   Then the job title is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Enter a job title that does not contain any special characters or numbers"
+  And an error summary list descriptive link is shown as "Job title must only include letters a-z, hyphens, spaces and apostrophes"
 
 @KICK-904
 @KICK-110
@@ -92,7 +92,7 @@ Scenario: User enters special characters or letters in the "Number of Vacancies"
   When the User clicks "Continue"
   Then the vacancy number is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "The number of vacancies must be a number"
+  And an error summary list descriptive link is shown as "The number of vacancies must be a number, like 3"
 
 @KICK-904
 Scenario: User enters a number greater than the total number of vacancies that the employer is allowed for this application
@@ -172,7 +172,7 @@ Scenario: User has chosen "Yes" to set a referral limit but has entered a value 
   When a User clicks "Continue"
   Then the referral limit number field is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "The referral limit must be a number"
+  And an error summary list descriptive link is shown as "The referral limit must be a number, like 3"
 
 # Internal Job Reference
 
@@ -204,7 +204,7 @@ Scenario: User has chosen to set an internal job reference number by selecting "
   When the User clicks "Continue"
   Then the job reference number field is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please enter a job reference number"
+  And an error summary list descriptive link is shown as "Enter a job reference number"
 
 @KICK-904
 @KICK-110
@@ -213,7 +213,7 @@ Scenario: User has chosen to set an internal job reference number by selecting "
   When the User clicks "Continue"
   Then the job reference number field is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please enter a job reference number"
+  And an error summary list descriptive link is shown as "Enter a job reference number"
 
 # Industry sector
 
@@ -222,14 +222,14 @@ Scenario: User has chosen to set an internal job reference number by selecting "
 Scenario: When the page first loads the 'Industry sector' drop-down field is set to 'Please select one'
   Given that the User is adding Role Details
   When the User has not selected the "Industry sector" drop-down
-  Then the "Industry sector" drop-down must be set to "Please select one"
+  Then the "Industry sector" drop-down must be set to "Select one industry sector"
 
 @KICK-904
 @KICK-1109
 Scenario: User doesn't choose a value within the 'Industry sector" form field
   Given that the User does not select a value within the "Industry Sector" form field
   When the User clicks "Continue"
-  Then the User must receive feedback requiring them to Industry sector: "Please select a valid industry sector"
+  Then the User must receive feedback requiring them to Industry sector: "Select a valid industry sector"
 
 # Contact name
 
