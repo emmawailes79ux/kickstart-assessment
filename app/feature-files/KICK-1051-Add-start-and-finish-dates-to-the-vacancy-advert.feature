@@ -35,7 +35,7 @@ Scenario: User has stated they want to set the Anticipated Start Date to a date 
   When the User clicks the "Continue" button
   Then the Anticipated Start Date is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please enter a valid Anticipated Start Date in the format DD/MM/YYY"
+  And an error summary list descriptive link is shown as "Enter the Anticipated Start Date as DD/MM/YYY"
 
 Scenario Outline: User enters the Anticipated Start Date in a format that deviates from the (DD/MM/YYYY) syntax
   Given that the User has selected the <Anticipated Start Date> to be "a date in the future"
@@ -43,7 +43,7 @@ Scenario Outline: User enters the Anticipated Start Date in a format that deviat
   When the User clicks the "Continue" button
   Then the <Anticipated Start Date> will be invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please enter a valid advertising start date in the format DD/MM/YYYY"
+  And an error summary list descriptive link is shown as "Enter the advertising start date as DD/MM/YYYY"
 
   Examples:
   | <Anticipated Start Date>  | <Displayed Text>                                                       |
@@ -55,14 +55,14 @@ Scenario: User sets the Anticipated Start Date to be a date in the past
   When the User clicks the "Continue" button
   Then the Anticipated Start Date will be invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please set the Anticipated Start Date to at least one month in the future"
+  And an error summary list descriptive link is shown as "Set the Anticipated Start Date to at least one month in the future"
 
 Scenario: User sets the Anticipated Start Date less than one month in the future
   Given that the User has set the Anticipated Start Date to a date less than one month in the future
   When the User clicks the "Continue" button
   Then the Anticipated Start Date will be invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please set the Anticipated Start Date to at least one month in the future"
+  And an error summary list descriptive link is shown as "Set the Anticipated Start Date to at least one month in the future"
 
 Scenario: User set the Anticipated Start Date over one month in the future
   Given that the User has set the Anticipated Start Date to a date over one month in the future
@@ -76,7 +76,7 @@ Scenario: User does not answer the Advertising Start Date question
   When the User clicks the "Continue" button
   Then the Advertising Start Date will be invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please select when you want the vacancy to be advertised"
+  And an error summary list descriptive link is shown as "Select when you want the vacancy to be advertised"
 
 Scenario: User sets the Advertising Start Date to be as soon as possible
   Given that the User is setting the Advertising Start Date to as soon as possible
@@ -94,7 +94,7 @@ Scenario Outline: User enters the Advertising Start Date in a format that deviat
   When the User clicks the "Continue" button
   Then the <Advertising Start Date> will be invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please enter a valid advertising start date in the format DD/MM/YYYY"
+  And an error summary list descriptive link is shown as "Enter the advertising start date as DD/MM/YYYY"
 
   Examples:
   | <Advertising Start Date>  | <Displayed Text>                                                       |
@@ -108,7 +108,7 @@ Scenario: User has stated they want to set the Advertising Start Date to a date 
   When the User clicks the "Continue" button
   Then the Advertising Start Date will be invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please enter a future advertising start date"
+  And an error summary list descriptive link is shown as "Enter a future advertising start date"
 
 Scenario: User sets the Advertising Start Date to be a date in the past
   Given that the User has selected the Advertising Start Date to be "a date in the future"
@@ -116,14 +116,14 @@ Scenario: User sets the Advertising Start Date to be a date in the past
   When the User clicks the "Continue" button
   Then the Advertising Start Date will be invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please set the advertising start date to a date in the future"
+  And an error summary list descriptive link is shown as "Set the advertising start date to a date in the future"
 
 Scenario: User sets the Advertising Start Date to be later than the Closing Date
   Given that the User has selected the Advertising Start Date to be later than the Closing Date
   When the User clicks the "Continue" button
   Then the Advertising Start Date will be invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Your advertising start date cannot exceed the closing date"
+  And an error summary list descriptive link is shown as "The advertising start date cannot be after the closing date"
 
 Scenario: User sets the Advertising Start Date less than one month in the future
   Given that the User has set the Advertising Start Date to a date less than one month in the future
@@ -145,7 +145,7 @@ Scenario: User does not answer the Closing Date question
   When the User clicks the "Continue" button
   Then the Closing Date will be invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please select if you want to set a closing date for applications"
+  And an error summary list descriptive link is shown as "Select yes if you want to set a closing date for applications"
 
 Scenario: User chooses not to set a Closing Date 
   Given that the User is setting the Closing Date to 'No' 
@@ -164,7 +164,7 @@ Scenario Outline: User enters the Closing Date in a format that deviates from th
   When the User clicks the "Continue" button
   Then the <Closing Date> will be invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please enter a valid closing date in the format DD/MM/YYYY"
+  And an error summary list descriptive link is shown as "Enter the closing date as DD/MM/YYYY"
 
   Examples:
   | <Closing Date>            | <Displayed Text>                                             |
@@ -177,7 +177,7 @@ Scenario: User has stated they want to set a Closing Date for applications but l
   When the User clicks the "Continue" button
   Then the Closing Date will be invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please enter a closing date for applications"
+  And an error summary list descriptive link is shown as "Enter a closing date for applications"
 
 Scenario: User sets the Closing Date for applications to be a date in the past
   Given that the User selects "Yes"  to the closing date question
@@ -185,14 +185,14 @@ Scenario: User sets the Closing Date for applications to be a date in the past
   When the User clicks the "Continue" button
   Then the Closing Date will be invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please set the closing date for applications to a date at least one month in the future"
+  And an error summary list descriptive link is shown as "Set the closing date to at least one month in the future"
 
 Scenario: User sets the Closing Date to be earlier than the Advertising Start Date 
   Given that the User has selected the Closing Date to be earlier than the Advertising Start Date 
   When the User clicks the "Continue" button 
   Then the Closing Date will be invalid
   And an error summary heading is shown as "There is a problem" 
-  And an error summary list descriptive link is shown as "Your vacancy cannot close before it starts being advertised" 
+  And an error summary list descriptive link is shown as "The closing date cannot be before the advertising date" 
 
 Scenario: User set the Closing Date for applications to a date at least one month in the future
   Given that the User selects "Yes"  to the closing date question
