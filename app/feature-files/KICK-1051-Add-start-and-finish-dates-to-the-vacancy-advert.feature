@@ -108,7 +108,7 @@ Scenario: User has stated they want to set the Advertising Start Date to a date 
   When the User clicks the "Continue" button
   Then the Advertising Start Date will be invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Enter a future advertising start date"
+  And an error summary list descriptive link is shown as "Enter an advertising start date in the future"
 
 Scenario: User sets the Advertising Start Date to be a date in the past
   Given that the User has selected the Advertising Start Date to be "a date in the future"
@@ -116,7 +116,7 @@ Scenario: User sets the Advertising Start Date to be a date in the past
   When the User clicks the "Continue" button
   Then the Advertising Start Date will be invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Set the advertising start date to a date in the future"
+  And an error summary list descriptive link is shown as "Set the advertising start date in the future"
 
 Scenario: User sets the Advertising Start Date to be later than the Closing Date
   Given that the User has selected the Advertising Start Date to be later than the Closing Date
@@ -130,7 +130,7 @@ Scenario: User sets the Advertising Start Date less than one month in the future
   When the User clicks the "Continue" button
   Then the Advertising Start Date will be invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please set the Advertising Start Date to at least one month in the future"
+  And an error summary list descriptive link is shown as "Set the Advertising Start Date to at least one month in the future"
 
 Scenario: User set the Advertising Start Date to a date at least one month in the future
   Given that the User has set the Advertising Start Date to a date in the future
@@ -177,7 +177,7 @@ Scenario: User has stated they want to set a Closing Date for applications but l
   When the User clicks the "Continue" button
   Then the Closing Date will be invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Enter a closing date for applications"
+  And an error summary list descriptive link is shown as "Enter a closing date"
 
 Scenario: User sets the Closing Date for applications to be a date in the past
   Given that the User selects "Yes"  to the closing date question
