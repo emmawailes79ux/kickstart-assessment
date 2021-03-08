@@ -25,32 +25,32 @@ Scenario: User does not enter anything into the "About the Job" field
   When the User clicks "Continue"
   Then the "About the job" field is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please describe the job"
+  And an error summary list descriptive link is shown as "Describe the job and duties"
 
 Scenario: User enters over 2000 characters into the "About the Job" field
   Given that the User enters more than 2000 characters into the "About the Job" field
   When the User clicks "Continue"
   Then the "About the job" field is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please describe the job in 2000 characters or less"
+  And an error summary list descriptive link is shown as "Describe the job in 2,000 characters or fewer"
 
 Scenario: User enters under 100 characters into the "About the Job" field
   Given that the User enters less than 100 characters into the "About the Job" field
   When the User clicks "Continue"
   Then the "About the job" field is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please describe the job in at least 100 characters or more"
+  And an error summary list descriptive link is shown as "Describe the job in at least 100 characters"
 
 Scenario Outline: User enters a value into the "About the Job" that contains special characters or any other non-alphanumeric values
   Given that I am a User who enters a value that contains special characters or any other non-alphanumeric values for <About the Job>
   When I click "Continue"
   Then the <About the Job> is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please do not include any special characters in describing this job"
+  And an error summary list descriptive link is shown as "Only use letters a to z"
 
   Examples:
   | <About the Job>                              | <Displayed Text>                                                      |
-  | "A great job within the ret@il sector..."    | "Please do not include any special characters in describing this job" |
+  | "A great job within the ret@il sector..."    | "Only use letters a to z" |
 
 # What are you looking for
 
@@ -59,28 +59,28 @@ Scenario: User does not enter anything into the "What are you looking for?" Fiel
   When the User clicks "Continue"
   Then the "What are you looking for?" field is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please describe what you are looking for"
+  And an error summary list descriptive link is shown as "Describe the skills and experience you are looking for"
 
 Scenario: User enters over 2000 characters into the "What are you looking for?" Field
   Given that the User does not enter anything into the "What are you looking for?" field
   When the User clicks "Continue"
   Then the "What are you looking for?" field is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please describe what you are looking for in 2000 characters or less"
+  And an error summary list descriptive link is shown as "Describe the skills and experience you are looking for in 2,000 characters or fewer"
 
 Scenario: User enters under 100 characters into the "What are you looking for?" Field
   Given that the User enters less than 100 characters into the "What are you looking for?" field
   When the User clicks "Continue"
   Then the "What are you looking for?" field is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please describe what you are looking for in at least 100 characters or more"
+  And an error summary list descriptive link is shown as "Describe the skills and experience you are looking for in at least 100 characters"
 
 Scenario Outline: User enters a value in the "What are you looking for" field field that contains special characters or any other non-alphanumeric values
   Given that I am a User who enters a value that contains special characters or any other non-alphanumeric values for <What are you looking for>
   When I click "Continue"
   Then the <What are you looking for> field is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please do not include any special characters in describing this job"
+  And an error summary list descriptive link is shown as "Only use letters a to z"
 
   Examples:
   | <What are you looking for>                                     | <Displayed Text>                                                                      |
@@ -100,14 +100,14 @@ Scenario: User enters over 2000 characters into the "Tell us about your company"
   When the User clicks "Continue"
   Then the "Tell us about your company" field is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please describe your company in 2000 characters or less"
+  And an error summary list descriptive link is shown as "Describe your company in 2,000 characters or fewer"
 
 Scenario: User enters under 100 characters into the "Tell us about your company" field
   Given that the User enters less than 100 characters into the "Tell us about your company" field
   When the User clicks "Continue"
   Then the "Tell us about your company" field is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please describe your company in at least 100 characters or more"
+  And an error summary list descriptive link is shown as "Describe your company in at least 100 characters"
 
 Scenario Outline: User enters a value in the "Tell us about your company" field that contains special characters or any other non-alphanumeric values
   Given that I am a User who enters a value that contains special characters or any other non-alphanumeric values for <Tell us about your company>
@@ -127,27 +127,27 @@ Scenario: User does not enter anything into the "What can you offer the Kickstar
   When the User clicks "Continue"
   Then the "What can you offer the Kickstarter?" field is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please enter details about what you can offer the Kickstarter"
+  And an error summary list descriptive link is shown as "Enter details about what you can offer the Kickstarter"
 
 Scenario: User enters over 2000 characters into the "What can you offer the Kickstarter?" Field
   Given that the User enters more than 2000 characters into the "Tell us about your company" field
   When the User clicks "Continue"
   Then the "What can you offer the Kickstarter" field is invalid
-  And an error summary list descriptive link is shown as "Please describe what you can offer the Kickstarter in 2000 characters or less"
+  And an error summary list descriptive link is shown as "Describe what you can offer the Kickstarter in 2,000 characters or fewer"
 
 Scenario: User enters under 100 characters into the "What can you offer the Kickstarter?" Field
   Given that the User enters less than 100 characters into the "What can you offer the Kickstarter" field
   When the User clicks "Continue"
   Then the "What can you offer the Kickstarter" field is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please describe what you can offer Kickstarter in at least 100 characters or more"
+  And an error summary list descriptive link is shown as "Describe what you can offer the Kickstarter in at least 100 characters"
 
 Scenario Outline: User enters a value in the "What can you offer the Kickstarter?" field that contains special characters or any other non-alphanumeric values
   Given that I am a User who enters a value that contains special characters or any other non-alphanumeric values for <What can you offer the Kickstarter>
   When I click "Continue"
   Then the <What can you offer the Kickstarter> field is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please do not include any special characters in describing what you can offer the Kickstarter"
+  And an error summary list descriptive link is shown as "Only use letters a to z"
 
   Examples:
   | <What can you offer the Kickstarter>                | <Displayed Text>                                                                                |
@@ -160,21 +160,21 @@ Scenario: User does not enter anything into the "How to Apply" field
   When the User clicks "Continue"
   Then the "How to Apply" field is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please enter details about how to apply for this job"
+  And an error summary list descriptive link is shown as "Enter details about how to apply for this job"
 
 Scenario: User enters over 1000 characters into the "How to Apply" field
   Given that the User enters more than 1000 characters into the "How to Apply" field
   When the User clicks "Continue"
   Then the "How to Apply" field is invalid
   And an error summary heading is shown as "How to Apply"
-  And an error summary list descriptive link is shown as "Please describe how to apply in 2000 characters or less"
+  And an error summary list descriptive link is shown as "Describe how to apply in 2,000 characters or fewer"
 
 Scenario: User enters under 100 characters into the "How to Apply" field
   Given that the User enters less than 100 characters into the "How to Apply" field
   When the User clicks "Continue"
   Then the "How to Apply" field is invalid
   And an error summary heading is shown as "How to Apply"
-  And an error summary list descriptive link is shown as "Please describe how to apply in 100 characters or more"
+  And an error summary list descriptive link is shown as "Describe how to apply in 100 characters or more"
 
 Scenario Outline: User enters a value in the "How to Apply?" field that contains special characters or any other non-alphanumeric values
   Given that I am a User who enters a value that contains special characters or any other non-alphanumeric values for <How to Apply>
@@ -185,7 +185,7 @@ Scenario Outline: User enters a value in the "How to Apply?" field that contains
 
   Examples:
   | <What can you offer the Kickstarter>                | <Displayed Text>                                                                       |
-  | "A great job experience in the ret@il sector..."    | "Please do not include any special characters in describing how to apply for this job" |
+  | "A great job experience in the ret@il sector..."    | "Only use letters a to z" |
 
 # Special Characters
 
@@ -194,7 +194,7 @@ Scenario: User enters characters that deviate from the accepted syntax for all f
   When the User clicks "Continue"
   Then the User must be receive feedback requiring them to fill in the <value> appropriately
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please make sure your entry does not contain any special characters"
+  And an error summary list descriptive link is shown as "Only use letters a to z"
 
  Examples: 
   | <Value>                 | <Validity> | 
