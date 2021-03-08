@@ -79,7 +79,7 @@
                 Sign out
               </a>
       </nav>
-              
+
 
 
     </div>
@@ -92,20 +92,24 @@
 
 {% if useAutoStoreData %}
   {% block footer %}
-    {{ govukFooter({
-      meta: {
-        items: [
-          {
-            href: "https://govuk-prototype-kit.herokuapp.com/",
-            text: "GOV.UK Prototype Kit " + releaseVersion
-          },
-          {
-            href: "/prototype-admin/clear-data",
-            text: "Clear data"
-          }
-        ]
-      }
-    }) }}
+  {{ govukFooter({
+    meta: {
+      items: [
+        {
+          href: "/employer/footer/accessibility",
+          text: "Accessibility statement"
+        },
+        {
+          href: "/employer/footer/cookies",
+          text: "Cookies"
+        },
+        {
+          href: "/employer/footer/privacy-policy",
+          text: "Privacy policy"
+        }
+      ]
+    }
+  }) }}
   {% endblock %}
 {% endif %}
 
