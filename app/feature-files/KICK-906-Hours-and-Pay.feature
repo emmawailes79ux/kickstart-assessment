@@ -33,7 +33,7 @@ Scenario: User enters a value smaller than 25 hours in the "Total Hours Per Week
   When I click "Continue"
   Then the "Total Hours Per Week" field is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "The total number of hours per week cannot be below 25"
+  And an error summary list descriptive link is shown as "The total number of hours per week cannot be less than 25"
 
 Scenario: User enters a value that is not an integer in the "Total Hours Per Week" field
   Given that I am a User who enters a value that is not an integer within the "Total Hours Per Week" field
@@ -100,14 +100,14 @@ Scenario: User does not select an option for Days
   When I click "Continue"
   Then the "Days" field is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Enter the days for this vacancy"
+  And an error summary list descriptive link is shown as "Select whether the working days are flexible or fixed"
 
 Scenario: User does not select days within the "Fixed pattern of days" field
   Given that I am a User who has selected the "Fixed pattern of days" radio and have not selected a day
   When I click "Continue"
   Then the "Fixed Pattern of Days" radio is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Enter the pattern of days for this vacancy"
+  And an error summary list descriptive link is shown as "Enter the fixed pattern of days"
 
 # Hours
 
@@ -116,7 +116,7 @@ Scenario: User does not select an option for hours
   When I click "Continue"
   Then the hours field is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Enter the hours for this vacancy"
+  And an error summary list descriptive link is shown as "Select whether the working hours are flexible or fixed daily hours"
 
 Scenario: User selects the "Flexible" radio
   Given that I am a User who selects the "Flexible" radio for hours
@@ -142,7 +142,7 @@ Scenario: User enters fixed daily hours and the hours "from" exceed the hours "t
   Then the "From" field is invalid
   And the "To" field is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "The job's starting hour cannot be later than its ending hour"
+  And an error summary list descriptive link is shown as "The start time cannot be later than the finishing time"
 
 Scenario: User enters fixed daily hours and the hours "to" are smaller than the hours "from"
   Given that I am a User who selects the "Fixed daily hours" radio and the value for the "from" field is greater than that for the "to" field
@@ -150,7 +150,7 @@ Scenario: User enters fixed daily hours and the hours "to" are smaller than the 
   Then the "From" field is invalid
   And the "To" field is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "The job start time can be after the finishing time"
+  And an error summary list descriptive link is shown as "The start time cannot be later than the finishing time"
 
 Scenario: User enters a value greater than 5 characters within the "From" or "To" field
   Given that I am a User who enters a value greater than 5 characters within the "From" or "To" field
