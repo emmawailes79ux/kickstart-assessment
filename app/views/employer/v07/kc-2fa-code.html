@@ -1,0 +1,71 @@
+{% extends "layout-footer.html" %}
+
+{% block pageTitle %}
+  Register for Kickstart
+{% endblock %}
+
+{% block beforeContent %}
+
+{% endblock %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <form action="kc-password" method="post">
+                {{ govukFieldset({
+                    legend: {
+                        html: "Mobile Authenticator Setup",
+                        classes: "govuk-fieldset__legend--l",
+                        isPageHeading: true
+                    }
+                })}}
+
+                <p class="govuk-body">You need to set up Mobile Authenticator to activate your account.</p>
+
+                <ol class="govuk-list govuk-list--number">
+                  <li>Install one of the following applications on your mobile:
+                  <ul class="">
+                      <li>FreeOTP</li>
+                      <li>Google Authenticator</li>
+                  </ul></li>
+                  <li>Open the application and enter the key:</li>
+                  <p class="govuk-body"><b>JJIU SSRZ NESH URZW M5TT QTKD NRSH ILYV</b></p>
+                  <p class="govuk-body"><a href="kc-2fa">Scan barcode?</a></p>
+                  <li>Use the following configuration values if the application allows setting them:
+                    <ul class="">
+                        <li>Type: Time-based</li>
+                        <li>Algorithm: SHA1</li>
+                        <li>Digits: 6</li>
+                        <li>Intervals: 30</li>
+                    </ul>
+                  </li>
+                  <li>Enter the one-time code provided by the application and click Submit to finish the setup.</li>
+                </ol>
+
+                <p class="govuk-body">Provide a device name to help you manage your OTP devices</p>
+                {{ govukInput({
+                    label: {
+                        text: "One-time code"
+                    },
+                    id: "one-time-code",
+                    name: "one-time-code",
+                    classes: "govuk-!-width-two-thirds"
+                }) }}
+
+                {{ govukInput({
+                    label: {
+                        text: "Device name"
+                    },
+                    id: "device-name",
+                    name: "device-name",
+                    classes: "govuk-!-width-two-thirds"
+                }) }}
+
+                {{ govukButton({
+                    text: "Continue"
+                }) }}
+
+            </form>
+        </div>
+    </div>
+{% endblock %}

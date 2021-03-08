@@ -1,0 +1,223 @@
+{% extends "layout-header-links.html" %}
+
+{% block pageTitle %}
+  Vacancies
+{% endblock %}
+
+{% block beforeContent %}
+    <style>
+      .govuk-table__header, .govuk-table__cell {
+        padding: 8px 10px 8px 0px;
+        vertical-align: middle;
+        }
+      }
+
+      .govuk-table__header, .govuk-table__cell .govuk-checkboxes__label:after {
+        top: 1px;
+        left: 9px;
+        width: 23px;
+        height: 12px;
+      }
+
+      .govuk-checkboxes--small .govuk-checkboxes__item {
+        min-height: 40px !important;
+      }
+  </style>
+  {% include "includes/header-summary.html" %}
+  {{ govukBackLink({
+      text: "Back",
+      href: "app-home"
+    }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+
+      {% set html %}
+        <p class="govuk-notification-banner__heading">
+          3 vacancies submitted successfully
+        </p>
+
+      {% endset %}
+
+      {{ govukNotificationBanner({
+        html: html,
+        type: 'success'
+      }) }}
+
+
+      <h1 class="govuk-heading-l">
+        Add your vacancies
+      </h1>
+
+      <p class="govuk-body">Provide details for the <b>34 Kickstart vacancies</b>.</p>
+
+      {{ govukButton({
+        text: "Add a vacancy",
+        href: "job-add"
+      }) }}
+
+
+      <script language="JavaScript">
+        function toggle(source) {
+          checkboxes = document.getElementsByName('box');
+          for(var i=0, n=checkboxes.length;i<n;i++) {
+            checkboxes[i].checked = source.checked;
+          }
+        }
+      </script>
+
+      <div class='govuk-checkboxes govuk-checkboxes--small'>
+        <div class='govuk-checkboxes__item' style='min-height:1;'>
+          <input class='govuk-checkboxes__input' id='select-all' name='box' type='checkbox' value='select-all'  onClick='toggle(this)'>
+          <label class='govuk-label govuk-checkboxes__label' for='select-all'>Select all
+          </label>
+        </div>
+      </div>
+
+      {{ govukTable({
+        firstCellIsHeader: false,
+        head: [
+          {
+            text: ""
+          },
+          {
+            text: "Job title"
+          },
+          {
+            html: "No. of<br>vacancies"
+          },
+          {
+            html: "Advertising<br>date"
+          },
+          {
+            text: "Location"
+          },
+          {
+            text: "Postcode"
+          },
+          {
+            text: ""
+          },
+          {
+            text: ""
+          },
+          {
+            text: "Status"
+          }
+        ],
+        rows: [
+          [
+            {
+              html: "<div class='govuk-checkboxes govuk-checkboxes--small'>
+                      <div class='govuk-checkboxes__item'>
+                        <input class='govuk-checkboxes__input' id='box1' name='box' type='checkbox' value='box1'>
+                        <label class='govuk-label govuk-checkboxes__label' for='box1'></label>
+                      </div>
+                    </div>"
+            },
+            {
+              html: "Trainee tree surgeon"
+            },
+            {
+              text: "2"
+            },
+            {
+              text: "11/03/21"
+            },
+            {
+              text: "Wakefield"
+            },
+            {
+              text: "WF1 5AW"
+            },
+            {
+              html: "<a href='job-detail'>Edit</a>"
+            },
+            {
+              html: "<a href='delete-vacancy'>Delete</a>"
+            },
+            {
+              html: '<strong class="govuk-tag govuk-tag--green">Ready to submit</strong>'
+            }
+          ],
+          [
+            {
+              text: ""
+            },
+            {
+              html: "<a href='#'>Junior exhibition designer</a>"
+            },
+            {
+              text: "3"
+            },
+            {
+              text: "04/03/21"
+            },
+            {
+              text: "Leeds"
+            },
+            {
+              text: "LS1 3AA"
+            },
+            {
+              html: ""
+            },
+            {
+              html: ""
+            },
+            {
+              html: '<strong class="govuk-tag govuk-tag--blue">Submitted</strong>'
+            }
+          ],
+          [
+            {
+              text: ""
+            },
+            {
+              html: ""
+            },
+            {
+              html: "<b>7 / 34</b>"
+            },
+            {
+              text: ""
+            },
+            {
+              text: ""
+            },
+            {
+              html: ""
+            },
+            {
+              html: ""
+            },
+            {
+              html: ""
+            },
+            {
+              html: ""
+            }
+          ]
+
+
+        ]
+      }) }}
+
+
+      {{ govukButton({
+        text: "Submit vacancies",
+        href: "job-list-roles-submitted",
+        classes: "govuk-button--secondary"
+      }) }}
+
+      <p class="govuk-body govuk-!-margin-top-9"><a href="app-home">Back to home</a></p>
+
+    </div>
+  </div>
+
+{% endblock %}

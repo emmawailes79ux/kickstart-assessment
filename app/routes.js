@@ -31,6 +31,32 @@ router.post('/employer/mvp/job-add-3b-locally', function (req, res) {
 
 ////// mvp //////////////////////////////////
 
+////// v07 //////////////////////////////////
+
+router.post('/employer/v07/job-add-3a', function (req, res) {
+  const editChoice = req.session.data['remote-role']
+
+  if (editChoice === 'yes') {
+    res.redirect('/employer/v07/job-add-3c')
+  } else if (editChoice === 'part') {
+    res.redirect('/employer/v07/job-add-3c')
+  } else if (editChoice === 'not') {
+    res.redirect('/employer/v07/job-add-3b')
+  }
+});
+
+router.post('/employer/v07/job-add-3b-locally', function (req, res) {
+  const editChoice = req.session.data['multiple-locations']
+
+  if (editChoice === 'multiple') {
+    res.redirect('/employer/v07/job-add-3d')
+  } else if (editChoice === 'one-location') {
+    res.redirect('/employer/v07/job-add-3c')
+  }
+});
+
+////// v07 //////////////////////////////////
+
 
 
 router.post('/employer/v05/manage/vacancies', function (req, res) {
