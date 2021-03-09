@@ -25,28 +25,28 @@ Scenario: User enters an invalid email address that deviates from the syntax
   When the User clicks "Continue"
   Then the email address is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please enter a valid email address for this vacancy"
+  And an error summary list descriptive link is shown as "Enter a valid email address for this vacancy"
 
 Scenario: User enters an email address longer than 100 characters
   Given that the User enters an email address that is longer than 100 characters
   When the User clicks "Continue"
   Then the email address is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please enter an email address shorter than 100 characters"
+  And an error summary list descriptive link is shown as "Enter an email address that is shorter than 100 characters"
 
 Scenario: User enters an email address shorter than 10 characters
   Given that the User enters an email address that is shorter than 10 characters
   When the User clicks "Continue"
   Then the email address is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please enter a valid email address"
+  And an error summary list descriptive link is shown as "Enter a valid email address"
 
 Scenario: User does not enter an email address
   Given that the User does not enter an email address
   When the User clicks "Continue"
   Then the email address is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please enter an email address"
+  And an error summary list descriptive link is shown as "Enter an email address"
 
 Scenario: Email does not match what is recorded in the initial application
   Given that the user has entered a valid email address
@@ -54,7 +54,7 @@ Scenario: Email does not match what is recorded in the initial application
   When the User clicks "Continue"
   Then the email address is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please enter a valid email address"
+  And an error summary list descriptive link is shown as "Enter a valid email address"
 
 #Kickstart application number
 
@@ -63,7 +63,7 @@ Scenario Outline: User enters an invalid Kickstart application number
   When the user clicks 'Continue'
   Then the Kickstart ID is invalid
   And an error summary heading is shown: "There is a problem"
-  And an error summary list descriptive link is shown as "Please enter a valid Kickstart application number"
+  And an error summary list descriptive link is shown as "Enter a valid Kickstart application number"
 
   Examples:
   | <Invalid Format>  | <Displayed Text>                                    |
@@ -90,11 +90,11 @@ Scenario: Kickstart application number does not match what is recorded in the in
   When the User clicks "Continue"
   Then the Kickstart application number is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please enter a valid Kickstart application number"
+  And an error summary list descriptive link is shown as "Enter a valid Kickstart application number"
 
 Scenario: User does not enter a Kickstart application number
   Given that the User has not entered any value in the "Kickstart application number" field
   When the user clicks 'Continue'
   Then the Kickstart ID is invalid
   And an error summary heading is shown: "There is a problem"
-  And an error summary list descriptive link is shown as "Please enter a Kickstart application number"
+  And an error summary list descriptive link is shown as "Enter a Kickstart application number"
