@@ -210,6 +210,13 @@ Scenario: User enters an apostrophe styled ’ instead of '
   | it's a good job       |    Valid         | 
   | it’s a good job       |    Invalid       | 
 
+# Double Spaces
+
+Scenario: User enters double spaces within the form fields 
+  Given that the User enters double spaces into a form field
+  When the User clicks "Continue" 
+  Then the System must replace the double spaces with single spaces
+
 # Continue
 
 Scenario: User has completed all form fields and clicks "Continue"
