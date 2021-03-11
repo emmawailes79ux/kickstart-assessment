@@ -36,62 +36,6 @@
       }) }}
 
 
-      {{ govukInput({
-        label: {
-          text: "Number of vacancies",
-          classes: "govuk-label--m",
-          isPageHeading: false
-        },
-        hint: {
-          text: "Number of vacancies for this location."
-        },
-        classes: "govuk-input--width-4",
-        id: "width-4",
-        name: "width-4"
-      }) }}
-
-      {% set referral %}
-      {{ govukInput({
-        label: {
-          text: "Referral limit",
-          isPageHeading: false,
-          classes: "govuk-fieldset__legend--m"
-        },
-        classes: "govuk-input--width-5",
-        id: "width-5",
-        name: "width-5"
-        }) }}
-        {% endset -%}
-
-       {{ govukRadios({
-          idPrefix: "contact",
-          name: "contact",
-          fieldset: {
-            legend: {
-              text: "Do you want a referral limit for each vacancy?",
-              isPageHeading: false,
-              classes: "govuk-fieldset__legend--m"
-            }
-          },
-          hint: {
-            text: "A referral is made when we recommend your job placement to a candidate. This does not guarantee the candidate will put in an application."
-          },
-          items: [
-            {
-              value: "yes",
-              text: "Yes",
-              conditional: {
-                html: referral
-              }
-            },
-            {
-              value: "no",
-              text: "No"
-            }
-          ]
-        }) }}
-
-
       {{ govukSelect({
         id: "sort",
         name: "sort",
@@ -247,45 +191,80 @@
           ]
         }) }}
 
+      <!-- <h2 class="govuk-fieldset__legend--l">Vacancy advert</h2>
 
-      <h2 class="govuk-heading-m">Contact for this job</h2>
+      {% from "govuk/components/character-count/macro.njk" import govukCharacterCount %}
 
-      {{ govukInput({
+      {{ govukCharacterCount({
+        name: "more-detail",
+        id: "more-detail",
+        maxlength: 3000,
         label: {
-          text: "Full name"
+          text: "About the job",
+          classes: "govuk-label--m",
+          isPageHeading: true
         },
-        classes: "govuk-input--width-20",
-        id: "contact-name",
-        name: "full-name"
+        hint: {
+          text: "Enter a brief description of the job and duties."
+        }
       }) }}
 
-      {{ govukInput({
+      {{ govukCharacterCount({
+       name: "skills",
+       id: "skills",
+       maxlength: 2000,
+       label: {
+         text: "What are you looking for?",
+         classes: "govuk-label--m",
+         isPageHeading: false
+       },
+       hint: {
+         text: "List the skills, experience and qualifications needed to do this job, if relevant."
+       }
+     }) }}
+
+      {{ govukCharacterCount({
+        name: "about-us",
+        id: "about-us",
+        maxlength: 1000,
         label: {
-          text: "Telephone"
+          text: "Tell us about your company",
+          classes: "govuk-label--m",
+          isPageHeading: true
         },
-        classes: "govuk-input--width-20",
-        id: "telephone",
-        name: "telephone"
+        hint: {
+          text: "This is your chance to sell your company to the applicant."
+        }
       }) }}
 
-      {{ govukInput({
+      {{ govukCharacterCount({
+        name: "additional-support",
+        id: "additional-support",
+        maxlength: 2000,
         label: {
-          text: "Email address"
+          text: "What can you offer the Kickstarter?",
+          classes: "govuk-label--m",
+          isPageHeading: false
         },
-        classes: "govuk-input--width-20",
-        id: "email",
-        name: "email"
+        hint: {
+          text: "What support will you provide to help their employability? For example, coaching and mentoring."
+        }
       }) }}
 
-      {{ govukInput({
-        label: {
-          text: "Confirm email address"
-        },
-        classes: "govuk-input--width-20",
-        id: "confirm-email",
-        name: "confirm-email"
-      }) }}
 
+      {{ govukCharacterCount({
+        name: "how-apply",
+        id: "how-apply",
+        maxlength: 1000,
+        label: {
+          text: "How to apply",
+          classes: "govuk-label--m",
+          isPageHeading: false
+        },
+        hint: {
+          text: "For example, whether a CV or covering letter are needed, forms to fill in, and who the application needs to be sent to"
+        }
+      }) }} -->
 
 {% endcall %}
 
@@ -296,7 +275,7 @@
 
       {{ govukButton({
         text: "Continue",
-        href: "job-add-2"
+        href: "job-add-b"
       }) }}
 
     </div>
