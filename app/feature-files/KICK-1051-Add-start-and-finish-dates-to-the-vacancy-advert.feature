@@ -55,14 +55,14 @@ Scenario: User sets the Anticipated Start Date to be a date in the past
   When the User clicks the "Continue" button
   Then the Anticipated Start Date will be invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Set the Anticipated Start Date to at least one month in the future"
+  And an error summary list descriptive link is shown as "Set the anticipated start date to at least one month in the future"
 
 Scenario: User sets the Anticipated Start Date less than one month in the future
   Given that the User has set the Anticipated Start Date to a date less than one month in the future
   When the User clicks the "Continue" button
   Then the Anticipated Start Date will be invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Set the Anticipated Start Date to at least one month in the future"
+  And an error summary list descriptive link is shown as "Set the anticipated start date to at least one month in the future"
 
 Scenario: User set the Anticipated Start Date over one month in the future
   Given that the User has set the Anticipated Start Date to a date over one month in the future
@@ -116,7 +116,7 @@ Scenario: User sets the Advertising Start Date to be a date in the past
   When the User clicks the "Continue" button
   Then the Advertising Start Date will be invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Set the advertising start date in the future"
+  And an error summary list descriptive link is shown as "Enter a date in the future"
 
 Scenario: User sets the Advertising Start Date to be later than the Closing Date
   Given that the User has selected the Advertising Start Date to be later than the Closing Date
@@ -130,7 +130,7 @@ Scenario: User sets the Advertising Start Date less than one month in the future
   When the User clicks the "Continue" button
   Then the Advertising Start Date will be invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Set the Advertising Start Date to at least one month in the future"
+  And an error summary list descriptive link is shown as "Enter a date that's at least one month in the future"
 
 Scenario: User set the Advertising Start Date to a date at least one month in the future
   Given that the User has set the Advertising Start Date to a date in the future
