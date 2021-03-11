@@ -35,7 +35,7 @@ Scenario: User has stated they want to set the Anticipated Start Date to a date 
   When the User clicks the "Continue" button
   Then the Anticipated Start Date is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Enter the Anticipated Start Date as DD/MM/YYY"
+  And an error summary list descriptive link is shown as "Enter the anticipated start date as DD/MM/YYY"
 
 Scenario Outline: User enters the Anticipated Start Date in a format that deviates from the (DD/MM/YYYY) syntax
   Given that the User has selected the <Anticipated Start Date> to be "a date in the future"
