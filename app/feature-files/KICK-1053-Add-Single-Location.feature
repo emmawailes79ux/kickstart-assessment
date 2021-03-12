@@ -35,7 +35,7 @@ Scenario: User does not enter a Building and Street value
   When I click "Continue"
   Then the Building and Street fields are invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please enter a Building and Street for this vacancy"
+  And an error summary list descriptive link is shown as "Enter a building and street for this vacancy"
 
 Scenario: User enters a value for the Building field that exceeds 100 characters
   Given that I am a User who enters a value that exceeds 100 characters in the Building field
@@ -68,14 +68,14 @@ Scenario: User enters a value for the Town or City field that exceeds 100 charac
   When I click "Continue"
   Then the Town or City is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please enter a valid Town or City for this vacancy"
+  And an error summary list descriptive link is shown as "Enter a valid town or city for this vacancy"
 
 Scenario Outline: User enters a value for the Town or City field that contains special characters, integers, or any other non-alphabetical values
   Given that I am a User who enters a value that contains special characters, integers, or any other non-alphabetical values for <Town or City>
   When I click "Continue"
   Then the <Town or City> is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please enter a valid Town or City for this vacancy"
+  And an error summary list descriptive link is shown as "Enter a valid town or city for this vacancy"
 
   Examples:
   | <Town or City> | <Displayed Text>                                       |
