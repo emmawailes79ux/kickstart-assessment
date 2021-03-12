@@ -42,7 +42,7 @@ Scenario: User enters a value for the Building field that exceeds 100 characters
   When I click "Continue"
   Then the Building and Street is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please enter a valid Building and Street for this vacancy"
+  And an error summary list descriptive link is shown as "Enter a valid building and street for this vacancy"
 
 Scenario Outline: User enters a value for the Building and Street field that contains special characters or any other non-alphanumeric values in the Building and Street fields
   Given that I am a User who enters a value that contains special characters or any other non-alphanumeric values for <Building and Street>
