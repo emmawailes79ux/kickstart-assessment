@@ -69,7 +69,7 @@ Scenario Outline: User enters special characters or letters within the "Total Ho
   When I click "Continue"
   Then the <Total Hours Per Week> field is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please enter a valid number of hours per week"
+  And an error summary list descriptive link is shown as "Enter a valid number of hours per week"
 
   Examples:
   | <Total Hours Per Week> | <Displayed Text>                                                 |
@@ -107,7 +107,7 @@ Scenario: User does not select days within the "Fixed pattern of days" field
   When I click "Continue"
   Then the "Fixed Pattern of Days" radio is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Enter the fixed pattern of days"
+  And an error summary list descriptive link is shown as "Enter the fixed working pattern"
 
 # Hours
 
@@ -159,7 +159,7 @@ Scenario: User enters a value greater than 5 characters within the "From" or "To
   Then the "From" field is invalid
   And the "To" field is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Hours must be fewer than 5 characters"
+  And an error summary list descriptive link is shown as "The number of hours must be fewer than 5 characters"
 
 Scenario Outline: User enters values that are not integers for the fixed daily hours
   Given that I am a User who selects the "Fixed daily hours" radio and enter a value that is a special character, letter or not an integer within the <From> or <To> fields
