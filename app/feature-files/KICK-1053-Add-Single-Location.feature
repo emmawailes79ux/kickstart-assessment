@@ -42,14 +42,14 @@ Scenario: User enters a value for the Building field that exceeds 100 characters
   When I click "Continue"
   Then the Building and Street is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please enter a valid Building and Street for this vacancy"
+  And an error summary list descriptive link is shown as "Enter a valid building and street for this vacancy"
 
 Scenario Outline: User enters a value for the Building and Street field that contains special characters or any other non-alphanumeric values in the Building and Street fields
   Given that I am a User who enters a value that contains special characters or any other non-alphanumeric values for <Building and Street>
   When I click "Continue"
   Then the <Building and Street> is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please enter a valid Building and Street for this vacancy"
+  And an error summary list descriptive link is shown as "Enter a valid building and street for this vacancy"
 
   Examples:
   | <Building and Street> | <Displayed Text>                                            |
@@ -61,7 +61,7 @@ Scenario: User does not enter a Town or City
   When I click "Continue"
   Then the Town or City field is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please enter a Town or City for this vacancy"
+  And an error summary list descriptive link is shown as "Enter a town or city for this vacancy"
 
 Scenario: User enters a value for the Town or City field that exceeds 100 characters
   Given that I am a User who enters a value that exceeds 100 characters in the Town or City field
@@ -88,21 +88,21 @@ Scenario: User does not enter a County
   When I click "Continue"
   Then the County is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please enter a County for this vacancy"
+  And an error summary list descriptive link is shown as "Enter a county for this vacancy"
 
 Scenario: User enters a value for the County field that exceeds 100 characters
   Given that I am a User who enters a value that exceeds 100 characters in the County field
   When I click "Continue"
   Then the County is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please enter a valid County for this vacancy"
+  And an error summary list descriptive link is shown as "Enter a valid county for this vacancy"
 
 Scenario Outline: User enters a value for the County field that contains special characters, integers, or any other non-alphabetical values
   Given that I am a User who enters a value that contains special characters, integers, or any other non-alphabetical values for <County>
   When I click "Continue"
   Then <County> is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please enter a valid County for this vacancy"
+  And an error summary list descriptive link is shown as "Enter a valid county for this vacancy"
 
   Examples:
   | <County>               | <Displayed Text>                                 |
@@ -116,14 +116,14 @@ Scenario: User does not enter a postcode
   When I click "Continue"
   Then the Postcode is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please enter a postcode for this vacancy"
+  And an error summary list descriptive link is shown as "Enter a postcode for this vacancy"
 
 Scenario Outline: User enters special characters or other value that isn't an alphanumeric string in the Postcode field
   Given that I am a User who enters special characters or other value that isn't an alphanumeric string for <Postcode>
   When I click "Continue"
   Then <Postcode> is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please enter a valid postcode for this vacancy"
+  And an error summary list descriptive link is shown as "Enter a valid postcode for this vacancy"
 
   Examples:
   | <Postcode>             | <Displayed Text>                                 |
@@ -135,7 +135,7 @@ Scenario Outline: User enters a value that exceeds the 8 character maximum limit
   When I click "Continue"
   Then the Postcode is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please enter a valid postcode for this vacancy"
+  And an error summary list descriptive link is shown as "Enter a valid postcode for this vacancy"
 
   Examples:
   | <Postcode>             | <Displayed Text>                                 |
@@ -146,7 +146,7 @@ Scenario Outline: User enters a value that falls below the 6 character minimum l
   When I click "Continue"
   Then the Postcode is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please enter a valid postcode for this vacancy"
+  And an error summary list descriptive link is shown as "Enter a valid postcode for this vacancy"
 
   Examples:
   | <Postcode>             | <Displayed Text>                                 |
@@ -157,7 +157,7 @@ Scenario Outline: User enters an invalid postcode value for the Postcode field
   When I click "Continue"
   Then the Postcode is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please enter a valid postcode for this vacancy"
+  And an error summary list descriptive link is shown as "Enter a valid postcode for this vacancy"
 
   Examples:
   | <Postcode>             | <Displayed Text>                                 |
