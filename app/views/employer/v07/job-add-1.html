@@ -41,7 +41,16 @@
       }) }}
 
 
-
+      {% set otherdaysShow %}
+      {{ govukInput({
+        hint: {
+          text: "Provide details, for example a 4-day week"
+        },
+        classes: "govuk-input--width-20",
+        id: "width-days",
+        name: "width-days"
+      }) }}
+      {% endset -%}
 
       {% set daysShow %}
       {{ govukCheckboxes({
@@ -94,7 +103,7 @@
            }
          },
          hint: {
-           text: "Choose 'flexible' if the job has flexible working days."
+           text: "Choose 'flexible' if the job has flexible working days"
          },
          items: [
            {
@@ -107,12 +116,29 @@
              conditional: {
                html: daysShow
              }
+           },
+           {
+             value: "free-days",
+             text: "Other working patterns",
+             conditional: {
+               html: otherdaysShow
+             }
            }
          ]
        }) }}
 
 
 
+       {% set otherhoursShow %}
+       {{ govukInput({
+         hint: {
+           text: "Provide details, for example night shift 11pm to 6am"
+         },
+         classes: "govuk-input--width-20",
+         id: "width-hours",
+         name: "width-hours"
+       }) }}
+       {% endset -%}
 
        {% set hoursShow %}
        <div class="govuk-date-input" id="passport-issued">
@@ -144,7 +170,7 @@
             }
           },
           hint: {
-            text: "Choose 'flexible' if the job has flexible hours."
+            text: "Choose 'flexible' if the job has flexible hours"
           },
           items: [
             {
@@ -157,12 +183,30 @@
               conditional: {
                 html: hoursShow
               }
+            },
+            {
+              value: "other-hours",
+              text: "Other daily hours",
+              conditional: {
+                html: otherhoursShow
+              }
             }
           ]
         }) }}
 
 
 
+
+        {% set otherpayShow %}
+        {{ govukInput({
+          hint: {
+            html: "Provide details, for example pay increases to &pound;10 after 3 months"
+          },
+          classes: "govuk-input--width-20",
+          id: "width-20",
+          name: "width-20"
+        }) }}
+        {% endset -%}
 
         {% set payShow %}
         {{ govukInput({
@@ -193,9 +237,16 @@
              },
              {
                value: "hourly-page",
-               text: "Hourly pay",
+               text: "Fixed hourly pay",
                conditional: {
                  html: payShow
+               }
+             },
+             {
+               value: "other-hourly-page",
+               text: "Other hourly pay",
+               conditional: {
+                 html: otherpayShow
                }
              }
            ]
