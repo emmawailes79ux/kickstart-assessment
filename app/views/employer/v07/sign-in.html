@@ -12,15 +12,17 @@
 {% block content %}
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-
+          Enter your details to sign into your Kickstart account. You’ll need to use the same email address you used when you applied.
             <form action="sign-in-2fa" method="post">
               {{ govukFieldset({
                   legend: {
-                      html: 'Sign in to the Kickstart Scheme',
+                      html: 'Sign into the Kickstart Scheme',
                       classes: "govuk-fieldset__legend--l",
                       isPageHeading: true
                   }
               })}}
+
+              <p class="govuk-body">Enter your details to sign into your Kickstart account. You'll need to use the same email address you used when you applied.</p>
 
               {{ govukInput({
                   label: {
