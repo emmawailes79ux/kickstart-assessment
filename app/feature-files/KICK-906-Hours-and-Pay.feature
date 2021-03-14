@@ -15,6 +15,300 @@ Flow:
   - Previous page is Add Multiple Locations [KICK-1071] if I have chosen to add multiple locations
   - Next page is Vacancy Summary [KICK-907]
 
+NEW SCENARIOS TO REVIEW
+
+# Back
+
+Scenario: User clicks on the back link
+  Given that I am a User who is on the "Add hours and pay" page
+  When I click "Back"
+  Then I must be redirected to the page requiring me to enter a vacancy's location [KICK-1053]
+  But When I have entered multiple locations
+  Then I must be redirected to the page requiring me to enter multiple locations [KICK-1071]
+
+# Total Hours Per Week
+
+Scenario: User enters a value smaller than 25 hours in the "Total Hours Per Week" field
+  Given that I am a User who enters a value smaller than 25 within the "Total Hours Per Week" field
+  When I click "Continue"
+  Then the "Total Hours Per Week" field is invalid
+  And an error summary heading is shown as "There is a problem"
+  And an error summary list descriptive link is shown as "The total hours per week for this vacancy cannot fall below 25"
+
+Scenario: User enters a value that is not an integer in the "Total Hours Per Week" field
+  Given that I am a User who enters a value that is not an integer within the "Total Hours Per Week" field
+  When I click "Continue",
+  Then the "Total Hours Per Week" field is invalid
+  And an error summary heading is shown as "There is a problem"
+  And an error summary list descriptive link is shown as "Please enter a valid number of hours per week for this vacancy"
+
+Scenario: User does not enter a value in the "Total Hours Per Week" field
+  Given that I am a User who does not enter a value within the "Total Hours Per Week" field
+  When I click "Continue"
+  Then the "Total Hours Per Week" field is invalid
+  And an error summary heading is shown as "There is a problem"
+  And an error summary list descriptive link is shown as "Please enter the number of hours per week for this vacancy"
+
+Scenario: User enters "0" within the "Total Hours Per Week" field
+  Given that I am a User who enters the "0" value within the "Total Hours Per Week" field
+  When I click "Continue"
+  Then the "Total Hours Per Week" field is invalid
+  And an error summary heading is shown as "There is a problem"
+  And an error summary list descriptive link is shown as "The total hours per week for this vacancy cannot be 0"
+
+Scenario: User enters a value greater than 5 characters within the "Total Hours Per Week" field
+  Given that I am a User who enters a value greater than 5 characters within the "Total Hours Per Week" field
+  And the value is an Integer
+  When I click "Continue"
+  Then the "Total Hours Per Week" field is invalid
+  And an error summary heading is shown as "There is a problem"
+  And an error summary list descriptive link is shown as "The total hours per week for this vacancy must be described in less than 5 characters"
+
+Scenario Outline: User enters special characters or letters (excluding decimal points) within the "Total Hours Per Week" field
+  Given that I am a User who enters special characters or letters within the <Total Hours Per Week> field (excluding decimal points)
+  When I click "Continue"
+  Then the <Total Hours Per Week> field is invalid
+  And an error summary heading is shown as "There is a problem"
+  And an error summary list descriptive link is shown as "Please enter a valid number of hours per week for this vacancy"
+
+  Examples:
+  | <Total Hours Per Week> | <Displayed Text>                                                 |
+  | 2$                     | "Please enter a valid number of hours per week for this vacancy" |
+  | twenty                 | "Please enter a valid number of hours per week for this vacancy" |
+
+Scenario: User enters a value greater than 99 hours within the "Total Hours Per Week" field
+  Given that I am a User who enters a value greater than 99 hours in the "Total Hours Per Week" field 
+  When I click "Continue"
+  Then the Total Hours Per Week field is invalid
+  And an error summary heading is shown as "There is a problem"
+  And an error summary list descriptive link is shown as "Please enter a valid number of hours per week for this vacancy"
+
+Scenario: User enters a valid number of hours within the "Total Hours Per Week" field
+  Given that I am a User who enters a value within the "Total Hours Per Week" field that is an integer
+  And does not contain any special characters or letters
+  And is under 5 characters long
+  And is not "0"
+  When I click "Continue"
+  Then the Total Hours Per Week field is valid
+
+# Days
+
+Scenario: User selects the "Flexible" radio for Days
+  Given that I am a User who selects the "Flexible" radio for Days
+  When I click "Continue"
+  Then the "Flexible" value is valid
+
+Scenario: User selects "Fixed pattern of days" for Days
+  Given that I am a User who selects the "Fixed Pattern of Days" radio
+  Then checkboxes for the days must be displayed
+
+Scenario: User does not select days within the "Fixed pattern of days" field
+  Given that I am a User who has selected the "Fixed pattern of days" radio and have not selected a day
+  When I click "Continue"
+  Then the "Fixed Pattern of Days" radio is invalid
+  And an error summary heading is shown as "There is a problem"
+  And an error summary list descriptive link is shown as "Please enter the pattern of days for this vacancy"
+
+Scenario: User selects the "Other Working Patterns" radio for Days
+  Given that I am a User who selects the "Other Working Patterns" radio for Days
+  Then the text field for "Other Working Patterns" must be shown 
+
+Scenario: User enters a value greater than 100 characters within the "Other Working Patterns" text field
+  Given that I am a User who enters a value greater than 100 characters within the "Other Working Patterns" text field
+  When I click "Continue" 
+  Then the "Other Working Patterns" text field is invalid
+  And an error summary heading is shown as "There is a problem" 
+  And an error summary descriptive link is shown as "Please describe the working pattern for this vacancy in less than 100 characters"
+
+Scenario: User does not enter a value in the "Other Working Patterns" text field
+  Given that I am a User who does not enter a value within the "Other Working Patterns" text field
+  When I click "Continue" 
+  Then the "Other Working Patterns" text field is invalid
+  And an error summary heading is shown as "There is a problem" 
+  And an error summary descriptive link is shown as "Please describe the working pattern for this vacancy"
+
+Scenario: User enters a value smaller than 100 characters within the "Other Working Patterns" text field
+  Given that I am a User who enters a value smaller than 100 characters within the "Other Working Patterns" text field
+  When I click "Continue" 
+  Then the "Other Working Patterns" text field is valid
+
+Scenario: User does not select an option for Days
+  Given that I am a User who does not select an option for Days
+  When I click "Continue"
+  Then the "Days" field is invalid
+  And an error summary heading is shown as "There is a problem"
+  And an error summary list descriptive link is shown as "Please enter the days for this vacancy"
+
+# Hours
+
+Scenario: User does not select an option for hours
+  Given that I am a User who does not select any option for hours
+  When I click "Continue"
+  Then the hours field is invalid
+  And an error summary heading is shown as "There is a problem"
+  And an error summary list descriptive link is shown as "Please enter the hours for this vacancy"
+
+Scenario: User selects the "Flexible" radio
+  Given that I am a User who selects the "Flexible" radio for hours
+  When I click "Continue"
+  Then the "Flexible" radio is valid
+
+Scenario: User selects the "Fixed daily hours" radio
+  Given that I am a User who selects the "Fixed daily hours" radio
+  Then the form fields for entering hours: "From" and "To" must be shown
+
+Scenario: User chooses fixed daily hours but does not enter any values
+  Given that I am a User who selects the "Fixed daily hours" radio
+  But I do not enter any values
+  When I click "Continue"
+  Then the "From" field is invalid
+  And the "To" field is invalid
+  And an error summary heading is shown as "There is a problem"
+  And an error summary list descriptive link is shown as "Please enter the fixed daily hours for this vacancy"
+
+Scenario: User enters fixed daily hours and the hours "from" exceed the hours "to"
+  Given that I am a User who selects the "Fixed daily hours" radio and the value for the "from" field is greater than that for the "to" field
+  When I click "Continue"
+  Then the "From" field is invalid
+  And the "To" field is invalid
+  And an error summary heading is shown as "There is a problem"
+  And an error summary list descriptive link is shown as "The job's starting hour cannot be later than its ending hour"
+
+Scenario: User enters fixed daily hours and the hours "to" are smaller than the hours "from"
+  Given that I am a User who selects the "Fixed daily hours" radio and the value for the "from" field is greater than that for the "to" field
+  When I click "Continue"
+  Then the "From" field is invalid
+  And the "To" field is invalid
+  And an error summary heading is shown as "There is a problem"
+  And an error summary list descriptive link is shown as "The job's ending hour cannot be earlier than its starting hour"
+
+Scenario: User enters a value greater than 5 characters within the "From" or "To" field
+  Given that I am a User who enters a value greater than 5 characters within the "From" or "To" field
+  And the value is an Integer
+  When I click "Continue"
+  Then the "From" field is invalid
+  And the "To" field is invalid
+  And an error summary heading is shown as "There is a problem"
+  And an error summary list descriptive link is shown as "All hour values must be shorter than 5 characters"
+
+Scenario Outline: User enters values that are not integers for the fixed daily hours
+  Given that I am a User who selects the "Fixed daily hours" radio and enter a value that is a special character, letter or not an integer within the <From> or <To> fields
+  When I click "Continue"
+  Then the "From" field is invalid
+  And the "To" field is invalid
+  And an error summary heading is shown as "There is a problem"
+  And an error summary list descriptive link is shown as "Please enter valid fixed daily hours for this vacancy"
+
+  Examples:
+  | <From> | <To> | <Displayed Text>                                       |
+  | twelve | six | "Please enter valid fixed daily hours for this vacancy" |
+  | 2$     | 18@ | "Please enter valid fixed daily hours for this vacancy" |
+
+Scenario: User selects the "Other daily hours" radio
+  Given that I am a User who selects the "Other daily hours" radio
+  Then a text box for "Other daily hours" must be shown
+
+Scenario: User does not enter a value within the "Other daily hours" text box
+  Given that I am a User who selects the "Other daily hours" radio
+  When I do not enter a value in the "Other daily hours" text box
+  Then the "Other daily hours" field is invalid 
+  And an error summary heading is shown as "There is a problem"
+  And an error summary descriptive link is shown as "Please describe the daily hours for this vacancy"
+
+Scenario: User enters a value greater than 100 characters within the "Other daily hours" text field
+  Given that I am a User who selects the "Other daily hours" radio
+  When I enter a value greater than 100 characters in the "Other daily hours" text box
+  Then the "Other daily hours" field is invalid 
+  And an error summary heading is shown as "There is a problem"
+  And an error summary descriptive link is shown as "Please describe the daily hours for this vacancy in less than 100 characters"
+
+Scenario: User enters a value smaller than 100 characters within the "Other daily hours" text field
+  Given that I am a User who enters a value smaller than 100 characters within the "Other Daily hours" text field
+  When I click "Continue" 
+  Then the "Other Daily hours" text field is valid
+
+# Pay
+
+Scenario: User does not select any option under "Pay"
+  Given that I am a User who selects the "National Minimum Wage" radio
+  When I click "Continue"
+  Then the "Pay" field is invalid
+  And an error summary heading is shown as "There is a problem"
+  And an error summary list descriptive link is shown as "Please enter what you will pay the claimant"
+
+Scenario: User selects the "National Minimum Wage" radio
+  Given that I am a User who selects the "National Minimum Wage" radio
+  When I click "Continue"
+  Then the "National Minimum Wage" radio is valid
+
+Scenario: User selects the "Hourly Pay" radio
+  Given that I am a User who selects the "Hourly Pay" radio
+  Then I must be shown the form field for entering "Hourly Pay"
+
+Scenario: User enters a value lower than the National Minimum Wage in the "Hourly Pay" field
+  Given that I am a User who enters a value lower than the national minimum wage in the "Hourly Pay" field
+  When I click "Continue"
+  Then the "Hourly Pay" field is invalid
+  And an error summary heading is shown as "There is a problem"
+  And an error summary list descriptive link is shown as "The hourly pay for this vacancy cannot fall below the national minimum wage"
+
+Scenario: User does not enter a value in the "Hourly Pay" field
+  Given that I am a User who does not enter a value in the "Hourly Pay" field
+  When I click "Continue"
+  Then the "Hourly Pay" field is invalid
+  And an error summary heading is shown as "There is a problem"
+  And an error summary list descriptive link is shown as "Please enter the hourly pay for this vacancy"
+
+Scenario Outline: User enters an invalid character in the "Hourly Pay" field
+  Given that I am a User who does enters a letter, special character, or value that is not an integer in the <Hourly Pay> field
+  When I click "Continue"
+  Then the "Hourly Pay" field is invalid
+  And an error summary heading is shown as "There is a problem"
+  And an error summary list descriptive link is shown as "Please enter a valid hourly pay for this vacancy"
+
+  Examples:
+  | <Hourly Pay>           | <Displayed Text>                                                 |
+  | 2$                     | "Please enter a valid number of hours per week for this vacancy" |
+  | twenty pounds          | "Please enter a valid number of hours per week for this vacancy" |
+
+Scenario: User selects the "Other hourly pay" radio
+  Given that I am a User who selects the "Other hourly pay" radio
+  Then a text field for "Other hourly pay" must be shown 
+
+Scenario: User does not enter a value within the "Other hourly pay" text box
+  Given that I am a User who selects the "Other hourly pay" radio
+  When I do not enter a value in the "Other hourly pay" text box
+  Then the "Other hourly pay" field is invalid 
+  And an error summary heading is shown as "There is a problem"
+  And an error summary descriptive link is shown as "Please describe the hourly pay for this vacancy"
+
+Scenario: User enters a value greater than 100 characters within the "Other hourly pay" text field
+  Given that I am a User who selects the "Other hourly pay" radio
+  When I enter a value greater than 100 characters in the "Other hourly pay" text box
+  Then the "Other hourly pay" field is invalid 
+  And an error summary heading is shown as "There is a problem"
+  And an error summary descriptive link is shown as "Please describe the hourly pay for this vacancy in less than 100 characters"
+
+Scenario: User enters a value smaller than 100 characters within the "Other hourly pay" text field
+  Given that I am a User who enters a value smaller than 100 characters within the "Other hourly pay" text field
+  When I click "Continue" 
+  Then the "Other hourly pay" field is valid
+
+# Continue
+
+Scenario: User clicks "Continue" after filling out all the form fields properly
+  Given that I am a User providing details about my vacancy's hours and pay
+  And have filled out all the form fields properly
+  When I click the 'Continue' buttons
+  Then I must be redirected to the page summarising my vacancy entry [KICK-907]
+
+# Sign Out
+
+Scenario: User can sign out
+  Given that a User is within the Applicant service
+  When the User clicks the 'Sign out' Link
+  Then the User must be signed out of the service [KICK-XXXX]
+
 Scenarios
 
 # Back
