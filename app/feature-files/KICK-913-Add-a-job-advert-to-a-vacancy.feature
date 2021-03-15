@@ -181,7 +181,8 @@ Scenario Outline: User enters a value in the "How to Apply?" field that contains
   When I click "Continue"
   Then the <How to Apply> field is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please do not include any special characters in describing how to apply for this job"
+  And an error summary list descriptive link is shown as "Use only letters a to z, hyphens, numbers, spaces and apostrophes
+"
 
   Examples:
   | <What can you offer the Kickstarter>                | <Displayed Text>                                                                       |
@@ -194,7 +195,7 @@ Scenario: User enters characters that deviate from the accepted syntax for all f
   When the User clicks "Continue"
   Then the User must be receive feedback requiring them to fill in the <value> appropriately
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Only use letters a to z"
+  And an error summary list descriptive link is shown as "Only use letters a to z or any number"
 
  Examples: 
   | <Value>                 | <Validity> | 
