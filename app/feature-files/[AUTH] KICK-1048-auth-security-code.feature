@@ -19,7 +19,7 @@ Scenario: User does not enter Security Code
   When I click 'Continue' without entering my Security Code
   Then the Security Code is invalid
   And an error summary heading is shown: "There is a problem"
-  And an error summary list descriptive link is shown as "Please enter a security code"
+  And an error summary list descriptive link is shown as "Enter a security code"
 
 Scenario: User enters an invalid security code
   Given that I am an employer confirming who I am
@@ -27,7 +27,7 @@ Scenario: User enters an invalid security code
   When I click 'Continue'
   Then the Security Code is invalid
   And an error summary heading is shown: "There is a problem"
-  And an error summary list descriptive link is shown as "Please enter a valid security code"
+  And an error summary list descriptive link is shown as "Enter a valid security code"
 
 Scenario: User enters a valid security code
   Given that I am an employer confirming who I am
