@@ -25,28 +25,28 @@ Scenario: User does not enter anything into the "About the Job" field
   When the User clicks "Continue"
   Then the "About the job" field is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Describe the job and duties"
+  And an error summary list descriptive link is shown as "Describe the job placement and duties"
 
 Scenario: User enters over 2000 characters into the "About the Job" field
   Given that the User enters more than 2000 characters into the "About the Job" field
   When the User clicks "Continue"
   Then the "About the job" field is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Describe the job in up to 2,000 characters"
+  And an error summary list descriptive link is shown as "Describe the job placement in up to 2,000 characters"
 
 Scenario: User enters under 100 characters into the "About the Job" field
   Given that the User enters less than 100 characters into the "About the Job" field
   When the User clicks "Continue"
   Then the "About the job" field is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Describe the job in at least 100 characters"
+  And an error summary list descriptive link is shown as "Describe the job placement in at least 100 characters"
 
 Scenario Outline: User enters a value into the "About the Job" that contains special characters or any other non-alphanumeric values
   Given that I am a User who enters a value that contains special characters or any other non-alphanumeric values for <About the Job>
   When I click "Continue"
   Then the <About the Job> is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Only use letters a to z or any number"
+  And an error summary list descriptive link is shown as "Only use the letters a to z or any number"
 
   Examples:
   | <About the Job>                              | <Displayed Text>                                                      |
@@ -80,7 +80,7 @@ Scenario Outline: User enters a value in the "What are you looking for" field fi
   When I click "Continue"
   Then the <What are you looking for> field is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Only use letters a to z or any number"
+  And an error summary list descriptive link is shown as "Only use the letters a to z or any number"
 
   Examples:
   | <What are you looking for>                                     | <Displayed Text>                                                                      |
@@ -114,7 +114,7 @@ Scenario Outline: User enters a value in the "Tell us about your company" field 
   When I click "Continue"
   Then the <Tell us about your company> field is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Use only letters a to z, hyphens, numbers, spaces and apostrophes"
+  And an error summary list descriptive link is shown as "Use only the letters a to z, hyphens, numbers, spaces and apostrophes"
 
   Examples:
   | <Tell us about your company>                 | <Displayed Text>                                                          |
@@ -147,7 +147,7 @@ Scenario Outline: User enters a value in the "What can you offer the Kickstarter
   When I click "Continue"
   Then the <What can you offer the Kickstarter> field is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Only use letters a to z or any number"
+  And an error summary list descriptive link is shown as "Only use the letters a to z or any number"
 
   Examples:
   | <What can you offer the Kickstarter>                | <Displayed Text>                                                                                |
@@ -181,7 +181,7 @@ Scenario Outline: User enters a value in the "How to Apply?" field that contains
   When I click "Continue"
   Then the <How to Apply> field is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Use only letters a to z, hyphens, numbers, spaces and apostrophes
+  And an error summary list descriptive link is shown as "Use only the letters a to z, hyphens, numbers, spaces and apostrophes
 "
 
   Examples:
