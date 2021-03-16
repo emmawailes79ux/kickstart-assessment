@@ -40,14 +40,14 @@ Scenario: User enters a value that is not an integer in the "Total Hours Per Wee
   When I click "Continue",
   Then the "Total Hours Per Week" field is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please enter a valid number of hours per week for this vacancy"
+  And an error summary list descriptive link is shown as "Enter a valid number of hours per week for this vacancy"
 
 Scenario: User does not enter a value in the "Total Hours Per Week" field
   Given that I am a User who does not enter a value within the "Total Hours Per Week" field
   When I click "Continue"
   Then the "Total Hours Per Week" field is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please enter the number of hours per week for this vacancy"
+  And an error summary list descriptive link is shown as "Enter the number of hours per week for this vacancy"
 
 Scenario: User enters "0" within the "Total Hours Per Week" field
   Given that I am a User who enters the "0" value within the "Total Hours Per Week" field
@@ -69,7 +69,7 @@ Scenario Outline: User enters special characters or letters (excluding decimal p
   When I click "Continue"
   Then the <Total Hours Per Week> field is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please enter a valid number of hours per week for this vacancy"
+  And an error summary list descriptive link is shown as "Enter a valid number of hours per week for this vacancy"
 
   Examples:
   | <Total Hours Per Week> | <Displayed Text>                                                 |
@@ -81,7 +81,7 @@ Scenario: User enters a value greater than 99 hours within the "Total Hours Per 
   When I click "Continue"
   Then the Total Hours Per Week field is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please enter a valid number of hours per week for this vacancy"
+  And an error summary list descriptive link is shown as "Enter a valid number of hours per week for this vacancy"
 
 Scenario: User enters a valid number of hours within the "Total Hours Per Week" field
   Given that I am a User who enters a value within the "Total Hours Per Week" field that is an integer
@@ -107,7 +107,7 @@ Scenario: User does not select days within the "Fixed pattern of days" field
   When I click "Continue"
   Then the "Fixed Pattern of Days" radio is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please enter the pattern of days for this vacancy"
+  And an error summary list descriptive link is shown as "Enter the pattern of days for this vacancy"
 
 Scenario: User selects the "Other Working Patterns" radio for Days
   Given that I am a User who selects the "Other Working Patterns" radio for Days
@@ -118,7 +118,7 @@ Scenario: User enters a value greater than 100 characters within the "Other Work
   When I click "Continue" 
   Then the "Other Working Patterns" text field is invalid
   And an error summary heading is shown as "There is a problem" 
-  And an error summary descriptive link is shown as "Please describe the working pattern for this vacancy in less than 100 characters"
+  And an error summary descriptive link is shown as "Describe the working pattern for this vacancy in less than 100 characters"
 
 Scenario: User does not enter a value in the "Other Working Patterns" text field
   Given that I am a User who does not enter a value within the "Other Working Patterns" text field
@@ -137,7 +137,7 @@ Scenario: User does not select an option for Days
   When I click "Continue"
   Then the "Days" field is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please enter the days for this vacancy"
+  And an error summary list descriptive link is shown as "Enter the days for this vacancy"
 
 # Hours
 
@@ -146,7 +146,7 @@ Scenario: User does not select an option for hours
   When I click "Continue"
   Then the hours field is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please enter the hours for this vacancy"
+  And an error summary list descriptive link is shown as "Enter the hours for this vacancy"
 
 Scenario: User selects the "Flexible" radio
   Given that I am a User who selects the "Flexible" radio for hours
@@ -164,7 +164,7 @@ Scenario: User chooses fixed daily hours but does not enter any values
   Then the "From" field is invalid
   And the "To" field is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please enter the fixed daily hours for this vacancy"
+  And an error summary list descriptive link is shown as "Enter the fixed daily hours for this vacancy"
 
 Scenario: User enters fixed daily hours and the hours "from" exceed the hours "to"
   Given that I am a User who selects the "Fixed daily hours" radio and the value for the "from" field is greater than that for the "to" field
@@ -189,7 +189,7 @@ Scenario: User enters a value greater than 5 characters within the "From" or "To
   Then the "From" field is invalid
   And the "To" field is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "All hour values must be shorter than 5 characters"
+  And an error summary list descriptive link is shown as "Enter the hours using fewer than 5 characters"
 
 Scenario Outline: User enters values that are not integers for the fixed daily hours
   Given that I am a User who selects the "Fixed daily hours" radio and enter a value that is a special character, letter or not an integer within the <From> or <To> fields
@@ -197,7 +197,7 @@ Scenario Outline: User enters values that are not integers for the fixed daily h
   Then the "From" field is invalid
   And the "To" field is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please enter valid fixed daily hours for this vacancy"
+  And an error summary list descriptive link is shown as "Enter valid fixed daily hours for this vacancy"
 
   Examples:
   | <From> | <To> | <Displayed Text>                                       |
@@ -213,14 +213,14 @@ Scenario: User does not enter a value within the "Other daily hours" text box
   When I do not enter a value in the "Other daily hours" text box
   Then the "Other daily hours" field is invalid 
   And an error summary heading is shown as "There is a problem"
-  And an error summary descriptive link is shown as "Please describe the daily hours for this vacancy"
+  And an error summary descriptive link is shown as "Describe the daily hours for this vacancy"
 
 Scenario: User enters a value greater than 100 characters within the "Other daily hours" text field
   Given that I am a User who selects the "Other daily hours" radio
   When I enter a value greater than 100 characters in the "Other daily hours" text box
   Then the "Other daily hours" field is invalid 
   And an error summary heading is shown as "There is a problem"
-  And an error summary descriptive link is shown as "Please describe the daily hours for this vacancy in less than 100 characters"
+  And an error summary descriptive link is shown as "Describe the daily hours for this vacancy in fewer than 100 characters"
 
 Scenario: User enters a value smaller than 100 characters within the "Other daily hours" text field
   Given that I am a User who enters a value smaller than 100 characters within the "Other Daily hours" text field
@@ -234,7 +234,7 @@ Scenario: User does not select any option under "Pay"
   When I click "Continue"
   Then the "Pay" field is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please enter what you will pay the claimant"
+  And an error summary list descriptive link is shown as "Enter how much you will pay the young person"
 
 Scenario: User selects the "National Minimum Wage" radio
   Given that I am a User who selects the "National Minimum Wage" radio
@@ -257,14 +257,14 @@ Scenario: User does not enter a value in the "Hourly Pay" field
   When I click "Continue"
   Then the "Hourly Pay" field is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please enter the hourly pay for this vacancy"
+  And an error summary list descriptive link is shown as "Enter the hourly pay for this vacancy"
 
 Scenario Outline: User enters an invalid character in the "Hourly Pay" field
   Given that I am a User who does enters a letter, special character, or value that is not an integer in the <Hourly Pay> field
   When I click "Continue"
   Then the "Hourly Pay" field is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Please enter a valid hourly pay for this vacancy"
+  And an error summary list descriptive link is shown as "Enter a valid hourly rate for this vacancy"
 
   Examples:
   | <Hourly Pay>           | <Displayed Text>                                                 |
@@ -280,14 +280,14 @@ Scenario: User does not enter a value within the "Other hourly pay" text box
   When I do not enter a value in the "Other hourly pay" text box
   Then the "Other hourly pay" field is invalid 
   And an error summary heading is shown as "There is a problem"
-  And an error summary descriptive link is shown as "Please describe the hourly pay for this vacancy"
+  And an error summary descriptive link is shown as "Describe the hourly pay for this vacancy"
 
 Scenario: User enters a value greater than 100 characters within the "Other hourly pay" text field
   Given that I am a User who selects the "Other hourly pay" radio
   When I enter a value greater than 100 characters in the "Other hourly pay" text box
   Then the "Other hourly pay" field is invalid 
   And an error summary heading is shown as "There is a problem"
-  And an error summary descriptive link is shown as "Please describe the hourly pay for this vacancy in less than 100 characters"
+  And an error summary descriptive link is shown as "Describe the hourly pay for this vacancy in fewer than 100 characters"
 
 Scenario: User enters a value smaller than 100 characters within the "Other hourly pay" text field
   Given that I am a User who enters a value smaller than 100 characters within the "Other hourly pay" text field
