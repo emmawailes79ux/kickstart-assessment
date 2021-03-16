@@ -59,7 +59,7 @@
 
       .tabs-panel-inner:focus {
         border: 0;
-          outline: 5px solid #ffbf47;
+        outline: none;
       }
 
       .tabs-list[role='tablist'] {
@@ -148,11 +148,11 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
-      {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+      <!-- {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
 
-      <!-- {% set html %}
+      {% set html %}
         <p class="govuk-notification-banner__heading">
-          3 vacancies submitted successfully
+          'Junior exhibition designer' added successfully
         </p>
 
       {% endset %}
@@ -161,6 +161,7 @@
         html: html,
         type: 'success'
       }) }} -->
+
 
 
       <h1 class="govuk-heading-l">
@@ -226,54 +227,16 @@
                     html: "No. of<br>vacancies"
                   },
                   {
-                    html: "Advertising<br>date"
-                  },
-                  {
-                    text: "Location"
-                  },
-                  {
-                    text: "Postcode"
+                    html: "No. of<br>locations"
                   },
                   {
                     text: ""
                   },
                   {
                     text: ""
-                  },
-                  {
-                    text: "Status"
                   }
                 ],
                 rows: [
-                  [
-                    {
-                      text: ""
-                    },
-                    {
-                      html: "Admin clerk"
-                    },
-                    {
-                      text: "2"
-                    },
-                    {
-                      text: "19/10/21"
-                    },
-                    {
-                      text: "Leeds"
-                    },
-                    {
-                      text: "LS1 3AA"
-                    },
-                    {
-                      html: "<a href='job-detail'>Edit</a>"
-                    },
-                    {
-                      html: "<a href='delete-vacancy'>Delete</a>"
-                    },
-                    {
-                      html: '<strong class="govuk-tag govuk-tag--grey">Incomplete</strong>'
-                    }
-                  ],
                   [
                     {
                       html: "<div class='govuk-checkboxes govuk-checkboxes--small'>
@@ -284,28 +247,19 @@
                             </div>"
                     },
                     {
-                      html: "Trainee tree surgeon"
+                      html: "<b>Junior exhibition designer</b> <span class='govuk-!-font-size-14'>(<a href='job-detail'>Edit</a>)</span>"
                     },
                     {
                       text: "2"
                     },
                     {
-                      text: "11/03/21"
+                      text: "2"
                     },
                     {
-                      text: "Wakefield"
+                      html: '<strong class="govuk-tag govuk-tag--yellow">Ready to submit</strong>'
                     },
                     {
-                      text: "WF1 5AW"
-                    },
-                    {
-                      html: "<a href='job-detail'>Edit</a>"
-                    },
-                    {
-                      html: "<a href='delete-vacancy'>Delete</a>"
-                    },
-                    {
-                      html: '<strong class="govuk-tag govuk-tag--green">Ready to submit</strong>'
+                      html: "<span class='govuk-!-font-size-16'><a href='delete-vacancy'>Delete</a></span>"
                     }
                   ]
 
@@ -316,7 +270,7 @@
 
               {{ govukButton({
                 text: "Submit vacancies",
-                href: "job-list-roles-submitted",
+                href: "submit-vacancy",
                 classes: "govuk-button--secondary"
               }) }}
             </div>
@@ -328,90 +282,77 @@
                 firstCellIsHeader: false,
                 head: [
                   {
-                    text: ""
-                  },
-                  {
                     text: "Job title"
                   },
                   {
                     html: "No. of<br>vacancies"
                   },
                   {
-                    html: "Advertising<br>date"
-                  },
-                  {
-                    text: "Location"
-                  },
-                  {
-                    text: "Postcode"
+                    html: "No. of<br>locations"
                   },
                   {
                     text: ""
-                  },
-                  {
-                    text: ""
-                  },
-                  {
-                    text: "Status"
                   }
                 ],
                 rows: [
                   [
                     {
-                      text: ""
-                    },
-                    {
-                      html: "<a href='#'>Junior exhibition designer</a>"
+                      html: "<b><a href='#'>Part-time auditor</a></b>"
                     },
                     {
                       text: "3"
                     },
                     {
-                      text: "04/03/21"
+                      text: "1"
                     },
                     {
-                      text: "Leeds"
-                    },
-                    {
-                      text: "LS1 3AA"
-                    },
-                    {
-                      html: ""
-                    },
-                    {
-                      html: ""
-                    },
-                    {
-                      html: '<strong class="govuk-tag govuk-tag--blue">Submitted</strong>'
+                      html: '<strong class="govuk-tag govuk-tag--green">Submitted</strong>',
+                      format: "numeric"
                     }
                   ],
                   [
                     {
+                      html: "<b><a href='#'>Landscape gardener</a></b>"
+                    },
+                    {
+                      text: "1"
+                    },
+                    {
+                      text: "1"
+                    },
+                    {
+                      html: '<strong class="govuk-tag govuk-tag--green">Submitted</strong>',
+                      format: "numeric"
+                    }
+                  ],
+                  [
+                    {
+                      html: "<b><a href='#'>Junior salesperson</a></b>"
+                    },
+                    {
+                      text: "14"
+                    },
+                    {
+                      text: "7"
+                    },
+                    {
+                      html: '<strong class="govuk-tag govuk-tag--green">Submitted</strong>',
+                      format: "numeric"
+                    }
+                  ],
+                  [
+
+                    {
+                      html: ""
+                    },
+                    {
+                      html: "<b>18 / 34</b>"
+                    },
+                    {
                       text: ""
                     },
                     {
-                      html: ""
-                    },
-                    {
-                      html: "<b>3 / 34</b>"
-                    },
-                    {
                       text: ""
-                    },
-                    {
-                      text: ""
-                    },
-                    {
-                      html: ""
-                    },
-                    {
-                      html: ""
-                    },
-                    {
-                      html: ""
-                    },
-                    {
-                      html: ""
                     }
                   ]
 
@@ -423,5 +364,7 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>
 
 {% endblock %}

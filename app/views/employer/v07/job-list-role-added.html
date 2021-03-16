@@ -59,7 +59,7 @@
 
       .tabs-panel-inner:focus {
         border: 0;
-          outline: 5px solid #ffbf47;
+        outline: none;
       }
 
       .tabs-list[role='tablist'] {
@@ -161,7 +161,7 @@
         html: html,
         type: 'success'
       }) }} -->
-      
+
 
 
       <h1 class="govuk-heading-l">
@@ -234,9 +234,6 @@
                   },
                   {
                     text: ""
-                  },
-                  {
-                    text: "Status"
                   }
                 ],
                 rows: [
@@ -245,7 +242,7 @@
                       text: ""
                     },
                     {
-                      html: "<b>Admin clerk</b>"
+                      html: "<b>Admin clerk</b> <span class='govuk-!-font-size-14'>(<a href='job-detail'>Edit</a>)</span>"
                     },
                     {
                       text: "2"
@@ -254,13 +251,10 @@
                       text: "1"
                     },
                     {
-                      html: "<a href='job-detail'>Edit</a>"
-                    },
-                    {
-                      html: "<a href='delete-vacancy'>Delete</a>"
-                    },
-                    {
                       html: '<strong class="govuk-tag govuk-tag--grey">Incomplete</strong>'
+                    },
+                    {
+                      html: "<span class='govuk-!-font-size-16'><a href='delete-vacancy'>Delete</a></span>"
                     }
                   ],
                   [
@@ -273,22 +267,19 @@
                             </div>"
                     },
                     {
-                      html: "<b>Trainee tree surgeon</b>"
+                      html: "<b>Landscape gardener</b> <span class='govuk-!-font-size-14'>(<a href='job-detail'>Edit</a>)</span>"
                     },
                     {
                       text: "1"
                     },
                     {
                       text: "1"
-                    },
-                    {
-                      html: "<a href='job-detail'>Edit</a>"
-                    },
-                    {
-                      html: "<a href='delete-vacancy'>Delete</a>"
                     },
                     {
                       html: '<strong class="govuk-tag govuk-tag--yellow">Ready to submit</strong>'
+                    },
+                    {
+                      html: "<span class='govuk-!-font-size-16'><a href='delete-vacancy'>Delete</a></span>"
                     }
                   ],
                   [
@@ -301,7 +292,7 @@
                             </div>"
                     },
                     {
-                      html: "<b>Junior salesperson</b>"
+                      html: "<b>Junior salesperson</b> <span class='govuk-!-font-size-14'>(<a href='job-detail'>Edit</a>)</span>"
                     },
                     {
                       text: "14"
@@ -310,13 +301,10 @@
                       text: "7"
                     },
                     {
-                      html: "<a href='job-detail'>Edit</a>"
-                    },
-                    {
-                      html: "<a href='delete-vacancy'>Delete</a>"
-                    },
-                    {
                       html: '<strong class="govuk-tag govuk-tag--yellow">Ready to submit</strong>'
+                    },
+                    {
+                      html: "<span class='govuk-!-font-size-16'><a href='delete-vacancy'>Delete</a></span>"
                     }
                   ],
                   [
@@ -329,22 +317,19 @@
                             </div>"
                     },
                     {
-                      html: "<b>Trainee auditor</b> <span class='govuk-!-font-size-14'>(<a href='job-detail'>Edit</a>)</span>"
-                    },
-                    {
-                      text: "4"
+                      html: "<b>Junior exhibition designer</b> <span class='govuk-!-font-size-14'>(<a href='job-detail'>Edit</a>)</span>"
                     },
                     {
                       text: "2"
                     },
                     {
-                      html: "<a href='job-detail'>Edit</a>"
-                    },
-                    {
-                      html: "<a href='delete-vacancy'>Delete</a>"
+                      text: "2"
                     },
                     {
                       html: '<strong class="govuk-tag govuk-tag--yellow">Ready to submit</strong>'
+                    },
+                    {
+                      html: "<span class='govuk-!-font-size-16'><a href='delete-vacancy'>Delete</a></span>"
                     }
                   ]
 
@@ -355,7 +340,7 @@
 
               {{ govukButton({
                 text: "Submit vacancies",
-                href: "job-list-roles-submitted",
+                href: "submit-vacancy",
                 classes: "govuk-button--secondary"
               }) }}
             </div>
@@ -367,67 +352,36 @@
                 firstCellIsHeader: false,
                 head: [
                   {
-                    text: ""
-                  },
-                  {
                     text: "Job title"
                   },
                   {
                     html: "No. of<br>vacancies"
                   },
                   {
-                    html: "Advertising<br>date"
-                  },
-                  {
-                    text: "Location"
-                  },
-                  {
-                    text: "Postcode"
+                    html: "No. of<br>locations"
                   },
                   {
                     text: ""
-                  },
-                  {
-                    text: ""
-                  },
-                  {
-                    text: "Status"
                   }
                 ],
                 rows: [
                   [
                     {
-                      text: ""
-                    },
-                    {
-                      html: "<a href='#'>Junior exhibition designer</a>"
+                      html: "<b><a href='#'>Part-time auditor</a></b>"
                     },
                     {
                       text: "3"
                     },
                     {
-                      text: "04/03/21"
+                      text: "1"
                     },
                     {
-                      text: "Leeds"
-                    },
-                    {
-                      text: "LS1 3AA"
-                    },
-                    {
-                      html: ""
-                    },
-                    {
-                      html: ""
-                    },
-                    {
-                      html: '<strong class="govuk-tag govuk-tag--blue">Submitted</strong>'
+                      html: '<strong class="govuk-tag govuk-tag--green">Submitted</strong>',
+                      format: "numeric"
                     }
                   ],
                   [
-                    {
-                      text: ""
-                    },
+
                     {
                       html: ""
                     },
@@ -439,18 +393,6 @@
                     },
                     {
                       text: ""
-                    },
-                    {
-                      html: ""
-                    },
-                    {
-                      html: ""
-                    },
-                    {
-                      html: ""
-                    },
-                    {
-                      html: ""
                     }
                   ]
 

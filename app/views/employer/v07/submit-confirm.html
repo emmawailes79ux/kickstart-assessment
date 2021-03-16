@@ -1,0 +1,56 @@
+{% extends "layout-header-links.html" %}
+
+{% block pageTitle %}
+  Submitted successfully
+{% endblock %}
+
+{% block beforeContent %}
+<style>
+  .guidance-layout {
+    word-wrap: break-word;
+    background-color: #005EA5;
+    padding: 50px 30px 30px;
+    display: block;
+    }
+    .guidance-layout h1, .guidance-layout p, .guidance-layout ul, .guidance-layout h2, .guidance-layout .govuk-summary-list, .guidance-layout .govuk-caption-m{
+        color:#fff;
+    }
+    .guidance-layout .govuk-button, .guidance-layout .drop-area__btn, .guidance-layout .js-enabled .dft-fu__add-file-btn, .js-enabled .guidance-layout .dft-fu__add-file-btn {
+        color: #005EA5;
+        background-color: #fff;
+    }
+    .guidance-layout .govuk-warning-text{
+        color:#fff;
+    }
+    .guidance-layout .govuk-warning-text__icon{
+        border: 3px solid #fff;
+        border-radius: 50%;
+        color: #005EA5;
+        background: #fff;
+    }
+    </style>
+    {% include "includes/header-summary.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row guidance-layout" style="margin-right:0; margin-left:0">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">15 vacancies submitted successfully</h1>
+
+      <p class="govuk-body">You have submitted 18 of your 34 vacancies so far.</p>
+
+      <h2 class="govuk-heading-m">What happens next</h2>
+
+      <p class="govuk-body">
+        We will review your vacancies. Due to current demand this can take up to 30 days.
+      </p>
+      <p class="govuk-body">
+        Once we have approved your vacancies you will start to receive referrals whenever your vacancy is referred by a work coach to a potential applicant.
+      </p>
+      <p class="govuk-body"><a href="job-list-roles-submitted" style="font-weight: bold; text-decoration: underline; color: white;">Continue with vacancies</a></p>
+
+    </div>
+  </div>
+
+{% endblock %}
