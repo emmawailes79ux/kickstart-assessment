@@ -1,0 +1,112 @@
+{% extends "layout-header-links.html" %}
+
+{% block pageTitle %}
+    Are you sure you want to delete this vacancy?
+{% endblock %}
+
+{% block beforeContent %}
+    {% include 'includes/back-button.njk' %}
+{% endblock %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+                <form id="form" method="post" action="job-list-role-deleted">
+
+                <div class="govuk-form-group">
+                  {{ govukRadios({
+                  classes: "govuk-radios--inline",
+                  idPrefix: "delete-vacancy",
+                  name: "delete-vacancy",
+                  fieldset: {
+                    legend: {
+                      text: "Are you sure you want to delete this vacancy?",
+                      isPageHeading: true,
+                      classes: "govuk-fieldset__legend--l"
+                    }
+                  },
+                  hint: {
+                    text: "Once you have deleted it you will not be able to retrieve it."
+                  },
+                  items: [
+                    {
+                      value: "yes",
+                      text: "Yes"
+                    },
+                    {
+                      value: "no",
+                      text: "No"
+                    }
+                  ]
+                  }) }}
+
+                  <button type="submit" class="govuk-button govuk-!-margin-right-1" id="submit">Continue</button>
+                </div>
+              </form>
+
+
+            </div>
+          </div>
+
+
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-full">
+                {{ govukTable({
+                  firstCellIsHeader: false,
+                  head: [
+                    {
+                      text: ""
+                    },
+                    {
+                      text: "Job title"
+                    },
+                    {
+                      html: "No. of<br>vacancies"
+                    },
+                    {
+                      html: "Advertising<br>date"
+                    },
+                    {
+                      text: "Location"
+                    },
+                    {
+                      text: "Postcode"
+                    },
+                    {
+                      text: "Status"
+                    }
+                  ],
+                  rows: [
+                    [
+                      {
+                        text: ""
+                      },
+                      {
+                        html: "Admin clerk"
+                      },
+                      {
+                        text: "2"
+                      },
+                      {
+                        text: "19/10/21"
+                      },
+                      {
+                        text: "Leeds"
+                      },
+                      {
+                        text: "LS1 3AA"
+                      },
+                      {
+                        html: '<strong class="govuk-tag govuk-tag--grey">Incomplete</strong>'
+                      }
+                    ]
+
+                  ]
+                }) }}
+              </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

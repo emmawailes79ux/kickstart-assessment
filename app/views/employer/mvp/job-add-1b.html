@@ -1,0 +1,216 @@
+{% extends "layout-header-links.html" %}
+
+{% block pageTitle %}
+  Add a vacancy
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/header-summary.html" %}
+    {{ govukBackLink({
+      text: "Back",
+      href: "job-add"
+    }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% call govukFieldset({
+        legend: {
+          html: "<span class='govuk-caption-l'>Add a vacancy</span>Hours and pay",
+          classes: "govuk-fieldset__legend--l",
+          isPageHeading: true
+        }
+      }) %}
+
+
+
+      {{ govukInput({
+        label: {
+          text: "Total hours per week",
+          classes: "govuk-label--m",
+          isPageHeading: false
+        },
+        hint: {
+          text: "The kickstart scheme requires a minimum of 25 hours per week"
+        },
+        classes: "govuk-input--width-5",
+        id: "total-hours",
+        name: "total-hours"
+      }) }}
+
+
+
+
+      {% set daysShow %}
+      {{ govukCheckboxes({
+        idPrefix: "selectDays",
+        name: "selectDays",
+        hint: {
+          text: "Select which days they will work"
+        },
+        items: [
+          {
+            value: "monday",
+            text: "Monday"
+          },
+          {
+            value: "tuesday",
+            text: "Tuesday"
+          },
+          {
+            value: "wednesday",
+            text: "Wednesday"
+          },
+          {
+            value: "thursday",
+            text: "Thursday"
+          },
+          {
+            value: "friday",
+            text: "Friday"
+          },
+          {
+            value: "saturday",
+            text: "Saturday"
+          },
+          {
+            value: "sunday",
+            text: "Sunday"
+          }
+        ]
+      }) }}
+      {% endset -%}
+
+      {{ govukRadios({
+         idPrefix: "days",
+         name: "days",
+         fieldset: {
+           legend: {
+             text: "Days",
+             isPageHeading: false,
+             classes: "govuk-fieldset__legend--m"
+           }
+         },
+         hint: {
+           text: "Choose 'flexible' if the job has flexible working days."
+         },
+         items: [
+           {
+             value: "flexible-days",
+             text: "Flexible"
+           },
+           {
+             value: "fixed-days",
+             text: "Fixed pattern of days",
+             conditional: {
+               html: daysShow
+             }
+           }
+         ]
+       }) }}
+
+
+
+
+       {% set hoursShow %}
+       <div class="govuk-date-input" id="passport-issued">
+         <div class="govuk-date-input__item">
+           <div class="govuk-form-group">
+             <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+               from
+             </label>
+             <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-month" name="passport-issued-month" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+         </div>
+         <div class="govuk-date-input__item">
+           <div class="govuk-form-group">
+             <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+               to
+             </label>
+             <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+         </div>
+       </div>
+       {% endset -%}
+
+       {{ govukRadios({
+          idPrefix: "hours",
+          name: "hours",
+          fieldset: {
+            legend: {
+              text: "Hours",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: "Choose 'flexible' if the job has flexible hours."
+          },
+          items: [
+            {
+              value: "flexible-hours",
+              text: "Flexible"
+            },
+            {
+              value: "fixed-hours",
+              text: "Fixed daily hours",
+              conditional: {
+                html: hoursShow
+              }
+            }
+          ]
+        }) }}
+
+
+
+
+        {% set payShow %}
+        {{ govukInput({
+          id: "cost",
+          name: "cost",
+          prefix: {
+            text: "£"
+          },
+          classes: "govuk-input--width-5",
+          spellcheck: false
+        }) }}
+        {% endset -%}
+
+        {{ govukRadios({
+           idPrefix: "pay",
+           name: "pay",
+           fieldset: {
+             legend: {
+               text: "Pay",
+               isPageHeading: false,
+               classes: "govuk-fieldset__legend--m"
+             }
+           },
+           items: [
+             {
+               value: "minimum-wage",
+               text: "Minimum wage"
+             },
+             {
+               value: "hourly-page",
+               text: "Hourly pay",
+               conditional: {
+                 html: payShow
+               }
+             }
+           ]
+         }) }}
+
+    {% endcall %}
+
+
+
+      {{ govukButton({
+        text: "Continue",
+        href: "job-add-location-list"
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}

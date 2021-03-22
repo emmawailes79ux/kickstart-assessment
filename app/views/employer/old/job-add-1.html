@@ -1,0 +1,161 @@
+{% extends "layout-header-links.html" %}
+
+{% block pageTitle %}
+  Add a vacancy
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+      text: "Back",
+      href: "job-add-2"
+    }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l"><span class='govuk-caption-l'>Add a vacancy</span>Dates</h1>
+
+      <!-- {% set startDate %}
+      {{ govukDateInput({
+        id: "start-date",
+        namePrefix: "start-date",
+        fieldset: {
+          legend: {
+            text: "When do you expect this vacancy to start?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        hint: {
+          text: "For example, 12 03 2021"
+        }
+      }) }}
+      {% endset -%}
+
+      {{ govukRadios({
+         idPrefix: "start-date",
+         name: "start-date",
+         fieldset: {
+           legend: {
+             text: "What is the vacancy's anticipated start date?",
+             isPageHeading: false,
+             classes: "govuk-fieldset__legend--m"
+           }
+         },
+         items: [
+           {
+             value: "asap",
+             text: "As soon as possible"
+           },
+           {
+             value: "setStart",
+             text: "A date in the future",
+             conditional: {
+               html: startDate
+             }
+           }
+         ]
+       }) }} -->
+
+      {% set advertisingDate %}
+      {{ govukDateInput({
+        id: "advertising-date",
+        namePrefix: "advertising-date",
+        fieldset: {
+          legend: {
+            text: "What date do you want the vacancy advert to go live",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: "For example, 12 03 2021"
+        }
+      }) }}
+      {% endset -%}
+
+      {{ govukRadios({
+         idPrefix: "contact",
+         name: "contact",
+         fieldset: {
+           legend: {
+             text: "When do you want to start advertising this vacancy?",
+             isPageHeading: false,
+             classes: "govuk-fieldset__legend--m"
+           }
+         },
+         items: [
+           {
+             value: "asap",
+             text: "As soon as possible"
+           },
+           {
+             value: "setDate",
+             text: "A date in the future",
+             conditional: {
+               html: advertisingDate
+             }
+           }
+         ]
+       }) }}
+
+      {% set closingDate %}
+      {{ govukDateInput({
+        id: "closing-date",
+        namePrefix: "closing-date",
+        fieldset: {
+          legend: {
+            text: "Closing date for applications",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        hint: {
+          text: "For example, 12 03 2021"
+        }
+      }) }}
+      {% endset -%}
+
+      {{ govukRadios({
+         idPrefix: "closing-date",
+         name: "closing-date",
+         fieldset: {
+           legend: {
+             text: "Do you want to set a closing date for applications to this vacancy?",
+             isPageHeading: false,
+             classes: "govuk-fieldset__legend--m"
+           }
+         },
+         hint: {
+           html: "<p class='govuk-hint'>Once the closing date has passed you will not receive any more referrals or applications.</p><p class='govuk-hint'>It is taking up to one month to process vacancies. If you want to set a closing date make sure you set one at least 2 months from now.</p>"
+         },
+         items: [
+           {
+             value: "yes",
+             text: "Yes",
+             conditional: {
+               html: closingDate
+             }
+           },
+           {
+             value: "no",
+             text: "No"
+           }
+         ]
+       }) }}
+
+
+
+
+
+      {{ govukButton({
+        text: "Continue",
+        href: "job-add-3a"
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}

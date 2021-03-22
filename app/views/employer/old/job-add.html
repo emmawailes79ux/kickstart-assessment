@@ -1,0 +1,304 @@
+{% extends "layout-header-links.html" %}
+
+{% block pageTitle %}
+  Add a vacancy
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+      text: "Back",
+      href: "job-list-empty"
+    }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% call govukFieldset({
+        legend: {
+          html: "<span class='govuk-caption-l'>Add a vacancy</span>Vacancy details",
+          classes: "govuk-fieldset__legend--l",
+          isPageHeading: true
+        }
+      }) %}
+
+      {{ govukInput({
+        label: {
+          text: "Job title",
+          classes: "govuk-label--m",
+          isPageHeading: false
+        },
+        classes: "govuk-input--width-20",
+        id: "job-title",
+        name: "job title"
+      }) }}
+
+
+      {{ govukInput({
+        label: {
+          text: "Number of vacancies",
+          classes: "govuk-label--m",
+          isPageHeading: false
+        },
+        hint: {
+          text: "Number of vacancies for this location."
+        },
+        classes: "govuk-input--width-4",
+        id: "width-4",
+        name: "width-4"
+      }) }}
+
+      {% set referral %}
+      {{ govukInput({
+        label: {
+          text: "Referral limit",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--m"
+        },
+        classes: "govuk-input--width-5",
+        id: "width-5",
+        name: "width-5"
+        }) }}
+        {% endset -%}
+
+       {{ govukRadios({
+          idPrefix: "contact",
+          name: "contact",
+          fieldset: {
+            legend: {
+              text: "Do you want a referral limit for each vacancy?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: "A referral is made when we recommend your job placement to a candidate. This does not guarantee the candidate will put in an application."
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes",
+              conditional: {
+                html: referral
+              }
+            },
+            {
+              value: "no",
+              text: "No"
+            }
+          ]
+        }) }}
+
+
+      {{ govukSelect({
+        id: "sort",
+        name: "sort",
+        label: {
+          text: "Industry sector",
+          classes: "govuk-label--m",
+          isPageHeading: false
+        },
+        items: [
+          {
+            value: "Administration",
+            text: "Administration"
+          },
+          {
+            value: "Animal Care",
+            text: "Animal Care"
+          },
+          {
+            value: "Beauty and Wellbeing",
+            text: "Beauty & Wellbeing"
+          },
+          {
+            value: "Business and Finance",
+            text: "Business & Finance"
+          },
+          {
+            value: "Computing, Technology and Digital",
+            text: "Computing, Technology & Digital"
+          },
+          {
+            value: "Construction and Trades",
+            text: "Construction & Trades"
+          },
+          {
+            value: "Creative and Media",
+            text: "Creative & Media"
+          },
+          {
+            value: "Delivery and Storage",
+            text: "Delivery & Storage"
+          },
+          {
+            value: "Emergency and Uniform Services",
+            text: "Emergency & Uniform Services"
+          },
+          {
+            value: "Engineering and Maintenance",
+            text: "Engineering & Maintenance"
+          },
+          {
+            value: "Environmentand Land",
+            text: "Environment & Land"
+          },
+          {
+            value: "Government Services",
+            text: "Government Services"
+          },
+          {
+            value: "Healthcare",
+            text: "Healthcare"
+          },
+          {
+            value: "Home Services",
+            text: "Home Services"
+          },
+          {
+            value: "Hospitality and Food",
+            text: "Hospitality & Food"
+          },
+          {
+            value: "Law and Legal",
+            text: "Law & Legal"
+          },
+          {
+            value: "Managerial",
+            text: "Managerial"
+          },
+          {
+            value: "Manufacturing",
+            text: "Manufacturing"
+          },
+          {
+            value: "Retail and Sales",
+            text: "Retail & Sales"
+          },
+          {
+            value: "Science and Research",
+            text: "Science & Research"
+          },
+          {
+            value: "Social Care",
+            text: "Social Care"
+          },
+          {
+            value: "Sports and Leisure",
+            text: "Sports & Leisure"
+          },
+          {
+            value: "Teaching and Education",
+            text: "Teaching & Education"
+          },
+          {
+            value: "Transport",
+            text: "Transport"
+          },
+          {
+            value: "Travel and Tourism",
+            text: "Travel & Tourism"
+          }
+        ]
+      }) }}
+
+
+
+      {% set jobref %}
+      {{ govukInput({
+       label: {
+          text: "Employer job reference",
+          classes: "govuk-label--s",
+          isPageHeading: false
+        },
+        hint: {
+            text: "Add any internal reference number you have for this vacancy. We will use this when communicating with you about this vacancy."
+          },
+        classes: "govuk-input--width-10",
+        id: "employer-ref",
+        name: "employer-ref"
+      }) }}
+        {% endset -%}
+
+       {{ govukRadios({
+          idPrefix: "job-ref",
+          name: "job-ref",
+          fieldset: {
+            legend: {
+              text: "Do you have your own internal job reference number?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes",
+              conditional: {
+                html: jobref
+              }
+            },
+            {
+              value: "no",
+              text: "No"
+            }
+          ]
+        }) }}
+
+
+      <h2 class="govuk-heading-m">Contact for this job</h2>
+
+      {{ govukInput({
+        label: {
+          text: "Full name"
+        },
+        classes: "govuk-input--width-20",
+        id: "contact-name",
+        name: "full-name"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Telephone"
+        },
+        classes: "govuk-input--width-20",
+        id: "telephone",
+        name: "telephone"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Email address"
+        },
+        classes: "govuk-input--width-20",
+        id: "email",
+        name: "email"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Confirm email address"
+        },
+        classes: "govuk-input--width-20",
+        id: "confirm-email",
+        name: "confirm-email"
+      }) }}
+
+
+{% endcall %}
+
+
+
+
+    <br>
+
+      {{ govukButton({
+        text: "Continue",
+        href: "job-add-2"
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -5,46 +5,60 @@
 {% endblock %}
 
 {% block beforeContent %}
+  {% include "includes/header-summary.html" %}
     {% include 'includes/back-button.njk' %}
 {% endblock %}
 
 {% block content %}
     <div class="govuk-grid-row">
-        <div class="govuk-grid-column-two-thirds">
-
-                <form id="form" method="post" action="job-list-role-deleted">
-
-                <div class="govuk-form-group">
-                  {{ govukRadios({
-                  classes: "govuk-radios--inline",
-                  idPrefix: "delete-vacancy",
-                  name: "delete-vacancy",
-                  fieldset: {
-                    legend: {
-                      text: "Are you sure you want to submit this vacancy?",
-                      isPageHeading: true,
-                      classes: "govuk-fieldset__legend--l"
-                    }
+        <div class="govuk-grid-column-full">
+            <h1 class="govuk-heading-l">Submit these vacancies to Universal Credit</h1>
+            <p class="govuk-body">We'll advertise these vacancies to Universal Credit claimants. You will not be able to make any more changes.</p>
+            {{ govukTable({
+              firstCellIsHeader: false,
+              head: [
+                {
+                  text: "Job title"
+                },
+                {
+                  html: "No. of vacancies"
+                },
+                {
+                  html: "No. of locations"
+                },
+                {
+                  text: "",
+                  format: "numeric"
+                }
+              ],
+              rows: [
+                [
+                  {
+                    html: "<b>Landscape gardner</b>"
                   },
-                  hint: {
-                    text: "Once you have submitted it you will not be able to make changes."
+                  {
+                    text: "1"
                   },
-                  items: [
-                    {
-                      value: "yes",
-                      text: "Yes"
-                    },
-                    {
-                      value: "no",
-                      text: "No"
-                    }
-                  ]
-                  }) }}
+                  {
+                    text: "1"
+                  }
+                ],
+                [
+                  {
+                    html: "<b>Junior salesperson</b>"
+                  },
+                  {
+                    text: "14"
+                  },
+                  {
+                    text: "7"
+                  }
+                ]
+              ]
+            }) }}
 
-                  <button type="submit" class="govuk-button govuk-!-margin-right-1" id="submit">Continue</button>
-                </div>
-              </form>
-
+                  <p class="govuk-body"><a href="submit-confirm" class="govuk-button govuk-!-margin-right-1" id="submit">Submit vacancies</a></p>
+                  <p class="govuk-body"><a href="job-list-role-deleted">Back to vacancies</a></p>
 
             </div>
           </div>
@@ -52,58 +66,7 @@
 
             <div class="govuk-grid-row">
               <div class="govuk-grid-column-full">
-                {{ govukTable({
-                  firstCellIsHeader: false,
-                  head: [
-                    {
-                      text: ""
-                    },
-                    {
-                      text: "Job title"
-                    },
-                    {
-                      html: "No. of<br>vacancies"
-                    },
-                    {
-                      html: "Advertising<br>date"
-                    },
-                    {
-                      text: "Location"
-                    },
-                    {
-                      text: "Postcode"
-                    },
-                    {
-                      text: "Status"
-                    }
-                  ],
-                  rows: [
-                    [
-                      {
-                        text: ""
-                      },
-                      {
-                        html: "Admin clerk"
-                      },
-                      {
-                        text: "2"
-                      },
-                      {
-                        text: "19/10/21"
-                      },
-                      {
-                        text: "Leeds"
-                      },
-                      {
-                        text: "LS1 3AA"
-                      },
-                      {
-                        html: '<strong class="govuk-tag govuk-tag--grey">Incomplete</strong>'
-                      }
-                    ]
 
-                  ]
-                }) }}
               </div>
             </div>
 

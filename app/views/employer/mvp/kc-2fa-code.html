@@ -14,24 +14,21 @@
             <form action="kc-password" method="post">
                 {{ govukFieldset({
                     legend: {
-                        html: "Mobile Authenticator Setup",
+                        html: "Set up a mobile authenticator",
                         classes: "govuk-fieldset__legend--l",
                         isPageHeading: true
                     }
                 })}}
 
-                <p class="govuk-body">You need to set up Mobile Authenticator to activate your account.</p>
+                <p class="govuk-body">You must set up a mobile authenticator before you can use your Kickstart account.</p>
+                <p class="govuk-body">You'll need to:</p>
 
                 <ol class="govuk-list govuk-list--number">
-                  <li>Install one of the following applications on your mobile:
-                  <ul class="">
-                      <li>FreeOTP</li>
-                      <li>Google Authenticator</li>
-                  </ul></li>
-                  <li>Open the application and enter the key:</li>
+                  <li>Download and install an authenticator app, for example FreeOTP or Google Authenticator</li>
+                  <li>Open the app and enter this key:</li>
                   <p class="govuk-body"><b>JJIU SSRZ NESH URZW M5TT QTKD NRSH ILYV</b></p>
                   <p class="govuk-body"><a href="kc-2fa">Scan barcode?</a></p>
-                  <li>Use the following configuration values if the application allows setting them:
+                  <li>Make the following changes to the set-up, if the app allows you to:
                     <ul class="">
                         <li>Type: Time-based</li>
                         <li>Algorithm: SHA1</li>
@@ -39,10 +36,11 @@
                         <li>Intervals: 30</li>
                     </ul>
                   </li>
-                  <li>Enter the one-time code provided by the application and click Submit to finish the setup.</li>
+                  <li>Enter the one-time code on the app</li>
+                  <!-- <li>Provide a device name, for example Laptop3</li> -->
+                  <li>Submit to finish setting up the app</li>
                 </ol>
 
-                <p class="govuk-body">Provide a device name to help you manage your OTP devices</p>
                 {{ govukInput({
                     label: {
                         text: "One-time code"
@@ -52,14 +50,14 @@
                     classes: "govuk-!-width-two-thirds"
                 }) }}
 
-                {{ govukInput({
+                <!-- {{ govukInput({
                     label: {
                         text: "Device name"
                     },
                     id: "device-name",
                     name: "device-name",
                     classes: "govuk-!-width-two-thirds"
-                }) }}
+                }) }}-->
 
                 {{ govukButton({
                     text: "Continue"

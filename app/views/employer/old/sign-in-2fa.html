@@ -1,0 +1,36 @@
+{% extends "layout-footer.html" %}
+
+{% block pageTitle %}
+  Enter security code
+{% endblock %}
+
+{% block beforeContent %}
+
+{% endblock %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <form action="job-list-empty" method="post">
+
+                <h1 class="govuk-heading-l">Enter the code from your Authenticator app</h1>
+
+                <div class="govuk-form-group govuk-!-margin-top-6">
+                    <label class="govuk-label" for="2fa-code">
+                        One-time code
+                    </label>
+                    <input class="govuk-input govuk-input--width-10" id="signin-code" name="signin-code" type="text">
+                </div>
+
+                {{ govukButton({
+                    text: "Continue"
+                }) }}
+
+                <p>Having trouble? <a href="sign-in" class="govuk-link">Sign in again</a></p>
+
+
+                <!-- <p><a href="account-recovery/access" class="govuk-link">I cannot access the mobile phone number I use to sign in</a></p> -->
+            </form>
+        </div>
+    </div>
+{% endblock %}
