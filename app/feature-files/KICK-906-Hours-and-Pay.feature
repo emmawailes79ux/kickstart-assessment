@@ -172,7 +172,7 @@ Scenario: User enters fixed daily hours and the hours "from" exceed the hours "t
   Then the "From" field is invalid
   And the "To" field is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "The job's starting hour cannot be later than its ending hour"
+  And an error summary list descriptive link is shown as "The start time cannot be later than the finishing time"
 
 Scenario: User enters fixed daily hours and the hours "to" are smaller than the hours "from"
   Given that I am a User who selects the "Fixed daily hours" radio and the value for the "from" field is greater than that for the "to" field
@@ -180,7 +180,7 @@ Scenario: User enters fixed daily hours and the hours "to" are smaller than the 
   Then the "From" field is invalid
   And the "To" field is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "The job's ending hour cannot be earlier than its starting hour"
+  And an error summary list descriptive link is shown as "The finishing time cannot be earlier than the start time"
 
 Scenario: User enters a value greater than 5 characters within the "From" or "To" field
   Given that I am a User who enters a value greater than 5 characters within the "From" or "To" field
@@ -234,7 +234,7 @@ Scenario: User does not select any option under "Pay"
   When I click "Continue"
   Then the "Pay" field is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "Enter how much you will pay the young person"
+  And an error summary list descriptive link is shown as "Enter how much you will pay the applicant"
 
 Scenario: User selects the "National Minimum Wage" radio
   Given that I am a User who selects the "National Minimum Wage" radio
@@ -444,7 +444,7 @@ Scenario: User enters fixed daily hours and the hours "to" are smaller than the 
   Then the "From" field is invalid
   And the "To" field is invalid
   And an error summary heading is shown as "There is a problem"
-  And an error summary list descriptive link is shown as "The start time cannot be later than the finishing time"
+  And an error summary list descriptive link is shown as "The finishing time cannot be earlier the start time"
 
 Scenario: User enters a value greater than 5 characters within the "From" or "To" field
   Given that I am a User who enters a value greater than 5 characters within the "From" or "To" field
