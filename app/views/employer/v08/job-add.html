@@ -1,0 +1,289 @@
+{% extends "layout-header-links.html" %}
+
+{% block pageTitle %}
+  Add a vacancy
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/beta-banner.html" %}
+  {% include "includes/header-summary.html" %}
+    {{ govukBackLink({
+      text: "Back",
+      href: "job-list-empty"
+    }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {% call govukFieldset({
+        legend: {
+          html: "<span class='govuk-caption-l'>Add a vacancy</span>Vacancy details",
+          classes: "govuk-fieldset__legend--l",
+          isPageHeading: true
+        }
+      }) %}
+
+      {{ govukInput({
+        label: {
+          text: "Job title",
+          classes: "govuk-label--m",
+          isPageHeading: false
+        },
+        classes: "govuk-input--width-20",
+        id: "job-title",
+        name: "job title"
+      }) }}
+
+
+      {{ govukSelect({
+        id: "sort",
+        name: "sort",
+        label: {
+          text: "Industry sector",
+          classes: "govuk-label--m",
+          isPageHeading: false
+        },
+        items: [
+          {
+            value: "Select",
+            text: "--- Select one ---"
+          },
+          {
+            value: "Administration",
+            text: "Administration"
+          },
+          {
+            value: "Animal Care",
+            text: "Animal Care"
+          },
+          {
+            value: "Beauty and Wellbeing",
+            text: "Beauty & Wellbeing"
+          },
+          {
+            value: "Business and Finance",
+            text: "Business & Finance"
+          },
+          {
+            value: "Computing, Technology and Digital",
+            text: "Computing, Technology & Digital"
+          },
+          {
+            value: "Construction and Trades",
+            text: "Construction & Trades"
+          },
+          {
+            value: "Creative and Media",
+            text: "Creative & Media"
+          },
+          {
+            value: "Delivery and Storage",
+            text: "Delivery & Storage"
+          },
+          {
+            value: "Emergency and Uniform Services",
+            text: "Emergency & Uniform Services"
+          },
+          {
+            value: "Engineering and Maintenance",
+            text: "Engineering & Maintenance"
+          },
+          {
+            value: "Environmentand Land",
+            text: "Environment & Land"
+          },
+          {
+            value: "Government Services",
+            text: "Government Services"
+          },
+          {
+            value: "Healthcare",
+            text: "Healthcare"
+          },
+          {
+            value: "Home Services",
+            text: "Home Services"
+          },
+          {
+            value: "Hospitality and Food",
+            text: "Hospitality & Food"
+          },
+          {
+            value: "Law and Legal",
+            text: "Law & Legal"
+          },
+          {
+            value: "Managerial",
+            text: "Managerial"
+          },
+          {
+            value: "Manufacturing",
+            text: "Manufacturing"
+          },
+          {
+            value: "Retail and Sales",
+            text: "Retail & Sales"
+          },
+          {
+            value: "Science and Research",
+            text: "Science & Research"
+          },
+          {
+            value: "Social Care",
+            text: "Social Care"
+          },
+          {
+            value: "Sports and Leisure",
+            text: "Sports & Leisure"
+          },
+          {
+            value: "Teaching and Education",
+            text: "Teaching & Education"
+          },
+          {
+            value: "Transport",
+            text: "Transport"
+          },
+          {
+            value: "Travel and Tourism",
+            text: "Travel & Tourism"
+          }
+        ]
+      }) }}
+
+
+
+      {% set jobref %}
+      {{ govukInput({
+       label: {
+          text: "Employer job reference",
+          classes: "govuk-label--s",
+          isPageHeading: false
+        },
+        hint: {
+            text: "Add any internal reference number you have for this vacancy. We will use this when communicating with you about this vacancy."
+          },
+        classes: "govuk-input--width-10",
+        id: "employer-ref",
+        name: "employer-ref"
+      }) }}
+        {% endset -%}
+
+       {{ govukRadios({
+          idPrefix: "job-ref",
+          name: "job-ref",
+          fieldset: {
+            legend: {
+              text: "Do you have your own internal job reference number?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes",
+              conditional: {
+                html: jobref
+              }
+            },
+            {
+              value: "no",
+              text: "No"
+            }
+          ]
+        }) }}
+
+      <!-- <h2 class="govuk-fieldset__legend--l">Vacancy advert</h2>
+
+      {% from "govuk/components/character-count/macro.njk" import govukCharacterCount %}
+
+      {{ govukCharacterCount({
+        name: "more-detail",
+        id: "more-detail",
+        maxlength: 3000,
+        label: {
+          text: "About the job",
+          classes: "govuk-label--m",
+          isPageHeading: true
+        },
+        hint: {
+          text: "Enter a brief description of the job and duties."
+        }
+      }) }}
+
+      {{ govukCharacterCount({
+       name: "skills",
+       id: "skills",
+       maxlength: 2000,
+       label: {
+         text: "What are you looking for?",
+         classes: "govuk-label--m",
+         isPageHeading: false
+       },
+       hint: {
+         text: "List the skills, experience and qualifications needed to do this job, if relevant."
+       }
+     }) }}
+
+      {{ govukCharacterCount({
+        name: "about-us",
+        id: "about-us",
+        maxlength: 1000,
+        label: {
+          text: "Tell us about your company",
+          classes: "govuk-label--m",
+          isPageHeading: true
+        },
+        hint: {
+          text: "This is your chance to sell your company to the applicant."
+        }
+      }) }}
+
+      {{ govukCharacterCount({
+        name: "additional-support",
+        id: "additional-support",
+        maxlength: 2000,
+        label: {
+          text: "What can you offer the Kickstarter?",
+          classes: "govuk-label--m",
+          isPageHeading: false
+        },
+        hint: {
+          text: "What support will you provide to help their employability? For example, coaching and mentoring."
+        }
+      }) }}
+
+
+      {{ govukCharacterCount({
+        name: "how-apply",
+        id: "how-apply",
+        maxlength: 1000,
+        label: {
+          text: "How to apply",
+          classes: "govuk-label--m",
+          isPageHeading: false
+        },
+        hint: {
+          text: "For example, whether a CV or covering letter are needed, forms to fill in, and who the application needs to be sent to"
+        }
+      }) }} -->
+
+{% endcall %}
+
+
+
+
+    <br>
+
+      {{ govukButton({
+        text: "Continue",
+        href: "job-add-b"
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}

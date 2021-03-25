@@ -1,0 +1,76 @@
+{% extends "layout-footer.html" %}
+
+{% block pageTitle %}
+  Sign in to the Kickstart Scheme
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/beta-banner.html" %}
+
+<style>
+  .alert, .multi-file-upload__status-message--alert {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  clear: both;
+  border-left-style: solid;
+  padding: 0.78947em;
+  margin-bottom: 1.57895em;
+  border-left-width: 10px;
+  border-color: #2b8cc4;
+  background-color: #eaf4f9;
+  font-family: "GDS Transport", arial, sans-serif; }
+
+  </style>
+
+{% endblock %}
+
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+          <div class="alert alert--default" role="alert">
+            Check your email to set up your password
+          </div>
+
+            <form action="sign-in-2fa" method="post">
+              {{ govukFieldset({
+                  legend: {
+                      html: 'Sign into the Kickstart Scheme',
+                      classes: "govuk-fieldset__legend--l",
+                      isPageHeading: true
+                  }
+              })}}
+
+              <p class="govuk-body">Enter your details to sign into your Kickstart account. You'll need to use the same email address you used when you applied.</p>
+
+              {{ govukInput({
+                  label: {
+                      text: "Email address"
+                  },
+                  id: "email-address",
+                  name: "email-address",
+                  classes: "govuk-!-width-two-thirds"
+              }) }}
+
+              {{ govukInput({
+                  label: {
+                      text: "Password"
+                  },
+                  id: "password",
+                  name: "password",
+                  classes: "govuk-!-width-two-thirds",
+                  type: "password"
+              }) }}
+
+              {{ govukButton({
+                  text: "Continue"
+              }) }}
+
+              <p><a href="forgotten-password">Forgotten your password?</a></p>
+
+            </form>
+        </div>
+    </div>
+{% endblock %}
