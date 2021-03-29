@@ -17,6 +17,7 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+      <form action="job-add-b" method="post" class="form">
       {% call govukFieldset({
         legend: {
           html: "<span class='govuk-caption-l'>Add a vacancy</span>Vacancy details",
@@ -33,7 +34,7 @@
         },
         classes: "govuk-input--width-20",
         id: "job-title",
-        name: "job title"
+        name: "job-title"
       }) }}
 
 

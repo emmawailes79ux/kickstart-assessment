@@ -18,7 +18,8 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h2 class="govuk-fieldset__legend--l">Vacancy advert</h2>
+      <h2 class="govuk-fieldset__legend--l"><span class='govuk-caption-l'>Add a vacancy</span>Vacancy advert</h2>
+      <p>{{ data['job-title'] }}</p>
 
       {% from "govuk/components/character-count/macro.njk" import govukCharacterCount %}
 
@@ -69,7 +70,7 @@
         id: "additional-support",
         maxlength: 2000,
         label: {
-          text: "What can you offer the Kickstarter?",
+          text: "What can you offer the applicant?",
           classes: "govuk-label--m",
           isPageHeading: false
         },
