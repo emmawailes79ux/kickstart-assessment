@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block beforeContent %}
-{% include "includes/beta-banner.html" %}
+  {% include "includes/beta-banner.html" %}
   {% include "includes/header-summary.html" %}
     {{ govukBackLink({
       text: "Back",
@@ -178,7 +178,7 @@ name: "address-postcode"
       }
     },
     hint: {
-      text: "A referral is made when we recommend your job placement to a candidate. This does not guarantee the candidate will put in an application."
+      html: "A referral is not an application.<p class='govuk-hint'>A referral is made when we recommend your job placement to a candidate.</p>"
     },
     items: [
       {
@@ -263,10 +263,13 @@ name: "address-postcode"
          classes: "govuk-fieldset__legend--m"
        }
      },
+     hint: {
+       text: "It is taking up to one month to process vacancies."
+     },
      items: [
        {
          value: "asap",
-         text: "As soon as possible"
+         text: "As soon as it has been processed"
        },
        {
          value: "setDate",
