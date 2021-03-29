@@ -16,11 +16,21 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-l">Vacancy locations</h1>
-      <p class="govuk-body">You can add the same vacancy to more than one location.</p>
+      <h1 class="govuk-heading-l">Vacancy location for Junior Exhibition Designer</h1>
+      <!-- <p class="govuk-body">You can add the same vacancy to more than one location.</p> -->
 
 
 <!-- nasty bit-->
+{{ govukInput({
+  label: {
+    html: "Number of vacancies for this location",
+    classes: "govuk-label--m",
+    isPageHeading: false
+  },
+  classes: "govuk-input--width-4",
+  id: "width-4",
+  name: "width-4"
+}) }}
 
 {% set jobref %}
 {{ govukRadios({
@@ -52,7 +62,7 @@ idPrefix: "remote-role",
 name: "remote-role",
 fieldset: {
   legend: {
-    html: "<span class='govuk-caption-l'>Location information</span>Where will this job be based?",
+    html: "Where will this job be based?",
     isPageHeading: true,
     classes: "govuk-fieldset__legend--m"
   }
@@ -63,25 +73,25 @@ hint: {
 items: [
   {
     value: "part",
-    text: "Required to work on-site at all times"
+    text: "On-site at all times"
   },
   {
     value: "not",
-    text: "A mix of remote and on-site work",
+    text: "A mix of remote and on-site",
     conditional: {
       html: jobref
     }
   },
   {
     value: "yes",
-    text: "Working remotely/at home at all times"
+    text: "Remotely/at home at all times"
   }
 ]
 }) }}
 
 
 
-<h2 class="govuk-heading-m">Location address</h2>
+<h3 class="govuk-heading-m">Location address</h3>
 
 {{ govukInput({
 label: {
@@ -142,17 +152,7 @@ name: "address-postcode"
     }
   ]
 }) }}
-
-{{ govukInput({
-  label: {
-    html: "Number of vacancies for this location",
-    classes: "govuk-label--m",
-    isPageHeading: false
-  },
-  classes: "govuk-input--width-4",
-  id: "width-4",
-  name: "width-4"
-}) }}
+<h2 class="govuk-heading-l" style="margin-top: 45px;">Location details</h2>
 
 {% set referral %}
 {{ govukInput({
@@ -172,13 +172,13 @@ name: "address-postcode"
     name: "contact",
     fieldset: {
       legend: {
-        text: "Do you want a referral limit for each vacancy?",
+        text: "Do you want us to limit the number of applicants we recommend this vacancy to (referrals)?",
         isPageHeading: false,
         classes: "govuk-fieldset__legend--m"
       }
     },
     hint: {
-      html: "A referral is not an application.<p class='govuk-hint'>A referral is made when we recommend your job placement to a candidate.</p>"
+      html: "We can not control how many applicants will apply for the role as they will send their applications to you directly"
     },
     items: [
       {
@@ -195,7 +195,7 @@ name: "address-postcode"
     ]
   }) }}
 
-  <h2 class="govuk-heading-m">Contact for this location</h2>
+  <h3 class="govuk-heading-m">Contact for this location</h3>
 
   {{ govukInput({
     label: {

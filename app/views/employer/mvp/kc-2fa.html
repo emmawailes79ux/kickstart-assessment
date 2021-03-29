@@ -21,7 +21,7 @@
                     }
                 })}}
 
-                <p class="govuk-body">You must set up a mobile authenticator before you can use your Kickstart account.</p>
+                <p class="govuk-body">You must set up a mobile authenticator for security reasons before you can use your Kickstart account.</p>
                 <p class="govuk-body">You’ll need to:</p>
 
                 <ol class="govuk-list govuk-list--number">
@@ -39,18 +39,18 @@
                       html: '<p class="govuk-body">Open the app and enter this key:<br><b>JJIU SSRZ NESH URZW M5TT QTKD NRSH ILYV</b></p>'
                     }) }}
 
-                  <li>Enter the one-time code on the app</li>
-                  <!-- <li>Provide a device name, for example Laptop3</li> -->
-                  <li>Submit to finish setting up the app</li>
+                  <li>Enter the one-time code showing on the app</li>
+                  {{ govukInput({
+                      label: {
+                          text: ""
+                      },
+                      id: "one-time-code",
+                      name: "one-time-code",
+                      classes: "govuk-!-width-two-thirds"
+                  }) }}
+                  <!-- <li>Submit to finish setting up the app</li> -->
                 </ol>
-                {{ govukInput({
-                    label: {
-                        text: "One-time code"
-                    },
-                    id: "one-time-code",
-                    name: "one-time-code",
-                    classes: "govuk-!-width-two-thirds"
-                }) }}
+
 
                 <!-- {{ govukInput({
                     label: {
@@ -62,7 +62,7 @@
                 }) }}-->
 
                 {{ govukButton({
-                    text: "Continue"
+                    text: "Save and continue"
                 }) }}
 
             </form>
