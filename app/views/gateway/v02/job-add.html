@@ -1,0 +1,209 @@
+{% extends "layout-header-links.html" %}
+
+{% block pageTitle %}
+  Add a vacancy
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/beta-banner.html" %}
+  {% include "includes/header-summary-gateway.html" %}
+    {{ govukBackLink({
+      text: "Back",
+      href: "job-list-empty"
+    }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form action="job-add-b" method="post" class="form">
+      {% call govukFieldset({
+        legend: {
+          html: "<span class='govuk-caption-l'>Add a vacancy</span>Vacancy details",
+          classes: "govuk-fieldset__legend--l",
+          isPageHeading: true
+        }
+      }) %}
+
+      <div class="govuk-form-group">
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--m" for="job-title">
+            Job title
+          </label>
+        </h1>
+        <input class="govuk-input govuk-input--width-20" id="job-title" name="job-title" value="{{ data['job-title'] }}" type="text">
+      </div>
+
+
+      {{ govukSelect({
+        id: "sort",
+        name: "sort",
+        label: {
+          text: "Job type",
+          classes: "govuk-label--m",
+          isPageHeading: false
+        },
+        hint: {
+          text: "Type of role or industry, for example managerial, healthcare"
+        },
+        items: [
+          {
+            value: "Select",
+            text: "--- Select one ---"
+          },
+          {
+            value: "Administration",
+            text: "Administration"
+          },
+          {
+            value: "Animal Care",
+            text: "Animal Care"
+          },
+          {
+            value: "Beauty and Wellbeing",
+            text: "Beauty & Wellbeing"
+          },
+          {
+            value: "Business and Finance",
+            text: "Business & Finance"
+          },
+          {
+            value: "Computing, Technology and Digital",
+            text: "Computing, Technology & Digital"
+          },
+          {
+            value: "Construction and Trades",
+            text: "Construction & Trades"
+          },
+          {
+            value: "Creative and Media",
+            text: "Creative & Media"
+          },
+          {
+            value: "Delivery and Storage",
+            text: "Delivery & Storage"
+          },
+          {
+            value: "Emergency and Uniform Services",
+            text: "Emergency & Uniform Services"
+          },
+          {
+            value: "Engineering and Maintenance",
+            text: "Engineering & Maintenance"
+          },
+          {
+            value: "Environmentand Land",
+            text: "Environment & Land"
+          },
+          {
+            value: "Government Services",
+            text: "Government Services"
+          },
+          {
+            value: "Healthcare",
+            text: "Healthcare"
+          },
+          {
+            value: "Home Services",
+            text: "Home Services"
+          },
+          {
+            value: "Hospitality and Food",
+            text: "Hospitality & Food"
+          },
+          {
+            value: "Law and Legal",
+            text: "Law & Legal"
+          },
+          {
+            value: "Managerial",
+            text: "Managerial"
+          },
+          {
+            value: "Manufacturing",
+            text: "Manufacturing"
+          },
+          {
+            value: "Retail and Sales",
+            text: "Retail & Sales"
+          },
+          {
+            value: "Science and Research",
+            text: "Science & Research"
+          },
+          {
+            value: "Social Care",
+            text: "Social Care"
+          },
+          {
+            value: "Sports and Leisure",
+            text: "Sports & Leisure"
+          },
+          {
+            value: "Teaching and Education",
+            text: "Teaching & Education"
+          },
+          {
+            value: "Transport",
+            text: "Transport"
+          },
+          {
+            value: "Travel and Tourism",
+            text: "Travel & Tourism"
+          }
+        ]
+      }) }}
+
+
+
+      {% set jobref %}
+      {{ govukInput({
+       label: {
+          text: "Employer job reference",
+          classes: "govuk-label--s",
+          isPageHeading: false
+        },
+        hint: {
+            text: "Add any internal reference number you have for this vacancy. We will use this when communicating with you about this vacancy."
+          },
+        classes: "govuk-input--width-10",
+        id: "employer-ref",
+        name: "employer-ref"
+      }) }}
+        {% endset -%}
+
+       {{ govukRadios({
+          idPrefix: "job-ref",
+          name: "job-ref",
+          fieldset: {
+            legend: {
+              text: "Do you have your own internal job reference number?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes",
+              conditional: {
+                html: jobref
+              }
+            },
+            {
+              value: "no",
+              text: "No"
+            }
+          ]
+        }) }}
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+{% endcall %}
+</form>
+
+    </div>
+  </div>
+
+{% endblock %}

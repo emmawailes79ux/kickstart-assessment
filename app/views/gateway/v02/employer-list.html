@@ -1,0 +1,115 @@
+{% extends "layout-header-links.html" %}
+
+{% block pageTitle %}
+  Employers
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/beta-banner.html" %}
+  <!-- {% include "includes/header-summary.html" %} -->
+<style>
+  .app-example-wrapper {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    }
+  .app-example {
+    position: relative;
+    border: 1px solid #b1b4b6;
+    padding: 15px;
+    }
+  .app-example h2{
+    margin-bottom: 5px;
+  }
+  .app-example h2 strong {
+    float: right;
+  }
+  .app-example button {
+    margin-bottom: 0;
+  }
+  .app-sub {
+    font-weight: normal;
+    font-size: 0.9em;
+    color: #505a5f;
+  }
+</style>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-0">
+        Erico Recruitment
+      </h1>
+      <h2 class="govuk-heading-m"><span class="app-sub">Kickstart Scheme Application ID</span> KS23562834</h2>
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+
+      {{ govukTable({
+
+        firstCellIsHeader: false,
+        head: [
+          {
+            text: "Employer"
+          },
+          {
+            text: "No. of vacancies",
+            format: "numeric"
+          }
+        ],
+        rows: [
+          [
+            {
+              html: "<a href='job-list-empty'>Arts and Sculpture Ltd</a>"
+            },
+            {
+              text: "13",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              html: "<a href='job-list-empty'>Dry Dock Boards</a>"
+            },
+            {
+              text: "3",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              html: "<a href='job-list-empty'>Erico Recruitment</a>"
+            },
+            {
+              text: "6",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              html: "<a href='job-list-empty'>Mums4Tots</a>"
+            },
+            {
+              text: "9",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              html: "<a href='job-list-empty'>Zenifer Electrics</a>"
+            },
+            {
+              text: "3",
+              format: "numeric"
+            }
+          ]
+        ]
+      }) }}
+
+
+    </div>
+  </div>
+
+{% endblock %}

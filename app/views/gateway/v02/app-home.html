@@ -1,0 +1,79 @@
+{% extends "layout-header-links.html" %}
+
+{% block pageTitle %}
+  Application home
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/beta-banner.html" %}
+  <!-- {% include "includes/header-summary.html" %} -->
+<style>
+  .app-example-wrapper {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    }
+  .app-example {
+    position: relative;
+    border: 1px solid #b1b4b6;
+    padding: 15px;
+    }
+  .app-example h2{
+    margin-bottom: 5px;
+  }
+  .app-example h2 strong {
+    float: right;
+  }
+  .app-example button {
+    margin-bottom: 0;
+  }
+  .app-sub {
+    font-weight: normal;
+    font-size: 0.9em;
+    color: #505a5f;
+  }
+</style>
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-0">
+        Erico Recruitment
+      </h1>
+      <p>Company number: 11721900</p>
+      <!-- <nav class="govuk-header__nav" style="float:right">
+        <a class="govuk-header__link" href="manage-users" style="display: inline-block; line-height: 30px;">Manage users</a> &nbsp;|&nbsp; <a class="govuk-header__link" href="sign-in" style="display: inline-block; line-height: 30px;">Sign out</a>
+      </nav> -->
+
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+      <h2 class="govuk-heading-m">Applications</h2>
+
+      <div class="app-example-wrapper">
+        <div class="app-example">
+          <h2 class="govuk-heading-s"><span class="app-sub">Kickstart Scheme Application ID</span> KS23562834</h2>
+          <p class="govuk-body govuk-!-font-size-14">Date created: 29th March 2021</p>
+          <p class="govuk-body">5 employers / 34 vacancies</p>
+
+          <p class="govuk-body"><a href="employer-list">View details</a></p>
+        </div>
+      </div>
+
+      <!--div class="app-example-wrapper">
+        <div class="app-example">
+          <h2 class="govuk-heading-s"><span class="app-sub">Application no.</span> KS24684321 <strong class="govuk-tag govuk-tag--blue">
+            LIVE
+          </strong></h2>
+          <p class="govuk-body">31 vacancies - 12th December 2020</p>
+
+          <p><a href="manage/vacancies">Manage vacancies</a></p>
+        </div>
+      </div-->
+
+
+    </div>
+  </div>
+
+{% endblock %}

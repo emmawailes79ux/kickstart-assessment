@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Sign in to the Kickstart Scheme
+{% endblock %}
+
+{% block beforeContent %}
+
+{% endblock %}
+
+
+{% block content %}
+    {{ govukErrorSummary({
+    titleText: "There is a problem",
+    errorList: [
+      {
+        text: "You need to enter your Kickstart application number",
+        href: "#ks-application-number-error"
+      }
+    ]
+    }) }}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <form action="sign-in-2fa" method="post">
+                {{ govukFieldset({
+                    legend: {
+                        html: 'Sign in to the Kickstart Scheme',
+                        classes: "govuk-fieldset__legend--l",
+                        isPageHeading: true
+                    }
+                })}}
+
+                {{ govukInput({
+                    label: {
+                        text: "Email address"
+                    },
+                    id: "email-address",
+                    name: "email-address",
+                    classes: "govuk-!-width-two-thirds"
+                }) }}
+
+                {{ govukInput({
+                    label: {
+                        text: "Kickstart application number"
+                    },
+                    id: "ks-application-number",
+                    name: "ks-application-number",
+                    classes: "govuk-!-width-two-thirds",
+                    type: "password",
+                    hint: {
+                        text: "Your Kickstart application number is 10 characters long and starts with 'KS'."
+                    },
+                    errorMessage: {
+                        text: "You need to enter your Kickstart application number"
+                    }
+                }) }}
+
+                {{ govukButton({
+                    text: "Continue"
+                }) }}
+
+                <!--p><a href="email-address">Register now</a> if you do not have sign in details already.</p-->
+
+                <!--h2 class="govuk-heading-m">Problems signing in</h2-->
+
+                <!-- <ul class="govuk-list signin"> -->
+                    <!-- <li>
+                        <a href="#" class="govuk-link">I forgot my password</a>
+                    </li> -->
+                    <!--li>
+                        <a href="account-recovery/access" class="govuk-link">I cannot access the email or mobile phone number I use to sign in</a>
+                    </li-->
+                <!-- </ul> -->
+            </form>
+        </div>
+    </div>
+{% endblock %}
