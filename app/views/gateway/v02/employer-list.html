@@ -64,6 +64,8 @@
 
       <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
+      <p class="govuk-body">Check or add the vacancies for each employer</p>
+
 
       {{ govukTable({
 
@@ -73,14 +75,26 @@
             text: "Employer"
           },
           {
-            text: "No. of vacancies",
+            text: "Contact name"
+          },
+          {
+            text: "Email address"
+          },
+          {
+            text: "Additional vacancies",
             format: "numeric"
           }
         ],
         rows: [
           [
             {
-              html: "<a href='job-list-empty'>Arts and Sculpture Ltd</a>"
+              html: "<a href='job-list-role-added'>Arts and Sculpture Ltd</a>"
+            },
+            {
+              text: "James Edwards"
+            },
+            {
+              text: "james.edwards@rtsabdsculpture.co.uk"
             },
             {
               text: "13",
@@ -92,6 +106,12 @@
               html: "<a href='job-list-empty'>Dry Dock Boards</a>"
             },
             {
+              text: "Liz Potter"
+            },
+            {
+              text: "liz.potter@drydocks.com"
+            },
+            {
               text: "3",
               format: "numeric"
             }
@@ -99,6 +119,12 @@
           [
             {
               html: "<a href='job-list-empty'>Erico Recruitment</a>"
+            },
+            {
+              text: "Teresa King"
+            },
+            {
+              text: "t.king@erico.org"
             },
             {
               text: "6",
@@ -110,6 +136,12 @@
               html: "<a href='job-list-empty'>Mums4Tots</a>"
             },
             {
+              text: "Rachel Stipe"
+            },
+            {
+              text: "Rachel@mums4tots.co.uk"
+            },
+            {
               text: "9",
               format: "numeric"
             }
@@ -117,6 +149,12 @@
           [
             {
               html: "<a href='job-list-empty'>Zenifer Electrics</a>"
+            },
+            {
+              text: "Bradley Howarth"
+            },
+            {
+              text: "Brad@zenifer.com"
             },
             {
               text: "3",
