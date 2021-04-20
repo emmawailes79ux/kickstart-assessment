@@ -5,6 +5,18 @@ const router = express.Router()
 
 module.exports = router
 
+////// Gateway /////////
+
+router.post('/gateway/v02/kc-choose', function (req, res) {
+  const editChoice = req.session.data['2fa-choose']
+
+  if (editChoice === 'authenticator-app') {
+    res.redirect('/gateway/v02/kc-2fa')
+  } else if (editChoice === 'mobile-phone') {
+    res.redirect('/gateway/v02/kc-phone')
+  }
+});
+
 ////// mvp //////////////////////////////////
 
 router.post('/employer/mvp/job-add-3a', function (req, res) {

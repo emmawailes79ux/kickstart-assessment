@@ -5,7 +5,12 @@
 {% endblock %}
 
 {% block beforeContent %}
-{% include "includes/beta-banner.html" %}
+  {% include "includes/beta-banner.html" %}
+
+  {{ govukBackLink({
+  text: "Back",
+  href: "kc-choose"
+  }) }}
 
 {% endblock %}
 
@@ -66,6 +71,8 @@
                 }) }}
 
             </form>
+
+            <p class="govuk-body"><a href="kc-choose">Prefer to set up your security using SMS?</a></p>
         </div>
     </div>
 {% endblock %}

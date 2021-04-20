@@ -1,0 +1,45 @@
+{% extends "layout-footer.html" %}
+
+{% block pageTitle %}
+  Set up your Kickstart Scheme account
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/beta-banner.html" %}
+
+  {{ govukBackLink({
+  text: "Back",
+  href: "kc-choose"
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <form action="phone-code" method="post">
+                {{ govukFieldset({
+                    legend: {
+                        html: "Enter your phone number",
+                        classes: "govuk-fieldset__legend--l",
+                        isPageHeading: true
+                    }
+                })}}
+
+                {{ govukInput({
+                    label: {
+                        text: "Mobile phone number"
+                    },
+                    id: "phone-number",
+                    name: "phone-number",
+                    classes: "govuk-!-width-two-thirds"
+                }) }}
+
+                {{ govukButton({
+                    text: "Continue"
+                }) }}
+
+            </form>
+        </div>
+    </div>
+{% endblock %}
