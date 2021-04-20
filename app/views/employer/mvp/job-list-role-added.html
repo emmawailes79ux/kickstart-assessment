@@ -1,7 +1,7 @@
 {% extends "layout-header-links.html" %}
 
 {% block pageTitle %}
-  Vacancies
+  Update your vacancies
 {% endblock %}
 
 {% block beforeContent %}
@@ -454,7 +454,7 @@
                 ]
               }) }}
 
-              <!-- <nav class="moj-pagination" id="pagination-label">
+              <nav class="moj-pagination" id="pagination-label">
 
                 <p class="govuk-visually-hidden" aria-labelledby="pagination-label">Pagination navigation</p>
 
@@ -472,9 +472,9 @@
                   <li class="moj-pagination__item  moj-pagination__item--next">
                     <a class="moj-pagination__link" href="">Next<span class="govuk-visually-hidden"> set of pages</span></a>
                 </li>
-                </ul> -->
+                </ul>
                 <!-- <p class="moj-pagination__results">Showing <b>10</b> to <b>20</b> of <b>30</b> results</p> -->
-              <!-- </nav> -->
+              </nav>
 
 
               {{ govukButton({
@@ -556,6 +556,28 @@
 
                 ]
               }) }}
+
+              <nav class="moj-pagination" id="pagination-label">
+
+                <p class="govuk-visually-hidden" aria-labelledby="pagination-label">Pagination navigation</p>
+
+                <ul class="moj-pagination__list">
+                  <li class="moj-pagination__item  moj-pagination__item--prev">
+                    <a class="moj-pagination__link" href="">Previous<span class="govuk-visually-hidden"> set of pages</span></a>
+                  </li>
+
+                  <li class="moj-pagination__item moj-pagination__item--active"><span class="moj-pagination__link">1</span></li>
+
+                  <li class="moj-pagination__item moj-pagination__item--active"><a class="moj-pagination__link" href="#">2</a></li>
+
+                  <li class="moj-pagination__item"><a class="moj-pagination__link" href="#">3</a></li>
+
+                  <li class="moj-pagination__item  moj-pagination__item--next">
+                    <a class="moj-pagination__link" href="">Next<span class="govuk-visually-hidden"> set of pages</span></a>
+                </li>
+                </ul>
+                <!-- <p class="moj-pagination__results">Showing <b>10</b> to <b>20</b> of <b>30</b> results</p> -->
+              </nav>
 
             </div>
           </div>

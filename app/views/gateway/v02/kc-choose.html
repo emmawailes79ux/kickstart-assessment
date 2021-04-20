@@ -18,7 +18,7 @@
         name: "2fa-choose",
         fieldset: {
           legend: {
-            text: "Which security method do you want to choose?",
+            text: "How would you like to set up your security?",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--l"
           }
@@ -26,16 +26,16 @@
         items: [
           {
             value: "authenticator-app",
-            text: "Use an authenticator app",
+            text: "Authenticator app",
             hint: {
-              text: "Generate a code using a free smartphone app such as Google Authenticator or FreeOTP."
+              text: "Download a free smartphone app like Google Authenticator or FreeOTP to generate a security code"
             }
           },
           {
             value: "mobile-phone",
-            text: "Text SMS",
+            text: "SMS text message",
             hint: {
-              text: "Receive a code by text message."
+              text: "Enter your mobile phone number to receive a security code by text message"
             }
           }
         ]
