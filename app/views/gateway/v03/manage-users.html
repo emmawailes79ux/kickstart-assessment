@@ -1,0 +1,96 @@
+{% extends "layout-header-links.html" %}
+
+{% block pageTitle %}
+  Confirm vacancy details
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/beta-banner.html" %}
+  <!-- {% include "includes/header-summary-gateway.html" %} -->
+    {{ govukBackLink({
+      text: "Back",
+      href: "job-list-role-added"
+    }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Manage users</h1>
+      <p class="govuk-body">Give access to other users.</p>
+
+      <a href="add-a-user" class="govuk-button govuk-!-margin-right-1" id="submit">Add a user</a>
+</div>
+</div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <!-- <h2 class="govuk-heading-l">Locations</h2> -->
+
+  {{ govukTable({
+    attributes: {
+    'data-module': 'moj-sortable-table'
+    },
+    head: [
+    {
+      text: "Name"
+    },
+    {
+      text: "Email"
+    },
+    {
+      html: "Type"
+    },
+    {
+      text: ""
+    },
+    {
+      text: ""
+    }
+    ],
+    rows: [
+    [
+      {
+        text: "James Williams"
+      },
+      {
+        text: "james.williams@artandsculpture.co.uk"
+      },
+      {
+        text: "Admin"
+      },
+      {
+        html: "<a href='add-a-user'>Change</a>"
+      },
+      {
+        html: ""
+      }
+    ],
+    [
+      {
+        text: "Cheryl Dawlish"
+      },
+      {
+        text: "cheryl.dawlish@artandsculpture.co.uk"
+      },
+      {
+        text: "Editor"
+      },
+      {
+        html: "<a href='add-a-user'>Change</a>"
+      },
+      {
+        html: "<a href='delete-user'>Delete</a>"
+      }
+    ]
+    ]
+    }) }}
+
+      <!-- <p><a href="job-detail" class="govuk-button">Save and continue</a></p> -->
+
+    </div>
+    </div>
+
+
+
+{% endblock %}

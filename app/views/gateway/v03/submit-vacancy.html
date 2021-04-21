@@ -1,0 +1,76 @@
+{% extends "layout-header-links.html" %}
+
+{% block pageTitle %}
+    Submit these vacancies to the Kickstart Scheme
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/beta-banner.html" %}
+  {% include "includes/header-summary-gateway.html" %}
+
+{% endblock %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+          <h1 class="govuk-heading-l">Submit these vacancies</h1>
+          <p class="govuk-body">You will not be able to make any more changes while these vacancies are being processed.</p>
+            {{ govukTable({
+              firstCellIsHeader: false,
+              head: [
+                {
+                  text: "Job title"
+                },
+                {
+                  html: "No. of vacancies"
+                },
+                {
+                  html: "No. of locations"
+                },
+                {
+                  text: "",
+                  format: "numeric"
+                }
+              ],
+              rows: [
+                [
+                  {
+                    html: "<b>Landscape gardner</b>"
+                  },
+                  {
+                    text: "1"
+                  },
+                  {
+                    text: "1"
+                  }
+                ],
+                [
+                  {
+                    html: "<b>Junior salesperson</b>"
+                  },
+                  {
+                    text: "14"
+                  },
+                  {
+                    text: "7"
+                  }
+                ]
+              ]
+            }) }}
+
+                  <p class="govuk-body"><a href="submit-confirm" class="govuk-button govuk-!-margin-right-1" id="submit">Submit vacancies</a></p>
+                  <p class="govuk-body"><a href="job-list-role-deleted">Back to vacancies</a></p>
+
+            </div>
+          </div>
+
+
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-full">
+
+              </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

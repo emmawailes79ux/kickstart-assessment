@@ -1,0 +1,52 @@
+{% extends "layout-header-links.html" %}
+
+{% block pageTitle %}
+  Vacancies submitted successfully
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/beta-banner.html" %}
+<style>
+  .guidance-layout {
+    word-wrap: break-word;
+    background-color: #005EA5;
+    padding: 50px 30px 30px;
+    display: block;
+    }
+    .guidance-layout h1, .guidance-layout p, .guidance-layout ul, .guidance-layout h2, .guidance-layout .govuk-summary-list, .guidance-layout .govuk-caption-m{
+        color:#fff;
+    }
+    .guidance-layout .govuk-button, .guidance-layout .drop-area__btn, .guidance-layout .js-enabled .dft-fu__add-file-btn, .js-enabled .guidance-layout .dft-fu__add-file-btn {
+        color: #005EA5;
+        background-color: #fff;
+    }
+    .guidance-layout .govuk-warning-text{
+        color:#fff;
+    }
+    .guidance-layout .govuk-warning-text__icon{
+        border: 3px solid #fff;
+        border-radius: 50%;
+        color: #005EA5;
+        background: #fff;
+    }
+    </style>
+    {% include "includes/header-summary.html" %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row guidance-layout" style="margin-right:0; margin-left:0">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">Vacancies submitted successfully</h1>
+
+      <h2 class="govuk-heading-m">What happens next</h2>
+
+      <p class="govuk-body">We'll review the vacancies and approve them. This may take up to 30 days.</p>
+      <p class="govuk-body">Once the vacancies have been approved we will start to recommend them to applicants and the employer will start to receive referrals.</p>
+      <p class="govuk-body">A referral is made when we recommend the job placement to a candidate. This does not guarantee the candidate will put in an application.</p>
+      <p class="govuk-body"><a href="job-list-roles-submitted" style="font-weight: bold; text-decoration: underline; color: white;">Return to vacancies</a></p>
+
+    </div>
+  </div>
+
+{% endblock %}

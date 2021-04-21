@@ -1,0 +1,331 @@
+{% extends "layout-header-links.html" %}
+
+{% block pageTitle %}
+  Employers
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/beta-banner.html" %}
+  {% include "includes/header-summary-gateway.html" %}
+<style>
+  .app-example-wrapper {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    }
+  .app-example {
+    position: relative;
+    border: 1px solid #b1b4b6;
+    padding: 15px;
+    }
+  .app-example h2{
+    margin-bottom: 5px;
+  }
+  .app-example h2 strong {
+    float: right;
+  }
+  .app-example button {
+    margin-bottom: 0;
+  }
+  .app-sub {
+    font-weight: normal;
+    font-size: 0.9em;
+    color: #505a5f;
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">
+        Employers
+      </h1>
+
+      <p class="govuk-body">Employers with "Remaining vacancies" need attention.</p>
+
+      {{ govukTable({
+      attributes: {
+      'data-module': 'moj-sortable-table'
+      },
+      head: [
+      {
+        text: "Name",
+        attributes: {
+          "aria-sort": "ascending"
+        }
+      },
+      {
+        text: "Elevation",
+        attributes: {
+          "aria-sort": "none"
+        }
+      },
+      {
+        text: "Continent",
+        attributes: {
+          "aria-sort": "none"
+        }
+      },
+      {
+        text: "First summit",
+        attributes: {
+          "aria-sort": "none"
+        },
+        format: "numeric"
+      }
+      ],
+      rows: [
+      [
+        {
+          text: "Aconcagua"
+        },
+        {
+          text: "6,961 meters",
+          attributes: {
+            "data-sort-value": "6961"
+          }
+        },
+        {
+          text: "South America"
+        },
+        {
+          text: "1897",
+          format: "numeric",
+          attributes: {
+            "data-sort-value": "1897"
+          }
+        }
+      ],
+      [
+        {
+          text: "Denali"
+        },
+        {
+          text: "6,194 meters",
+          attributes: {
+            "data-sort-value": "6194"
+          }
+        },
+        {
+          text: "North America"
+        },
+        {
+          text: "1913",
+          format: "numeric",
+          attributes: {
+            "data-sort-value": "1913"
+          }
+        }
+      ],
+      [
+        {
+          text: "Elbrus"
+        },
+        {
+          text: "5,642 meters",
+          attributes: {
+            "data-sort-value": "5642"
+          }
+        },
+        {
+          text: "Europe"
+        },
+        {
+          text: "1874",
+          format: "numeric",
+          attributes: {
+            "data-sort-value": "1874"
+          }
+        }
+      ],
+      [
+        {
+          text: "Everest"
+        },
+        {
+          text: "8,850 meters",
+          attributes: {
+            "data-sort-value": "8850"
+          }
+        },
+        {
+          text: "Asia"
+        },
+        {
+          text: "1953",
+          format: "numeric",
+          attributes: {
+            "data-sort-value": "1953"
+          }
+        }
+      ],
+      [
+        {
+          text: "Kilimanjaro"
+        },
+        {
+          text: "5,895 meters",
+          attributes: {
+            "data-sort-value": "5895"
+          }
+        },
+        {
+          text: "Africa"
+        },
+        {
+          text: "1889",
+          format: "numeric",
+          attributes: {
+            "data-sort-value": "1889"
+          }
+        }
+      ],
+      [
+        {
+          text: "Puncak Jaya"
+        },
+        {
+          text: "4,884 meters",
+          attributes: {
+            "data-sort-value": "4884"
+          }
+        },
+        {
+          text: "Australia"
+        },
+        {
+          text: "1962",
+          format: "numeric",
+          attributes: {
+            "data-sort-value": "1962"
+          }
+        }
+      ],
+      [
+        {
+          text: "Vinson"
+        },
+        {
+          text: "4,897 meters",
+          attributes: {
+            "data-sort-value": "4897"
+          }
+        },
+        {
+          text: "Antarctica"
+        },
+        {
+          text: "1966",
+          format: "numeric",
+          attributes: {
+            "data-sort-value": "1966"
+          }
+        }
+      ]
+      ]
+      }) }}
+
+
+      {{ govukTable({
+
+        firstCellIsHeader: false,
+        head: [
+          {
+            text: "Employer"
+          },
+          {
+            text: "Contact name"
+          },
+          {
+            text: "Email address"
+          },
+          {
+            text: "Additional vacancies",
+            format: "numeric"
+          }
+        ],
+        rows: [
+          [
+            {
+              html: "<a href='job-list-role-added'>Arts and Sculpture Ltd</a>"
+            },
+            {
+              text: "James Edwards"
+            },
+            {
+              text: "james.edwards@rtsabdsculpture.co.uk"
+            },
+            {
+              text: "13",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              html: "<a href='job-list-empty'>Dry Dock Boards</a>"
+            },
+            {
+              text: "Liz Potter"
+            },
+            {
+              text: "liz.potter@drydocks.com"
+            },
+            {
+              text: "3",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              html: "<a href='job-list-empty'>Erico Recruitment</a>"
+            },
+            {
+              text: "Teresa King"
+            },
+            {
+              text: "t.king@erico.org"
+            },
+            {
+              text: "6",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              html: "<a href='job-list-empty'>Mums4Tots</a>"
+            },
+            {
+              text: "Rachel Stipe"
+            },
+            {
+              text: "Rachel@mums4tots.co.uk"
+            },
+            {
+              text: "9",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              html: "<a href='job-list-empty'>Zenifer Electrics</a>"
+            },
+            {
+              text: "Bradley Howarth"
+            },
+            {
+              text: "Brad@zenifer.com"
+            },
+            {
+              text: "3",
+              format: "numeric"
+            }
+          ]
+        ]
+      }) }}
+
+
+    </div>
+  </div>
+
+{% endblock %}
