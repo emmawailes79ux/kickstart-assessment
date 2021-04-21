@@ -1,7 +1,7 @@
 {% extends "layout-footer.html" %}
 
 {% block pageTitle %}
-  Sign into your Kickstart Scheme account
+  Sign in to your Kickstart Scheme account
 {% endblock %}
 
 {% block beforeContent %}
@@ -37,13 +37,13 @@
             <form action="sign-in-2fa" method="post">
               {{ govukFieldset({
                   legend: {
-                      html: 'Sign into the Kickstart Scheme',
+                      html: 'Sign in to the Kickstart Scheme',
                       classes: "govuk-fieldset__legend--l",
                       isPageHeading: true
                   }
               })}}
 
-              <p class="govuk-body">Enter your details to sign into your Kickstart account. You'll need to use the same email address you used when you applied.</p>
+              <p class="govuk-body">Enter your details to sign in to your Kickstart account. You'll need to use the same email address you used when you applied.</p>
 
               {{ govukInput({
                   label: {
