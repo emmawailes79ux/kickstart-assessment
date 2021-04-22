@@ -8,28 +8,71 @@
 {% include "includes/beta-banner.html" %}
   {% include "includes/header-summary-gateway.html" %}
 <style>
-  .app-example-wrapper {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    }
-  .app-example {
+  [aria-sort] button,
+  [aria-sort] button:hover {
+    background-color: transparent;
+    border-width: 0;
+    -webkit-box-shadow: 0 0 0 0;
+    -moz-box-shadow: 0 0 0 0;
+    box-shadow: 0 0 0 0;
+    color: #005ea5;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    padding: 0 10px 0 0;
     position: relative;
-    border: 1px solid #b1b4b6;
-    padding: 15px;
-    }
-  .app-example h2{
-    margin-bottom: 5px;
+    text-align: inherit;
+    font-size: 1em;
+    margin: 0;
   }
-  .app-example h2 strong {
-    float: right;
+
+  [aria-sort] button:focus {
+    background-color: $govuk-focus-colour;
+    color: $govuk-focus-text-colour;
+    box-shadow: 0 -2px $govuk-focus-colour, 0 4px $govuk-focus-text-colour;
+    outline: none;
   }
-  .app-example button {
-    margin-bottom: 0;
+
+  [aria-sort]:first-child button {
+    right: auto;
   }
-  .app-sub {
-    font-weight: normal;
-    font-size: 0.9em;
-    color: #505a5f;
+
+  [aria-sort] button:before {
+    content: " \25bc";
+    position: absolute;
+    right: -1px;
+    top: 9px;
+    font-size: 0.5em;
+  }
+
+  [aria-sort] button:after {
+    content: " \25b2";
+    position: absolute;
+    right: -1px;
+    top: 1px;
+    font-size: 0.5em;
+  }
+
+  [aria-sort="ascending"] button:before,
+  [aria-sort="descending"] button:before {
+    content: none;
+  }
+
+  [aria-sort="ascending"] button:after {
+    content: " \25b2";
+    font-size: .8em;
+    position: absolute;
+    right: -5px;
+    top: 2px;
+  }
+
+  [aria-sort="descending"] button:after {
+    content: " \25bc";
+    font-size: .8em;
+    position: absolute;
+    right: -5px;
+    top: 2px;
   }
 </style>
 {% endblock %}
@@ -50,25 +93,27 @@
       },
       head: [
       {
-        text: "Name",
+        text: "Employer",
         attributes: {
           "aria-sort": "ascending"
         }
       },
       {
-        text: "Elevation",
+        text: "Remaining vacancies",
         attributes: {
           "aria-sort": "none"
-        }
+        },
+        format: "numeric"
       },
       {
-        text: "Continent",
+        text: "Submitted vacancies",
         attributes: {
           "aria-sort": "none"
-        }
+        },
+        format: "numeric"
       },
       {
-        text: "First summit",
+        text: "Total vacancies",
         attributes: {
           "aria-sort": "none"
         },
@@ -78,249 +123,161 @@
       rows: [
       [
         {
-          text: "Aconcagua"
+          html: "<a href='job-list-empty'>Arts and Sculpture Ltd</a>"
         },
         {
-          text: "6,961 meters",
+          text: "31",
+          format: "numeric",
           attributes: {
-            "data-sort-value": "6961"
+            "data-sort-value": "31"
           }
         },
         {
-          text: "South America"
-        },
-        {
-          text: "1897",
+          text: "3",
           format: "numeric",
           attributes: {
-            "data-sort-value": "1897"
+            "data-sort-value": "3"
+          }
+        },
+        {
+          text: "34",
+          format: "numeric",
+          attributes: {
+            "data-sort-value": "34"
           }
         }
       ],
       [
         {
-          text: "Denali"
+          html: "<a href='job-list-empty'>Arts and Sculpture Ltd</a>"
         },
         {
-          text: "6,194 meters",
+          text: "31",
+          format: "numeric",
           attributes: {
-            "data-sort-value": "6194"
+            "data-sort-value": "31"
           }
         },
         {
-          text: "North America"
-        },
-        {
-          text: "1913",
+          text: "3",
           format: "numeric",
           attributes: {
-            "data-sort-value": "1913"
+            "data-sort-value": "3"
+          }
+        },
+        {
+          text: "34",
+          format: "numeric",
+          attributes: {
+            "data-sort-value": "34"
           }
         }
       ],
       [
         {
-          text: "Elbrus"
+          html: "<a href='job-list-empty'>Arts and Sculpture Ltd</a>"
         },
         {
-          text: "5,642 meters",
+          text: "31",
+          format: "numeric",
           attributes: {
-            "data-sort-value": "5642"
+            "data-sort-value": "31"
           }
         },
         {
-          text: "Europe"
-        },
-        {
-          text: "1874",
+          text: "3",
           format: "numeric",
           attributes: {
-            "data-sort-value": "1874"
+            "data-sort-value": "3"
+          }
+        },
+        {
+          text: "34",
+          format: "numeric",
+          attributes: {
+            "data-sort-value": "34"
           }
         }
       ],
       [
         {
-          text: "Everest"
+          html: "<a href='job-list-empty'>Arts and Sculpture Ltd</a>"
         },
         {
-          text: "8,850 meters",
+          text: "31",
+          format: "numeric",
           attributes: {
-            "data-sort-value": "8850"
+            "data-sort-value": "31"
           }
         },
         {
-          text: "Asia"
-        },
-        {
-          text: "1953",
+          text: "3",
           format: "numeric",
           attributes: {
-            "data-sort-value": "1953"
+            "data-sort-value": "3"
+          }
+        },
+        {
+          text: "34",
+          format: "numeric",
+          attributes: {
+            "data-sort-value": "34"
           }
         }
       ],
       [
         {
-          text: "Kilimanjaro"
+          html: "<a href='job-list-empty'>Arts and Sculpture Ltd</a>"
         },
         {
-          text: "5,895 meters",
+          text: "31",
+          format: "numeric",
           attributes: {
-            "data-sort-value": "5895"
+            "data-sort-value": "31"
           }
         },
         {
-          text: "Africa"
-        },
-        {
-          text: "1889",
+          text: "3",
           format: "numeric",
           attributes: {
-            "data-sort-value": "1889"
+            "data-sort-value": "3"
+          }
+        },
+        {
+          text: "34",
+          format: "numeric",
+          attributes: {
+            "data-sort-value": "34"
           }
         }
       ],
       [
         {
-          text: "Puncak Jaya"
+          html: "<a href='job-list-empty'>Arts and Sculpture Ltd</a>"
         },
         {
-          text: "4,884 meters",
-          attributes: {
-            "data-sort-value": "4884"
-          }
-        },
-        {
-          text: "Australia"
-        },
-        {
-          text: "1962",
+          text: "31",
           format: "numeric",
           attributes: {
-            "data-sort-value": "1962"
-          }
-        }
-      ],
-      [
-        {
-          text: "Vinson"
-        },
-        {
-          text: "4,897 meters",
-          attributes: {
-            "data-sort-value": "4897"
+            "data-sort-value": "31"
           }
         },
         {
-          text: "Antarctica"
-        },
-        {
-          text: "1966",
+          text: "3",
           format: "numeric",
           attributes: {
-            "data-sort-value": "1966"
+            "data-sort-value": "3"
+          }
+        },
+        {
+          text: "34",
+          format: "numeric",
+          attributes: {
+            "data-sort-value": "34"
           }
         }
       ]
-      ]
-      }) }}
 
-
-      {{ govukTable({
-
-        firstCellIsHeader: false,
-        head: [
-          {
-            text: "Employer"
-          },
-          {
-            text: "Contact name"
-          },
-          {
-            text: "Email address"
-          },
-          {
-            text: "Additional vacancies",
-            format: "numeric"
-          }
-        ],
-        rows: [
-          [
-            {
-              html: "<a href='job-list-role-added'>Arts and Sculpture Ltd</a>"
-            },
-            {
-              text: "James Edwards"
-            },
-            {
-              text: "james.edwards@rtsabdsculpture.co.uk"
-            },
-            {
-              text: "13",
-              format: "numeric"
-            }
-          ],
-          [
-            {
-              html: "<a href='job-list-empty'>Dry Dock Boards</a>"
-            },
-            {
-              text: "Liz Potter"
-            },
-            {
-              text: "liz.potter@drydocks.com"
-            },
-            {
-              text: "3",
-              format: "numeric"
-            }
-          ],
-          [
-            {
-              html: "<a href='job-list-empty'>Erico Recruitment</a>"
-            },
-            {
-              text: "Teresa King"
-            },
-            {
-              text: "t.king@erico.org"
-            },
-            {
-              text: "6",
-              format: "numeric"
-            }
-          ],
-          [
-            {
-              html: "<a href='job-list-empty'>Mums4Tots</a>"
-            },
-            {
-              text: "Rachel Stipe"
-            },
-            {
-              text: "Rachel@mums4tots.co.uk"
-            },
-            {
-              text: "9",
-              format: "numeric"
-            }
-          ],
-          [
-            {
-              html: "<a href='job-list-empty'>Zenifer Electrics</a>"
-            },
-            {
-              text: "Bradley Howarth"
-            },
-            {
-              text: "Brad@zenifer.com"
-            },
-            {
-              text: "3",
-              format: "numeric"
-            }
-          ]
         ]
       }) }}
 

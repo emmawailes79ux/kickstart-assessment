@@ -34,7 +34,7 @@
           isPageHeading: false
         },
         hint: {
-          text: "The kickstart scheme requires a minimum of 25 hours per week"
+          text: "The Kickstart Scheme requires a minimum of 25 hours per week"
         },
         classes: "govuk-input--width-5",
         id: "total-hours",
@@ -133,7 +133,7 @@
        {% set otherhoursShow %}
        {{ govukInput({
          hint: {
-           text: "Provide details, for example night shift 11pm to 6am"
+           text: "Provide details, for example night shift 23:00 to 06:00"
          },
          classes: "govuk-input--width-20",
          id: "width-hours",
@@ -142,6 +142,9 @@
        {% endset -%}
 
        {% set hoursShow %}
+       <div id="width-days-hint" class="govuk-hint">
+         Use the 24-hour clock, for example 09:00, 18:00
+       </div>
        <div class="govuk-date-input" id="passport-issued">
          <div class="govuk-date-input__item">
            <div class="govuk-form-group">
@@ -234,7 +237,7 @@
            items: [
              {
                value: "minimum-wage",
-               text: "Minimum wage"
+               text: "National minimum wage"
              },
              {
                value: "hourly-page",
