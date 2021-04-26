@@ -28,6 +28,16 @@ router.post('/gateway/v02/kc-choose', function (req, res) {
 
 ////// mvp //////////////////////////////////
 
+router.post('/employer/mvp/kc-choose', function (req, res) {
+  const editChoice = req.session.data['2fa-choose']
+
+  if (editChoice === 'authenticator-app') {
+    res.redirect('/employer/mvp/kc-2fa')
+  } else if (editChoice === 'mobile-phone') {
+    res.redirect('/employer/mvp/kc-phone')
+  }
+});
+
 router.post('/employer/mvp/job-add-3a', function (req, res) {
   const editChoice = req.session.data['remote-role']
 
@@ -50,7 +60,17 @@ router.post('/employer/mvp/job-add-3b-locally', function (req, res) {
   }
 });
 
-////// mvp //////////////////////////////////
+////// v08 //////////////////////////////////
+
+router.post('/employer/v08/kc-choose', function (req, res) {
+  const editChoice = req.session.data['2fa-choose']
+
+  if (editChoice === 'authenticator-app') {
+    res.redirect('/employer/v08/kc-2fa')
+  } else if (editChoice === 'mobile-phone') {
+    res.redirect('/employer/v08/kc-phone')
+  }
+});
 
 ////// v07 //////////////////////////////////
 

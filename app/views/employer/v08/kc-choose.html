@@ -1,0 +1,54 @@
+{% extends "layout-footer.html" %}
+
+{% block pageTitle %}
+  Set up your Kickstart Scheme account
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/beta-banner.html" %}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form id="form" method="post" action="kc-choose">
+    {{ govukRadios({
+        idPrefix: "2fa-choose",
+        name: "2fa-choose",
+        fieldset: {
+          legend: {
+            text: "How would you like to set up your security?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        items: [
+          {
+            value: "authenticator-app",
+            text: "Authenticator app",
+            hint: {
+              text: "Download a free smartphone app like Google Authenticator or FreeOTP to generate a security code"
+            }
+          },
+          {
+            value: "mobile-phone",
+            text: "SMS text message",
+            hint: {
+              text: "Enter your mobile phone number to receive a security code by text message"
+            }
+          }
+        ]
+      }) }}
+
+      <button type="submit" class="govuk-button govuk-!-margin-right-1" id="submit">Continue</button>
+
+    </form>
+
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+
+  </div>
+</div>
+{% endblock %}
