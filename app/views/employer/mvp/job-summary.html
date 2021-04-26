@@ -69,7 +69,7 @@
                 },
                 {
                   key: {
-                    text: "What can you offer the Kickstarter?"
+                    text: "What can you offer the applicant?"
                   },
                   value: {
                     text: "We train and support all our employees to grow confidence and knowledge in the world of art and sculpture."
@@ -124,75 +124,107 @@
               ]
             }) }}
 
-      <h2 class="govuk-heading-m">Locations</h2>
-
-      {{ govukTable({
-        attributes: {
-        'data-module': 'moj-sortable-table'
-        },
-        head: [
-        {
-          text: "Town or city",
-          attributes: {
-            "aria-sort": "ascending"
-          }
-        },
-        {
-          text: "Postcode",
-          attributes: {
-            "aria-sort": "none"
-          }
-        },
-        {
-          html: "No. of<br>vacancies",
-          attributes: {
-            "aria-sort": "none"
-          }
-        },
-        {
-          html: "Advertising<br>start date",
-          attributes: {
-            "aria-sort": "none"
-          }
-        }
-        ],
+      <h2 class="govuk-heading-m">Location</h2>
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
         rows: [
-        [
           {
-            text: "Leeds"
-          },
-          {
-            text: "LS1 9JA",
-            attributes: {
-              "data-sort-value": "IV1 1BA"
+            key: {
+              text: "Number of vacancies"
+            },
+            value: {
+              text: "2"
             }
           },
           {
-            text: "1"
-          },
-          {
-            text: "15/07/21"
-          }
-        ],
-        [
-          {
-            text: "Manchester"
-          },
-          {
-            text: "M3 1SH",
-            attributes: {
-              "data-sort-value": "MK10 1SH"
+            key: {
+              text: "Where will this job be based?"
+            },
+            value: {
+              text: "On-site at all times"
             }
           },
           {
-            text: "1"
+            key: {
+              text: "Location address"
+            },
+            value: {
+              html: "William Brown St,<br> Liverpool L3 8EL"
+            }
           },
           {
-            text: "15/07/21"
+            key: {
+              text: "Accessible by public transport?"
+            },
+            value: {
+              text: "Yes"
+            }
           }
         ]
+      }) }}
+
+      <h2 class="govuk-heading-m">Location details</h2>
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+          {
+            key: {
+              text: "Referral Limit"
+            },
+            value: {
+              text: "No"
+            }
+          },
+          {
+            key: {
+              text: "Contact name"
+            },
+            value: {
+              text: "James Davies"
+            }
+          },
+          {
+            key: {
+              text: "Contact number"
+            },
+            value: {
+              html: "0117 873737"
+            }
+          },
+          {
+            key: {
+              text: "Contact email address"
+            },
+            value: {
+              text: "James.Davies@artsandsculpture.co.uk"
+            }
+          }
         ]
-        }) }}
+      }) }}
+
+      <h2 class="govuk-heading-m">Key dates</h2>
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+          {
+            key: {
+              text: "Advertising Start Date"
+            },
+            value: {
+              text: "As soon as possible"
+            }
+          },
+          {
+            key: {
+              text: "Closing date"
+            },
+            value: {
+              text: "17/05/2021"
+            }
+          }
+        ]
+      }) }}
+
 
       <p><a href="job-list-role-added">Back to vacancy list</a></p>
 
