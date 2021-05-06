@@ -60,6 +60,30 @@ router.post('/employer/mvp/job-add-3b-locally', function (req, res) {
   }
 });
 
+////// v09 //////////////////////////////////
+
+router.post('/employer/v09/kc-choose', function (req, res) {
+  const editChoice = req.session.data['2fa-choose']
+
+  if (editChoice === 'authenticator-app') {
+    res.redirect('/employer/v09/kc-2fa')
+  } else if (editChoice === 'mobile-phone') {
+    res.redirect('/employer/v09/kc-phone')
+  }
+});
+
+router.post('/employer/v09/get-help', function (req, res) {
+  const editChoice = req.session.data['get-help']
+
+  if (editChoice === 'application') {
+    res.redirect('/employer/v09/get-help-form')
+  } else if (editChoice === 'kickstart') {
+    res.redirect('/employer/v09/get-help-contact')
+  } else if (editChoice === 'govuk') {
+    res.redirect('/gov-uk/v03/start')
+  }
+})
+
 ////// v08 //////////////////////////////////
 
 router.post('/employer/v08/kc-choose', function (req, res) {
