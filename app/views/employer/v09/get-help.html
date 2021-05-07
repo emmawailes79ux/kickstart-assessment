@@ -11,51 +11,57 @@
 
 
 {% block content %}
+
     <div class="govuk-grid-row">
-        <div class="govuk-grid-column-two-thirds">
-            <form action="/employer/v09/get-help" method="post" class="form">
-              {{ govukFieldset({
-                  legend: {
-                      html: 'What do you need help with?',
-                      classes: "govuk-fieldset__legend--l",
-                      isPageHeading: true
-                  }
-              })}}
-
-              {{ govukSelect({
-                id: "get-help",
-                name: "get-help",
-                label: {
-                  text: "Get help",
-                  classes: "govuk-label--m",
-                  isPageHeading: false
-                },
-                items: [
-                  {
-                    value: "Choose a topic",
-                    text: "--- Select one ---"
-                  },
-                  {
-                    value: "application",
-                    text: "I need to change my email address"
-                  },
-                  {
-                    value: "kickstart",
-                    text: "Stopped getting applications for my vacancy"
-                  },
-                  {
-                    value: "govuk",
-                    text: "Want to find out more about the Kickstart Scheme"
-                  }
-                ]
-              }) }}
-
-
-              {{ govukButton({
-                  text: "Continue"
-              }) }}
-
-            </form>
-        </div>
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl app-masthead__title">Get help with the Kickstart Scheme</h1>
+        <p class="app-masthead__description">Use this help area to answer the questions you have about the Kickstart Scheme and the <marquee><i><b><span style="background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);">online portal</span></b></i></marquee></p>
+      </div>
+      <div class="govuk-grid-column-full">
+        <hr class="govuk-section-break govuk-section-break--visible govuk-section-break--xl govuk-!-margin-top-0">
+      </div>
     </div>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-third-from-desktop govuk-!-margin-bottom-8">
+        <h2 class="govuk-heading-m govuk-!-font-weight-bold">Manage my account</h2>
+        <p class="govuk-body">If you are having trouble logging in or you need to change some of your login details</p>
+        <p class="govuk-body govuk-!-margin-bottom-0"><a href="get-help-form" class="govuk-link govuk-!-font-weight-bold">Get help with logging in</a></p>
+      </div>
+      <div class="govuk-grid-column-one-third-from-desktop govuk-!-margin-bottom-8">
+        <h2 class="govuk-heading-m">Manage my vacancies</h2>
+        <p class="govuk-body">If you need help around the vacancies that you have already submitted to DWP contact us here</p>
+        <p class="govuk-body govuk-!-margin-bottom-0"><a href="https://www.gov.uk/government/publications/kickstart-scheme-employer-contacts/kickstart-scheme-employer-contacts" class="govuk-link govuk-!-font-weight-bold">Get help with your vacacnies</a></p>
+      </div>
+      <div class="govuk-grid-column-one-third-from-desktop govuk-!-margin-bottom-8">
+        <h2 class="govuk-heading-m">Trouble submitting my vacancies</h2>
+        <p class="govuk-body">If part of the online form isn't working for you get in touch here.</p>
+        <p class="govuk-body govuk-!-margin-bottom-0"><a href="get-help-form" class="govuk-link govuk-!-font-weight-bold">Get help with the <span style="background-image: linear-gradient(to left, violet, indigo, blue, green, yellow, orange, red);">online portal</span></a></p>
+      </div>
+
+      <div class="govuk-grid-column-full">
+        <hr class="govuk-section-break govuk-section-break--visible govuk-section-break--xl govuk-!-margin-top-0">
+      </div>
+
+      <div class="govuk-grid-column-two-thirds-from-desktop">
+        <h2 id="community" class="govuk-heading-l">Further reading around the Kickstart Scheme</h2>
+        <p class="govuk-body">
+          The GOV.UK content around the Kickstart Scheme has a wealth of information to draw upon:
+        </p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li><a href="/gov-uk/v03/start" class="govuk-link">Help if you are an employer</a></li>
+          <li><a href="/gov-uk/v03/start" class="govuk-link">Help if you are a Gateway</a></li>
+        </ul>
+
+      </div>
+
+      <div class="govuk-grid-column-full">
+        <hr class="govuk-section-break govuk-section-break--visible govuk-section-break--xl">
+      </div>
+
+
+
+    </div>
+
+
 {% endblock %}

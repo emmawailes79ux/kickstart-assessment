@@ -24,10 +24,26 @@
 
               {{ govukInput({
                   label: {
+                      text: "Name"
+                  },
+                  id: "name",
+                  name: "name",
+                  classes: "govuk-!-width-two-thirds"
+              }) }}
+              {{ govukInput({
+                  label: {
                       text: "Your email address"
                   },
                   id: "email-address",
                   name: "email-address",
+                  classes: "govuk-!-width-two-thirds"
+              }) }}
+              {{ govukInput({
+                  label: {
+                      text: "Confirm email address"
+                  },
+                  id: "confirm-email-address",
+                  name: "confirm-email-address",
                   classes: "govuk-!-width-two-thirds"
               }) }}
 
