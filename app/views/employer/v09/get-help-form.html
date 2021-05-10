@@ -22,6 +22,8 @@
                   }
               })}}
 
+              <p class="govuk-body">Use this form to get help or advice for a problem or issue with the Kickstart Scheme.</p>
+
               {{ govukInput({
                   label: {
                       text: "Name"
@@ -30,6 +32,34 @@
                   name: "name",
                   classes: "govuk-!-width-two-thirds"
               }) }}
+
+              {{ govukSelect({
+                id: "get-help",
+                name: "get-help",
+                label: {
+                  text: "What do you need help with?",
+                  isPageHeading: false
+                },
+                items: [
+                  {
+                    value: "Choose a topic",
+                    text: "--- Select one ---"
+                  },
+                  {
+                    value: "application",
+                    text: "I need to change my email address"
+                  },
+                  {
+                    value: "kickstart",
+                    text: "Stopped getting applications for my vacancy"
+                  },
+                  {
+                    value: "govuk",
+                    text: "Want to find out more about the Kickstart Scheme"
+                  }
+                ]
+              }) }}
+
               {{ govukInput({
                   label: {
                       text: "Your email address"
