@@ -1,0 +1,126 @@
+{% extends "layout-header-links.html" %}
+
+{% block pageTitle %}
+  Vacancy locations for [job title]
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/beta-banner.html" %}
+  {% include "includes/header-summary-gateway.html" %}
+    {{ govukBackLink({
+      text: "Back",
+      href: "job-add-location-2"
+    }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l"><span class='govuk-caption-l'>Add a vacancy for Arts and Sculpture Ltd</span>Vacancy locations for Junior Exhibition Designer</h1>
+      <p class="govuk-body">List all the locations for this job. Each location can have different numbers of vacancies and advertising start dates.</p>
+
+      <a href="job-add-location-list-2" class="govuk-button govuk-button--secondary govuk-!-margin-right-1" id="submit">Add a location</a>
+</div>
+</div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <!-- <h2 class="govuk-heading-l">Locations</h2> -->
+
+  {{ govukTable({
+    head: [
+    {
+      text: "Town or city",
+      attributes: {
+        "aria-sort": "ascending"
+      }
+    },
+    {
+      text: "Postcode",
+      attributes: {
+        "aria-sort": "none"
+      }
+    },
+    {
+      html: "No. of<br>vacancies",
+      attributes: {
+        "aria-sort": "none"
+      }
+    },
+    {
+      html: "Advertising<br>start date",
+      attributes: {
+        "aria-sort": "none"
+      }
+    },
+    {
+      text: "",
+      attributes: {
+        "aria-sort": "none"
+      }
+    },
+    {
+      text: "",
+      attributes: {
+        "aria-sort": "none"
+      }
+    }
+    ],
+    rows: [
+    [
+      {
+        text: "Leeds"
+      },
+      {
+        text: "LS1 9JA",
+        attributes: {
+          "data-sort-value": "LS1 9JA"
+        }
+      },
+      {
+        text: "1"
+      },
+      {
+        text: "15/07/21"
+      },
+      {
+        html: "<a href='job-add-location-list-2'>Change</a>"
+      },
+      {
+        html: "<a href='#'>Delete</a>"
+      }
+    ],
+    [
+      {
+        text: "Manchester"
+      },
+      {
+        text: "M3 1SH",
+        attributes: {
+          "data-sort-value": "M3 1SH"
+        }
+      },
+      {
+        text: "1"
+      },
+      {
+        text: "15/07/21"
+      },
+      {
+        html: "<a href='job-add-location-list-2'>Change</a>"
+      },
+      {
+        html: "<a href='#'>Delete</a>"
+      }
+    ]
+    ]
+    }) }}
+
+      <p><a href="job-detail" class="govuk-button">Save and continue</a></p>
+
+    </div>
+    </div>
+
+
+
+{% endblock %}

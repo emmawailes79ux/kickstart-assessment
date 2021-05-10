@@ -1,0 +1,35 @@
+{% extends "layout-footer.html" %}
+
+{% block pageTitle %}
+  Phone security code
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/beta-banner.html" %}
+
+{% endblock %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-l">We have sent you a text message with your security code</h1>
+
+            <p>It should take one minute to arrive.</p>
+
+            <form action="employer-list" method="post" class="form">
+                <div class="govuk-form-group govuk-!-margin-top-6">
+                    <label class="govuk-label" for="email-security-code">
+                        Enter security code
+                    </label>
+                    <input class="govuk-input govuk-input--width-10" id="email-security-code" name="email-security-code" type="text">
+                </div>
+
+                {{ govukButton({
+                    text: "Continue"
+                }) }}
+            </form>
+
+            <!--p><a href="resend-email">I did not get the text</a></p-->
+        </div>
+    </div>
+{% endblock %}
