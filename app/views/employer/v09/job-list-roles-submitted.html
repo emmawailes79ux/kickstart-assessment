@@ -172,7 +172,7 @@
             Your vacancies
           </h1>
 
-          <p class="govuk-body ">You've been approved for 34 Kickstart Scheme vacancies. Make changes to the vacancies and submit them. We’ll approve them before they go live.</p>
+          <p class="govuk-body">Add your vacancies and submit them. We'll approve them before they go live.</p>
 
           {{ govukButton({
             text: "Add a vacancy",
@@ -213,6 +213,11 @@
                   }
                 }
               </script>
+              {{ govukButton({
+                text: "Submit vacancies",
+                href: "submit-vacancy",
+                classes: "govuk-button--secondary"
+              }) }}
 
               <div class='govuk-checkboxes govuk-checkboxes--small'>
                 <div class='govuk-checkboxes__item' style='min-height:1;'>
