@@ -5,13 +5,10 @@
 {% endblock %}
 
 {% block beforeContent %}
-{% include "includes/beta-banner.html" %}
-{% include "includes/manage-users-link.html" %}
+  {% include "includes/beta-banner.html" %}
+  {% include "includes/manage-users-link.html" %}
   {% include "includes/header-summary.html" %}
-    {{ govukBackLink({
-      text: "Back",
-      href: "job-list-role-added"
-    }) }}
+  {% include 'includes/back-button.njk' %}
 {% endblock %}
 
 {% block content %}
