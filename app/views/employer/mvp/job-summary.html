@@ -48,7 +48,8 @@
                     text: "About the job"
                   },
                   value: {
-                    text: "Your role as a Junior Exhibition Designer will be predominantly be to support the leading curators and designers in Leeds Art Gallery and the Henry Moore Institute. This a rare opportunity to get access to one of the country's leading art galleries with an expectation that you will learn on the job. Previous coputer skills are necessary as there will be certain amount of data entry. This role is likely to be highly sort after."
+                    html: "<p class='govuk-body'>>Your role as a Junior Exhibition Designer will be predominantly be to support the leading curators and designers in Leeds Art Gallery and the Henry Moore Institute. This a rare opportunity to get access to one of the country's leading art galleries with an expectation that you will learn on the job. Previous coputer skills are necessary as there will be certain amount of data entry. This role is likely to be highly sort after.</p>
+                    <p>Market leader in immersive art anc cultural exhibitions, Arts and Sculpture are at the forefront of the scene in the UK.</p>"
                   }
                 },
                 {
@@ -57,14 +58,6 @@
                   },
                   value: {
                     text: "Communication, time keeping, basic computer skills, an appreciation and understanding of art."
-                  }
-                },
-                {
-                  key: {
-                    text: "Tell us about your company"
-                  },
-                  value: {
-                    text: "Market leader in immersive art anc cultural exhibitions, Arts and Sculpture are at the forefront of the scene in the UK."
                   }
                 },
                 {
@@ -99,18 +92,10 @@
                 },
                 {
                   key: {
-                    text: "Days"
+                    text: "Days and hours"
                   },
                   value: {
-                    text: "Monday, Tuesday, Wednesday, Friday, Saturday"
-                  }
-                },
-                {
-                  key: {
-                    text: "Hours"
-                  },
-                  value: {
-                    text: "Flexible"
+                    html: "Monday, Tuesday, Wednesday, Friday, Saturday<br>Flexible hours"
                   }
                 },
                 {
@@ -206,6 +191,14 @@
       {{ govukSummaryList({
         classes: 'govuk-!-margin-bottom-9',
         rows: [
+          {
+            key: {
+              text: "Date submitted to Kickstart"
+            },
+            value: {
+              text: "12/03/2021"
+            }
+          },
           {
             key: {
               text: "Advertising Start Date"
