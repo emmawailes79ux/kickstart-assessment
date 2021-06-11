@@ -6,6 +6,10 @@
 
 {% block beforeContent %}
 {% include "includes/beta-banner.html" %}
+{{ govukBackLink({
+  text: "Back",
+  href: "get-help"
+}) }}
 
 {% endblock %}
 
@@ -17,7 +21,7 @@
           <p class="govuk-body">
             We have received your message and have sent you a confirmation email.  We will respond to your query within 7 working days.
           </p>
-          <p><a href="/employer/mvp/sign-in">Sign in to Kickstart</a></p>
+          <!-- <p><a href="/employer/mvp/sign-in">Sign in to Kickstart</a></p> -->
         </div>
     </div>
 {% endblock %}
