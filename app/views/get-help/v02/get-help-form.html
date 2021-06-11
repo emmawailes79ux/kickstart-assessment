@@ -1,0 +1,102 @@
+{% extends "layout-footer.html" %}
+
+{% block pageTitle %}
+  Tell us about your problem
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/beta-banner.html" %}
+
+{% endblock %}
+
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <form action="get-help-thanks" method="post">
+              {{ govukFieldset({
+                  legend: {
+                      html: 'Give us details about your issue',
+                      classes: "govuk-fieldset__legend--l",
+                      isPageHeading: true
+                  }
+              })}}
+
+              <p class="govuk-body">Use this form to get help or advice for a problem or issue with the Kickstart Scheme.</p>
+
+              {{ govukInput({
+                  label: {
+                      text: "Name"
+                  },
+                  id: "name",
+                  name: "name",
+                  classes: "govuk-!-width-two-thirds"
+              }) }}
+
+              {{ govukSelect({
+                id: "get-help",
+                name: "get-help",
+                label: {
+                  text: "What do you need help with?",
+                  isPageHeading: false
+                },
+                items: [
+                  {
+                    value: "Choose a topic",
+                    text: "--- Select one ---"
+                  },
+                  {
+                    value: "application",
+                    text: "I need to change my email address"
+                  },
+                  {
+                    value: "kickstart",
+                    text: "Stopped getting applications for my vacancy"
+                  },
+                  {
+                    value: "govuk",
+                    text: "Want to find out more about the Kickstart Scheme"
+                  }
+                ]
+              }) }}
+
+              {{ govukInput({
+                  label: {
+                      text: "Your email address"
+                  },
+                  id: "email-address",
+                  name: "email-address",
+                  classes: "govuk-!-width-two-thirds"
+              }) }}
+              {{ govukInput({
+                  label: {
+                      text: "Confirm email address"
+                  },
+                  id: "confirm-email-address",
+                  name: "confirm-email-address",
+                  classes: "govuk-!-width-two-thirds"
+              }) }}
+
+              {{ govukCharacterCount({
+                name: "more-detail",
+                id: "more-detail",
+                maxlength: 4000,
+                label: {
+                  text: "About the issue",
+                  classes: "govuk-label--m",
+                  isPageHeading: true
+                },
+                hint: {
+                  text: "Enter a description of your problem."
+                }
+              }) }}
+
+              {{ govukButton({
+                  text: "Continue"
+              }) }}
+
+
+            </form>
+        </div>
+    </div>
+{% endblock %}

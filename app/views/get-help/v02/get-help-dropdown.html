@@ -1,0 +1,65 @@
+{% extends "layout-footer.html" %}
+
+{% block pageTitle %}
+  Get help with this service
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/beta-banner.html" %}
+
+{% endblock %}
+
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <form action="/employer/v09/get-help" method="post" class="form">
+              {{ govukFieldset({
+                  legend: {
+                      html: 'What do you need help with?',
+                      classes: "govuk-fieldset__legend--l",
+                      isPageHeading: true
+                  }
+              })}}
+
+              {{ govukSelect({
+                id: "get-help",
+                name: "get-help",
+                label: {
+                  text: "Get help",
+                  classes: "govuk-label--m",
+                  isPageHeading: false
+                },
+                items: [
+                  {
+                    value: "Choose a topic",
+                    text: "--- Select one ---"
+                  },
+                  {
+                    value: "application",
+                    text: "I need to change my email address"
+                  },
+                  {
+                    value: "phone",
+                    text: "I need to change my phone number"
+                  },
+                  {
+                    value: "kickstart",
+                    text: "Stopped getting applications for my vacancy"
+                  },
+                  {
+                    value: "govuk",
+                    text: "Want to find out more about the Kickstart Scheme"
+                  }
+                ]
+              }) }}
+
+
+              {{ govukButton({
+                  text: "Continue"
+              }) }}
+
+            </form>
+        </div>
+    </div>
+{% endblock %}
