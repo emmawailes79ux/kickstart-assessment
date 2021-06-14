@@ -1,0 +1,153 @@
+{% extends "layout-header-links.html" %}
+
+{% block pageTitle %}
+  Add a vacancy
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/beta-banner.html" %}
+{% include "includes/manage-users-link.html" %}
+  {% include "includes/header-summary.html" %}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "job-add-1"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form id="form" method="post" action="job-add-location-2">
+        {% set jobref %}
+        {{ govukRadios({
+          classes: "govuk-radios",
+          idPrefix: "local-national",
+          name: "local-national",
+          fieldset: {
+            legend: {
+              html: "Do you want to advertise this job locally?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+          {
+            value: "local",
+            text: "Yes, I only want people close by to this location"
+          },
+          {
+              value: "national",
+              text: "No, I can employ people from all over the UK for this job"
+            }
+          ]
+        }) }}
+          {% endset -%}
+
+      {{ govukRadios({
+        idPrefix: "remote-role",
+        name: "remote-role",
+        fieldset: {
+          legend: {
+            html: "<span class='govuk-caption-l'>Add a vacancy</span>Where will this job be based?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          text: "Think about whether this job can be done remotely and what flexibility you can offer."
+        },
+        items: [
+          {
+            value: "part",
+            text: "Required to work on-site at all times"
+          },
+          {
+            value: "not",
+            text: "A mix of remote and on-site work",
+            conditional: {
+              html: jobref
+            }
+          },
+          {
+            value: "yes",
+            text: "Working remotely/at home at all times"
+          }
+        ]
+      }) }}
+
+
+
+      <h2 class="govuk-heading-m">Location address</h2>
+
+      {{ govukInput({
+        label: {
+          html: 'Building and street <span class="govuk-visually-hidden">line 1 of 2</span>'
+        },
+        id: "address-line-1",
+        name: "address-line-1"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          html: '<span class="govuk-visually-hidden">Building and street line 2 of 2</span>'
+        },
+        id: "address-line-2",
+        name: "address-line-2"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Town or city"
+        },
+        classes: "govuk-!-width-two-thirds",
+        id: "address-town",
+        name: "address-town"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Postcode"
+        },
+        classes: "govuk-input--width-10",
+        id: "address-postcode",
+        name: "address-postcode"
+      }) }}
+
+      {{ govukRadios({
+          idPrefix: "public-transport",
+          name: "public-transport",
+          fieldset: {
+            legend: {
+              text: "Is the location accessible via public transport?",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes"
+            },
+            {
+              value: "no",
+              text: "No"
+            },
+            {
+              value: "do not know",
+              text: "Do not know"
+            }
+          ]
+        }) }}
+
+      <button type="submit" class="govuk-button govuk-!-margin-right-1" id="submit">Continue</button>
+
+      {% include "includes/get-help-link.html" %}
+
+</form>
+
+    </div>
+  </div>
+
+{% endblock %}

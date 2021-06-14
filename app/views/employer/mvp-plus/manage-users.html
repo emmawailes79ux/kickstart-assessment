@@ -1,0 +1,98 @@
+{% extends "layout-header-links.html" %}
+
+{% block pageTitle %}
+  Confirm vacancy details
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/beta-banner.html" %}
+  {% include "includes/manage-users-link.html" %}
+  {% include "includes/header-summary.html" %}
+    {{ govukBackLink({
+      text: "Back",
+      href: "job-list-role-added"
+    }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Manage users</h1>
+      <p class="govuk-body">You have administrator (admin) access to this account and can give other members of staff access as editors.</p>
+      <p class="govuk-body">Editors can add, update, delete or submit vacancies.</p>
+
+      <a href="add-a-user" class="govuk-button govuk-!-margin-right-1" id="submit">Add an editor</a>
+</div>
+</div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <!-- <h2 class="govuk-heading-l">Locations</h2> -->
+
+  {{ govukTable({
+    attributes: {
+    'data-module': 'moj-sortable-table'
+    },
+    head: [
+    {
+      text: "Name"
+    },
+    {
+      text: "Email"
+    },
+    {
+      html: "Type"
+    },
+    {
+      text: ""
+    },
+    {
+      text: ""
+    }
+    ],
+    rows: [
+    [
+      {
+        text: "James Williams"
+      },
+      {
+        text: "james.williams@artandsculpture.co.uk"
+      },
+      {
+        text: "Admin"
+      },
+      {
+        html: "<a href='add-a-user'>Change</a>"
+      },
+      {
+        html: ""
+      }
+    ],
+    [
+      {
+        text: "Cheryl Dawlish"
+      },
+      {
+        text: "cheryl.dawlish@artandsculpture.co.uk"
+      },
+      {
+        text: "Editor"
+      },
+      {
+        html: "<a href='add-a-user'>Change</a>"
+      },
+      {
+        html: "<a href='delete-user'>Delete</a>"
+      }
+    ]
+    ]
+    }) }}
+
+      {% include "includes/get-help-link.html" %}
+
+    </div>
+    </div>
+
+
+
+{% endblock %}
