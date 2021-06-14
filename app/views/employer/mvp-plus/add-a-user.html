@@ -6,8 +6,8 @@
 
 {% block beforeContent %}
   {% include "includes/beta-banner.html" %}
-  {% include "includes/manage-users-link.html" %}
-  {% include "includes/header-summary.html" %}
+  <!-- {% include "includes/manage-users-link.html" %} -->
+  {% include "includes/header-summary-users.html" %}
   {% include 'includes/back-button.njk' %}
 {% endblock %}
 
@@ -53,7 +53,7 @@
     }) }}
 
       <p><a href="manage-users" class="govuk-button">Save and continue</a></p>
-      <p class="govuk-body"><a href="#">Back to manage users</a></p>
+      <!-- <p class="govuk-body"><a href="manage-users">Back to manage users</a></p> -->
 
       {% include "includes/get-help-link.html" %}
 

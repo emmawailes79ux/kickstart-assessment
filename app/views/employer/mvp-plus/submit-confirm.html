@@ -6,7 +6,8 @@
 
 {% block beforeContent %}
 {% include "includes/beta-banner.html" %}
-{% include "includes/manage-users-link.html" %}
+<!-- {% include "includes/manage-users-link.html" %} -->
+{% include "includes/header-summary-users.html" %}
 <style>
   .guidance-layout {
     word-wrap: break-word;
@@ -31,7 +32,6 @@
         background: #fff;
     }
     </style>
-    {% include "includes/header-summary.html" %}
 {% endblock %}
 
 {% block content %}
