@@ -81,10 +81,19 @@
                   classes: "govuk-!-width-two-thirds"
               }) }}
 
+              {{ govukInput({
+                  label: {
+                      text: "Kickstart Scheme Application ID"
+                  },
+                  id: "kickstart-number",
+                  name: "kickstart-number",
+                  classes: "govuk-!-width-two-thirds"
+              }) }}
+
               {{ govukCharacterCount({
                 name: "more-detail",
                 id: "more-detail",
-                maxlength: 4000,
+                maxwords: 500,
                 label: {
                   text: "About the issue",
                   classes: "govuk-label--m",
