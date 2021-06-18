@@ -1,0 +1,827 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Apply for a Kickstart Scheme grant - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<style>
+  @import url("/public/stylesheets/govuk.css");
+
+  .gem-c-contents-list {
+    position: relative;
+    margin: 0 0 20px 0;
+    z-index: 1;
+    background: #fff;
+    box-shadow: 0 20px 15px -10px #fff
+}
+
+.gem-c-contents-list__title {
+    color: #0b0c0c;
+    font-family: "nta", arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0
+}
+
+@media print {
+    .gem-c-contents-list__title {
+        color: #000
+    }
+}
+
+@media print {
+    .gem-c-contents-list__title {
+        font-family: sans-serif
+    }
+}
+
+@media (min-width: 40.0625em) {
+    .gem-c-contents-list__title {
+        font-size: 16px;
+        line-height: 1.5
+    }
+}
+
+@media print {
+    .gem-c-contents-list__title {
+        font-size: 14pt;
+        line-height: 1.5
+    }
+}
+
+.gem-c-contents-list__list, .gem-c-contents-list__nested-list {
+    color: #0b0c0c;
+    font-family: "nta", arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.1428571429;
+    margin: 0;
+    padding: 0;
+    list-style-type: none
+}
+
+@media print {
+    .gem-c-contents-list__list, .gem-c-contents-list__nested-list {
+        color: #000
+    }
+}
+
+@media print {
+    .gem-c-contents-list__list, .gem-c-contents-list__nested-list {
+        font-family: sans-serif
+    }
+}
+
+@media (min-width: 40.0625em) {
+    .gem-c-contents-list__list, .gem-c-contents-list__nested-list {
+        font-size: 16px;
+        line-height: 1.25
+    }
+}
+
+@media print {
+    .gem-c-contents-list__list, .gem-c-contents-list__nested-list {
+        font-size: 14pt;
+        line-height: 1.2
+    }
+}
+
+.gem-c-contents-list--no-underline .gem-c-contents-list__link {
+    text-decoration: none
+}
+
+.gem-c-contents-list--no-underline .gem-c-contents-list__link:hover,
+.gem-c-contents-list--no-underline .gem-c-contents-list__link:active {
+    text-decoration: underline
+}
+
+.gem-c-contents-list--no-underline .gem-c-contents-list__link:focus,
+.gem-c-contents-list--no-underline .gem-c-contents-list__link:active:focus,
+.gem-c-contents-list--no-underline .gem-c-contents-list__link:link:focus,
+.gem-c-contents-list--no-underline .gem-c-contents-list__link:visited:focus {
+    outline: 3px solid transparent;
+    color: #0b0c0c;
+    background-color: #fd0;
+    box-shadow: 0 -2px #fd0, 0 4px #0b0c0c;
+    text-decoration: none;
+    color: #0b0c0c !important
+}
+
+.gem-c-contents-list__list-item--parent > .gem-c-contents-list__link {
+    font-weight: bold
+}
+
+.gem-c-contents-list__link:focus, .gem-c-contents-list__link:active:focus,
+.gem-c-contents-list__link:link:focus, .gem-c-contents-list__link:visited:focus {
+    outline: 3px solid transparent;
+    color: #0b0c0c;
+    background-color: #fd0;
+    box-shadow: 0 -2px #fd0, 0 4px #0b0c0c;
+    text-decoration: none;
+    color: #0b0c0c !important
+}
+
+.gem-c-contents-list__list-item {
+    padding-top: 10px;
+    line-height: 1.3;
+    list-style-type: none
+}
+
+@media (min-width: 40.0625em) {
+    .gem-c-contents-list__list-item {
+        padding-top: 7.5px
+    }
+}
+
+.gem-c-contents-list__list-item--dashed {
+    position: relative;
+    padding-left: 25px;
+    padding-right: 25px
+}
+
+.gem-c-contents-list__list-item--dashed:before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    width: 20px;
+    overflow: hidden
+}
+
+.gem-c-print-link {
+    display: none
+}
+
+.gem-c-print-link.gem-c-print-link--show-without-js {
+    display: block
+}
+
+.js-enabled .gem-c-print-link {
+    display: block
+}
+
+.gem-c-print-link__link, .gem-c-print-link__button {
+    background: url(http://www.gov.uk/assets/government-frontend/govuk_publishing_components/icon-print-b04bc2c6b31f73054f79768fd91f76df0b164b247c0905d8ca07b45cfb4f9a3b.png) no-repeat 10px 50%;
+    background-size: 16px 18px;
+    padding: 10px 10px 10px 36px
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+    .gem-c-print-link__link, .gem-c-print-link__button {
+        background-image: url(http://www.gov.uk/assets/government-frontend/govuk_publishing_components/icon-print-2x-685277484e948f6a848f303d3614e422e652a6a6536980501b893d9f4bbd9f4f.png)
+    }
+}
+
+.gem-c-print-link__link:hover, .gem-c-print-link__button:hover {
+    background-color: #f3f2f1
+}
+
+.gem-c-print-link__link {
+    box-shadow: inset 0 0 0 1px #b1b4b6;
+    text-decoration: none
+}
+
+.gem-c-print-link__link:focus {
+    border: 0;
+    box-shadow: 0 3px #0b0c0c
+}
+
+.gem-c-print-link__button {
+    border: 1px solid #b1b4b6;
+    color: #1d70b8;
+    cursor: pointer;
+    margin: 0
+}
+
+.gem-c-print-link__button:focus {
+    outline: 3px solid transparent;
+    color: #0b0c0c;
+    background-color: #fd0;
+    box-shadow: 0 -2px #fd0, 0 4px #0b0c0c;
+    text-decoration: none;
+    background-color: #fd0;
+    border-color: transparent
+}
+
+.gem-c-govspeak .call-to-action {
+    margin: 2em 0;
+    background-color: #f3f2f1;
+    padding: 2em
+}
+
+.gem-c-govspeak .call-to-action:first-child {
+    margin-top: 0
+}
+
+.gem-c-govspeak .call-to-action p:last-child, .gem-c-govspeak .call-to-action ul:last-child,
+.gem-c-govspeak .call-to-action ol:last-child {
+    margin-bottom: 0
+}
+
+.gem-c-govspeak .steps {
+    padding-left: 0;
+    margin-left: 0;
+    overflow: hidden
+}
+
+.gem-c-govspeak .steps > li {
+    background-position: 0 .87em;
+    background-repeat: no-repeat;
+    list-style-type: decimal;
+    margin-left: 0;
+    padding: .75em 0 .75em 2.5em
+}
+
+.gem-c-govspeak .steps > li:nth-child(1) {
+    background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 250 250' preserveAspectRatio='xMinYMin meet'%3E%3Cg%3E%3Ccircle r='50%25' cx='50%25' cy='50%25' class='circle-back'%3E%3C/circle%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='0.3em' font-family='nta,arial,sans-serif' font-size='8rem' fill='%23ffffff'%3E1%3C/text%3E%3C/g%3E%3C/svg%3E ");
+    background-repeat: no-repeat;
+    background-position: .2em .7em;
+    background-size: 1.4em 1.4em
+}
+
+.gem-c-govspeak .steps > li:nth-child(2) {
+    background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 250 250' preserveAspectRatio='xMinYMin meet'%3E%3Cg%3E%3Ccircle r='50%25' cx='50%25' cy='50%25' class='circle-back'%3E%3C/circle%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='0.3em' font-family='nta,arial,sans-serif' font-size='8rem' fill='%23ffffff'%3E2%3C/text%3E%3C/g%3E%3C/svg%3E ");
+    background-repeat: no-repeat;
+    background-position: .2em .7em;
+    background-size: 1.4em 1.4em
+}
+
+.gem-c-govspeak .steps > li:nth-child(3) {
+    background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 250 250' preserveAspectRatio='xMinYMin meet'%3E%3Cg%3E%3Ccircle r='50%25' cx='50%25' cy='50%25' class='circle-back'%3E%3C/circle%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='0.3em' font-family='nta,arial,sans-serif' font-size='8rem' fill='%23ffffff'%3E3%3C/text%3E%3C/g%3E%3C/svg%3E ");
+    background-repeat: no-repeat;
+    background-position: .2em .7em;
+    background-size: 1.4em 1.4em
+}
+
+.gem-c-govspeak .steps > li:nth-child(4) {
+    background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 250 250' preserveAspectRatio='xMinYMin meet'%3E%3Cg%3E%3Ccircle r='50%25' cx='50%25' cy='50%25' class='circle-back'%3E%3C/circle%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='0.3em' font-family='nta,arial,sans-serif' font-size='8rem' fill='%23ffffff'%3E4%3C/text%3E%3C/g%3E%3C/svg%3E ");
+    background-repeat: no-repeat;
+    background-position: .2em .7em;
+    background-size: 1.4em 1.4em
+}
+
+.gem-c-govspeak .steps > li:nth-child(5) {
+    background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 250 250' preserveAspectRatio='xMinYMin meet'%3E%3Cg%3E%3Ccircle r='50%25' cx='50%25' cy='50%25' class='circle-back'%3E%3C/circle%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='0.3em' font-family='nta,arial,sans-serif' font-size='8rem' fill='%23ffffff'%3E5%3C/text%3E%3C/g%3E%3C/svg%3E ");
+    background-repeat: no-repeat;
+    background-position: .2em .7em;
+    background-size:1.4em 1.4em
+}
+
+.gem-c-govspeak .steps > li:nth-child(6) {
+    background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 250 250' preserveAspectRatio='xMinYMin meet'%3E%3Cg%3E%3Ccircle r='50%25' cx='50%25' cy='50%25' class='circle-back'%3E%3C/circle%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='0.3em' font-family='nta,arial,sans-serif' font-size='8rem' fill='%23ffffff'%3E6%3C/text%3E%3C/g%3E%3C/svg%3E ");
+    background-repeat: no-repeat;
+    background-position: .2em .7em;
+    background-size:1.4em 1.4em
+}
+
+.gem-c-govspeak .steps > li:nth-child(7) {
+    background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 250 250' preserveAspectRatio='xMinYMin meet'%3E%3Cg%3E%3Ccircle r='50%25' cx='50%25' cy='50%25' class='circle-back'%3E%3C/circle%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='0.3em' font-family='nta,arial,sans-serif' font-size='8rem' fill='%23ffffff'%3E7%3C/text%3E%3C/g%3E%3C/svg%3E ");
+    background-repeat: no-repeat;
+    background-position: .2em .7em;
+    background-size:1.4em 1.4em
+}
+
+.gem-c-govspeak .steps > li:nth-child(8) {
+    background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 250 250' preserveAspectRatio='xMinYMin meet'%3E%3Cg%3E%3Ccircle r='50%25' cx='50%25' cy='50%25' class='circle-back'%3E%3C/circle%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='0.3em' font-family='nta,arial,sans-serif' font-size='8rem' fill='%23ffffff'%3E8%3C/text%3E%3C/g%3E%3C/svg%3E ");
+    background-repeat: no-repeat;
+    background-position: .2em .7em;
+    background-size:1.4em 1.4em
+}
+
+.gem-c-govspeak .steps > li:nth-child(9) {
+    background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 250 250' preserveAspectRatio='xMinYMin meet'%3E%3Cg%3E%3Ccircle r='50%25' cx='50%25' cy='50%25' class='circle-back'%3E%3C/circle%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='0.3em' font-family='nta,arial,sans-serif' font-size='8rem' fill='%23ffffff'%3E9%3C/text%3E%3C/g%3E%3C/svg%3E ");
+    background-repeat: no-repeat;
+    background-position: .2em .7em;
+    background-size:1.4em 1.4em
+}
+
+.gem-c-govspeak .steps > li:nth-child(10) {
+    background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 250 250' preserveAspectRatio='xMinYMin meet'%3E%3Cg%3E%3Ccircle r='50%25' cx='50%25' cy='50%25' class='circle-back'%3E%3C/circle%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='0.3em' font-family='nta,arial,sans-serif' font-size='8rem' fill='%23ffffff'%3E10%3C/text%3E%3C/g%3E%3C/svg%3E ");
+    background-repeat: no-repeat;
+    background-position: .2em .7em;
+    background-size:1.4em 1.4em;
+}
+.gem-c-govspeak table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    display: block;
+    margin: 30px 0;
+    overflow-x: auto;
+    width: 100%;
+    font-family: "nta", arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-size: 12px;
+    line-height:1.25
+}
+
+@media print {
+    .gem-c-govspeak table {
+        font-family:sans-serif
+    }
+}
+
+@media (min-width: 40.0625em) {
+    .gem-c-govspeak table {
+        font-size: 14px;
+        line-height:1.4285714286
+    }
+}
+
+@media print {
+    .gem-c-govspeak table {
+        font-size: 12pt;
+        line-height:1.2
+    }
+}
+
+.gem-c-govspeak table caption {
+    text-align: left;
+    margin-bottom:.5em
+}
+
+.gem-c-govspeak table th, .gem-c-govspeak table td {
+    vertical-align: top;
+    padding: 10px 10px 10px 0;
+    border-bottom:solid 1px #b1b4b6
+}
+
+.gem-c-govspeak table th {
+    font-family: "nta", arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 1.25;
+    text-align: left;
+    color:#0b0c0c
+}
+
+@media print {
+    .gem-c-govspeak table th {
+        font-family:sans-serif
+    }
+}
+
+@media (min-width: 40.0625em) {
+    .gem-c-govspeak table th {
+        font-size: 14px;
+        line-height:1.4285714286
+    }
+}
+
+@media print {
+    .gem-c-govspeak table th {
+        font-size: 12pt;
+        line-height:1.2
+    }
+}
+
+.gem-c-govspeak table td small {
+    font-size:1em
+}
+
+.group-title {
+  margin-top: 45px;
+  margin-bottom: 15px;
+  font-size: 27px;
+  font-family: "nta", arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 700;
+  display: block;
+}
+.app-c-important-metadata {
+  font-family: "nta", arial, sans-serif;
+}
+</style>
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <div class="gem-c-title govuk-!-margin-top-8 govuk-!-margin-bottom-8">
+    <span class="govuk-caption-xl gem-c-title__context">
+      Guidance
+    </span>
+  <h1 class="gem-c-title__text govuk-heading-l">
+    Manage your Kickstart Scheme jobs (step 4)
+  </h1>
+</div>
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+
+  <p class="gem-c-lead-paragraph">Changes to your existing Kickstart Scheme jobs that you need to tell us about and how to create more Kickstart Scheme jobs. </p>
+
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="metadata-logo-wrapper">
+    <div class="govuk-grid-column-two-thirds metadata-column">
+      <div class="gem-c-metadata" data-module="gem-toggle">
+  <dl data-module="gem-track-click">
+      <dt class="gem-c-metadata__term">From:</dt>
+      <dd class="gem-c-metadata__definition">
+          <a class="govuk-link" href="/government/organisations/department-for-work-pensions">Department for Work and Pensions</a>
+
+      </dd>
+  </dl>
+</div>
+    </div>
+    <div class="govuk-grid-column-one-third">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+      <div class="app-c-important-metadata app-c-important-metadata--bottom-margin">
+    <dl data-module="gem-track-click">
+      <dt class="app-c-important-metadata__term">Applies to: </dt>
+      <dd class="app-c-important-metadata__definition">Wales, England, and Scotland</dd>
+    </dl>
+  </div>
+
+
+      <div id="contents" class="app-c-contents-list-with-body" data-module="sticky-element-container">
+      <div class="responsive-bottom-margin">
+          <nav class="gem-c-contents-list  gem-c-contents-list--no-underline " aria-label="Contents" role="navigation" data-module="gem-track-click">
+    <h2 class="gem-c-contents-list__title">
+      Contents
+</h2>
+    <ol class="gem-c-contents-list__list">
+        <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
+          <a class="gem-c-contents-list__link govuk-link " data-track-category="contentsClicked" data-track-action="content_item 1" data-track-label="#kickstart-scheme-step-by-step-for-employers" data-track-options='{"dimension29":"Kickstart Scheme: step by step for employers"}' href="#kickstart-scheme-step-by-step-for-employers">Kickstart Scheme: step by step for employers</a>
+
+        </li>
+        <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
+          <a class="gem-c-contents-list__link govuk-link " data-track-category="contentsClicked" data-track-action="content_item 2" data-track-label="#before-you-manage-your-kickstart-scheme-jobs" data-track-options='{"dimension29":"Before you manage your Kickstart Scheme jobs"}' href="#before-you-manage-your-kickstart-scheme-jobs">Before you manage your Kickstart Scheme jobs</a>
+
+        </li>
+        <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
+          <a class="gem-c-contents-list__link govuk-link " data-track-category="contentsClicked" data-track-action="content_item 3" data-track-label="#getting-the-young-people-into-the-jobs" data-track-options='{"dimension29":"Getting the young people into the jobs"}' href="#getting-the-young-people-into-the-jobs">Getting the young people into the jobs</a>
+
+        </li>
+        <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
+          <a class="gem-c-contents-list__link govuk-link " data-track-category="contentsClicked" data-track-action="content_item 4" data-track-label="#if-a-young-person-leaves-the-job-early" data-track-options='{"dimension29":"If a young person leaves the job early"}' href="#if-a-young-person-leaves-the-job-early">If a young person leaves the job early</a>
+
+        </li>
+        <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
+          <a class="gem-c-contents-list__link govuk-link " data-track-category="contentsClicked" data-track-action="content_item 5" data-track-label="#manage-the-kickstart-scheme-funding" data-track-options='{"dimension29":"Manage the Kickstart Scheme funding"}' href="#manage-the-kickstart-scheme-funding">Manage the Kickstart Scheme funding</a>
+
+        </li>
+        <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
+          <a class="gem-c-contents-list__link govuk-link " data-track-category="contentsClicked" data-track-action="content_item 6" data-track-label="#create-more-kickstart-scheme-jobs" data-track-options='{"dimension29":"Create more Kickstart Scheme jobs"}' href="#create-more-kickstart-scheme-jobs">Create more Kickstart Scheme jobs</a>
+
+        </li>
+        <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
+          <a class="gem-c-contents-list__link govuk-link " data-track-category="contentsClicked" data-track-action="content_item 7" data-track-label="#get-help-and-support-with-managing-your-kickstart-scheme-jobs" data-track-options='{"dimension29":"Get help and support with managing your Kickstart Scheme jobs"}' href="#get-help-and-support-with-managing-your-kickstart-scheme-jobs">Get help and support with managing your Kickstart Scheme jobs</a>
+
+        </li>
+    </ol>
+</nav>
+      </div>
+
+
+<div class="gem-c-print-link govuk-!-margin-top-0 govuk-!-margin-bottom-6">
+    <button class="govuk-link govuk-body-s gem-c-print-link__button" data-module="print-link">Print this page</button>
+</div>
+
+
+<div class="gem-c-govspeak govuk-govspeak " data-module="govspeak">
+
+        <div class="govspeak">
+<h2 id="kickstart-scheme-step-by-step-for-employers">Kickstart Scheme: step by step for employers</h2>
+
+<ol class="steps">
+<li>
+<p><a rel="external" href="how-the-kickstart-scheme-works-step-1" class="govuk-link">Find out how the Kickstart Scheme works and check if your organisation is eligible to apply</a></p>
+</li>
+<li>
+<p><a rel="external" href="apply-online-for-a-kickstart-scheme-grant-step-2" class="govuk-link">Apply online for a Kickstart Scheme grant</a> or <a rel="external" href="apply-for-a-kickstart-scheme-grant-through-a-kickstart-gateway-step-2" class="govuk-link">apply through a Kickstart gateway</a></p>
+</li>
+<li>
+<p><a rel="external" href="submit-your-kickstart-scheme-vacancies-step-3" class="govuk-link">Submit your Kickstart Scheme vacancies</a></p>
+</li>
+<li>
+<p>Manage your Kickstart Scheme jobs</p>
+</li>
+</ol>
+
+<div role="note" aria-label="Information" class="application-notice info-notice">
+<p>If you're a Kickstart gateway, check the <a href="https://www.gov.uk/guidance/help-employers-apply-for-a-kickstart-scheme-grant-kickstart-gateway" class="govuk-link">guidance for gateways</a>.</p>
+</div>
+
+<h2 id="before-you-manage-your-kickstart-scheme-jobs">Before you manage your Kickstart Scheme jobs</h2>
+
+<p>Before you manage your Kickstart Scheme jobs, you need to:</p>
+
+<ul>
+  <li>successfully <a rel="external" href="apply-online-for-a-kickstart-scheme-grant-step-2" class="govuk-link">apply online</a> or <a rel="external" href="apply-for-a-kickstart-scheme-grant-through-a-kickstart-gateway-step-2" class="govuk-link">apply through a Kickstart gateway</a> for a Kickstart Scheme grant</li>
+  <li>sign and return your Kickstart Scheme grant agreement to DWP or your Kickstart gateway</li>
+  <li><a rel="external" href="submit-your-kickstart-scheme-vacancies-step-3" class="govuk-link">submit your Kickstart Scheme vacancies</a></li>
+</ul>
+
+<h2 id="getting-the-young-people-into-the-jobs">Getting the young people into the jobs</h2>
+
+<ol class="steps">
+<li>
+<p>Work coaches at Jobcentre Plus will use the vacancies you've submitted to match candidates to the jobs placements.</p>
+</li>
+<li>
+<p>You or your Kickstart gateway will receive a notification email each time a young person is referred to the job placement ('referrals').</p>
+</li>
+<li>
+<p>Referred candidates may choose to apply for the job placement.</p>
+</li>
+<li>
+<p>You'll then be able to interview the candidates who have applied.</p>
+</li>
+<li>
+<p>You or your Kickstart gateway will tell DWP when the young person has started so we can process the funding. You'll be told how to do this in the 'referral' email.</p>
+</li>
+</ol>
+<p>Funding will only be given if a young person is hired using the Kickstart Scheme process.</p>
+
+<p>After a job placement ends you can get another Kickstart Scheme young person to start another job placement.</p>
+
+<h2 id="if-a-young-person-leaves-the-job-early">If a young person leaves the job early</h2>
+
+<p>You must email DWP as soon as possible if a young person either:</p>
+
+<ul>
+  <li>leaves their job before the end of the 6-month period</li>
+  <li>needs to temporarily leave their job (for example for special leave or COVID-19-related restrictions)</li>
+</ul>
+
+<p>The email address is the same one you use to tell DWP about the young person's start date. You'll be told how to do this in the 'referral' email you get when a work coach refers a young person to your job vacancy.</p>
+
+<p>If a young person leaves their job early, the next scheduled wage payment from DWP will be the last you receive for them.</p>
+
+<p>DWP may be able to extend the funding period if the young person has to temporarily stop working.</p>
+
+<h2 id="manage-the-kickstart-scheme-funding">Manage the Kickstart Scheme funding</h2>
+
+<p>If you apply online, DWP will send the funding directly to you.</p>
+
+<p>If you apply through a Kickstart gateway, DWP will send the funding to them. The Kickstart gateway will be responsible for sending the funding to you.</p>
+
+<h3 id="how-the-funding-is-calculated-for-each-young-person">How the funding is calculated for each young person</h3>
+
+<p>The total grant is made up of:</p>
+
+<ul>
+  <li>25 hours each week at National Minimum Wage or National Living Wage (depending on their age at the end of the job*) multiplied by 26 weeks</li>
+  <li>National Insurance and workplace pension contributions are added to this amount</li>
+  <li>the &pound;1,500 funding for setup costs is then added to this amount</li>
+</ul>
+
+<p>*For example, if a young person starts the job aged 17 and turns 18 before the end of the 26 weeks, the funding will cover National Minimum Wage for 18 year olds from the first day of their job.</p>
+
+<h3 id="funding-for-setup-costs-per-job">&pound;1,500 funding for setup costs per job</h3>
+
+<p>You'll get &pound;1,500 funding per job. This should be spent on setup costs and supporting the young person to develop their employability skills.</p>
+
+<p>For example:</p>
+
+<ul>
+  <li>training and employability support (provided by you, a Kickstart gateway or another provider)</li>
+  <li>IT equipment and software</li>
+  <li>uniform or Personal Protective Equipment</li>
+</ul>
+
+<h4 id="how-youll-get-the-1500">How you'll get the &pound;1,500</h4>
+
+<p>If you apply directly, the &pound;1,500 funding for setup costs will be paid when you tell us that the young person has started the job placement. You'll be told how to do this in the email you receive when a work coach refers a young person to your job vacancy.</p>
+
+<p>If you apply through a Kickstart gateway, you need to tell them when the young person starts their job placement. They can then send you the &pound;1,500 funding once they've received it from DWP.</p>
+
+<p>If a Kickstart gateway or another provider does some of the job placement setup or employability support for you, you can use the &pound;1,500 funding to cover this.</p>
+
+<h3 id="kickstart-scheme-wages-and-related-costs">Kickstart Scheme wages and related costs</h3>
+
+<p>The funding covers:</p>
+
+<ul>
+  <li>100% of the National Minimum Wage (or the National Living Wage depending on the age of the participant) for 25 hours per week for a total of 6 months</li>
+  <li>associated employer National Insurance contributions</li>
+  <li>any relevant workplace pension contributions (automatic enrolment)</li>
+</ul>
+
+<p>Employers can pay a higher wage and for more hours but the funding will not cover this.</p>
+
+<h4 id="how-youll-get-the-funding-for-wages-and-related-costs">How you'll get the funding for wages and related costs</h4>
+
+<p>Every 30 days we use information from HMRC to check that the young person is being paid through Pay As You Earn (PAYE).</p>
+
+<p>We'll then send the funding for the wages and related costs to cover the previous 30 days of employment.</p>
+
+<p>Each time you'll receive a remittance advice explaining what you've got. You'll be able to identify the young person in the remittance advice by their 'Introduction ID'. We'll send you the Introduction ID in an email when the young person is referred by a work coach to your job placement.</p>
+
+<h3 id="funding-schedule">Funding schedule</h3>
+
+<p>The schedule shows when the funding will be sent to either:</p>
+
+<ul>
+  <li>you if you applied directly</li>
+  <li>your gateway (they will then need to pass the funding on to you within 5 working days)</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th scope="col">Funding type</th>
+      <th scope="col">When we usually process the funding</th>
+      <th scope="col">When you'll usually receive the funding</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Setup costs</td>
+      <td>After you or your gateway has told DWP the young person has started</td>
+      <td>Up to 11 working days after it's been processed</td>
+    </tr>
+    <tr>
+      <td>First wage payment</td>
+      <td>6 weeks after the start date</td>
+      <td>Up to 11 working days after it's been processed</td>
+    </tr>
+    <tr>
+      <td>All other wage payments</td>
+      <td>30 days after the previous wage payment</td>
+      <td>Up to 11 working days after it's been processed</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="example-payment-dates">Example payment dates</h3>
+
+<p>You have 3 young people starting their jobs in January, March and June 2021.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th scope="col">Young person's start date</th>
+      <th scope="col">You tell us when they've started</th>
+      <th scope="col">You'll get the setup funding</th>
+      <th scope="col">You'll get the first wage payment</th>
+      <th scope="col">You'll get the second wage payment</th>
+      <th scope="col">You'll get all other wage payments</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Monday 4 January</td>
+      <td>Tuesday 5 January</td>
+      <td>Up to 11 working days after Tuesday 5 January</td>
+      <td>Between Monday 15 February and Tuesday 2 March</td>
+      <td>Between Monday 15 March and Tuesday 30 March</td>
+      <td>30 days after the previous wage payment (then up to 11 working days after this)</td>
+    </tr>
+    <tr>
+      <td>Monday 1 March</td>
+      <td>Friday 5 March</td>
+      <td>Up to 11 working days after Friday 5 March</td>
+      <td>Between Monday 12 April and Tuesday 27 April</td>
+      <td>Between Monday 10 May and Tuesday 25 May</td>
+      <td>30 days after the previous wage payment (then up to 11 working days after this)</td>
+    </tr>
+    <tr>
+      <td>Tuesday 1 June</td>
+      <td>Wednesday 2 June</td>
+      <td>Up to 11 working days after Wednesday 2 June</td>
+      <td>Between Tuesday 13 July and Wednesday 28 July</td>
+      <td>Between Tuesday 10 August and Wednesday 25 August</td>
+      <td>30 days after the previous wage payment (then up to 11 working days after this)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="create-more-kickstart-scheme-jobs">Create more Kickstart Scheme jobs</h2>
+
+<p>You can add more jobs to your grant agreement after it has been approved.</p>
+
+<p>The additional jobs will be assessed to make sure they meet the <a href="#criteria" class="govuk-link">Kickstart Scheme criteria</a>.</p>
+
+<p>If you applied directly, get in touch with your <a href="https://www.gov.uk/government/publications/kickstart-scheme-employer-contacts/kickstart-scheme-employer-contacts" class="govuk-link">local or national Kickstart Scheme contact</a> for information about how to add more jobs to your grant agreement.</p>
+
+<p>If you applied through a Kickstart gateway, tell them you'd like to add more jobs to the grant agreement. They will contact DWP to arrange this.</p>
+
+<h2 id="get-help-and-support-with-managing-your-kickstart-scheme-jobs">Get help and support with managing your Kickstart Scheme jobs</h2>
+
+<p>Contact your <a href="https://www.gov.uk/government/publications/kickstart-scheme-employer-contacts/kickstart-scheme-employer-contacts" class="govuk-link">local or national Kickstart Scheme contact</a> if you need help managing your Kickstart Scheme jobs.</p>
+</div>
+
+</div>
+
+      <div class="responsive-bottom-margin">
+
+      </div>
+
+      <div data-sticky-element class="app-c-contents-list-with-body__link-wrapper">
+        <div class="app-c-contents-list-with-body__link-container">
+          <a class="govuk-link app-c-back-to-top dont-print" href="#contents">
+    <svg class="app-c-back-to-top__icon" xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewbox="0 0 13 17" aria-hidden="true" focusable="false">
+      <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+    </svg>
+    Contents
+</a>
+
+        </div>
+      </div>
+  </div>
+
+<div class="gem-c-print-link govuk-!-margin-top-0 govuk-!-margin-bottom-6">
+    <button class="govuk-link govuk-body-s gem-c-print-link__button" data-module="print-link">Print this page</button>
+</div>
+  </div>
+
+<div class="govuk-grid-column-one-third">
+
+<div class="gem-c-contextual-sidebar">
+
+
+  <div class="gem-c-related-navigation">
+
+      <h2 id="related-nav-related_items-994611d7" class="gem-c-related-navigation__main-heading" data-track-count="sidebarRelatedItemSection">
+        Related content
+      </h2>
+
+
+
+
+      <nav role="navigation" class="gem-c-related-navigation__nav-section" aria-labelledby="related-nav-collections-994611d7" data-module="gem-toggle">
+
+    <h3 id="related-nav-collections-994611d7" class="gem-c-related-navigation__sub-heading gem-c-related-navigation__sub-heading--sidebar" data-track-count="sidebarRelatedItemSection">Collection</h3>
+
+  <ul class="gem-c-related-navigation__link-list" data-module="gem-track-click">
+
+
+        <li class="gem-c-related-navigation__link"><a class="govuk-link govuk-link gem-c-related-navigation__section-link govuk-link gem-c-related-navigation__section-link--sidebar" data-track-category="relatedLinkClicked" data-track-action="1.1 Collection" data-track-label="/government/collections/test-kickstart-scheme" data-track-options='{"dimension28":"1","dimension29":"Kickstart Scheme"}' href="start">Kickstart Scheme</a></li>
+
+  </ul>
+</nav>
+
+  </div>
+
+
+
+
+
+<div class="gem-c-contextual-sidebar__brexit-cta">
+  <h2 class="gem-c-contextual-sidebar__brexit-heading govuk-heading-s">Brexit</h2>
+  <p class="gem-c-contextual-sidebar__brexit-text govuk-body">
+    <a class="govuk-link" data-module="gem-track-click" data-track-category="relatedLinkClicked" data-track-action="1.0 Transition" data-track-label="/transition" data-track-dimension="Check what you need to do" data-track-dimension-index="29" lang="en" href="/transition">Check what you need to do</a>
+</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+  <div class="gem-c-contextual-footer">
+
+  <div class="gem-c-related-navigation">
+
+
+
+
+
+      <nav role="navigation" class="gem-c-related-navigation__nav-section" aria-labelledby="related-nav-topics-f63550d9" data-module="gem-toggle">
+
+    <h2 id="related-nav-topics-f63550d9" class="gem-c-related-navigation__sub-heading gem-c-related-navigation__sub-heading--footer" data-track-count="footerRelatedItemSection">Explore the topic</h2>
+
+  <ul class="gem-c-related-navigation__link-list" data-module="gem-track-click">
+
+
+        <li class="gem-c-related-navigation__link"><a class="govuk-link govuk-link gem-c-related-navigation__section-link govuk-link gem-c-related-navigation__section-link--footer" data-track-category="relatedLinkClicked" data-track-action="1.1 Explore the topic" data-track-label="/employment/recruiting-hiring" data-track-options='{"dimension28":"2","dimension29":"Recruiting and hiring"}' href="/employment/recruiting-hiring">Recruiting and hiring</a></li>
+        <li class="gem-c-related-navigation__link"><a class="govuk-link govuk-link gem-c-related-navigation__section-link govuk-link gem-c-related-navigation__section-link--footer" data-track-category="relatedLinkClicked" data-track-action="1.2 Explore the topic" data-track-label="/coronavirus-taxon/self-employed-people-and-sole-traders" data-track-options='{"dimension28":"2","dimension29":"Support for self-employed people and sole traders during coronavirus"}' href="/coronavirus-taxon/self-employed-people-and-sole-traders">Support for self-employed people and sole traders during coronavirus</a></li>
+
+  </ul>
+</nav>
+
+  </div>
+
+  </div>
+
+
+    </div>
+  </div>
+{% endblock %}

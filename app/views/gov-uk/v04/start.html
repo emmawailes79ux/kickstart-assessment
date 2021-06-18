@@ -1,0 +1,808 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Apply for a Kickstart Scheme grant - GOV.UK
+{% endblock %}
+
+{% block beforeContent %}
+<style>
+  @import url("/public/stylesheets/govuk.css");
+
+  .gem-c-contents-list {
+    position: relative;
+    margin: 0 0 20px 0;
+    z-index: 1;
+    background: #fff;
+    box-shadow: 0 20px 15px -10px #fff
+}
+
+.gem-c-contents-list__title {
+    color: #0b0c0c;
+    font-family: "nta", arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 0
+}
+
+@media print {
+    .gem-c-contents-list__title {
+        color: #000
+    }
+}
+
+@media print {
+    .gem-c-contents-list__title {
+        font-family: sans-serif
+    }
+}
+
+@media (min-width: 40.0625em) {
+    .gem-c-contents-list__title {
+        font-size: 16px;
+        line-height: 1.5
+    }
+}
+
+@media print {
+    .gem-c-contents-list__title {
+        font-size: 14pt;
+        line-height: 1.5
+    }
+}
+
+.gem-c-contents-list__list, .gem-c-contents-list__nested-list {
+    color: #0b0c0c;
+    font-family: "nta", arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.1428571429;
+    margin: 0;
+    padding: 0;
+    list-style-type: none
+}
+
+@media print {
+    .gem-c-contents-list__list, .gem-c-contents-list__nested-list {
+        color: #000
+    }
+}
+
+@media print {
+    .gem-c-contents-list__list, .gem-c-contents-list__nested-list {
+        font-family: sans-serif
+    }
+}
+
+@media (min-width: 40.0625em) {
+    .gem-c-contents-list__list, .gem-c-contents-list__nested-list {
+        font-size: 16px;
+        line-height: 1.25
+    }
+}
+
+@media print {
+    .gem-c-contents-list__list, .gem-c-contents-list__nested-list {
+        font-size: 14pt;
+        line-height: 1.2
+    }
+}
+
+.gem-c-contents-list--no-underline .gem-c-contents-list__link {
+    text-decoration: none
+}
+
+.gem-c-contents-list--no-underline .gem-c-contents-list__link:hover,
+.gem-c-contents-list--no-underline .gem-c-contents-list__link:active {
+    text-decoration: underline
+}
+
+.gem-c-contents-list--no-underline .gem-c-contents-list__link:focus,
+.gem-c-contents-list--no-underline .gem-c-contents-list__link:active:focus,
+.gem-c-contents-list--no-underline .gem-c-contents-list__link:link:focus,
+.gem-c-contents-list--no-underline .gem-c-contents-list__link:visited:focus {
+    outline: 3px solid transparent;
+    color: #0b0c0c;
+    background-color: #fd0;
+    box-shadow: 0 -2px #fd0, 0 4px #0b0c0c;
+    text-decoration: none;
+    color: #0b0c0c !important
+}
+
+.gem-c-contents-list__list-item--parent > .gem-c-contents-list__link {
+    font-weight: bold
+}
+
+.gem-c-contents-list__link:focus, .gem-c-contents-list__link:active:focus,
+.gem-c-contents-list__link:link:focus, .gem-c-contents-list__link:visited:focus {
+    outline: 3px solid transparent;
+    color: #0b0c0c;
+    background-color: #fd0;
+    box-shadow: 0 -2px #fd0, 0 4px #0b0c0c;
+    text-decoration: none;
+    color: #0b0c0c !important
+}
+
+.gem-c-contents-list__list-item {
+    padding-top: 10px;
+    line-height: 1.3;
+    list-style-type: none
+}
+
+@media (min-width: 40.0625em) {
+    .gem-c-contents-list__list-item {
+        padding-top: 7.5px
+    }
+}
+
+.gem-c-contents-list__list-item--dashed {
+    position: relative;
+    padding-left: 25px;
+    padding-right: 25px
+}
+
+.gem-c-contents-list__list-item--dashed:before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    width: 20px;
+    overflow: hidden
+}
+
+.gem-c-print-link {
+    display: none
+}
+
+.gem-c-print-link.gem-c-print-link--show-without-js {
+    display: block
+}
+
+.js-enabled .gem-c-print-link {
+    display: block
+}
+
+.gem-c-print-link__link, .gem-c-print-link__button {
+    background: url(http://www.gov.uk/assets/government-frontend/govuk_publishing_components/icon-print-b04bc2c6b31f73054f79768fd91f76df0b164b247c0905d8ca07b45cfb4f9a3b.png) no-repeat 10px 50%;
+    background-size: 16px 18px;
+    padding: 10px 10px 10px 36px
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (min-resolution: 192dpi), only screen and (min-resolution: 2dppx) {
+    .gem-c-print-link__link, .gem-c-print-link__button {
+        background-image: url(http://www.gov.uk/assets/government-frontend/govuk_publishing_components/icon-print-2x-685277484e948f6a848f303d3614e422e652a6a6536980501b893d9f4bbd9f4f.png)
+    }
+}
+
+.gem-c-print-link__link:hover, .gem-c-print-link__button:hover {
+    background-color: #f3f2f1
+}
+
+.gem-c-print-link__link {
+    box-shadow: inset 0 0 0 1px #b1b4b6;
+    text-decoration: none
+}
+
+.gem-c-print-link__link:focus {
+    border: 0;
+    box-shadow: 0 3px #0b0c0c
+}
+
+.gem-c-print-link__button {
+    border: 1px solid #b1b4b6;
+    color: #1d70b8;
+    cursor: pointer;
+    margin: 0
+}
+
+.gem-c-print-link__button:focus {
+    outline: 3px solid transparent;
+    color: #0b0c0c;
+    background-color: #fd0;
+    box-shadow: 0 -2px #fd0, 0 4px #0b0c0c;
+    text-decoration: none;
+    background-color: #fd0;
+    border-color: transparent
+}
+
+.gem-c-govspeak .call-to-action {
+    margin: 2em 0;
+    background-color: #f3f2f1;
+    padding: 2em
+}
+
+.gem-c-govspeak .call-to-action:first-child {
+    margin-top: 0
+}
+
+.gem-c-govspeak .call-to-action p:last-child, .gem-c-govspeak .call-to-action ul:last-child,
+.gem-c-govspeak .call-to-action ol:last-child {
+    margin-bottom: 0
+}
+
+.gem-c-govspeak .steps {
+    padding-left: 0;
+    margin-left: 0;
+    overflow: hidden
+}
+
+.gem-c-govspeak .steps > li {
+    background-position: 0 .87em;
+    background-repeat: no-repeat;
+    list-style-type: decimal;
+    margin-left: 0;
+    padding: .75em 0 .75em 2.5em
+}
+
+.gem-c-govspeak .steps > li:nth-child(1) {
+    background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 250 250' preserveAspectRatio='xMinYMin meet'%3E%3Cg%3E%3Ccircle r='50%25' cx='50%25' cy='50%25' class='circle-back'%3E%3C/circle%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='0.3em' font-family='nta,arial,sans-serif' font-size='8rem' fill='%23ffffff'%3E1%3C/text%3E%3C/g%3E%3C/svg%3E ");
+    background-repeat: no-repeat;
+    background-position: .2em .7em;
+    background-size: 1.4em 1.4em
+}
+
+.gem-c-govspeak .steps > li:nth-child(2) {
+    background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 250 250' preserveAspectRatio='xMinYMin meet'%3E%3Cg%3E%3Ccircle r='50%25' cx='50%25' cy='50%25' class='circle-back'%3E%3C/circle%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='0.3em' font-family='nta,arial,sans-serif' font-size='8rem' fill='%23ffffff'%3E2%3C/text%3E%3C/g%3E%3C/svg%3E ");
+    background-repeat: no-repeat;
+    background-position: .2em .7em;
+    background-size: 1.4em 1.4em
+}
+
+.gem-c-govspeak .steps > li:nth-child(3) {
+    background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 250 250' preserveAspectRatio='xMinYMin meet'%3E%3Cg%3E%3Ccircle r='50%25' cx='50%25' cy='50%25' class='circle-back'%3E%3C/circle%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='0.3em' font-family='nta,arial,sans-serif' font-size='8rem' fill='%23ffffff'%3E3%3C/text%3E%3C/g%3E%3C/svg%3E ");
+    background-repeat: no-repeat;
+    background-position: .2em .7em;
+    background-size: 1.4em 1.4em
+}
+
+.gem-c-govspeak .steps > li:nth-child(4) {
+    background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 250 250' preserveAspectRatio='xMinYMin meet'%3E%3Cg%3E%3Ccircle r='50%25' cx='50%25' cy='50%25' class='circle-back'%3E%3C/circle%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='0.3em' font-family='nta,arial,sans-serif' font-size='8rem' fill='%23ffffff'%3E4%3C/text%3E%3C/g%3E%3C/svg%3E ");
+    background-repeat: no-repeat;
+    background-position: .2em .7em;
+    background-size: 1.4em 1.4em
+}
+
+.gem-c-govspeak .steps > li:nth-child(5) {
+    background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 250 250' preserveAspectRatio='xMinYMin meet'%3E%3Cg%3E%3Ccircle r='50%25' cx='50%25' cy='50%25' class='circle-back'%3E%3C/circle%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='0.3em' font-family='nta,arial,sans-serif' font-size='8rem' fill='%23ffffff'%3E5%3C/text%3E%3C/g%3E%3C/svg%3E ");
+    background-repeat: no-repeat;
+    background-position: .2em .7em;
+    background-size:1.4em 1.4em
+}
+
+.gem-c-govspeak .steps > li:nth-child(6) {
+    background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 250 250' preserveAspectRatio='xMinYMin meet'%3E%3Cg%3E%3Ccircle r='50%25' cx='50%25' cy='50%25' class='circle-back'%3E%3C/circle%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='0.3em' font-family='nta,arial,sans-serif' font-size='8rem' fill='%23ffffff'%3E6%3C/text%3E%3C/g%3E%3C/svg%3E ");
+    background-repeat: no-repeat;
+    background-position: .2em .7em;
+    background-size:1.4em 1.4em
+}
+
+.gem-c-govspeak .steps > li:nth-child(7) {
+    background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 250 250' preserveAspectRatio='xMinYMin meet'%3E%3Cg%3E%3Ccircle r='50%25' cx='50%25' cy='50%25' class='circle-back'%3E%3C/circle%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='0.3em' font-family='nta,arial,sans-serif' font-size='8rem' fill='%23ffffff'%3E7%3C/text%3E%3C/g%3E%3C/svg%3E ");
+    background-repeat: no-repeat;
+    background-position: .2em .7em;
+    background-size:1.4em 1.4em
+}
+
+.gem-c-govspeak .steps > li:nth-child(8) {
+    background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 250 250' preserveAspectRatio='xMinYMin meet'%3E%3Cg%3E%3Ccircle r='50%25' cx='50%25' cy='50%25' class='circle-back'%3E%3C/circle%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='0.3em' font-family='nta,arial,sans-serif' font-size='8rem' fill='%23ffffff'%3E8%3C/text%3E%3C/g%3E%3C/svg%3E ");
+    background-repeat: no-repeat;
+    background-position: .2em .7em;
+    background-size:1.4em 1.4em
+}
+
+.gem-c-govspeak .steps > li:nth-child(9) {
+    background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 250 250' preserveAspectRatio='xMinYMin meet'%3E%3Cg%3E%3Ccircle r='50%25' cx='50%25' cy='50%25' class='circle-back'%3E%3C/circle%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='0.3em' font-family='nta,arial,sans-serif' font-size='8rem' fill='%23ffffff'%3E9%3C/text%3E%3C/g%3E%3C/svg%3E ");
+    background-repeat: no-repeat;
+    background-position: .2em .7em;
+    background-size:1.4em 1.4em
+}
+
+.gem-c-govspeak .steps > li:nth-child(10) {
+    background-image: url("data:image/svg+xml, %3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 250 250' preserveAspectRatio='xMinYMin meet'%3E%3Cg%3E%3Ccircle r='50%25' cx='50%25' cy='50%25' class='circle-back'%3E%3C/circle%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='0.3em' font-family='nta,arial,sans-serif' font-size='8rem' fill='%23ffffff'%3E10%3C/text%3E%3C/g%3E%3C/svg%3E ");
+    background-repeat: no-repeat;
+    background-position: .2em .7em;
+    background-size:1.4em 1.4em;
+}
+.gem-c-govspeak table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    display: block;
+    margin: 30px 0;
+    overflow-x: auto;
+    width: 100%;
+    font-family: "nta", arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-size: 12px;
+    line-height:1.25
+}
+
+@media print {
+    .gem-c-govspeak table {
+        font-family:sans-serif
+    }
+}
+
+@media (min-width: 40.0625em) {
+    .gem-c-govspeak table {
+        font-size: 14px;
+        line-height:1.4285714286
+    }
+}
+
+@media print {
+    .gem-c-govspeak table {
+        font-size: 12pt;
+        line-height:1.2
+    }
+}
+
+.gem-c-govspeak table caption {
+    text-align: left;
+    margin-bottom:.5em
+}
+
+.gem-c-govspeak table th, .gem-c-govspeak table td {
+    vertical-align: top;
+    padding: 10px 10px 10px 0;
+    border-bottom:solid 1px #b1b4b6
+}
+
+.gem-c-govspeak table th {
+    font-family: "nta", arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 1.25;
+    text-align: left;
+    color:#0b0c0c
+}
+
+@media print {
+    .gem-c-govspeak table th {
+        font-family:sans-serif
+    }
+}
+
+@media (min-width: 40.0625em) {
+    .gem-c-govspeak table th {
+        font-size: 14px;
+        line-height:1.4285714286
+    }
+}
+
+@media print {
+    .gem-c-govspeak table th {
+        font-size: 12pt;
+        line-height:1.2
+    }
+}
+
+.gem-c-govspeak table td small {
+    font-size:1em
+}
+
+.group-title {
+  margin-top: 45px;
+  margin-bottom: 15px;
+  font-size: 27px;
+  font-family: "nta", arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 700;
+  display: block;
+}
+</style>
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <div class="gem-c-title govuk-!-margin-top-8 govuk-!-margin-bottom-8">
+    <span class="govuk-caption-xl gem-c-title__context">
+      Collection
+    </span>
+  <h1 class="gem-c-title__text govuk-heading-l">
+    Kickstart Scheme
+  </h1>
+</div>
+  </div>
+
+  <div class="govuk-grid-column-two-thirds">
+
+  <p class="gem-c-lead-paragraph">The Kickstart Scheme provides funding to employers to create job placements for 16 to 24 year olds on Universal Credit.</p>
+
+
+
+
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="metadata-logo-wrapper">
+    <div class="govuk-grid-column-two-thirds metadata-column">
+      <div class="gem-c-metadata" data-module="gem-toggle">
+  <dl data-module="gem-track-click">
+      <dt class="gem-c-metadata__term">From:</dt>
+      <dd class="gem-c-metadata__definition">
+          <a class="govuk-link" href="/government/organisations/department-for-work-pensions">Department for Work and Pensions</a>
+
+      </dd>
+  </dl>
+</div>
+    </div>
+    <div class="govuk-grid-column-one-third">
+    </div>
+  </div>
+</div>
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+      <div id="contents" class="app-c-contents-list-with-body" data-module="sticky-element-container">
+      <div class="responsive-bottom-margin">
+          <nav class="gem-c-contents-list  gem-c-contents-list--no-underline " aria-label="Contents" role="navigation" data-module="gem-track-click">
+    <h2 class="gem-c-contents-list__title">
+      Contents
+</h2>
+    <ol class="gem-c-contents-list__list">
+        <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
+          <a class="gem-c-contents-list__link govuk-link " data-track-category="contentsClicked" data-track-action="content_item 1" data-track-label="#step-by-step-for-employers" data-track-options='{"dimension29":"Step by step for employers"}' href="#step-by-step-for-employers">Employers guidance</a>
+
+        </li>
+        <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
+          <a class="gem-c-contents-list__link govuk-link " data-track-category="contentsClicked" data-track-action="content_item 2" data-track-label="#step-by-step-for-kickstart-gateways" data-track-options='{"dimension29":"Step by step for Kickstart gateways"}' href="#step-by-step-for-kickstart-gateways">Kickstart gateway guidance</a>
+
+        </li>
+        <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
+          <a class="gem-c-contents-list__link govuk-link " data-track-category="contentsClicked" data-track-action="content_item 3" data-track-label="#contact-information" data-track-options='{"dimension29":"Contact information"}' href="#contact-information">Contact information</a>
+
+        </li>
+        <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
+          <a class="gem-c-contents-list__link govuk-link " data-track-category="contentsClicked" data-track-action="content_item 4" data-track-label="#terms-and-conditions" data-track-options='{"dimension29":"Terms and conditions"}' href="#terms-and-conditions">Terms and conditions</a>
+
+        </li>
+        <li class="gem-c-contents-list__list-item gem-c-contents-list__list-item--dashed">
+          <a class="gem-c-contents-list__link govuk-link " data-track-category="contentsClicked" data-track-action="content_item 5" data-track-label="#promotional-material" data-track-options='{"dimension29":"Promotional material"}' href="#promotional-material">Promotional material</a>
+
+        </li>
+    </ol>
+</nav>
+      </div>
+
+      <div class="responsive-bottom-margin">
+
+<div class="gem-c-govspeak govuk-govspeak direction-ltr" data-module="govspeak">
+      <div class="govspeak">
+
+<p>The Kickstart Scheme provides funding to create new jobs for 16 to 24 year olds on Universal Credit who are at risk of long term unemployment. Employers of all sizes can apply for funding which covers:</p>
+
+<ul>
+  <li>100% of the <a href="https://www.gov.uk/national-minimum-wage-rates" class="govuk-link">National Minimum Wage</a> (or the <a href="https://www.gov.uk/national-minimum-wage-rates" class="govuk-link">National Living Wage</a> depending on the age of the participant) for 25 hours per week for a total of 6 months</li>
+  <li>associated <a rel="external" href="https://www.gov.uk/national-insurance-rates-letters#employer-national-insurance-rates" class="govuk-link">employer National Insurance contributions</a></li>
+  <li><a rel="external" href="https://www.thepensionsregulator.gov.uk/en/employers" class="govuk-link">minimum automatic enrolment pension contributions</a></li>
+</ul>
+
+<p>Employers can spread the job start dates up until 31 December 2021. You'll get funding until 30 June 2022 if a young person starts their job on 31 December 2021.</p>
+
+<p>Further funding is available for training and support so that young people on the scheme can get a job in the future.</p>
+
+</div>
+</div>
+
+
+  <h3 class="group-title" id="step-by-step-for-employers">Employer guidance</h3>
+
+
+<div class="gem-c-govspeak govuk-govspeak direction-ltr" data-module="govspeak">
+
+      <div class="govspeak">
+</div>
+
+</div>
+
+  <div data-module="gem-track-click">
+        <ul class="gem-c-document-list">
+      <li class="gem-c-document-list__item  ">
+
+        <a data-track-category="navDocumentCollectionLinkClicked" data-track-action="1.1" data-track-label="how-the-kickstart-scheme-works-step-1" data-track-options='{"dimension28":"5","dimension29":"How the Kickstart Scheme works (step 1)"}' class="gem-c-document-list__item-title   gem-c-document-list__item-link" href="kickstart-for-employers">Kickstart Scheme for employers</a>
+
+
+
+          <ul class="gem-c-document-list__item-metadata">
+
+                <li class="gem-c-document-list__attribute">
+                    <time datetime="2021-04-20T14:59:49+01:00">
+                      16 June 2021
+                    </time>
+</li>
+                <li class="gem-c-document-list__attribute">
+                    Guidance
+</li>          </ul>
+
+
+      </li>
+
+    </ul>
+
+  </div>
+
+
+  <h3 class="group-title" id="step-by-step-for-kickstart-gateways">Kickstart gateway guidance</h3>
+  <div class="gem-c-govspeak govuk-govspeak direction-ltr" data-module="govspeak">
+
+      <div class="govspeak">
+</div>
+
+</div>
+
+  <div data-module="gem-track-click">
+        <ul class="gem-c-document-list">
+      <li class="gem-c-document-list__item  ">
+
+        <a data-track-category="navDocumentCollectionLinkClicked" data-track-action="2.1" data-track-label="help-employers-with-the-kickstart-scheme-kickstart-gateway" data-track-options='{"dimension28":"1","dimension29":"Help employers with the Kickstart Scheme (Kickstart gateway)"}' class="gem-c-document-list__item-title   gem-c-document-list__item-link" href="kickstart-for-gateways">Kickstart Scheme for gateways</a>
+
+
+
+          <ul class="gem-c-document-list__item-metadata">
+
+                <li class="gem-c-document-list__attribute">
+                    <time datetime="2021-04-21T15:56:51+01:00">
+                      16 June 2021
+                    </time>
+</li>
+                <li class="gem-c-document-list__attribute">
+                    Guidance
+</li>          </ul>
+
+
+      </li>
+    </ul>
+
+  </div>
+  <h3 class="group-title" id="contact-information">Contact information</h3>
+
+
+<div class="gem-c-govspeak govuk-govspeak direction-ltr" data-module="govspeak">
+
+      <div class="govspeak">
+</div>
+
+</div>
+
+  <div data-module="gem-track-click">
+        <ul class="gem-c-document-list">
+      <li class="gem-c-document-list__item  ">
+
+        <a data-track-category="navDocumentCollectionLinkClicked" data-track-action="3.1" data-track-label="/government/publications/kickstart-scheme-employer-contacts" data-track-options='{"dimension28":"1","dimension29":"Kickstart Scheme contacts"}' class="gem-c-document-list__item-title   gem-c-document-list__item-link" href="/government/publications/kickstart-scheme-employer-contacts">Kickstart Scheme contacts</a>
+
+
+
+          <ul class="gem-c-document-list__item-metadata">
+
+                <li class="gem-c-document-list__attribute">
+                    <time datetime="2021-02-03T00:15:06+00:00">
+                       3 February 2021
+                    </time>
+</li>
+                <li class="gem-c-document-list__attribute">
+                    Guidance
+</li>          </ul>
+
+
+      </li>
+    </ul>
+
+  </div>
+  <h3 class="group-title" id="terms-and-conditions">Terms and conditions</h3>
+
+
+<div class="gem-c-govspeak govuk-govspeak direction-ltr" data-module="govspeak">
+
+      <div class="govspeak">
+</div>
+
+</div>
+
+  <div data-module="gem-track-click">
+        <ul class="gem-c-document-list">
+      <li class="gem-c-document-list__item  ">
+
+        <a data-track-category="navDocumentCollectionLinkClicked" data-track-action="4.1" data-track-label="/government/publications/kickstart-scheme-terms-and-conditions" data-track-options='{"dimension28":"1","dimension29":"Kickstart Scheme terms and conditions"}' class="gem-c-document-list__item-title   gem-c-document-list__item-link" href="/government/publications/kickstart-scheme-terms-and-conditions">Kickstart Scheme terms and conditions</a>
+
+
+
+          <ul class="gem-c-document-list__item-metadata">
+
+                <li class="gem-c-document-list__attribute">
+                    <time datetime="2020-12-22T16:40:22+00:00">
+                      22 December 2020
+                    </time>
+</li>
+                <li class="gem-c-document-list__attribute">
+                    Guidance
+</li>          </ul>
+
+
+      </li>
+    </ul>
+
+  </div>
+  <h3 class="group-title" id="promotional-material">Promotional material</h3>
+
+
+<div class="gem-c-govspeak govuk-govspeak direction-ltr" data-module="govspeak">
+
+      <div class="govspeak">
+</div>
+
+</div>
+
+  <div data-module="gem-track-click">
+        <ul class="gem-c-document-list">
+      <li class="gem-c-document-list__item  ">
+
+        <a data-track-category="navDocumentCollectionLinkClicked" data-track-action="5.1" data-track-label="/government/publications/kickstart-scheme-promotional-materials" data-track-options='{"dimension28":"1","dimension29":"Kickstart Scheme: promotional materials"}' class="gem-c-document-list__item-title   gem-c-document-list__item-link" href="/government/publications/kickstart-scheme-promotional-materials">Kickstart Scheme: promotional materials</a>
+
+
+
+          <ul class="gem-c-document-list__item-metadata">
+
+                <li class="gem-c-document-list__attribute">
+                    <time datetime="2021-02-03T17:10:32+00:00">
+                       3 February 2021
+                    </time>
+</li>
+                <li class="gem-c-document-list__attribute">
+                    Promotional material
+</li>          </ul>
+
+
+      </li>
+    </ul>
+
+  </div>
+
+      </div>
+      <div class="responsive-bottom-margin">
+
+      </div>
+
+      <div data-sticky-element class="app-c-contents-list-with-body__link-wrapper">
+        <div class="app-c-contents-list-with-body__link-container">
+          <a class="govuk-link app-c-back-to-top dont-print" href="#contents">
+    <svg class="app-c-back-to-top__icon" xmlns="http://www.w3.org/2000/svg" width="13" height="17" viewbox="0 0 13 17" aria-hidden="true" focusable="false">
+      <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+    </svg>
+    Contents
+</a>
+
+        </div>
+      </div>
+  </div>
+  </div>
+
+<div class="govuk-grid-column-one-third">
+
+<div class="gem-c-contextual-sidebar">
+
+
+
+
+
+
+
+<div class="gem-c-contextual-sidebar__brexit-cta">
+  <h2 class="gem-c-contextual-sidebar__brexit-heading govuk-heading-s">Brexit</h2>
+  <p class="gem-c-contextual-sidebar__brexit-text govuk-body">
+    <a class="govuk-link" data-module="gem-track-click" data-track-category="relatedLinkClicked" data-track-action="1.0 Transition" data-track-label="/transition" data-track-dimension="Check what you need to do" data-track-dimension-index="29" lang="en" href="/transition">Check what you need to do</a>
+</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+  <div class="gem-c-contextual-footer">
+
+  <div class="gem-c-related-navigation">
+
+
+
+
+
+      <nav role="navigation" class="gem-c-related-navigation__nav-section" aria-labelledby="related-nav-topics-1434c5e6" data-module="gem-toggle">
+
+    <h2 id="related-nav-topics-1434c5e6" class="gem-c-related-navigation__sub-heading gem-c-related-navigation__sub-heading--footer" data-track-count="footerRelatedItemSection">Explore the topic</h2>
+
+  <ul class="gem-c-related-navigation__link-list" data-module="gem-track-click">
+
+
+        <li class="gem-c-related-navigation__link"><a class="govuk-link govuk-link gem-c-related-navigation__section-link govuk-link gem-c-related-navigation__section-link--footer" data-track-category="relatedLinkClicked" data-track-action="1.1 Explore the topic" data-track-label="/employment/recruiting-hiring" data-track-options='{"dimension28":"2","dimension29":"Recruiting and hiring"}' href="/employment/recruiting-hiring">Recruiting and hiring</a></li>
+        <li class="gem-c-related-navigation__link"><a class="govuk-link govuk-link gem-c-related-navigation__section-link govuk-link gem-c-related-navigation__section-link--footer" data-track-category="relatedLinkClicked" data-track-action="1.2 Explore the topic" data-track-label="/coronavirus-taxon/funding-and-support" data-track-options='{"dimension28":"2","dimension29":"Funding and support for businesses during coronavirus"}' href="/coronavirus-taxon/funding-and-support">Funding and support for businesses during coronavirus</a></li>
+
+  </ul>
+</nav>
+
+  </div>
+
+  </div>
+
+
+    </div>
+  </div>
+
+<div class="govuk-grid-column-one-third">
+
+<div class="gem-c-contextual-sidebar">
+
+
+<div class="gem-c-related-navigation">
+
+    <!-- <h2 class="govuk-heading-m" id="related-nav-related_items-863af8e2" class="gem-c-related-navigation__main-heading" data-track-count="sidebarRelatedItemSection">
+      Related content
+    </h2>
+
+
+
+
+    <nav role="navigation" class="gem-c-related-navigation__nav-section" aria-labelledby="related-nav-collections-863af8e2" data-module="gem-toggle">
+
+  <h3 class="govuk-heading-s" id="related-nav-collections-863af8e2" class="gem-c-related-navigation__sub-heading gem-c-related-navigation__sub-heading--sidebar" data-track-count="sidebarRelatedItemSection">Collection</h3>
+
+<ul class="gem-c-related-navigation__link-list" data-module="track-click">
+
+
+      <li class="gem-c-related-navigation__link"><a class="gem-c-related-navigation__section-link gem-c-related-navigation__section-link--sidebar" data-track-category="relatedLinkClicked" data-track-action="1.1 Collection" data-track-label="/government/collections/kickstart-scheme" data-track-options='{"dimension28":"1","dimension29":"Kickstart Scheme"}' href="/government/collections/kickstart-scheme">Kickstart Scheme</a></li>
+
+</ul>
+</nav>
+
+</div>
+
+
+
+
+
+<a class="govuk-link gem-c-contextual-sidebar__brexit-cta" data-module="track-click" data-track-category="relatedLinkClicked" data-track-action="1.0 Transition" data-track-label="/transition" data-track-dimension="Check what you need to do" data-track-dimension-index="29" aria-label="Brexit campaign slogan, Check, Change, Go. Check what you need to do" lang="en" href="/transition">
+<h2 class="govuk-heading-m" class="gem-c-contextual-sidebar__brexit-heading">Brexit</h2>
+<ul class="govuk-list govuk-list--bullet gem-c-contextual-sidebar__take-action-traffic-lights">
+  <li>
+    <img class="gem-c-contextual-sidebar__take-action-traffic-lists-icon" alt="" src="/assets/government-frontend/govuk_publishing_components/take-action-red-5117cea61725753ad21e17234e1d12f5605c1ab8df1eab37bd7d557d200a5006.svg">
+    <span class="gem-c-contextual-sidebar__take-action-traffic-lists-text">
+      Check
+    </span>
+  </li>
+  <li>
+    <img class="gem-c-contextual-sidebar__take-action-traffic-lists-icon" alt="" src="/assets/government-frontend/govuk_publishing_components/take-action-amber-ed37d78dd940d181c13d2689c7ca16a10891d89e5d278eef21e0e0001fb5a477.svg">
+    <span class="gem-c-contextual-sidebar__take-action-traffic-lists-text">
+      Change
+    </span>
+  </li>
+  <li>
+    <img class="gem-c-contextual-sidebar__take-action-traffic-lists-icon" alt="" src="/assets/government-frontend/govuk_publishing_components/take-action-green-201c5dfb37cd72eb3603b1afe36c913fecfda46ecb6221f1ed8c59708bc103e0.svg">
+    <span class="gem-c-contextual-sidebar__take-action-traffic-lists-text">
+      Go
+    </span>
+  </li>
+</ul>
+<p class="gem-c-contextual-sidebar__brexit-text">Check what you need to do</p>
+</a> -->
+</div>
+
+</div>
+
+</div>
+{% endblock %}
