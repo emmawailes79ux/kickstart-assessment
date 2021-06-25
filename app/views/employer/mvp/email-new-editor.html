@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 
-{% block pageTitle %}You have been approved for the Kickstart Scheme{% endblock %}
+{% block pageTitle %}Set up your Kickstart Scheme account{% endblock %}
 
 {% block header %}
 
@@ -30,7 +30,7 @@
                     <span style="font-family: Helvetica, Arial, sans-serif; margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C;">
                         To: {{ data['prototype-firstname'] }} {{ data['prototype-lastname'] }}<br>
                         From: DWP<br>
-                        Subject: Share your views: Manage your Kickstart Scheme vacancies online - private beta
+                        Subject: Manage your Kickstart Scheme vacancies
                     </span>
                 </td>
             </tr>
@@ -78,39 +78,23 @@
                 <td width="10" valign="middle"><br></td>
 
                 <td style="font-family: Helvetica, Arial, sans-serif; font-size: 19px; line-height: 1.315789474; max-width: 560px;">
+                    <p style="Margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C;">You have been added to your organisation's Kickstart Scheme account by [first_name] [last_name] as an editor.</p>
 
-                    <p style="Margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C;">Dear [first_name] [last_name]</p>
+                    <p style="Margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C;">To use the account you must now:
+                      <ul class="govuk-list govuk-list--bullet">
+                        <li>sign into your Kickstart Scheme account</li>
+                        <li>provide details of the vacancies you want to advertise</li>
 
-                    <p style="Margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C;">We'd like to invite you to take part in our private beta (initial test with a small group of employers) to help us test the <b>Manage your Kickstart Scheme vacancies</b> online service for employers so that you can share your experience with us.</p>
+                      </ul></p>
 
-                    <p> The private beta version will allow you to provide vacancy details, submit them and check the status of your vacancies.</p>
+                    <p style="Margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C;">
+                      <a href="kc-start" class="govuk-link" style="overflow-wrap: break-word; word-wrap: break-word; -ms-word-break: break-all; word-break: break-all; word-break: break-word; -ms-hyphens: auto; -moz-hyphens: auto; -webkit-hyphens: auto; hyphens: auto;">Set up your Kickstart Scheme account</a>
+                    </p>
 
-                    <h2 style="Margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C; font-weight: bold;">Private beta link</h2>
-
-                    <p style="Margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C;">We'll send you an activation email with a link to the private beta.</p>
-
-                    <h2 style="Margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C; font-weight: bold;">Support</h2>
-
-                    <p style="Margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C;">If you need help during private beta, <a href="mailto:Kickstart.support@dwp.gov.uk" class="govuk-link" style="overflow-wrap: break-word; word-wrap: break-word; -ms-word-break: break-all; word-break: break-all; word-break: break-word; -ms-hyphens: auto; -moz-hyphens: auto; -webkit-hyphens: auto; hyphens: auto;">email our support team</a>. We aim to respond to all support queries within 24 hours.</p>
-
-                    <h2 style="Margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C; font-weight: bold;">Share your feedback</h2>
-
-                    <p style="Margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C;">Your views are very important to us and during the two-week long private beta phase we want to gather your feedback and use it to help us refine the service.</p>
-
-                    <p style="Margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C;">Please <a href="https://getinvolved.dwp.gov.uk/digital/test-manage-kickstart-scheme-vacancies/" class="govuk-link" style="overflow-wrap: break-word; word-wrap: break-word; -ms-word-break: break-all; word-break: break-all; word-break: break-word; -ms-hyphens: auto; -moz-hyphens: auto; -webkit-hyphens: auto; hyphens: auto;">share your feedback</a> with us and we’ll be in touch.</p>
-
-
-                    <h2 style="Margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C; font-weight: bold;">What happens next?</h2>
-
-                    <p style="Margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C;">To sign in to the Kickstart Scheme again, after you have activated your account, and for more details about the Kickstart Scheme, please read the attached PDF.</p>
-
-                    <p> After private beta, we’ll continue to work with you to improve the service and add new features until the service is ready to launch in public beta.</p>
-
-                    <p style="Margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C;">We look forward to hearing from you.</p>
-
-                    <p style="Margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C;">Best regards,</p>
-
-                    <p style="Margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C;">Kickstart Scheme</p>
+                    <p style="Margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C;">You have 48 hours before the link expires.</p>
+                    <p style="Margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C;">After you’ve activated your account you can sign in to the Kickstart Scheme on GOV.UK whenever you need to add vacancies or make changes.</p>
+                    <p style="Margin: 0 0 20px 0; font-size: 19px; line-height: 25px; color: #0B0C0C;">Regards,<br>
+                    Kickstart Scheme</p>
                 </td>
 
                 <td width="10" valign="middle"><br></td>
