@@ -1,0 +1,246 @@
+{% from "govuk/components/accordion/macro.njk" import govukAccordion %}
+
+{{ govukAccordion({
+  id: "accordion-with-summary-sections",
+  items: [
+    {
+      heading: {
+        text: "Vacancy summary"
+      },
+      content: {
+        html:
+        '<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Job title
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Junior Exhibition Designer
+            </dd>
+              <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="job-add">
+                    Change<span class="govuk-visually-hidden"> role</span>
+                    </a>
+              </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Industry sector
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Travel &amp; Tourism
+            </dd>
+              <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="job-add">
+                    Change<span class="govuk-visually-hidden"> sector</span>
+                    </a>
+              </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Internal job reference
+            </dt>
+            <dd class="govuk-summary-list__value">
+              AS 00918
+            </dd>
+              <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="job-add">
+                    Change<span class="govuk-visually-hidden"> emp-ref</span>
+                    </a>
+              </dd>
+          </div>
+        </dl>'
+      }
+    },
+        {
+      heading: {
+        text: "Vacancy advert"
+      },
+      content: {
+        html:
+        '<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              About the job
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Your role as a Junior Exhibition Designer will be predominantly be to support the leading curators and designers in Leeds Art Gallery and the Henry Moore Institute. This a rare opportunity to get access to one of the country&#39;s leading art galleries with an expectation that you will learn on the job. Previous coputer skills are necessary as there will be certain amount of data entry. This role is likely to be highly sort after.
+            </dd>
+              <dd class="govuk-summary-list__actions">
+
+                  <a class="govuk-link" href="job-add-2">
+                    Change<span class="govuk-visually-hidden"> vacancy summary</span>
+                    </a>
+              </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              What are you looking for?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Communication, time keeping, basic computer skills, an appreciation and understanding of art.
+            </dd>
+              <dd class="govuk-summary-list__actions">
+
+                  <a class="govuk-link" href="job-add-2">
+                    Change<span class="govuk-visually-hidden"> skills</span>
+                    </a>
+              </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Tell us about your company
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Market leader in immersive art anc cultural exhibitions, Arts and Sculpture are at the forefront of the scene in the UK.
+            </dd>
+              <dd class="govuk-summary-list__actions">
+
+                  <a class="govuk-link" href="job-add-2">
+                    Change<span class="govuk-visually-hidden"> company info</span>
+                    </a>
+              </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              What can you offer the Kickstarter?
+            </dt>
+            <dd class="govuk-summary-list__value">
+              We train and support all our employees to grow confidence and knowledge in the world of art and sculpture.
+            </dd>
+              <dd class="govuk-summary-list__actions">
+
+                  <a class="govuk-link" href="job-add-2">
+                    Change<span class="govuk-visually-hidden"> what you can offer</span>
+                    </a>
+              </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              How to apply
+            </dt>
+            <dd class="govuk-summary-list__value">
+              CVs emailed to s.almarez@leedsartgallery.co.uk
+            </dd>
+              <dd class="govuk-summary-list__actions">
+
+                  <a class="govuk-link" href="job-add-2">
+                    Change<span class="govuk-visually-hidden"> how to apply</span>
+                    </a>
+              </dd>
+          </div>
+        </dl>'
+      }
+    },
+            {
+      heading: {
+        text: "Dates"
+      },
+      content: {
+        html:
+        '<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Advertising start date
+            </dt>
+            <dd class="govuk-summary-list__value">
+              As soon as possible
+            </dd>
+              <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="job-add-1">
+                    Change<span class="govuk-visually-hidden"> end date</span>
+                    </a>
+              </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Closing date for applications
+            </dt>
+            <dd class="govuk-summary-list__value">
+              None
+            </dd>
+              <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="job-add-1">
+                    Change<span class="govuk-visually-hidden"> deadline</span>
+                    </a>
+              </dd>
+          </div>
+        </dl>'
+      }
+    },
+                {
+      heading: {
+        text: "Hours and pay"
+      },
+      content: {
+        html:
+        '<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Total hours per week
+            </dt>
+            <dd class="govuk-summary-list__value">
+              25
+            </dd>
+
+              <dd class="govuk-summary-list__actions">
+
+                  <a class="govuk-link" href="job-add-4">
+                    Change<span class="govuk-visually-hidden"> total hours</span>
+                    </a>
+              </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Days
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Monday, Tuesday, Wednesday, Friday, Saturday
+            </dd>
+
+              <dd class="govuk-summary-list__actions">
+
+                  <a class="govuk-link" href="job-add-4">
+                    Change<span class="govuk-visually-hidden"> days</span>
+                    </a>
+              </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Hours
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Flexible
+            </dd>
+
+              <dd class="govuk-summary-list__actions">
+
+                  <a class="govuk-link" href="job-add-4">
+                    Change<span class="govuk-visually-hidden"> hours</span>
+                    </a>
+              </dd>
+          </div>
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Pay
+            </dt>
+            <dd class="govuk-summary-list__value">
+              National minimum wage
+            </dd>
+
+              <dd class="govuk-summary-list__actions">
+
+                  <a class="govuk-link" href="job-add-4">
+                    Change<span class="govuk-visually-hidden"> pay</span>
+                    </a>
+              </dd>
+          </div>
+        </dl>'
+      }
+    }
+  ]
+}) }}

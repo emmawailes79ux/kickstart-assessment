@@ -1,0 +1,302 @@
+{% extends "layout-header-links.html" %}
+
+{% block pageTitle %}
+  Vacancy summary
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/beta-banner.html" %}
+  {% include "includes/header-summary.html" %}
+    {{ govukBackLink({
+      text: "Back",
+      href: "job-add-location-2"
+    }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">Vacancy summary</h1>
+
+      {{ govukSummaryList({
+              classes: 'govuk-!-margin-bottom-9',
+              rows: [
+                {
+                  key: {
+                    text: "Job title"
+                  },
+                  value: {
+                    html: "Junior Exhibition Designer"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "job-add",
+                        text: "Change",
+                        visuallyHiddenText: "role"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "Job type"
+                  },
+                  value: {
+                    text: "Travel & Tourism"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "job-add",
+                        text: "Change",
+                        visuallyHiddenText: "sector"
+                      }
+                    ]
+                  }
+                }
+                ]
+            }) }}
+                <h2 class="govuk-heading-m">Vacancy advert</h2>
+                 {{ govukSummaryList({
+              classes: 'govuk-!-margin-bottom-9',
+              rows: [
+                {
+                  key: {
+                    text: "About the job"
+                  },
+                  value: {
+                    text: "Your role as a Junior Exhibition Designer will be predominantly be to support the leading curators and designers in Leeds Art Gallery and the Henry Moore Institute. This a rare opportunity to get access to one of the country's leading art galleries with an expectation that you will learn on the job. Previous coputer skills are necessary as there will be certain amount of data entry. This role is likely to be highly sort after."
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "job-add-b",
+                        text: "Change",
+                        visuallyHiddenText: "vacancy summary"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "What are you looking for?"
+                  },
+                  value: {
+                    text: "Communication, time keeping, basic computer skills, an appreciation and understanding of art."
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "job-add-b",
+                        text: "Change",
+                        visuallyHiddenText: "skills"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "Tell us about your company"
+                  },
+                  value: {
+                    text: "Market leader in immersive art anc cultural exhibitions, Arts and Sculpture are at the forefront of the scene in the UK."
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "job-add-b",
+                        text: "Change",
+                        visuallyHiddenText: "company info"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "What can you offer the applicant?"
+                  },
+                  value: {
+                    text: "We train and support all our employees to grow confidence and knowledge in the world of art and sculpture."
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "job-add-b",
+                        text: "Change",
+                        visuallyHiddenText: "what you can offer"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "How to apply"
+                  },
+                  value: {
+                    text: "CVs emailed to s.almarez@leedsartgallery.co.uk"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "job-add-b",
+                        text: "Change",
+                        visuallyHiddenText: "how to apply"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }) }}
+            <h2 class="govuk-heading-m">Hours and pay</h2>
+            {{ govukSummaryList({
+              classes: 'govuk-!-margin-bottom-9',
+              rows: [
+                {
+                  key: {
+                    text: "Total hours per week"
+                  },
+                  value: {
+                    text: "25"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "job-add-1",
+                        text: "Change",
+                        visuallyHiddenText: "total hours"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "Days or working patterns"
+                  },
+                  value: {
+                    text: "Monday, Tuesday, Wednesday, Friday, Saturday"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "job-add-1",
+                        text: "Change",
+                        visuallyHiddenText: "days"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "Hours"
+                  },
+                  value: {
+                    text: "Flexible"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "job-add-1",
+                        text: "Change",
+                        visuallyHiddenText: "hours"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "Hourly pay"
+                  },
+                  value: {
+                    text: "National minimum wage"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "job-add-1",
+                        text: "Change",
+                        visuallyHiddenText: "pay"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }) }}
+
+      <h2 class="govuk-heading-m">Locations</h2>
+
+      {{ govukTable({
+        head: [
+        {
+          text: "Town or city",
+          attributes: {
+            "aria-sort": "ascending"
+          }
+        },
+        {
+          text: "Postcode",
+          attributes: {
+            "aria-sort": "none"
+          }
+        },
+        {
+          html: "No. of<br>vacancies",
+          attributes: {
+            "aria-sort": "none"
+          }
+        },
+        {
+          html: "Advertising<br>start date",
+          attributes: {
+            "aria-sort": "none"
+          }
+        }
+        ],
+        rows: [
+        [
+          {
+            text: "Leeds"
+          },
+          {
+            text: "LS1 9JA",
+            attributes: {
+              "data-sort-value": "IV1 1BA"
+            }
+          },
+          {
+            text: "1"
+          },
+          {
+            text: "15/07/21"
+          }
+        ],
+        [
+          {
+            text: "Manchester"
+          },
+          {
+            text: "M3 1SH",
+            attributes: {
+              "data-sort-value": "MK10 1SH"
+            }
+          },
+          {
+            text: "1"
+          },
+          {
+            text: "15/07/21"
+          }
+        ]
+        ]
+        }) }}
+
+      <p><a href="job-add-location-list" id="submit">Manage locations</a></p>
+
+      <p><a href="job-list-role-added" class="govuk-button">Save and continue</a></p>
+
+    </div>
+    </div>
+
+
+
+{% endblock %}
