@@ -1,0 +1,65 @@
+{% extends "layout-header-links.html" %}
+
+{% block pageTitle %}
+  Add a user
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/beta-banner.html" %}
+{% include "includes/manage-users-link.html" %}
+  {% include "includes/header-summary-gateway.html" %}
+    {% include 'includes/back-button.njk' %}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Add an editor</h1>
+
+      {{ govukInput({
+        label: {
+          text: "First name"
+        },
+        classes: "govuk-input--width-20",
+        id: "first-name",
+        name: "first-name"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Surname"
+        },
+        classes: "govuk-input--width-20",
+        id: "surname",
+        name: "surname"
+      }) }}
+
+    {{ govukInput({
+      label: {
+        text: "Email address"
+      },
+      classes: "govuk-input--width-20",
+      id: "user-email",
+      name: "user-email"
+    }) }}
+
+    {{ govukInput({
+      label: {
+        text: "Confirm email address"
+      },
+      classes: "govuk-input--width-20",
+      id: "confirm-email",
+      name: "confirm-email"
+    }) }}
+
+      <p><a href="manage-users" class="govuk-button">Save and continue</a></p>
+      <p class="govuk-body"><a href="#">Back to manage users</a></p>
+
+      {% include "includes/get-help-link.html" %}
+
+    </div>
+    </div>
+
+
+
+{% endblock %}

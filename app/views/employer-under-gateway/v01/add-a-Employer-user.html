@@ -1,0 +1,104 @@
+{% extends "layout-header-links.html" %}
+
+{% block pageTitle %}
+  Add a user
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/beta-banner.html" %}
+{% include "includes/manage-users-link.html" %}
+  {% include "includes/header-summary-gateway.html" %}
+    {% include 'includes/back-button.njk' %}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Add an Employer editor</h1>
+
+      {{ govukSelect({
+        classes: "govuk-combo-width-20",
+        id: "sort",
+        name: "sort",
+        label: {
+          text: "Select Employer"
+        },
+        items: [
+          {
+            value: "Employer1",
+            text: "Arts and Sculpture Ltd",
+            selected: true
+          },
+          {
+            value: "Employer2",
+            text: "Bevel Inc"
+          },
+          {
+            value: "Employer3",
+            text: "Dry Dock Boards"
+          },
+          {
+            value: "Employer4",
+            text: "Mums 4 Tots"
+          },
+          {
+            value: "Employer5",
+            text: "Nikamo"
+          },
+          {
+            value: "Employer6",
+            text: "The Big Disco"
+          },
+          {
+            value: "Employer7",
+            text: "Wonky Organic Wondermarket (WOW)"
+          }
+        ]
+      }) }}
+      {{ govukInput({
+        label: {
+          text: "First name"
+        },
+        classes: "govuk-input--width-20",
+        id: "first-name",
+        name: "first-name"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Surname"
+        },
+        classes: "govuk-input--width-20",
+        id: "surname",
+        name: "surname"
+      }) }}
+
+    {{ govukInput({
+      label: {
+        text: "Email address"
+      },
+      classes: "govuk-input--width-20",
+      id: "user-email",
+      name: "user-email"
+    }) }}
+
+    {{ govukInput({
+      label: {
+        text: "Confirm email address"
+      },
+      classes: "govuk-input--width-20",
+      id: "confirm-email",
+      name: "confirm-email"
+    }) }}
+
+      <p><a href="manage-users" class="govuk-button">Save and continue</a></p>
+      <p class="govuk-body"><a href="manage-users">Back to manage users</a></p>
+
+      {% include "includes/get-help-link.html" %}
+
+    </div>
+    </div>
+
+
+
+{% endblock %}

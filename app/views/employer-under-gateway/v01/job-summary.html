@@ -1,0 +1,239 @@
+{% extends "layout-header-links.html" %}
+
+{% block pageTitle %}
+  Vacancy summary
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/beta-banner.html" %}
+  {% include "includes/manage-users-link.html" %}
+  {% include "includes/header-summary-gateway.html" %}
+    {{ govukBackLink({
+      text: "Back",
+      href: "job-list-roles-submitted"
+    }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">Vacancy summary</h1>
+
+      {{ govukSummaryList({
+              classes: 'govuk-!-margin-bottom-9',
+              rows: [
+                {
+                  key: {
+                    text: "Job title"
+                  },
+                  value: {
+                    html: "Junior Exhibition Designer"
+                  }
+                },
+                {
+                  key: {
+                    text: "Job type"
+                  },
+                  value: {
+                    text: "Travel & Tourism"
+                  }
+                }
+                ]
+            }) }}
+                <h2 class="govuk-heading-m">Vacancy advert</h2>
+                 {{ govukSummaryList({
+              classes: 'govuk-!-margin-bottom-9',
+              rows: [
+                {
+                  key: {
+                    text: "About the job"
+                  },
+                  value: {
+                    text: "Your role as a Junior Exhibition Designer will be predominantly be to support the leading curators and designers in Leeds Art Gallery and the Henry Moore Institute. This a rare opportunity to get access to one of the country's leading art galleries with an expectation that you will learn on the job. Previous coputer skills are necessary as there will be certain amount of data entry. This role is likely to be highly sort after."
+                  }
+                },
+                {
+                  key: {
+                    text: "What are you looking for?"
+                  },
+                  value: {
+                    text: "Communication, time keeping, basic computer skills, an appreciation and understanding of art."
+                  }
+                },
+                {
+                  key: {
+                    text: "Tell us about your company"
+                  },
+                  value: {
+                    text: "Market leader in immersive art anc cultural exhibitions, Arts and Sculpture are at the forefront of the scene in the UK."
+                  }
+                },
+                {
+                  key: {
+                    text: "What can you offer the applicant?"
+                  },
+                  value: {
+                    text: "We train and support all our employees to grow confidence and knowledge in the world of art and sculpture."
+                  }
+                },
+                {
+                  key: {
+                    text: "How to apply"
+                  },
+                  value: {
+                    text: "CVs emailed to s.almarez@leedsartgallery.co.uk"
+                  }
+                }
+              ]
+            }) }}
+            <h2 class="govuk-heading-m">Hours and pay</h2>
+            {{ govukSummaryList({
+              classes: 'govuk-!-margin-bottom-9',
+              rows: [
+                {
+                  key: {
+                    text: "Total hours per week"
+                  },
+                  value: {
+                    text: "25"
+                  }
+                },
+                {
+                  key: {
+                    text: "Days"
+                  },
+                  value: {
+                    text: "Monday, Tuesday, Wednesday, Friday, Saturday"
+                  }
+                },
+                {
+                  key: {
+                    text: "Hours"
+                  },
+                  value: {
+                    text: "Flexible"
+                  }
+                },
+                {
+                  key: {
+                    text: "Hourly pay"
+                  },
+                  value: {
+                    text: "National minimum wage"
+                  }
+                }
+              ]
+            }) }}
+
+      <h2 class="govuk-heading-m">Vacancy numbers and locations</h2>
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+          {
+            key: {
+              text: "Number of vacancies"
+            },
+            value: {
+              text: "2"
+            }
+          },
+          {
+            key: {
+              text: "Where will this job be based?"
+            },
+            value: {
+              text: "On-site at all times"
+            }
+          },
+          {
+            key: {
+              text: "Location address"
+            },
+            value: {
+              html: "William Brown St,<br> Liverpool L3 8EL"
+            }
+          },
+          {
+            key: {
+              text: "Accessible by public transport?"
+            },
+            value: {
+              text: "Yes"
+            }
+          }
+        ]
+      }) }}
+
+      <h2 class="govuk-heading-m">Location details</h2>
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+          {
+            key: {
+              text: "Referral Limit"
+            },
+            value: {
+              text: "No"
+            }
+          },
+          {
+            key: {
+              text: "Contact name"
+            },
+            value: {
+              text: "James Davies"
+            }
+          },
+          {
+            key: {
+              text: "Contact number"
+            },
+            value: {
+              html: "0117 873737"
+            }
+          },
+          {
+            key: {
+              text: "Contact email address"
+            },
+            value: {
+              text: "James.Davies@artsandsculpture.co.uk"
+            }
+          }
+        ]
+      }) }}
+
+      <h2 class="govuk-heading-m">Dates</h2>
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+          {
+            key: {
+              text: "Advertising start date"
+            },
+            value: {
+              text: "As soon as possible"
+            }
+          },
+          {
+            key: {
+              text: "Closing date"
+            },
+            value: {
+              text: "17/05/2021"
+            }
+          }
+        ]
+      }) }}
+
+
+      <p><a href="job-list-role-added">Back to vacancy list</a></p>
+
+      {% include "includes/get-help-link.html" %}
+
+    </div>
+    </div>
+
+
+
+{% endblock %}

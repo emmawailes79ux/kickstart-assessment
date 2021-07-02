@@ -1,0 +1,49 @@
+{% extends "layout-footer.html" %}
+
+{% block pageTitle %}
+  Set up your Kickstart Scheme account
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/beta-banner.html" %}
+
+  {{ govukBackLink({
+  text: "Back",
+  href: "kc-choose"
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <form action="kc-phone-code" method="post">
+                {{ govukFieldset({
+                    legend: {
+                        html: "Enter your phone number",
+                        classes: "govuk-fieldset__legend--l",
+                        isPageHeading: true
+                    }
+                })}}
+
+                {{ govukInput({
+                    label: {
+                        text: "Mobile phone number"
+                    },
+                    id: "phone-number",
+                    name: "phone-number",
+                    classes: "govuk-!-width-two-thirds"
+                }) }}
+
+                {{ govukButton({
+                    text: "Continue"
+                }) }}
+
+            </form>
+
+            <p class="govuk-body"><a href="kc-choose">Prefer to set up your security using an authenticator app?</a></p>
+
+            {% include "includes/get-help-link.html" %}
+        </div>
+    </div>
+{% endblock %}

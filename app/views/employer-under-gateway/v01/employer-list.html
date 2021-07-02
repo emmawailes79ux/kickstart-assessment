@@ -1,0 +1,368 @@
+{% extends "layout-header-links.html" %}
+
+{% block pageTitle %}
+  Employers
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/beta-banner.html" %}
+{% include "includes/manage-users-link.html" %}
+  {% include "includes/header-summary-gateway.html" %}
+<style>
+  [aria-sort] button,
+  [aria-sort] button:hover {
+    background-color: transparent;
+    border-width: 0;
+    -webkit-box-shadow: 0 0 0 0;
+    -moz-box-shadow: 0 0 0 0;
+    box-shadow: 0 0 0 0;
+    color: #005ea5;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    padding: 0 10px 0 0;
+    position: relative;
+    text-align: inherit;
+    font-size: 1em;
+    margin: 0;
+  }
+
+  [aria-sort] button:focus {
+    background-color: $govuk-focus-colour;
+    color: $govuk-focus-text-colour;
+    box-shadow: 0 -2px $govuk-focus-colour, 0 4px $govuk-focus-text-colour;
+    outline: none;
+  }
+
+  [aria-sort]:first-child button {
+    right: auto;
+  }
+
+  [aria-sort] button:before {
+    content: " \25bc";
+    position: absolute;
+    right: -1px;
+    top: 9px;
+    font-size: 0.5em;
+  }
+
+  [aria-sort] button:after {
+    content: " \25b2";
+    position: absolute;
+    right: -1px;
+    top: 1px;
+    font-size: 0.5em;
+  }
+
+  [aria-sort="ascending"] button:before,
+  [aria-sort="descending"] button:before {
+    content: none;
+  }
+
+  [aria-sort="ascending"] button:after {
+    content: " \25b2";
+    font-size: .8em;
+    position: absolute;
+    right: -5px;
+    top: 2px;
+  }
+
+  [aria-sort="descending"] button:after {
+    content: " \25bc";
+    font-size: .8em;
+    position: absolute;
+    right: -5px;
+    top: 2px;
+  }
+</style>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">
+        List of employers under Erico Recruitment
+      </h1>
+
+      <p class="govuk-body">Provide the vacancy details for each employer.</p>
+
+      {{ govukTable({
+      attributes: {
+      'data-module': 'moj-sortable-table'
+      },
+      head: [
+      {
+        text: "Employer",
+        attributes: {
+          "aria-sort": "ascending"
+        }
+      },
+      {
+        text: "Vacancies to be submitted",
+        attributes: {
+          "aria-sort": "none"
+        },
+        format: "numeric"
+      },
+      {
+        text: "Vacancies submitted to Kickstart",
+        attributes: {
+          "aria-sort": "none"
+        },
+        format: "numeric"
+      },
+      {
+        text: "Total vacancies",
+        attributes: {
+          "aria-sort": "none"
+        },
+        format: "numeric"
+      }
+      ],
+      rows: [
+      [
+        {
+          html: "<a href='job-list-empty'>Arts and Sculpture Ltd</a>"
+        },
+        {
+          text: "31",
+          format: "numeric",
+          attributes: {
+            "data-sort-value": "31"
+          }
+        },
+        {
+          text: "3",
+          format: "numeric",
+          attributes: {
+            "data-sort-value": "3"
+          }
+        },
+        {
+          text: "34",
+          format: "numeric",
+          attributes: {
+            "data-sort-value": "34"
+          }
+        }
+      ],
+      [
+        {
+          html: "<a href='job-list-empty'>Bevel Inc</a>"
+        },
+        {
+          text: "0",
+          format: "numeric",
+          attributes: {
+            "data-sort-value": "0"
+          }
+        },
+        {
+          text: "6",
+          format: "numeric",
+          attributes: {
+            "data-sort-value": "6"
+          }
+        },
+        {
+          text: "6",
+          format: "numeric",
+          attributes: {
+            "data-sort-value": "6"
+          }
+        }
+      ],
+      [
+        {
+          html: "<a href='job-list-empty'>Dry Dock Boards</a>"
+        },
+        {
+          text: "7",
+          format: "numeric",
+          attributes: {
+            "data-sort-value": "7"
+          }
+        },
+        {
+          text: "5",
+          format: "numeric",
+          attributes: {
+            "data-sort-value": "5"
+          }
+        },
+        {
+          text: "12",
+          format: "numeric",
+          attributes: {
+            "data-sort-value": "12"
+          }
+        }
+      ],
+      [
+        {
+          html: "<a href='job-list-empty'>Erico Recruitment</a>"
+        },
+        {
+          text: "0",
+          format: "numeric",
+          attributes: {
+            "data-sort-value": "0"
+          }
+        },
+        {
+          text: "3",
+          format: "numeric",
+          attributes: {
+            "data-sort-value": "3"
+          }
+        },
+        {
+          text: "3",
+          format: "numeric",
+          attributes: {
+            "data-sort-value": "3"
+          }
+        }
+      ],
+      [
+        {
+          html: "<a href='job-list-empty'>Mums 4 Tots</a>"
+        },
+        {
+          text: "48",
+          format: "numeric",
+          attributes: {
+            "data-sort-value": "48"
+          }
+        },
+        {
+          text: "52",
+          format: "numeric",
+          attributes: {
+            "data-sort-value": "52"
+          }
+        },
+        {
+          text: "100",
+          format: "numeric",
+          attributes: {
+            "data-sort-value": "100"
+          }
+        }
+      ],
+      [
+        {
+          html: "<a href='job-list-empty'>Nikamo</a>"
+        },
+        {
+          text: "1",
+          format: "numeric",
+          attributes: {
+            "data-sort-value": "1"
+          }
+        },
+        {
+          text: "3",
+          format: "numeric",
+          attributes: {
+            "data-sort-value": "3"
+          }
+        },
+        {
+          text: "4",
+          format: "numeric",
+          attributes: {
+            "data-sort-value": "4"
+          }
+        }
+      ],
+      [
+        {
+          html: "<a href='job-list-empty'>The Big Disco</a>"
+        },
+        {
+          text: "0",
+          format: "numeric",
+          attributes: {
+            "data-sort-value": "0"
+          }
+        },
+        {
+          text: "23",
+          format: "numeric",
+          attributes: {
+            "data-sort-value": "23"
+          }
+        },
+        {
+          text: "23",
+          format: "numeric",
+          attributes: {
+            "data-sort-value": "23"
+          }
+        }
+      ],
+      [
+        {
+          html: "<a href='job-list-empty'>Wonky Organic Wondermarket (WOW)</a>"
+        },
+        {
+          text: "0",
+          format: "numeric",
+          attributes: {
+            "data-sort-value": "0"
+          }
+        },
+        {
+          text: "18",
+          format: "numeric",
+          attributes: {
+            "data-sort-value": "18"
+          }
+        },
+        {
+          text: "18",
+          format: "numeric",
+          attributes: {
+            "data-sort-value": "18"
+          }
+        }
+      ],
+      [
+        {
+          html: "<a href='job-list-empty'>Zenith Recruitment</a>"
+        },
+        {
+          text: "1",
+          format: "numeric",
+          attributes: {
+            "data-sort-value": "1"
+          }
+        },
+        {
+          text: "7",
+          format: "numeric",
+          attributes: {
+            "data-sort-value": "7"
+          }
+        },
+        {
+          text: "8",
+          format: "numeric",
+          attributes: {
+            "data-sort-value": "8"
+          }
+        }
+      ]
+
+        ]
+      }) }}
+
+      {% include "includes/get-help-link.html" %}
+
+    </div>
+  </div>
+
+{% endblock %}

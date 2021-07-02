@@ -1,0 +1,191 @@
+{% extends "layout-header-links.html" %}
+
+{% block pageTitle %}
+  Confirm vacancy details
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/beta-banner.html" %}
+  {% include "includes/manage-users-link.html" %}
+  {% include "includes/header-summary-gateway.html" %}
+    {{ govukBackLink({
+      text: "Back",
+      href: "employer-list"
+    }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Manage users</h1>
+      <p class="govuk-body">You have administrator (admin) access to this account and can give other members of staff access as editors. You can also give Admin rights to Employers, allowing them to give members of staff access as editors.</p>
+      <p class="govuk-body">Gateway editors can add, update, delete or submit vacancies. Employer editors can add, update vacancies for their company.</p>
+
+      <a href="add-a-Gateway-user" class="govuk-button govuk-!-margin-right-1" id="submit">Add a Gateway editor</a>
+</div>
+</div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <!-- <h2 class="govuk-heading-l">Locations</h2> -->
+
+        {{ govukTable({
+          attributes: {
+          'data-module': 'moj-sortable-table'
+          },
+          head: [
+          {
+            text: "Name"
+          },
+          {
+            text: "Email"
+          },
+          {
+            html: "Type"
+          },
+          {
+            text: ""
+          },
+          {
+            text: ""
+          }
+          ],
+          rows: [
+          [
+
+            {
+              text: "Bill Walsh"
+            },
+            
+            {
+              text: "bill.walsh@ericorecruitment.co.uk"
+            },
+            {
+              text: "Gateway Admin"
+            },
+            {
+              html: "<a href='add-a-Gateway-user'>Change</a>"
+            },
+            {
+              html: ""
+            }
+          ],
+          [
+
+          {
+              text: "Rebecca Irving"
+            },
+
+            {
+              text: "rebecca.irving@ericorecruitment.co.uk"
+            },
+            {
+              text: "Gateway Editor"
+            },
+            {
+              html: "<a href='add-a-Gateway-user'>Change</a>"
+            },
+            {
+              html: "<a href='delete-user'>Delete</a>"
+            }
+          ]
+          ]
+          }) }}
+
+
+
+                  <a href="add-a-Employer-user" class="govuk-button govuk-!-margin-right-1" id="submit">Add an Employer editor</a>
+            </div>
+            </div>
+
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-full">
+                  <!-- <h2 class="govuk-heading-l">Locations</h2> -->
+
+                  {% from "govuk/components/table/macro.njk" import govukTable %}
+
+                  {{ govukTable({
+                    caption: " ",
+                    captionClasses: "govuk-table__caption--m",
+                    firstCellIsHeader: false,
+                    head: [
+                      {
+                        text: "Employer name",
+                        classes: 'govuk-!-width-one-eighth'
+                      },
+                      {
+                        text: "Name",
+                        classes: 'govuk-!-width-one-eighth'
+                      },
+                      {
+                        text: "Email"
+
+                      },
+                      {
+                        text: "Type",
+                        classes: 'govuk-!-width-one-eighth'
+                      },
+                      {
+                        text: "",
+                        classes: 'govuk-!-width-one-eighth'
+                      },
+                      {
+                        text: " ",
+                          classes: 'govuk-!-width-one-eighth'
+                      }
+                    ],
+                    rows: [
+                      [
+                        {
+                          text: "Arts and Sculpture"
+                        },
+                        {
+                          text: "James Williams"
+                        },
+                        {
+                          text: "james.williams@artsandsculpture.co.uk"
+                        },
+                        {
+                          text: "Admin"
+                        },
+                        {
+                          html: "<a href='add-a-user'>Change</a>"
+                        },
+                        {
+                          html: ""
+                        }
+                      ],
+                      [
+                        {
+                          text: "Arts and Sculpture"
+                        },
+                        {
+                          text: "Cheryl Dawlish"
+                        },
+                        {
+                          text: "cheryl.dawlish@artsandsculpture.co.uk"
+                        },
+                        {
+                          text: "Editor"
+                        },
+                        {
+                          html: "<a href='add-a-user'>Change</a>"
+                        },
+                        {
+                          html: "<a href='delete-user'>Delete</a>"
+                        }
+                      ],
+                      [
+
+                      ]
+                    ]
+                  }) }}
+
+
+                  {% include "includes/get-help-link.html" %}
+    </div>
+    </div>
+
+
+
+{% endblock %}
