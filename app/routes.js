@@ -5,6 +5,16 @@ const router = express.Router()
 
 module.exports = router
 
+////// Employer Under Gateway /////////
+router.post('/employer-under-gateway/v01/kc-choose', function (req, res) {
+  const editChoice = req.session.data['2fa-choose']
+
+  if (editChoice === 'authenticator-app') {
+    res.redirect('/employer-under-gateway/v01/kc-2fa')
+  } else if (editChoice === 'mobile-phone') {
+    res.redirect('/employer-under-gateway/v01/kc-phone')
+  }
+});
 ////// Gateway /////////
 router.post('/gateway/v04/kc-choose', function (req, res) {
   const editChoice = req.session.data['2fa-choose']
