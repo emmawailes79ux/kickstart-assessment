@@ -5,6 +5,10 @@ const router = express.Router()
 
 module.exports = router
 
+////////manage placements////////
+
+
+
 ////// Employer Under Gateway /////////
 router.post('/employer-under-gateway/E-v01/kc-choose', function (req, res) {
   const editChoice = req.session.data['2fa-choose']
