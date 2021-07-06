@@ -1,0 +1,22 @@
+{% extends "layout-footer.html" %}
+
+{% block pageTitle %}
+  Sorry, there is a problem
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/beta-banner.html" %}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Sorry, there is a problem</h1>
+      <p class="govuk-body">The link has expired.</p>
+      <p class="govuk-body"><a href="forgotten-password">Provide your email address</a> and we'll send you further instructions.</p>
+    </div>
+  </div>
+
+{% endblock %}

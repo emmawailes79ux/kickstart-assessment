@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+    Application cancelled
+{% endblock %}
+
+{% block header %}
+    {{ super() }}
+{% endblock %}
+
+{% block content %}
+  <script>
+    window.location.href = 'javascript:window.history.go(-2)'
+  </script>
+{% endblock %}

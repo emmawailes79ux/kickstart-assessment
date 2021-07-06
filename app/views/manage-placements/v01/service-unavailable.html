@@ -1,0 +1,23 @@
+{% extends "layout-footer.html" %}
+
+{% block pageTitle %}
+  Sorry, the service is unavailable
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/beta-banner.html" %}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Sorry, the service is unavailable</h1>
+      <p class="govuk-body">
+        Try again later.
+      </p>
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,138 @@
+{% extends "layout-header-links.html" %}
+
+{% block pageTitle %}
+  Referral detail
+{% endblock %}
+
+{% block beforeContent %}
+    {% include 'includes/back-button.njk' %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">Mick Brown</h1>
+
+          {{ govukSummaryList({
+            classes: ' ',
+            rows: [
+              {
+                key: {
+                  text: "Intro ID"
+                },
+                value: {
+                  text: "AS1234"
+                }
+              },
+              {
+                key: {
+                  text: "Referred for"
+                },
+                value: {
+                  text: "Junior Exhibition Designer, Leeds"
+                }
+              },
+              {
+                key: {
+                  text: "Date of Referral"
+                },
+                value: {
+                  text: "10 December 2020"
+                }
+              }
+              ]
+          }) }}
+
+<p> </p>
+      <h2 class="govuk-heading-l ">Place this referral in the job</h2>
+
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+  {% from "govuk/components/input/macro.njk" import govukInput %}
+
+  {% set yesHtml %}
+  {{ govukDateInput({
+  id: "placement-started-yes",
+  namePrefix: "placement-started-yes",
+  fieldset: {
+    legend: {
+      text: "What date did the placement start?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  hint: {
+    text: "For example, 12 11 2020"
+
+
+  ]
+
+  }) }}
+  {% endset -%}
+
+  {% set noHtml %}
+  {{ govukDateInput({
+    id: "placement-started-no",
+    namePrefix: "placement-started-yes",
+    fieldset: {
+      legend: {
+        text: "Give an anticipated start date (if you have one).",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--s"
+      }
+    },
+    hint: {
+      text: "For example, 12 11 2020"
+    }
+
+  }) }}
+  {% endset -%}
+
+  {{ govukRadios({
+    idPrefix: "placement",
+    name: "placement",
+    fieldset: {
+      legend: {
+        text: "Has this placement started?",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--m"
+      }
+    },
+    hint: {
+      text: ""
+    },
+    items: [
+      {
+        value: "yes",
+        text: "Yes",
+        conditional: {
+          html: yesHtml
+        }
+      },
+      {
+        value: "no",
+        text: "No",
+        conditional: {
+          html: noHtml
+        }
+      }
+    ]
+  }) }}
+
+
+
+<!--if logic for button goes here-->
+
+
+          {{ govukButton({
+            text: "Continue",
+            href: "placement-confirm"
+          }) }}
+
+
+        <p class="govuk-body govuk-!-margin-top-9"><a href="../app-home">Back to home</a></p>
+
+    </div>
+  </div>
+
+{% endblock %}

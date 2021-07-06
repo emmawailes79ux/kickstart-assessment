@@ -1,0 +1,129 @@
+{% extends "layout-header-links.html" %}
+
+{% block pageTitle %}
+  Placements
+{% endblock %}
+
+{% block beforeContent %}
+    {% include 'includes/back-button.njk' %}
+{% endblock %}
+
+{% block content %}
+        <span class="govuk-caption-l">Junior Exhibition Designer, Leeds</span>
+        <h2 class="govuk-heading-l">Placements</h2>
+
+        <p class="govuk-!-margin-bottom-3">You have <strong>2</strong> vacancies remaining for this job</p>
+        <p><a href="referrals-place-in-role">Place someone in this job</a></p>
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+        {{ govukTable({
+        firstCellIsHeader: false,
+        head: [
+          {
+            text: "Name"
+          },
+          {
+            text: "Intro ID"
+          },
+          {
+            text: "Start date"
+          },
+          {
+            text: "End date"
+          },
+          {
+            text: ""
+          },
+          {
+            text: ""
+          },
+          {
+            text: ""
+          }
+        ],
+        rows: [
+          [
+            {
+              html: "<a href='placement-detail-ac'>Andy Clarke</a>"
+            },
+            {
+              text: "AS1242"
+            },
+            {
+              text: "19 Jan 21"
+            },
+            {
+              text: "19 Jun 22"
+            },
+            {
+              html: "<a href='pause-placement-check'>Pause</a>"
+            },
+            {
+              html: "<a href='cancel-role-check'>Cancel</a>"
+            },
+            {
+              html: '<strong class="govuk-tag govuk-tag--green">Placed</strong>'
+            }
+          ],
+
+          [
+           {
+              html: "<a href='placement-detail'>David White</a>"
+            },
+            {
+              text: "AS2457"
+            },
+            {
+              text: "11 Jan 21"
+            },
+            {
+              text: "11 Jun 22"
+            },
+            {
+              html: "<a href='pause-placement-check'>Pause</a>"
+            },
+            {
+              html: "<a href='cancel-role-check'>Cancel</a>"
+            },
+            {
+              html: '<strong class="govuk-tag govuk-tag--green">Placed</strong>'
+            }
+          ],
+
+          [
+           {
+              html: "<a href='placement-detail-paused'>Fiona Brown</a>"
+            },
+            {
+              text: "AS1276"
+            },
+            {
+              text: "11 Jan 21"
+            },
+            {
+              text: "11 October 21"
+            },
+            {
+              html: "<a href='pause-placement-check'>Resume</a>"
+            },
+            {
+              html: "<a href='cancel-role-check'>Cancel</a>"
+            },
+            {
+              html: '<strong class="govuk-tag govuk-tag--yellow">Paused</strong>'
+            }
+          ]
+
+
+        ]
+        }) }}
+
+
+        <p class="govuk-body govuk-!-margin-top-9"><a href="../app-home">Back to home</a></p>
+
+
+    </div>
+  </div>
+
+{% endblock %}

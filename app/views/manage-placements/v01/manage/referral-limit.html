@@ -1,0 +1,46 @@
+{% extends "layout-header-links.html" %}
+
+{% block pageTitle %}
+  Change your referral limit
+{% endblock %}
+
+{% block beforeContent %}
+    {% include 'includes/back-button.njk' %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">Junior Exhibition Designer, Leeds</span>
+      <h1 class="govuk-heading-l">Change your creferral limit</h1>
+
+      <form id="form" method="post" action="job-detail">
+
+       {{ govukInput({
+          
+          id: "referral-limit",
+          classes: "govuk-input--width-5",
+          value: "50",
+          name: "referral-limit",
+          hint: {
+            text: "A referral is made when we recommend your job placement to a candidate. This does not guarantee the candidate will put in an application."
+          }
+        }) }}
+
+        {{ govukButton({
+          text: "Confirm change",
+          href: "referral-limit-confirm"
+        }) }}
+
+      </form>
+ 
+
+
+        <p class="govuk-body govuk-!-margin-top-9"><a href="../app-home">Back to home</a></p>
+           
+
+    </div>
+  </div>
+
+{% endblock %}
