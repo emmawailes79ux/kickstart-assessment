@@ -153,7 +153,7 @@
 
       {% set html %}
         <p class="govuk-notification-banner__heading">
-          'Junior exhibition designer' added successfully
+          'Junior exhibition designer'  added successfully
         </p>
 
       {% endset %}
@@ -218,7 +218,6 @@
                   </label>
                 </div>
               </div>
-
               {{ govukTable({
                 firstCellIsHeader: false,
                 head: [
@@ -547,7 +546,9 @@
                     text: "Postcode"
                   },
                   {
-                    text: ""
+                    text: "",
+                    classes: 'govuk-!-width-one-quarter'
+
                   }
                 ],
                 rows: [
@@ -646,7 +647,7 @@
                       text: "WF1 5AW"
                     },
                     {
-                      html: '<strong class="govuk-tag govuk-tag--red"> Referral limit</strong>',
+                      html: '<strong class="govuk-tag govuk-tag--red">Referral Limit Reached</strong>',
                       format: "numeric"
                     }
                   ],
@@ -821,12 +822,6 @@
                       text: ""
                     }
                   ]
-
-
-
-
-
-
                 ]
               }) }}
 

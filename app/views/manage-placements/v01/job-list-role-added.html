@@ -309,7 +309,11 @@
                 Submitted
               </a>
             </li>
-
+            <li>
+              <a href="#tab-3">
+                Live
+              </a>
+            </li>
           </ul>
         </div>
 
@@ -532,7 +536,6 @@
                     }
                   ],
                   [
-
                     {
                       html: ""
                     },
@@ -553,9 +556,13 @@
                     }
                   ]
 
-
                 ]
               }) }}
+
+
+
+
+
 
               <nav class="moj-pagination" id="pagination-label">
 
@@ -581,6 +588,286 @@
 
             </div>
           </div>
+
+          <div class="tabs-panel" id="tab-3">
+            <div class="tabs-panel-inner">
+          {{ govukTable({
+            firstCellIsHeader: false,
+            head: [
+              {
+                text: "Job title"
+              },
+              {
+                text: "Vacancies"
+              },
+              {
+                text: "Placements"
+              },
+              {
+                text: "Referrals"
+              },
+              {
+                text: "Location"
+              },
+              {
+                text: "Postcode"
+              },
+              {
+                text: ""
+              }
+            ],
+            rows: [
+              [
+                {
+                  html: "<a href='job-detail'>Junior exhibition designer</a>"
+                },
+                {
+                  text: "3"
+                },
+                {
+                  html: "<a href='placements'>2</a>"
+                },
+                {
+                  html: "<a href='referrals'>43</a>"
+                },
+                {
+                  text: "Leeds"
+                },
+                {
+                  text: "LS1 3AA"
+                },
+                {
+                  html: '<strong class="govuk-tag govuk-tag--blue">Live</strong>',
+                  format: "numeric"
+                }
+              ],
+
+              [
+                {
+                  html: "<a href='#'>Junior exhibition designer</a>"
+                },
+                {
+                  text: "1"
+                },
+                {
+                  text: "0"
+                },
+                {
+                  html: "<a href='#'>25</a>"
+                },
+                {
+                  text: "Wakefield"
+                },
+                {
+                  text: "WF1 5AW"
+                },
+                {
+                  html: '<strong class="govuk-tag govuk-tag--blue">Live</strong>',
+                  format: "numeric"
+                }
+              ],
+
+              [
+                {
+                  html: "<a href='#'>Admissions assistant</a>"
+                },
+                {
+                  text: "6"
+                },
+                {
+                  html: "<a href='#'>2</a>"
+                },
+                {
+                  html: "<a href='#'>45</a>"
+                },
+                {
+                  text: "Leeds"
+                },
+                {
+                  text: "LS1 3AA"
+                },
+                {
+                  html: '<strong class="govuk-tag govuk-tag--blue">Live</strong>',
+                  format: "numeric"
+                }
+              ],
+
+              [
+                {
+                  html: "<a href='job-detail-rl'>Junior admin clerk</a>"
+                },
+                {
+                  text: "3"
+                },
+                {
+                  text: "0"
+                },
+                {
+                  html: "<a href='#'>49</a>"
+                },
+                {
+                  text: "Wakefield"
+                },
+                {
+                  text: "WF1 5AW"
+                },
+                {
+                  html: '<strong class="govuk-tag govuk-tag--red">Referral limit</strong>',
+                  format: "numeric"
+                }
+              ],
+
+              [
+                {
+                  html: "<a href='job-detail-ejs'>Waiter</a>"
+                },
+                {
+                  text: "9"
+                },
+                {
+                  text: "0"
+                },
+                {
+                  html: "<a href='#'>18</a>"
+                },
+                {
+                  text: "Leeds"
+                },
+                {
+                  text: "LS1 3AA"
+                },
+                {
+                  html: '<strong class="govuk-tag govuk-tag--blue">Live</strong>',
+                  format: "numeric"
+                }
+              ],
+
+              [
+                {
+                  html: "<a href='#'>Waiter</a>"
+                },
+                {
+                  text: "5"
+                },
+                {
+                  html: "<a href='#'>3</a>"
+                },
+                {
+                  html: "<a href='#'>58</a>"
+                },
+                {
+                  text: "Wakefield"
+                },
+                {
+                  text: "WF1 5AW"
+                },
+                {
+                  html: '<strong class="govuk-tag govuk-tag--blue">Live</strong>',
+                  format: "numeric"
+                }
+              ],
+
+              [
+                {
+                  html: "<a href='job-detail-bl'>Barista</a>"
+                },
+                {
+                  text: "2"
+                },
+                {
+                  html: "<a href='placements-barista'>2</a>"
+                },
+                {
+                  html: "<a href='#'>27</a>"
+                },
+                {
+                  text: "Leeds"
+                },
+                {
+                  text: "LS1 3AA"
+                },
+                {
+                  html: '<strong class="govuk-tag govuk-tag--green">Filled</strong>',
+                  format: "numeric"
+                }
+              ],
+
+              [
+                {
+                  html: "<a href='job-detail-pause'>Barista</a>"
+                },
+                {
+                  text: "1"
+                },
+                {
+                  text: "0"
+                },
+                {
+                  html: "<a href='#'>18</a>"
+                },
+                {
+                  text: "Wakefield"
+                },
+                {
+                  text: "WF1 5AW"
+                },
+                {
+                  html: '<strong class="govuk-tag govuk-tag--blue">Live</strong>',
+                  format: "numeric"
+                }
+              ],
+
+              [
+                {
+                  html: "<a href='job-detail-cd'>Trainee chef<a>"
+                },
+                {
+                  text: "1"
+                },
+                {
+                  html: "<a href='placements-chef-wakefield'>2</a>"
+                },
+                {
+                  html: "<a href='#'>37</a>"
+                },
+                {
+                  text: "Wakefield"
+                },
+                {
+                  text: "WF4 4LG"
+                },
+                {
+                  html: '<strong class="govuk-tag govuk-tag--red">Closing soon</strong>',
+                  format: "numeric"
+                }
+              ],
+              [
+                {
+                  html: "<a href='#'>Trainee chef<a>"
+                },
+                {
+                  text: "2"
+                },
+                {
+                  html: "<a href='#'>1</a>"
+                },
+                {
+                  html: "<a href='#'>32</a>"
+                },
+                {
+                  text: "Leeds"
+                },
+                {
+                  text: "LS1 3AA"
+                },
+                {
+                  html: '<strong class="govuk-tag govuk-tag--yellow">Paused</strong>',
+                  format: "numeric"
+                }
+              ]
+            ]
+          }) }}
+
         </div>
       </div>
     </div>
