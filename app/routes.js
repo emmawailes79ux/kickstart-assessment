@@ -20,6 +20,16 @@ router.post('/employer-under-gateway/E-v01/kc-choose', function (req, res) {
   }
 });
 ////// Gateway /////////
+router.post('/gateway/Manage-users-v01/which-user', function (req, res) {
+  const editChoice = req.session.data['choose-a-user']
+
+  if (editChoice === 'Gateway-user') {
+    res.redirect('/gateway/Manage-users-v01/add-a-Gateway-user')
+  } else if (editChoice === 'Employer-user') {
+    res.redirect('/gateway/Manage-users-v01/add-a-Employer-user')
+  }
+});
+
 router.post('/gateway/Manage-users-v01/kc-choose', function (req, res) {
   const editChoice = req.session.data['2fa-choose']
 

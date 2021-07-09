@@ -14,10 +14,12 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-l">Add an Employer editor</h1>
+      <h1 class="govuk-heading-l">Add an Employer Admin</h1>
+      <p class="govuk-body">You can add in an administrator role for your Employers here. The employer admin will be able to give editor access to their team. [Copy needed]
+
 
       {{ govukSelect({
-        classes: "govuk-combo-width-20",
+        classes: "govuk-combo-width-25",
         id: "sort",
         name: "sort",
         label: {
@@ -55,6 +57,8 @@
           }
         ]
       }) }}
+
+
       {{ govukInput({
         label: {
           text: "First name"
@@ -91,7 +95,12 @@
       name: "confirm-email"
     }) }}
 
-      <p><a href="manage-users" class="govuk-button">Save and continue</a></p>
+    <div class="govuk-button-group">
+      <a href="manage-users-added-employer-editor" class="govuk-button">Save and continue</a>
+      <a href="add-a-Employer-user" class="govuk-button govuk-button--secondary govuk-!-margin-right-1" id="submit">Add another user</a>
+    </div>
+
+
       <p class="govuk-body"><a href="manage-users">Back to manage users</a></p>
 
       {% include "includes/get-help-link.html" %}

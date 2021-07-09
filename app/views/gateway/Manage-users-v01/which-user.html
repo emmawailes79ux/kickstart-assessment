@@ -1,0 +1,62 @@
+{% extends "layout-header-links.html" %}
+
+{% block pageTitle %}
+  Manage users
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/beta-banner.html" %}
+  {% include "includes/manage-users-link.html" %}
+  {% include "includes/header-summary-gateway.html" %}
+    {{ govukBackLink({
+      text: "Back",
+      href: "employer-list"
+    }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form id="form" method="post" action="which-user">
+        {{ govukRadios({
+          idPrefix: "choose-a-user",
+          name: "choose-a-user",
+          fieldset: {
+            legend: {
+              text: "Which type of user do you want to add?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          items: [
+          {
+            value: "Gateway-user",
+            text: "Gateway user",
+            hint: {
+              text: ""
+            }
+          },
+          {
+            value: "Employer-user",
+            text: "Employer user",
+            hint: {
+              text: ""
+            }
+          }
+          ]
+        }) }}
+
+        <button type="submit" class="govuk-button govuk-!-margin-right-1" id="submit">Continue</button>
+
+
+      </form>
+
+    {% include "includes/get-help-link.html" %}
+
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+
+  </div>
+  </div>
+  {% endblock %}
