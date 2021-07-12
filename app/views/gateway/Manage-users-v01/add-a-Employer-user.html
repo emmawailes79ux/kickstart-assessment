@@ -15,7 +15,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-l">Add an employer admin</h1>
-      <p class="govuk-body">You can give administrator access to an employer member of staff (employer admin). Employer admins can add employer editors. 
+      <p class="govuk-body">You can give administrator access to an employer member of staff (employer admin). Employer admins can add employer editors.
 
 
       {{ govukSelect({
@@ -26,6 +26,11 @@
           text: "Employers"
         },
         items: [
+          {
+            value: "empty field",
+            text: "---Select one---",
+            selected: true
+          },
           {
             value: "Employer1",
             text: "Arts and Sculpture Ltd",
