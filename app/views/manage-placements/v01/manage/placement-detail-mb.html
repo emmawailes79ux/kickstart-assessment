@@ -13,9 +13,9 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <span class="govuk-caption-l">Junior Exhibition Designer, Leeds</span>
-        <h1 class="govuk-heading-l govuk-!-margin-bottom-0 govuk-!-padding-bottom-2">Fiona Brown</h1>
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-0 govuk-!-padding-bottom-2">Mick Brown</h1>
 
-        <strong class="govuk-tag govuk-tag--yellow govuk-!-margin-bottom-5">Paused</strong>
+        <strong class="govuk-tag govuk-tag--orange govuk-!-margin-bottom-5">Awaiting start date</strong>
 
           {{ govukSummaryList({
             classes: ' ',
@@ -25,15 +25,15 @@
                   text: "Intro ID"
                 },
                 value: {
-                  text: "AS1276"
+                  text: "AS1242"
                 }
               },
               {
                 key: {
-                  text: "Date of Referral"
+                  text: "Date of referral"
                 },
                 value: {
-                  text: "11 December 2020"
+                  text: "10 December 2020"
                 }
               },
               {
@@ -41,7 +41,7 @@
                   text: "Start date in role"
                 },
                 value: {
-                  text: "11 January 2021"
+                  text: "14 January 2021"
                 }
               },
               {
@@ -49,58 +49,50 @@
                   text: "End date"
                 },
                 value: {
-                  text: "11 June 2021"
+                  text: "14 June 2021"
                 }
               },
               {
                 key: {
-                  text: "Date placement was paused"
+                  text: "Email address"
                 },
                 value: {
-                  text: "13 January 2021"
+                  text: "andrew.clarke79@gmail.com"
                 }
               },
               {
                 key: {
-                  text: "Reason for pause"
+                  text: "Phone number"
                 },
                 value: {
-                  text: "Job not currently viable during lockdown "
+                  text: "07787147323"
                 }
-
-
               }
               ]
           }) }}
 
 
-      <form id="form" method="post" action="placement-detail-paused">
+      <form id="form" method="post" action="#">
 
-       {{ govukRadios({
-          idPrefix: "manage-placement-paused",
-          name: "manage-placement-paused",
+        <h2 class="govuk-heading-m">Update start date</h2>
+
+        {{ govukDateInput({
+          id: "start-date",
+          namePrefix: "start-date",
           fieldset: {
             legend: {
-              text: "Update this placement",
-              isPageHeading: false,
-              classes: "govuk-fieldset__legend--m"
+              text: "Enter the expected date they will start work or have started",
+              classes: "govuk-fieldset__legend--s"
             }
           },
-          items: [
-            {
-              value: "unpause-placement",
-              text: "Resume"
-            },
-            {
-              value: "cancel-role",
-              text: "Cancel"
-            }
-          ]
+          hint: {
+            text: "For example, 27 3 2007"
+          }
         }) }}
 
         {{ govukButton({
           text: "Continue",
-          href: "placements-unpaused"
+          href: "placements-updated"
         }) }}
 
       </form>

@@ -5,9 +5,16 @@ const router = express.Router()
 
 module.exports = router
 
-////////manage placements////////
+////////manage-placements////////
 
-
+router.post('/manage-placements/v01/manage/referral-detail', function (req, res) {
+  const editChoice = req.session.data['placement']
+  if (editChoice === 'yes') {
+    res.redirect('/manage-placements/v01/manage/placement-confirm')
+  } else if (editChoice === 'no') {
+    res.redirect('/manage-placements/v01/manage/placement-confirm-no-date')
+  }
+});
 
 ////// Employer Under Gateway /////////
 router.post('/employer-under-gateway/E-v01/kc-choose', function (req, res) {
