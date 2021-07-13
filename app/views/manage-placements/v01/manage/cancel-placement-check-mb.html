@@ -1,7 +1,7 @@
 {% extends "layout-header-links.html" %}
 
 {% block pageTitle %}
-    Are you sure you want to cancel the application?
+    Are you sure you want to cancel the placement?
 {% endblock %}
 
 {% block beforeContent %}
@@ -11,7 +11,7 @@
 {% block content %}
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-            <form id="form" method="post" action="cancel-role-check">
+            <form id="form" method="post" action="placements-updated">
 
 
 
@@ -19,7 +19,7 @@
                     <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
                         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                         <h1 class="govuk-fieldset__heading">
-                            Are you sure you want to cancel the job?
+                            Are you sure you want to cancel the placement for Mick Brown?
                         </h1>
                         </legend>
 
@@ -30,24 +30,39 @@
 
                         <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact">
+                            <input class="govuk-radios__input" id="cancel-placement" name="cancel-placement" type="radio" value="yes" data-aria-controls="conditional-contact">
                             <label class="govuk-label govuk-radios__label" for="contact">
-                                Yes, cancel the job and delete all the vacancies
+                                Yes, cancel the placement and terminate their employment
                             </label>
                         </div>
                         <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
 
+                            {{ govukDateInput({
+                            id: "pause-date",
+                            namePrefix: "pause-date",
+                            fieldset: {
+                                legend: {
+                                text: "When do you want to cancel the placement?",
+                                isPageHeading: true,
+                                classes: "govuk-fieldset__legend--s"
+                                }
+                            },
+                            hint: {
+                                text: "For example, 12 11 2007"
+                            }
+                            }) }}
+
 
                             <div class="govuk-form-group">
                                 <label class="govuk-label govuk-label--s" for="more-detail">
-                                    Enter a reason for cancelling the job
+                                    Enter a reason for cancelling the placement
                                 </label>
                                 <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
                             </div>
 
                         </div>
                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone" data-aria-controls="conditional-contact-2">
+                            <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="no" data-aria-controls="conditional-contact-2">
                             <label class="govuk-label govuk-radios__label" for="contact-2">
                             No
                             </label>
@@ -60,7 +75,6 @@
 
                 <button type="submit" class="govuk-button govuk-!-margin-right-1" id="submit">Continue</button>
 
-                <a href="javascript:window.history.back()" class="govuk-button govuk-button--secondary">Cancel</a>
             </form>
         </div>
     </div>

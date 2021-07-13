@@ -8,14 +8,14 @@
 {% include "includes/beta-banner.html" %}
     <style>
       .govuk-table__header, .govuk-table__cell {
-        padding: 8px 10px 8px 0px;
+        padding: 8px 24px 8px 0px;
         vertical-align: middle;
         }
       }
 
       .govuk-table__header, .govuk-table__cell .govuk-checkboxes__label:after {
         top: 1px;
-        left: 9px;
+        left: 18px;
         width: 23px;
         height: 12px;
       }
@@ -529,43 +529,35 @@
                 firstCellIsHeader: false,
                 head: [
                   {
-                    text: "Job title",
-                    classes: "govuk-!-padding-right-1"
+                    text: "Job title"
                   },
                   {
-                    html: "Total <br>Vacancies",
-                    classes: "govuk-!-padding-right-1"
+                    html: "Total <br>Vacancies"
                   },
                   {
                     text: "Placements"
                   },
                   {
-                    text: "Referrals",
-                    classes: "govuk-!-padding-left-1"
+                    text: "Referrals"
 
                   },
                   {
-                    text: "Location",
-                    classes: "govuk-!-padding-right-1",
-                    classes: "govuk-!-padding-left-2"
+                    text: "Location"
 
                   },
                   {
-                    text: "Postcode",
-                    classes: "govuk-!-padding-left-3"
+                    text: "Postcode"
 
                   },
                   {
-                    text: "",
-                    classes: "govuk-!-padding-left-1"
+                    text: ""
 
                   }
                 ],
                 rows: [
                   [
                     {
-                    html: "<a href='job-detail'>Junior exhibition designer</a>",
-                    classes: "govuk-!-width-one-fifth"
+                    html: "<b><a href='job-detail'>Junior exhibition designer</a></b>"
                     },
                     {
                       text: "3"
@@ -574,18 +566,14 @@
                       html: "<a href='manage/placements'>2</a>"
                     },
                     {
-                      html: "<a href='manage/referrals'>43</a>",
-                      classes: "govuk-!-padding-left-1"
+                      html: "<a href='manage/referrals'>43</a>"
                     },
                     {
-                      text: "Leeds",
-                      classes: "govuk-!-padding-right-1",
-                      classes: "govuk-!-padding-left-2"
+                      text: "Leeds"
 
                     },
                     {
-                      text: "LS1 3AA",
-                      classes: "govuk-!-padding-left-3"
+                      text: "LS1 3AA"
                     },
                     {
                       html: '<strong class="govuk-tag govuk-tag--blue">Live</strong>',
@@ -595,7 +583,7 @@
 
                   [
                     {
-                      html: "<a href='#'>Junior exhibition designer</a>"
+                      html: "<b><a href='#'>Junior exhibition designer</a></b>"
                     },
                     {
                       text: "1"
@@ -604,18 +592,15 @@
                       text: "0"
                     },
                     {
-                      html: "<a href='#'>25</a>",
-                      classes: "govuk-!-padding-left-1"
+                      html: "<a href='#'>25</a>"
                     },
                     {
                       text: "Wakefield",
-                      classes: "govuk-!-padding-right-1",
-                      classes: "govuk-!-padding-left-2"
+                      classes: "govuk-!-padding-right-1"
 
                     },
                     {
-                      text: "WF1 5AW",
-                      classes: "govuk-!-padding-left-3"
+                      text: "WF1 5AW"
                     },
                     {
                       html: '<strong class="govuk-tag govuk-tag--blue">Live</strong>',
@@ -625,7 +610,7 @@
 
                   [
                     {
-                      html: "<a href='#'>Admissions assistant</a>"
+                      html: "<b><a href='#'>Admissions assistant</a></b>"
                     },
                     {
                       text: "6"
@@ -634,18 +619,15 @@
                       html: "<a href='#'>2</a>"
                     },
                     {
-                      html: "<a href='#'>45</a>",
-                      classes: "govuk-!-padding-left-1"
+                      html: "<a href='#'>45</a>"
                     },
                     {
                       text: "Leeds",
-                      classes: "govuk-!-padding-right-1",
-                      classes: "govuk-!-padding-left-2"
+                      classes: "govuk-!-padding-right-1"
 
                     },
                     {
-                      text: "LS1 3AA",
-                      classes: "govuk-!-padding-left-3"
+                      text: "LS1 3AA"
                     },
                     {
                       html: '<strong class="govuk-tag govuk-tag--blue">Live</strong>',
@@ -655,7 +637,7 @@
 
                   [
                     {
-                      html: "<a href='job-detail-rl'>Junior admin clerk</a>"
+                      html: "<b><a href='job-detail-rl'>Junior admin clerk</a></b>"
                     },
                     {
                       text: "3"
@@ -664,18 +646,14 @@
                       text: "0"
                     },
                     {
-                      html: "<a href='#'>49</a>",
-                      classes: "govuk-!-padding-left-1"
+                      html: "<a href='#'>49</a>"
                     },
                     {
-                      text: "Wakefield",
-                      classes: "govuk-!-padding-right-1",
-                      classes: "govuk-!-padding-left-2"
+                      text: "Wakefield"
 
                     },
                     {
-                      text: "WF1 5AW",
-                      classes: "govuk-!-padding-left-3"
+                      text: "WF1 5AW"
                     },
                     {
                       html: '<strong class="govuk-tag govuk-tag--red">Referral Limit Reached</strong>',
@@ -685,7 +663,7 @@
 
                   [
                     {
-                      html: "<a href='job-detail-ejs'>Waiter</a>"
+                      html: "<b><a href='job-detail-ejs'>Waiter</a></b>"
                     },
                     {
                       text: "9"
@@ -694,18 +672,14 @@
                       text: "0"
                     },
                     {
-                      html: "<a href='#'>18</a>",
-                      classes: "govuk-!-padding-left-1"
+                      html: "<a href='#'>18</a>"
                     },
                     {
-                      text: "Leeds",
-                      classes: "govuk-!-padding-right-1",
-                      classes: "govuk-!-padding-left-2"
+                      text: "Leeds"
 
                     },
                     {
-                      text: "LS1 3AA",
-                      classes: "govuk-!-padding-left-3"
+                      text: "LS1 3AA"
                     },
                     {
                       html: '<strong class="govuk-tag govuk-tag--blue">Live</strong>',
@@ -715,7 +689,7 @@
 
                   [
                     {
-                      html: "<a href='#'>Waiter</a>"
+                      html: "<b><a href='#'>Waiter</a></b>"
                     },
                     {
                       text: "5"
@@ -724,18 +698,15 @@
                       html: "<a href='#'>3</a>"
                     },
                     {
-                      html: "<a href='#'>58</a>",
-                      classes: "govuk-!-padding-left-1"
+                      html: "<a href='#'>58</a>"
                     },
                     {
                       text: "Wakefield",
-                      classes: "govuk-!-padding-right-1",
-                      classes: "govuk-!-padding-left-2"
+                      classes: "govuk-!-padding-right-1"
 
                     },
                     {
-                      text: "WF1 5AW",
-                      classes: "govuk-!-padding-left-3"
+                      text: "WF1 5AW"
                     },
                     {
                       html: '<strong class="govuk-tag govuk-tag--blue">Live</strong>',
@@ -745,7 +716,7 @@
 
                   [
                     {
-                      html: "<a href='job-detail-bl'>Barista</a>"
+                      html: "<b><a href='job-detail-bl'>Barista</a></b>"
                     },
                     {
                       text: "2"
@@ -754,18 +725,15 @@
                       html: "<a href='placements-barista'>2</a>"
                     },
                     {
-                      html: "<a href='#'>27</a>",
-                      classes: "govuk-!-padding-left-1"
+                      html: "<a href='#'>27</a>"
                     },
                     {
                       text: "Leeds",
-                      classes: "govuk-!-padding-right-1",
-                      classes: "govuk-!-padding-left-2"
+                      classes: "govuk-!-padding-right-1"
 
                     },
                     {
-                      text: "LS1 3AA",
-                      classes: "govuk-!-padding-left-3"
+                      text: "LS1 3AA"
                     },
                     {
                       html: '<strong class="govuk-tag govuk-tag--green">Filled</strong>',
@@ -775,7 +743,7 @@
 
                   [
                     {
-                      html: "<a href='job-detail-pause'>Barista</a>"
+                      html: "<b><a href='job-detail-pause'>Barista</a></b>"
                     },
                     {
                       text: "1"
@@ -784,18 +752,15 @@
                       text: "0"
                     },
                     {
-                      html: "<a href='#'>18</a>",
-                      classes: "govuk-!-padding-left-1"
+                      html: "<a href='#'>18</a>"
                     },
                     {
                       text: "Wakefield",
-                      classes: "govuk-!-padding-right-1",
-                      classes: "govuk-!-padding-left-2"
+                      classes: "govuk-!-padding-right-1"
 
                     },
                     {
-                      text: "WF1 5AW",
-                      classes: "govuk-!-padding-left-3"
+                      text: "WF1 5AW"
                     },
                     {
                       html: '<strong class="govuk-tag govuk-tag--blue">Live</strong>',
@@ -805,7 +770,7 @@
 
                   [
                     {
-                      html: "<a href='job-detail-cd'>Trainee chef<a>"
+                      html: "<b><a href='job-detail-cd'>Trainee chef<a></b>"
                     },
                     {
                       text: "1"
@@ -814,18 +779,15 @@
                       html: "<a href='placements-chef-wakefield'>2</a>"
                     },
                     {
-                      html: "<a href='#'>37</a>",
-                      classes: "govuk-!-padding-left-1"
+                      html: "<a href='#'>37</a>"
                     },
                     {
                       text: "Wakefield",
-                      classes: "govuk-!-padding-right-1",
-                      classes: "govuk-!-padding-left-2"
+                      classes: "govuk-!-padding-right-1"
 
                     },
                     {
-                      text: "WF4 4LG",
-                      classes: "govuk-!-padding-left-3"
+                      text: "WF4 4LG"
                     },
                     {
                       html: '<strong class="govuk-tag govuk-tag--red">Date passed</strong>',
@@ -835,7 +797,7 @@
 
                   [
                     {
-                      html: "<a href='#'>Trainee chef<a>"
+                      html: "<b><a href='#'>Trainee chef<a></b>"
                     },
                     {
                       text: "2"
@@ -844,18 +806,15 @@
                       html: "<a href='#'>1</a>"
                     },
                     {
-                      html: "<a href='#'>32</a>",
-                      classes: "govuk-!-padding-left-1"
+                      html: "<a href='#'>32</a>"
                     },
                     {
                       text: "Leeds",
-                      classes: "govuk-!-padding-right-1",
-                      classes: "govuk-!-padding-left-2"
+                      classes: "govuk-!-padding-right-1"
 
                     },
                     {
-                      text: "LS1 3AA",
-                      classes: "govuk-!-padding-left-3"
+                      text: "LS1 3AA"
                     },
                     {
                       html: '<strong class="govuk-tag govuk-tag--grey">Suspended</strong>',

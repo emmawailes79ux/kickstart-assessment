@@ -51,37 +51,33 @@
                 value: {
                   text: "14 June 2021"
                 }
-              },
-              
+
               }
               ]
           }) }}
 
+          <form id="form" method="post" action="#">
 
-      <form id="form" method="post" action="#">
+                  <h2 class="govuk-heading-m">Update start date</h2>
 
-        <h2 class="govuk-heading-m">Update start date</h2>
-
-        {{ govukDateInput({
-          id: "start-date",
-          namePrefix: "start-date",
-          fieldset: {
-            legend: {
-              text: "Enter the expected date they will start work or have started",
-              classes: "govuk-fieldset__legend--s"
-            }
-          },
-          hint: {
-            text: "For example, 27 3 2007"
-          }
-        }) }}
+                  {{ govukDateInput({
+                    id: "start-date",
+                    namePrefix: "start-date",
+                    fieldset: {
+                      legend: {
+                        text: "Enter the expected date they will start work or have started",
+                        classes: "govuk-fieldset__legend--s"
+                      }
+                    },
+                    hint: {
+                      text: "For example, 27 3 2007"
+                    }
+                  }) }}
 
         {{ govukButton({
           text: "Continue",
           href: "placements-updated"
         }) }}
-
-      </form>
 
         <p class="govuk-body govuk-!-margin-top-9"><a href="../app-home">Back to home</a></p>
 
