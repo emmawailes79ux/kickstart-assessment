@@ -7,6 +7,15 @@ module.exports = router
 
 ////////manage-placements////////
 
+router.post('/manage-placements/v01/manage/pause-placement-check', function (req, res) {
+  const editChoice = req.session.data['placement']
+  if (editChoice === 'pause-yes') {
+    res.redirect('/manage-placements/v01/manage/placements-updated-dw-pause')
+  } else if (editChoice === 'pause-no') {
+    res.redirect('/manage-placements/v01/manage/placements-updated')
+  }
+});
+
 router.post('/manage-placements/v01/manage/referral-detail', function (req, res) {
   const editChoice = req.session.data['placement']
   if (editChoice === 'yes') {

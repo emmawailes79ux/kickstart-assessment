@@ -11,7 +11,94 @@
 {% block content %}
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
+          <form id="form" method="post" action="pause-placement-check">
 
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <h1 class="govuk-fieldset__heading">
+                        Are you sure you want to pause this placement?</h1>
+                    </legend>
+
+                    {{ govukWarningText({
+                    html: "This will pause the employment of <a href='placement-detail'>David White</a>.",
+                    iconFallbackText: "Warning"
+                    }) }}
+
+                    {% from "govuk/components/radios/macro.njk" import govukRadios %}
+                    {% from "govuk/components/input/macro.njk" import govukInput %}
+
+      {% set yesHtml %}
+      {{ govukDateInput({
+      id: "pause-date",
+      namePrefix: "pause-date",
+      fieldset: {
+          legend: {
+          text: "When do you want pause the job?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--s"
+          }
+      },
+      hint: {
+          text: "For example, 12 11 2007"
+      }
+      }) }}
+            <div class="govuk-form-group">
+                <label class="govuk-label govuk-label--s" for="more-detail">
+                    Enter a reason for pausing the job
+                </label>
+                <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+            </div>
+
+
+      {% endset -%}
+
+      {% set noHtml %}
+
+      {{ govukRadios({
+        id: "pause-date-no",
+        namePrefix: "pause-date-no",
+        fieldset: {
+          legend: {
+            text: "",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--s"
+          }
+        }
+
+      }) }}
+      {% endset -%}
+
+      {{ govukRadios({
+        idPrefix: "placement",
+        name: "placement",
+        fieldset: {
+          legend: {
+            text: "",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: ""
+        },
+        items: [
+          {
+            value: "pause-yes",
+            text: "Yes",
+            conditional: {
+              html: yesHtml
+            }
+          },
+          {
+            value: "pause-no",
+            text: "No",
+            conditional: {
+              html: noHtml
+            }
+          }
+        ]
+      }) }}
 
               <!-- {% set pauseHtml %}
 
@@ -79,75 +166,12 @@
 
 
 
-                <form id="form" method="post" action="pause-role-check">
+                <button type="submit" class="govuk-button govuk-!-margin-right-1" id="submit">Continue</button>
 
-
-                <div class="govuk-form-group">
-                    <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
-                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                        <h1 class="govuk-fieldset__heading">
-                            Are you sure you want to pause this placement?
-                        </h1>
-                        </legend>
-
-                        {{ govukWarningText({
-                        html: "This will pause the employment of <a href='placement-detail'>David White</a>.",
-                        iconFallbackText: "Warning"
-                        }) }}
+              </form>
 
 
 
-                        <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
-                        <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="pause-role" name="pause-role" type="radio" value="yes" data-aria-controls="conditional-contact">
-                            <label class="govuk-label govuk-radios__label" for="contact">
-                                Yes 
-                            </label>
-                        </div>
-                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
-
-                            {{ govukDateInput({
-                            id: "pause-date",
-                            namePrefix: "pause-date",
-                            fieldset: {
-                                legend: {
-                                text: "When do you want pause the job?",
-                                isPageHeading: true,
-                                classes: "govuk-fieldset__legend--s"
-                                }
-                            },
-                            hint: {
-                                text: "For example, 12 11 2007"
-                            }
-                            }) }}
-
-
-                            <div class="govuk-form-group">
-                                <label class="govuk-label govuk-label--s" for="more-detail">
-                                    Enter a reason for pausing the job
-                                </label>
-                                <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
-                            </div>
-
-                        </div>
-                        <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="no" data-aria-controls="conditional-contact-2">
-                            <label class="govuk-label govuk-radios__label" for="contact-2">
-                            No
-                            </label>
-                        </div>
-
-                        </div>
-
-                    </fieldset>
-                    </div>
-
-                {{ govukButton({
-                  text: "Continue",
-                  href: "placements-updated"
-                }) }}
-
-            </form>
         </div>
     </div>
 {% endblock %}
