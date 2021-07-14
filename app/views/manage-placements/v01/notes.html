@@ -206,3 +206,98 @@ items: [
 </div>
 
 {% endblock %}
+
+
+
+
+
+<!--test-->
+
+<h2 class="govuk-heading-l ">Place this referral in the job</h2>
+<form id="form" method="post" action="referral-detail">
+    {% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+{% set yesHtml %}
+{{ govukDateInput({
+id: "placement-started-yes",
+namePrefix: "placement-started-yes",
+fieldset: {
+  legend: {
+    text: "What date did the placement start?",
+    isPageHeading: true,
+    classes: "govuk-fieldset__legend--s"
+  }
+},
+hint: {
+  text: "For example, 12 11 2020"
+
+
+]
+
+}) }}
+{% endset -%}
+
+{% set noHtml %}
+{{ govukDateInput({
+  id: "placement-started-no",
+  namePrefix: "placement-started-no",
+  fieldset: {
+    legend: {
+      text: "Give an anticipated start date (if you have one).",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  hint: {
+    text: "For example, 12 11 2020"
+  }
+
+}) }}
+{{ govukRadios({
+  id: "placement-started-no",
+  namePrefix: "placement-started-no",
+  fieldset: {
+    legend: {
+      text: "If you don't provide a start date the placement will be filled, but payment won't be released.",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  hint: {
+    text: ""
+  }
+
+}) }}
+{% endset -%}
+
+{{ govukRadios({
+  idPrefix: "placement",
+  name: "placement",
+  fieldset: {
+    legend: {
+      text: "Has this placement started?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  hint: {
+    text: ""
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes",
+      conditional: {
+        html: yesHtml
+      }
+    },
+    {
+      value: "no",
+      text: "No",
+      conditional: {
+        html: noHtml
+      }
+    }
+  ]
+}) }}
