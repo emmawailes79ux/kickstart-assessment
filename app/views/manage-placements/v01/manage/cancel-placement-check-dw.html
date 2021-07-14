@@ -11,8 +11,6 @@
 {% block content %}
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-            <form id="form" method="post" action="placements-updated">
-
 
 
                 <div class="govuk-form-group">
@@ -28,18 +26,95 @@
                         iconFallbackText: "Warning"
                         }) }}
 
-                        <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
-                        <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="cancel-placement" name="cancel-placement" type="radio" value="yes" data-aria-controls="conditional-contact">
-                            <label class="govuk-label govuk-radios__label" for="contact">
-                                Yes, cancel the placement and terminate their employment
-                            </label>
-                        </div>
-                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
 
+                                  {% from "govuk/components/radios/macro.njk" import govukRadios %}
+                                  {% from "govuk/components/input/macro.njk" import govukInput %}
+  <form id="form" method="post" action="cancel-placement-dw">
+                    {% set yesHtml %}
+                    {{ govukDateInput({
+                    id: "cancel-date-yes",
+                    namePrefix: "cancel-date-yes",
+                    fieldset: {
+                        legend: {
+                        text: "When do you want cancel the job?",
+                        isPageHeading: true,
+                        classes: "govuk-fieldset__legend--s"
+                        }
+                    },
+                    hint: {
+                        text: "For example, 12 11 2007"
+                    }
+                    }) }}
+                          <div class="govuk-form-group">
+                              <label class="govuk-label govuk-label--s" for="more-detail">
+                                  Enter a reason for cancelling the job
+                              </label>
+                              <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+                          </div>
+
+
+                    {% endset -%}
+
+                    {% set noHtml %}
+
+                    {{ govukRadios({
+                      id: "cancel-date-no",
+                      namePrefix: "cancel-date-no",
+                      fieldset: {
+                        legend: {
+                          text: "",
+                          isPageHeading: true,
+                          classes: "govuk-fieldset__legend--s"
+                        }
+                      }
+
+                    }) }}
+                    {% endset -%}
+
+                    {{ govukRadios({
+                      idPrefix: "cancel-placement",
+                      name: "cancel-placement",
+                      fieldset: {
+                        legend: {
+                          text: "",
+                          isPageHeading: true,
+                          classes: "govuk-fieldset__legend--m"
+                        }
+                      },
+                      hint: {
+                        text: ""
+                      },
+                      items: [
+                        {
+                          value: "cancel-yes",
+                          text: "Yes, cancel the placement and end their employment",
+                          conditional: {
+                            html: yesHtml
+                          }
+                        },
+                        {
+                          value: "cancel-no",
+                          text: "No",
+                          conditional: {
+                            html: noHtml
+                          }
+                        }
+                      ]
+                    }) }}
+
+
+
+                  <!--<div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+                  <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="cancel-placement" name="cancel-placement" type="radio" value="yes" data-aria-controls="conditional-contact">
+                      <label class="govuk-label govuk-radios__label" for="contact">
+                          Yes, cancel the placement and terminate their employment
+                      </label>
+                  </div>
                             {{ govukDateInput({
-                            id: "pause-date",
-                            namePrefix: "pause-date",
+                            id: "cancel-date",
+                            namePrefix: "cancel-date",
                             fieldset: {
                                 legend: {
                                 text: "When do you want to cancel the placement?",
@@ -71,7 +146,7 @@
                         </div>
 
                     </fieldset>
-                    </div>
+                    </div>-->
 
                 <button type="submit" class="govuk-button govuk-!-margin-right-1" id="submit">Continue</button>
 

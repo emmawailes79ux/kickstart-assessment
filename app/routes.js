@@ -6,6 +6,32 @@ const router = express.Router()
 module.exports = router
 
 ////////manage-placements////////
+router.post('/manage-placements/v01/manage/cancel-placement-mb', function (req, res) {
+  const editChoice = req.session.data['cancel-placement']
+  if (editChoice === 'cancel-yes') {
+    res.redirect('/manage-placements/v01/manage/placements-updated-mb-cancel')
+  } else if (editChoice === 'cancel-no') {
+    res.redirect('/manage-placements/v01/manage/placements-updated')
+  }
+});
+
+router.post('/manage-placements/v01/manage/cancel-placement-dw', function (req, res) {
+  const editChoice = req.session.data['cancel-placement']
+  if (editChoice === 'cancel-yes') {
+    res.redirect('/manage-placements/v01/manage/placements-updated-dw-cancel')
+  } else if (editChoice === 'cancel-no') {
+    res.redirect('/manage-placements/v01/manage/placements-updated')
+  }
+});
+
+router.post('/manage-placements/v01/manage/pause-placement-check', function (req, res) {
+  const editChoice = req.session.data['placement']
+  if (editChoice === 'pause-yes') {
+    res.redirect('/manage-placements/v01/manage/placements-updated-dw-pause')
+  } else if (editChoice === 'pause-no') {
+    res.redirect('/manage-placements/v01/manage/placements-updated')
+  }
+});
 
 router.post('/manage-placements/v01/manage/referral-detail', function (req, res) {
   const editChoice = req.session.data['placement']
