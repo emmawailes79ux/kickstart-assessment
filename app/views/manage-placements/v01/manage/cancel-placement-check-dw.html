@@ -45,12 +45,39 @@
                         text: "For example, 12 11 2007"
                     }
                     }) }}
-                          <div class="govuk-form-group">
-                              <label class="govuk-label govuk-label--s" for="more-detail">
-                                  Enter a reason for cancelling the job
-                              </label>
-                              <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
-                          </div>
+                            {{ govukSelect({
+                              classes: "govuk-combo-width-25",
+                                id: "sort",
+                                name: "sort",
+                                label: {
+                                text: "Select a reason for cancelling the job"
+                                },
+                                      items: [
+                                        {
+                                        value: "empty field",
+                                        text: "---Select one---",
+                                        selected: true
+                                        },
+                                        {
+                                        value: "Employer1",
+                                        text: "Employer - withdrawal of role/from Kickstart"
+                                        },
+                                        {
+                                        value: "Employer2",
+                                        text: "Employer - Dismissal"
+                                        },
+                                        {
+                                        value: "Employee1",
+                                        text: "Employee - Role Not Suitable"
+                                        },
+                                        {
+                                        value: "Employee2",
+                                        text: "Employee - Other"
+                                        }
+
+                                        ]
+                                        }) }}
+
 
 
                     {% endset -%}

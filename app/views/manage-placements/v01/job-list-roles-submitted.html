@@ -176,9 +176,12 @@
             <li>view submitted vacancies</li>
             <li>make changes to live vacancies</li>
             <li>place someone in a job</li>
-            <li>change your referral limit</li> </br>
+            <li>change your referral limit</li> 
+            {{ govukInsetText({
+      text: "New vacancies will be sent to DWP for approval before they go live."
+      }) }}
 
-    <p class="govuk-body">New vacancies will be sent to DWP for approval before they go live.</p>
+
       {{ govukButton({
         text: "Add a vacancy",
         href: "job-add"

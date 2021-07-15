@@ -20,10 +20,6 @@
                         Are you sure you want to pause this placement?</h1>
                     </legend>
 
-                    {{ govukWarningText({
-                    html: "This will pause the employment of <a href='placement-detail'>David White</a>.",
-                    iconFallbackText: "Warning"
-                    }) }}
 
                     {% from "govuk/components/radios/macro.njk" import govukRadios %}
                     {% from "govuk/components/input/macro.njk" import govukInput %}
@@ -34,7 +30,7 @@
       namePrefix: "pause-date",
       fieldset: {
           legend: {
-          text: "When do you want to start pausing this person’s employment?",
+          text: "When do you want to start pausing David White's employment?",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--s"
           }

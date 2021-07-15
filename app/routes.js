@@ -18,7 +18,7 @@ router.post('/manage-placements/v01/manage/cancel-placement-fb', function (req, 
 router.post('/manage-placements/v01/manage/cancel-placement-mb', function (req, res) {
   const editChoice = req.session.data['cancel-placement']
   if (editChoice === 'cancel-yes') {
-    res.redirect('/manage-placements/v01/manage/placements-updated-mb-cancel')
+    res.redirect('/manage-placements/v01/manage/placements-cancel-mb')
   } else if (editChoice === 'cancel-no') {
     res.redirect('/manage-placements/v01/manage/placements-updated')
   }
