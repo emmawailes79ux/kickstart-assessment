@@ -49,7 +49,7 @@
                   text: "End date"
                 },
                 value: {
-                  text: "Awaiting end date"
+                  text: "End date will be 6 months after the start date"
                 }
 
               }
@@ -73,6 +73,10 @@
                       text: "For example, 27 3 2007"
                     }
                   }) }}
+
+                  {{ govukInsetText({
+  text: "You'll need to add a start date or expected start date before DWP will send you any payments.."
+}) }}
 
         {{ govukButton({
           text: "Continue",
