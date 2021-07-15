@@ -13,9 +13,10 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <span class="govuk-caption-l">Junior Exhibition Designer, Leeds</span>
-      <h1 class="govuk-heading-l">Change your referral limit</h1>
+      <h1 class="govuk-heading-l">Update your referral limit</h1>
 
       <form id="form" method="post" action="job-detail">
+
 
        {{ govukInput({
 
@@ -24,9 +25,11 @@
           value: "50",
           name: "referral-limit",
           hint: {
-            text: "A referral is made when we recommend your job placement to a candidate. This does not guarantee the candidate will put in an application."
+          text: "",
+          html: "<span class='govuk-caption-s'>You can change the referral limit (the number of applicants we recommend a vacancy to) for each role. The lowest number of referrals you can set for each role is <b>10</b>.</span><br><br>Referrals are no guarantee that candidates will put in an application.</br></br>"
           }
         }) }}
+
 
         {{ govukButton({
           text: "Confirm change",
@@ -37,7 +40,7 @@
 
 
 
-        <p class="govuk-body govuk-!-margin-top-9"><a href="../app-home">Back to home</a></p>
+        <p class="govuk-body govuk-!-margin-top-9"><a href="../app-home">Return to Arts and Sculpture Ltd</a></p>
 
 
     </div>
