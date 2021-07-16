@@ -29,7 +29,8 @@
 
                                   {% from "govuk/components/radios/macro.njk" import govukRadios %}
                                   {% from "govuk/components/input/macro.njk" import govukInput %}
-  <form id="form" method="post" action="cancel-placement-dw">
+
+              <form id="form" method="post" action="cancel-placement-dw">
                     {% set yesHtml %}
                     {{ govukDateInput({
                     id: "cancel-date-yes",
