@@ -15,7 +15,7 @@
       <span class="govuk-caption-l">Junior Exhibition Designer, Leeds</span>
         <h1 class="govuk-heading-l govuk-!-margin-bottom-0 govuk-!-padding-bottom-2">Mick Brown</h1>
 
-        <strong class="govuk-tag govuk-tag--orange govuk-!-margin-bottom-5">Awaiting start date</strong>
+        <strong class="govuk-tag govuk-tag--orange govuk-!-margin-bottom-5">Add a start date</strong>
 
           {{ govukSummaryList({
             classes: ' ',
@@ -41,7 +41,7 @@
                   text: "Start date in role"
                 },
                 value: {
-                  text: "Awaiting start date"
+                  text: "Add a start date"
                 }
               },
               {
@@ -49,7 +49,7 @@
                   text: "End date"
                 },
                 value: {
-                  text: "Awaiting end date"
+                  text: "End date will be 6 months after the start date"
                 }
 
               }
@@ -65,7 +65,7 @@
                     namePrefix: "start-date",
                     fieldset: {
                       legend: {
-                        text: "Enter the expected date they will start work or have started",
+                        text: "Enter the start date or expected start date",
                         classes: "govuk-fieldset__legend--s"
                       }
                     },
@@ -74,11 +74,15 @@
                     }
                   }) }}
 
+                  {{ govukInsetText({
+  text: "You'll need to add a start date or expected start date before DWP will send you any payments.."
+}) }}
+
         {{ govukButton({
           text: "Continue",
-          href: "placements-updated"
+          href: "placements-updated-mb-date-dw-pause"
         }) }}
-        
+
 
         <p class="govuk-body govuk-!-margin-top-9"><a href="../app-home">Back to home</a></p>
 
