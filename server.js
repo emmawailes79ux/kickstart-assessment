@@ -82,6 +82,8 @@ middleware.forEach(func => app.use(func))
 
 // Set up App
 var appViews = extensions.getAppViews([
+  path.join(__dirname, '/node_modules/hmrc-frontend/layouts'),
+  path.join(__dirname, '/node_modules/hmrc-frontend/components'),
   path.join(__dirname, '/app/views/'),
   path.join(__dirname, '/lib/')
 ])
@@ -111,6 +113,8 @@ app.use('/public', express.static(path.join(__dirname, '/public')))
 
 // Serve govuk-frontend in from node_modules (so not to break pre-extenstions prototype kits)
 app.use('/node_modules/govuk-frontend', express.static(path.join(__dirname, '/node_modules/govuk-frontend')))
+app.use('/node_modules/hmrc-frontend', express.static(path.join(__dirname, '/node_modules/hmrc-frontend')))
+
 
 // Set up documentation app
 if (useDocumentation) {
@@ -156,6 +160,7 @@ if (useV6) {
   app.use('/public/v6/', express.static(path.join(__dirname, '/node_modules/govuk_template_jinja/assets')))
   app.use('/public/v6/', express.static(path.join(__dirname, '/node_modules/govuk_frontend_toolkit')))
   app.use('/public/v6/javascripts/govuk/', express.static(path.join(__dirname, '/node_modules/govuk_frontend_toolkit/javascripts/govuk/')))
+  app.use('/assets', express.static(path.join(__dirname, 'node_modules', 'hmrc-frontend')))
 }
 
 // Add variables that are available in all views
