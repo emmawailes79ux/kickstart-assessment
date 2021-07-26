@@ -1,13 +1,15 @@
 {% extends "layout-header-links.html" %}
 
 {% block pageTitle %}
-  Vacancies
+  Your vacancies
 {% endblock %}
 
 {% block beforeContent %}
 {% include "includes/beta-banner.html" %}
 <!-- {% include "includes/manage-users-link.html" %} -->
 {% include "includes/header-summary-users.html" %}
+{% include "includes/language-select.njk" %}
+
     <style>
       .govuk-table__header, .govuk-table__cell {
         padding: 8px 10px 8px 0px;
@@ -214,11 +216,11 @@
                   }
                 }
               </script>
-              {{ govukButton({
+            <!--  {{ govukButton({
                 text: "Submit vacancies",
                 href: "submit-vacancy",
                 classes: "govuk-button--secondary"
-              }) }}
+              }) }}-->
 
               <div class='govuk-checkboxes govuk-checkboxes--small'>
                 <div class='govuk-checkboxes__item' style='min-height:1;'>
