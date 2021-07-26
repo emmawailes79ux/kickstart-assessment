@@ -6,6 +6,7 @@
 
 {% block beforeContent %}
 {% include "includes/beta-banner.html" %}
+{% include "includes/language-select.njk" %}
 
 {% endblock %}
 
@@ -16,7 +17,7 @@
 
             <p>It should take one minute to arrive.</p>
 
-            <form action="job-list-empty" method="post" class="form">
+            <form action="job-list-empty-tabs" method="post" class="form">
                 <div class="govuk-form-group govuk-!-margin-top-6">
                     <label class="govuk-label" for="email-security-code">
                         Enter security code
