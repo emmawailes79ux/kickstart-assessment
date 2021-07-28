@@ -6,6 +6,7 @@
 
 {% block beforeContent %}
 {% include "includes/beta-banner.html" %}
+{% include "includes/language-select.njk" %}
 <!-- {% include "includes/manage-users-link.html" %} -->
 {% include "includes/header-summary-users.html" %}
     <style>
@@ -313,11 +314,11 @@
                 }
               </script>
 
-              {{ govukButton({
+            <!--  {{ govukButton({
                 text: "Submit vacancies",
                 href: "submit-vacancy",
                 classes: "govuk-button--secondary"
-              }) }}
+              }) }}-->
 
               <div class='govuk-checkboxes govuk-checkboxes--small'>
                 <div class='govuk-checkboxes__item' style='min-height:1;'>
@@ -343,7 +344,8 @@
                     html: "No. of<br>locations"
                   },
                   {
-                    text: ""
+                    text: "",
+                    format: "numeric"
                   },
                   {
                     text: ""
@@ -364,7 +366,8 @@
                       text: "1"
                     },
                     {
-                      html: '<strong class="govuk-tag govuk-tag--grey">Incomplete</strong>'
+                      html: '<strong class="govuk-tag govuk-tag--grey">Incomplete</strong>',
+                      format: "numeric"
                     },
                     {
                       html: "<span class='govuk-!-font-size-16'><a href='delete-vacancy'>Delete</a></span>"
@@ -389,7 +392,8 @@
                       text: "1"
                     },
                     {
-                      html: '<strong class="govuk-tag govuk-tag--yellow">Ready to submit</strong>'
+                      html: '<strong class="govuk-tag govuk-tag--yellow">Ready to submit</strong>',
+                      format: "numeric"
                     },
                     {
                       html: "<span class='govuk-!-font-size-16'><a href='delete-vacancy'>Delete</a></span>"
@@ -414,7 +418,8 @@
                       text: "7"
                     },
                     {
-                      html: '<strong class="govuk-tag govuk-tag--yellow">Ready to submit</strong>'
+                      html: '<strong class="govuk-tag govuk-tag--yellow">Ready to submit</strong>',
+                      format: "numeric"
                     },
                     {
                       html: "<span class='govuk-!-font-size-16'><a href='delete-vacancy'>Delete</a></span>"
@@ -439,7 +444,8 @@
                       text: "2"
                     },
                     {
-                      html: '<strong class="govuk-tag govuk-tag--yellow">Ready to submit</strong>'
+                      html: '<strong class="govuk-tag govuk-tag--yellow">Ready to submit</strong>',
+                      format: "numeric"
                     },
                     {
                       html: "<span class='govuk-!-font-size-16'><a href='delete-vacancy'>Delete</a></span>"

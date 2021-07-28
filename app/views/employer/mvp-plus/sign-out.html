@@ -1,0 +1,40 @@
+{% extends "layout-footer.html" %}
+
+{% block pageTitle %}
+  You have now set up your Kickstart Scheme account
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/beta-banner.html" %}
+{% include "includes/language-select.njk" %}
+
+{% endblock %}
+
+{% set mainClasses = "govuk-main-wrapper--l" %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      {{ govukPanel({
+        titleText: "You have signed out of the session",
+        html: "You can now close your browser.<br><strong></strong>"
+      }) }}
+
+      <p class="govuk-body"></p>
+
+    <h2 class="govuk-heading-m">What happens next?</h2>
+
+        <p class="govuk-body">
+        If you signed out in error you can <a href="sign-in" class="govuk-link">sign back in here,</a> otherwise you can close your browser.
+        </p>
+
+        <h2 class="govuk-heading-m"></h2>
+
+        <p class="govuk-body">
+
+      <p class="govuk-body">
+        <a href="#" class="govuk-link">What did you think of this service?</a> (takes 30 seconds)
+      </p>
+    </div>
+  </div>
+{% endblock %}

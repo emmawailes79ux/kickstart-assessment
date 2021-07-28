@@ -6,6 +6,7 @@
 
 {% block beforeContent %}
 {% include "includes/beta-banner.html" %}
+{% include "includes/language-select.njk" %}
 <!-- {% include "includes/manage-users-link.html" %} -->
 {% include "includes/header-summary-users.html" %}
     <style>
@@ -156,7 +157,7 @@
 
     <p class="govuk-body">Add your vacancies and submit them. DWP will approve them before they go live.</p>
 
-    {{ govukButton({
+  {{ govukButton({
       text: "Add a vacancy",
       href: "job-add"
     }) }}
@@ -195,11 +196,11 @@
                   }
                 }
               </script>
-              {{ govukButton({
+      <!--        {{ govukButton({
                 text: "Submit vacancies",
                 href: "submit-vacancy",
                 classes: "govuk-button--secondary"
-              }) }}
+              }) }}-->
               <div class='govuk-checkboxes govuk-checkboxes--small'>
                 <div class='govuk-checkboxes__item' style='min-height:1;'>
                   <input class='govuk-checkboxes__input' id='select-all' name='box' type='checkbox' value='select-all'  onClick='toggle(this)'>

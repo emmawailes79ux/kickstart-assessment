@@ -14,6 +14,9 @@ $govuk-assets-path: '/govuk/assets/';
 @import "patterns/task-list";
 @import "patterns/related-items";
 
+// Components from HMRC
+@import "/Users/emma.wailes/Documents/Sites/kickstart-assessment/node_modules/hmrc-frontend/hmrc/components/language-select/language-select";
+
 // Components that aren't in Frontend
 @import "components/cookie-banner";
 
@@ -33,8 +36,8 @@ $govuk-assets-path: '/govuk/assets/';
       padding: 20px 15px;
     }
 
-    * {
-      color: $white;
+//    * {
+//      color: $white;
     }
 
     .key-details-bar__top-block,
@@ -47,7 +50,7 @@ $govuk-assets-path: '/govuk/assets/';
     }
 
     .key-details-bar__bottom-block {
-      border-top: 1px solid $white-transparent;
+      border-top: 1px solid white-transparent;
       content: ' ';
       padding-top: 10px;
       margin-top: 6px;
@@ -56,9 +59,15 @@ $govuk-assets-path: '/govuk/assets/';
       }
     }
 
+    dt.govuk-summary-list__key,
+    dd.govuk-summary-list__value,
+    dd.govuk-summary-list__actions {
+      float: none;
+    }
+    
     dd,
     dt {
-      float: left;
+    float: left;
       font-size: 19px;
       margin-right: 5px;
       @media(max-width: 670px) {
@@ -122,7 +131,6 @@ $govuk-assets-path: '/govuk/assets/';
         clear: both;
         margin-top: 5px;
       }
-    }
 }
 
 

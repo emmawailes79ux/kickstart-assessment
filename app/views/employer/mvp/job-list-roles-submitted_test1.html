@@ -6,10 +6,6 @@
 
 {% block beforeContent %}
 {% include "includes/beta-banner.html" %}
-{% include "includes/language-select.njk" %}
-<!-- {% include "includes/manage-users-link.html" %} -->
-{% include "includes/header-summary-users.html" %}
-
     <style>
       .govuk-table__header, .govuk-table__cell {
         padding: 8px 10px 8px 0px;
@@ -140,6 +136,7 @@
         }
       }
   </style>
+    {% include "includes/header-summary.html" %}
 
   <!-- {{ govukBackLink({
       text: "Back",
@@ -168,23 +165,16 @@
 
 
 
-      <div class="govuk-grid-row">
-        <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+        Your vacancies
+      </h1>
 
-          <h1 class="govuk-heading-l">
-            Your vacancies
-          </h1>
+      <p class="govuk-body">Add your vacancies and submit them. DWP will approve them before they go live.</p>
 
-          <p class="govuk-body">Add your vacancies and submit them. DWP will approve them before they go live.</p>
-
-          {{ govukButton({
-            text: "Add a vacancy",
-            href: "job-add"
-          }) }}
-    </div>
-    </div>
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-full">
+      {{ govukButton({
+        text: "Add a vacancy",
+        href: "job-add"
+      }) }}
 
 
 
@@ -216,11 +206,6 @@
                   }
                 }
               </script>
-            <!--  {{ govukButton({
-                text: "Submit vacancies",
-                href: "submit-vacancy",
-                classes: "govuk-button--secondary"
-              }) }}-->
 
               <div class='govuk-checkboxes govuk-checkboxes--small'>
                 <div class='govuk-checkboxes__item' style='min-height:1;'>
@@ -246,7 +231,8 @@
                     html: "No. of<br>locations"
                   },
                   {
-                    text: ""
+                    text: "Status",
+                    format: "numeric"
                   },
                   {
                     text: ""
@@ -272,7 +258,112 @@
                       text: "2"
                     },
                     {
-                      html: '<strong class="govuk-tag govuk-tag--yellow">Ready to submit</strong>'
+                      html: '<strong class="govuk-tag govuk-tag--yellow">Ready to submit</strong>',
+                      format: "numeric"
+                    },
+                    {
+                      html: "<span class='govuk-!-font-size-16'><a href='delete-vacancy'>Delete</a></span>"
+                    }
+                  ],
+                  [
+                    {
+                      html: "<div class='govuk-checkboxes govuk-checkboxes--small'>
+                              <div class='govuk-checkboxes__item'>
+                                <input class='govuk-checkboxes__input' id='box1' name='box' type='checkbox' value='box1'>
+                                <label class='govuk-label govuk-checkboxes__label' for='box1'></label>
+                              </div>
+                            </div>"
+                    },
+                    {
+                      html: "<b>Part-Time-Groundskeeper-and-Handywoman-and-Kitchen-cleaner-and-Potwasher-and-Dogwalker-and-beekeeper</b> <span class='govuk-!-font-size-14'>(<a href='job-detail'>Edit</a>)</span>"
+                    },
+                    {
+                      text: "2"
+                    },
+                    {
+                      text: "2"
+                    },
+                    {
+                      html: '<strong class="govuk-tag govuk-tag--yellow">Ready to submit</strong>',
+                      format: "numeric"
+                    },
+                    {
+                      html: "<span class='govuk-!-font-size-16'><a href='delete-vacancy'>Delete</a></span>"
+                    }
+                  ],
+                  [
+                    {
+                      html: "<div class='govuk-checkboxes govuk-checkboxes--small'>
+                              <div class='govuk-checkboxes__item'>
+                                <input class='govuk-checkboxes__input' id='box1' name='box' type='checkbox' value='box1'>
+                                <label class='govuk-label govuk-checkboxes__label' for='box1'></label>
+                              </div>
+                            </div>"
+                    },
+                    {
+                      html: "<b>Part-Time-Groundskeeper-and-Handywoman-and-Kitchen-cleaner-and-Potwasher-and-Dogwalker-and-beekeeper</b> <span class='govuk-!-font-size-14'>(<a href='job-detail'>Edit</a>)</span>"
+                    },
+                    {
+                      text: "2"
+                    },
+                    {
+                      text: "2"
+                    },
+                    {
+                      html: '<strong class="govuk-tag govuk-tag--yellow">Ready to submit and take away and finalise and strengthen to 100%</strong>',
+                      format: "numeric"
+                    },
+                    {
+                      html: "<span class='govuk-!-font-size-16'><a href='delete-vacancy'>Delete</a></span>"
+                    }
+                  ],
+                  [
+                    {
+                      html: "<div class='govuk-checkboxes govuk-checkboxes--small'>
+                              <div class='govuk-checkboxes__item'>
+                                <input class='govuk-checkboxes__input' id='box1' name='box' type='checkbox' value='box1'>
+                                <label class='govuk-label govuk-checkboxes__label' for='box1'></label>
+                              </div>
+                            </div>"
+                    },
+                    {
+                      html: "<b>Part-Time-Groundskeeper-and-Handywoman-and-Kitche...</b> <span class='govuk-!-font-size-14'>(<a href='job-detail'>Edit</a>)</span>"
+                    },
+                    {
+                      text: "2"
+                    },
+                    {
+                      text: "2"
+                    },
+                    {
+                      html: '<strong class="govuk-tag govuk-tag--yellow">Ready to submit and take away and finalise and strengthen to 100%</strong>',
+                      format: "numeric"
+                    },
+                    {
+                      html: "<span class='govuk-!-font-size-16'><a href='delete-vacancy'>Delete</a></span>"
+                    }
+                  ],
+                  [
+                    {
+                      html: "<div class='govuk-checkboxes govuk-checkboxes--small'>
+                              <div class='govuk-checkboxes__item'>
+                                <input class='govuk-checkboxes__input' id='box1' name='box' type='checkbox' value='box1'>
+                                <label class='govuk-label govuk-checkboxes__label' for='box1'></label>
+                              </div>
+                            </div>"
+                    },
+                    {
+                      html: "<b>Part-Time-Groundskeeper-and-Handywoman-and-Kitche...</b> <span class='govuk-!-font-size-14'>(<a href='job-detail'>Edit</a>)</span>"
+                    },
+                    {
+                      text: "2"
+                    },
+                    {
+                      text: "2"
+                    },
+                    {
+                      html: '<strong class="govuk-tag govuk-tag--yellow">Ready to submit</strong>',
+                      format: "numeric"
                     },
                     {
                       html: "<span class='govuk-!-font-size-16'><a href='delete-vacancy'>Delete</a></span>"
@@ -313,19 +404,20 @@
                     html: "Date<br>submitted"
                   },
                   {
-                    text: ""
+                    text: "Status",
+                    format: "numeric"
                   }
                 ],
                 rows: [
                   [
                     {
-                      html: "<b><a href='job-summary'>Landscape gardener</a></b>"
+                      html: "<b><a href='job-summary'>Part-Time-Groundskeeper-and-Handywoman-and-Kitchen-cleaner-and-Potwasher-and-Dogwalker-and-beekeeper</a></b>"
                     },
                     {
                       text: "1"
                     },
                     {
-                      text: "Leeds"
+                      text: "Newcastle-upon-Tyne and Northumberland"
                     },
                     {
                       text: "LS2 6YT"
@@ -334,7 +426,7 @@
                       text: "26/03/2021"
                     },
                     {
-                      html: '<strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong>',
+                      html: '<strong class="govuk-tag govuk-tag--yellow">Ready to submit and take away and finalise and strengthen to 100% Awaiting approval</strong>',
                       format: "numeric"
                     }
                   ],
@@ -355,7 +447,7 @@
                       text: "26/03/2021"
                     },
                     {
-                      html: '<strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong>',
+                      html: '<strong class="govuk-tag govuk-tag--red">Withdrawn</strong>',
                       format: "numeric"
                     }
                   ],
@@ -376,7 +468,7 @@
                       text: "26/03/2021"
                     },
                     {
-                      html: '<strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong>',
+                      html: '<strong class="govuk-tag govuk-tag--green">Approved</strong>',
                       format: "numeric"
                     }
                   ],
@@ -397,7 +489,7 @@
                       text: "26/03/2021"
                     },
                     {
-                      html: '<strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong>',
+                      html: '<strong class="govuk-tag govuk-tag--blue">Live</strong>',
                       format: "numeric"
                     }
                   ],
@@ -418,7 +510,7 @@
                       text: "26/03/2021"
                     },
                     {
-                      html: '<strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong>',
+                      html: '<strong class="govuk-tag govuk-tag--purple">Filled</strong>',
                       format: "numeric"
                     }
                   ],
@@ -430,7 +522,7 @@
                       text: "2"
                     },
                     {
-                      text: "Peterborough"
+                      text: "Newcastle-upon-Tyne and Northumberland"
                     },
                     {
                       text: "PE1 1EJ"
@@ -439,7 +531,7 @@
                       text: "26/03/2021"
                     },
                     {
-                      html: '<strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong>',
+                      html: '<strong class="govuk-tag govuk-tag--red">Withdrawn</strong>',
                       format: "numeric"
                     }
                   ],
@@ -460,7 +552,7 @@
                       text: "26/03/2021"
                     },
                     {
-                      html: '<strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong>',
+                      html: '<strong class="govuk-tag govuk-tag--red">Closing Date Passed</strong>',
                       format: "numeric"
                     }
                   ],
@@ -481,7 +573,7 @@
                       text: "26/03/2021"
                     },
                     {
-                      html: '<strong class="govuk-tag govuk-tag--blue">Awaiting approval</strong>',
+                      html: '<strong class="govuk-tag govuk-tag--grey">Suspended</strong>',
                       format: "numeric"
                     }
                   ],
@@ -490,7 +582,7 @@
                       html: "<b><a href='job-summary'>Part-time auditor</a></b>"
                     },
                     {
-                      text: "3"
+                      text: "150"
                     },
                     {
                       text: "Leeds"
@@ -535,8 +627,6 @@
           </div>
         </div>
       </div>
-
-      {% include "includes/get-help-link.html" %}
     </div>
   </div>
 
