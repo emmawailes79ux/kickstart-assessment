@@ -32,14 +32,13 @@
           {
             text: "End date"
           },
+
           {
             text: ""
           },
           {
-            text: ""
-          },
-          {
-            text: ""
+            text: "Status",
+            format: "numeric"
           }
         ],
         rows: [
@@ -56,14 +55,13 @@
             {
               text: "11 Jun 21"
             },
+
             {
-              html: "<a href='pause-placement-check'>Pause</a>"
+              html: "<a href='cancel-placement-check-dw'>End placement early</a>"
             },
             {
-              html: "<a href='cancel-placement-check-dw'>Cancel</a>"
-            },
-            {
-              html: '<strong class="govuk-tag govuk-tag--green">Placed</strong>'
+              html: '<strong class="govuk-tag govuk-tag--green">Placed</strong>',
+              format: "numeric"
             }
           ],
 
@@ -80,14 +78,13 @@
             {
               text: "11 Jun 21"
             },
+
             {
-              html: "<a href='resume-placement-check'>Resume</a>"
+              html: "<a href='cancel-placement-check-fb'>End placement early</a>"
             },
             {
-              html: "<a href='cancel-placement-check-fb'>Cancel</a>"
-            },
-            {
-              html: '<strong class="govuk-tag govuk-tag--yellow">Paused</strong>'
+              html: '<strong class="govuk-tag govuk-tag--red">Awaiting Withdrawal</strong>',
+              format: "numeric"
             }
           ]
 
