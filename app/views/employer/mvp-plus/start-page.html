@@ -26,7 +26,13 @@
         <li>submit your job placement vacancies</li>
       </ul>
 
+
       <p class="govuk-body">You will have received your Grant Agreement offer and the terms and conditions of the grant in the email we sent you.</p>
+
+      {{ govukInsetText({
+      html: "<p class='govuk-body'>The online service is also available in <a href='#'>Welsh (Cymraeg)</a></p>"
+      }) }}
+
 
       {{ govukButton({
         text: "Start now",
