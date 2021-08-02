@@ -1,17 +1,16 @@
 {% extends "layout-header-links.html" %}
+
 {% block pageTitle %}
   Vacancy advert
 {% endblock %}
 
 {% block beforeContent %}
 {% include "includes/beta-banner.html" %}
-<!-- {% include "includes/manage-users-link.html" %} -->
-{% include "includes/language-select.njk" %}
-{% include "includes/header-summary-users.html" %}
-  <!--  {{ govukBackLink({
+  {% include "includes/header-summary.html" %}
+    {{ govukBackLink({
       text: "Back",
-      href: "job-add"
-    }) }}-->
+      href: "job-list-add"
+    }) }}
 {% endblock %}
 
 {% block content %}
@@ -20,6 +19,7 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h2 class="govuk-fieldset__legend--l"><span class='govuk-caption-l'>Add a vacancy</span>Vacancy advert</h2>
+      <p>{{ data['job-title'] }}</p>
 
       {% from "govuk/components/character-count/macro.njk" import govukCharacterCount %}
 
@@ -104,8 +104,6 @@
         text: "Save and continue",
         href: "job-add-1"
       }) }}
-
-      {% include "includes/get-help-link.html" %}
 
     </div>
   </div>

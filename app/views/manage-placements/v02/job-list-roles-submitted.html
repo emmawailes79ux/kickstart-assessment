@@ -1,0 +1,895 @@
+{% extends "layout-header-links.html" %}
+
+{% block pageTitle %}
+  Vacancies
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/beta-banner.html" %}
+    <style>
+      .govuk-table__header, .govuk-table__cell {
+        padding: 8px 24px 8px 0px;
+        vertical-align: middle;
+        }
+      }
+
+      .govuk-table__header, .govuk-table__cell .govuk-checkboxes__label:after {
+        top: 1px;
+        left: 18px;
+        width: 23px;
+        height: 12px;
+      }
+
+      .govuk-checkboxes--small .govuk-checkboxes__item {
+        min-height: 40px !important;
+      }
+
+      .visually-hidden,
+      .visuallyhidden {
+        position: absolute;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        width: 1px;
+        margin: -1px;
+        padding: 0;
+        border: 0;
+      }
+
+      .tabs {
+        margin-bottom: 1.05263em;
+      }
+
+      .tabs-content {
+        clear: both;
+      }
+
+      @media (min-width: 641px) {
+        .tabs-content [role='tabpanel'] {
+          border-top: 1px solid #bfc1c3;
+        }
+      }
+
+      .tabs-content [role='tabpanel'] .tabs-panel-inner {
+        margin-top: 60px;
+      }
+
+      .tabs-content [aria-hidden='true'] {
+        display: none;
+      }
+
+      .tabs-panel-inner:focus {
+        border: 0;
+        outline: none;
+      }
+
+      .tabs-list[role='tablist'] {
+        border-top: 1px solid #bfc1c3;
+        margin: 0;
+      }
+
+      @media (min-width: 641px) {
+        .tabs-list[role='tablist'] {
+          border-top: 0 none;
+        }
+      }
+
+      .tabs-list[role='tablist'] li {
+        font-family: "nta", Arial, sans-serif;
+        font-weight: 400;
+        text-transform: none;
+        font-size: 16px;
+        line-height: 1.25;
+        border-bottom: 1px solid #bfc1c3;
+        margin: 0;
+        list-style-type: none;
+      }
+
+      @media (min-width: 641px) {
+        .tabs-list[role='tablist'] li {
+          font-size: 19px;
+          line-height: 1.31579;
+        }
+      }
+
+      @media (min-width: 641px) {
+        .tabs-list[role='tablist'] li {
+          border-bottom: 0 none;
+          float: left;
+          margin: 0 0 -1px;
+          padding: 0;
+        }
+      }
+
+      .tabs-list[role='tablist'] li a {
+        background-color: #dee0e2;
+        display: block;
+        font-weight: bold;
+        padding: 0.47368em;
+        text-decoration: none;
+      }
+
+      @media (min-width: 641px) {
+        .tabs-list[role='tablist'] li a {
+          border: 0 none;
+          float: left;
+          margin: 0.26316em 0.26316em 0.26316em 0;
+          padding: 0.47368em 1em;
+          text-align: center;
+        }
+      }
+
+      .tabs-list[role='tablist'] li [aria-selected='true'] {
+        background-color: #fff;
+        color: #0b0c0c;
+        cursor: default;
+        text-decoration: none;
+      }
+
+      @media (min-width: 641px) {
+        .tabs-list[role='tablist'] li [aria-selected='true'] {
+          border: 1px solid #bfc1c3;
+          border-bottom: 1px solid transparent;
+          margin-bottom: 0;
+          margin-top: 0;
+          padding: 0.68421em 0.94737em 0.73684em;
+        }
+      }
+  </style>
+    {% include "includes/header-summary.html" %}
+
+  <!-- {{ govukBackLink({
+      text: "Back",
+      href: "app-home"
+    }) }} -->
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <!-- {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+
+      {% set html %}
+        <p class="govuk-notification-banner__heading">
+          'Junior exhibition designer'  added successfully
+        </p>
+
+      {% endset %}
+
+      {{ govukNotificationBanner({
+        html: html,
+        type: 'success'
+      }) }} -->
+
+
+
+      <h1 class="govuk-heading-l">
+        Manage your vacancies
+      </h1>
+
+
+        <p class="govuk-body"><b>You can:<b></p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>add new vacancies</li>
+            <li>view submitted vacancies</li>
+            <li>confirm someone has been placed in a job</li>
+
+            {{ govukInsetText({
+      text: "New vacancies will be sent to DWP for approval before they go live."
+      }) }}
+
+
+      {{ govukButton({
+        text: "Add a vacancy",
+        href: "job-add"
+      }) }}
+
+
+
+      <div class="tabs">
+        <div class="tabs-nav">
+          <ul class="tabs-list">
+            <li>
+              <a href="#tab-1">
+                In progress
+              </a>
+            </li>
+            <li>
+              <a href="#tab-2">
+                Submitted
+              </a>
+            </li>
+            <li>
+              <a href="#tab-3">
+                Live
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div class="tabs-content">
+          <div class="tabs-panel" id="tab-1">
+            <div class="tabs-panel-inner">
+              <script language="JavaScript">
+                function toggle(source) {
+                  checkboxes = document.getElementsByName('box');
+                  for(var i=0, n=checkboxes.length;i<n;i++) {
+                    checkboxes[i].checked = source.checked;
+                  }
+                }
+              </script>
+
+              <div class='govuk-checkboxes govuk-checkboxes--small'>
+                <div class='govuk-checkboxes__item' style='min-height:1;'>
+                  <input class='govuk-checkboxes__input' id='select-all' name='box' type='checkbox' value='select-all'  onClick='toggle(this)'>
+                  <label class='govuk-label govuk-checkboxes__label' for='select-all'>Select all
+                  </label>
+                </div>
+              </div>
+              {{ govukTable({
+                firstCellIsHeader: false,
+                head: [
+                  {
+                    text: ""
+                  },
+                  {
+                    text: "Job title"
+                  },
+                  {
+                    html: "No. of<br>vacancies"
+                  },
+                  {
+                    html: "No. of<br>locations"
+                  },
+                  {
+                    text: "Status",
+                    format: "numeric"
+                  },
+                  {
+                    text: ""
+                  }
+                ],
+                rows: [
+                  [
+                    {
+                      html: "<div class='govuk-checkboxes govuk-checkboxes--small'>
+                              <div class='govuk-checkboxes__item'>
+                                <input class='govuk-checkboxes__input' id='box1' name='box' type='checkbox' value='box1'>
+                                <label class='govuk-label govuk-checkboxes__label' for='box1'></label>
+                              </div>
+                            </div>"
+                    },
+                    {
+                      html: "<b>Junior exhibition designer</b> <span class='govuk-!-font-size-14'>(<a href='job-detail'>Edit</a>)</span>"
+                    },
+                    {
+                      text: "2"
+                    },
+                    {
+                      text: "2"
+                    },
+                    {
+                      html: '<strong class="govuk-tag govuk-tag--yellow">Awaiting submission</strong>',
+                      format: "numeric"
+                    },
+                    {
+                      html: "<span class='govuk-!-font-size-16'><a href='delete-vacancy'>Delete</a></span>"
+                    }
+                  ]
+
+
+                ]
+              }) }}
+
+
+              {{ govukButton({
+                text: "Submit vacancies",
+                href: "submit-vacancy",
+                classes: "govuk-button--secondary"
+              }) }}
+            </div>
+          </div>
+
+          <div class="tabs-panel" id="tab-2">
+            <div class="tabs-panel-inner">
+              {{ govukTable({
+                firstCellIsHeader: false,
+                head: [
+                  {
+                    text: "Job title"
+                  },
+                  {
+                    html: "No. of<br>vacancies"
+                  },
+                  {
+                    html: "Town/city"
+                  },
+                  {
+                    html: "Postcode"
+                  },
+                  {
+                    html: "Date<br>submitted"
+                  },
+                  {
+                    text: ""
+                  }
+                ],
+                rows: [
+                  [
+                    {
+                      html: "<b><a href='job-summary'>Landscape gardener</a></b>"
+                    },
+                    {
+                      text: "1"
+                    },
+                    {
+                      text: "Leeds"
+                    },
+                    {
+                      text: "LS2 6YT"
+                    },
+                    {
+                      text: "26/03/2021"
+                    },
+                    {
+                      html: '<strong class="govuk-tag govuk-tag--yellow">Awaiting approval</strong>',
+                      format: "numeric"
+                    }
+                  ],
+                  [
+                    {
+                      html: "<b><a href='job-summary'>Junior salesperson</a></b>"
+                    },
+                    {
+                      text: "2"
+                    },
+                    {
+                      text: "Birmingham"
+                    },
+                    {
+                      text: "B1 2LG"
+                    },
+                    {
+                      text: "26/03/2021"
+                    },
+                    {
+                      html: '<strong class="govuk-tag govuk-tag--yellow">Awaiting approval</strong>',
+                      format: "numeric"
+                    }
+                  ],
+                  [
+                    {
+                      html: "<b><a href='job-summary'>Junior salesperson</a></b>"
+                    },
+                    {
+                      text: "2"
+                    },
+                    {
+                      text: "Coventry"
+                    },
+                    {
+                      text: "CV1 3JJ"
+                    },
+                    {
+                      text: "26/03/2021"
+                    },
+                    {
+                      html: '<strong class="govuk-tag govuk-tag--yellow">Awaiting approval</strong>',
+                      format: "numeric"
+                    }
+                  ],
+                  [
+                    {
+                      html: "<b><a href='job-summary'>Junior salesperson</a></b>"
+                    },
+                    {
+                      text: "2"
+                    },
+                    {
+                      text: "Leeds"
+                    },
+                    {
+                      text: "LS2 6YT"
+                    },
+                    {
+                      text: "26/03/2021"
+                    },
+                    {
+                      html: '<strong class="govuk-tag govuk-tag--red">Withdrawn</strong>',
+                      format: "numeric"
+                    }
+                  ],
+                  [
+                    {
+                      html: "<b><a href='job-summary'>Junior salesperson</a></b>"
+                    },
+                    {
+                      text: "2"
+                    },
+                    {
+                      text: "Manchester"
+                    },
+                    {
+                      text: "M2 6HD"
+                    },
+                    {
+                      text: "26/03/2021"
+                    },
+                    {
+                      html: '<strong class="govuk-tag govuk-tag--grey">Suspended</strong>',
+                      format: "numeric"
+                    }
+                  ],
+                  [
+                    {
+                      html: "<b><a href='job-summary'>Junior salesperson</a></b>"
+                    },
+                    {
+                      text: "2"
+                    },
+                    {
+                      text: "Peterborough"
+                    },
+                    {
+                      text: "PE1 1EJ"
+                    },
+                    {
+                      text: "26/03/2021"
+                    },
+                    {
+                      html: '<strong class="govuk-tag govuk-tag--red">Referral Limit Reached</strong>',
+                      format: "numeric"
+                    }
+                  ],
+                  [
+                    {
+                      html: "<b><a href='job-summary'>Junior salesperson</a></b>"
+                    },
+                    {
+                      text: "2"
+                    },
+                    {
+                      text: "Rotherham"
+                    },
+                    {
+                      text: "S60 1FD"
+                    },
+                    {
+                      text: "26/03/2021"
+                    },
+                    {
+                      html: '<strong class="govuk-tag govuk-tag--yellow">Awaiting approval</strong>',
+                      format: "numeric"
+                    }
+                  ],
+                  [
+                    {
+                      html: "<b><a href='job-summary'>Junior salesperson</a></b>"
+                    },
+                    {
+                      text: "2"
+                    },
+                    {
+                      text: "Sheffield"
+                    },
+                    {
+                      text: "S1 1XZ"
+                    },
+                    {
+                      text: "26/03/2021"
+                    },
+                    {
+                      html: '<strong class="govuk-tag govuk-tag--yellow">Awaiting approval</strong>',
+                      format: "numeric"
+                    }
+                  ],
+                  [
+                    {
+                      html: "<b><a href='job-summary'>Part-time auditor</a></b>"
+                    },
+                    {
+                      text: "3"
+                    },
+                    {
+                      text: "Leeds"
+                    },
+                    {
+                      text: "LS2 6YT"
+                    },
+                    {
+                      text: "23/03/2021"
+                    },
+                    {
+                      html: '<strong class="govuk-tag govuk-tag--yellow">Awaiting approval</strong>',
+                      format: "numeric"
+                    }
+                  ],
+                  [
+
+                    {
+                      html: ""
+                    },
+                    {
+                      html: "<b>18 / 34</b>"
+                    },
+                    {
+                      text: ""
+                    },
+                    {
+                      text: ""
+                    },
+                    {
+                      text: ""
+                    },
+                    {
+                      text: ""
+                    }
+                  ]
+
+                ]
+              }) }}
+
+            </div>
+          </div>
+
+          <div class="tabs-panel" id="tab-3">
+            <div class="tabs-panel-inner">
+              {{ govukTable({
+                firstCellIsHeader: false,
+                head: [
+                  {
+                    text: "Job title"
+                  },
+                  {
+                    html: "Total <br>Vacancies"
+                  },
+                  {
+                    text: "Placements"
+                  },
+                  {
+                    text: "Referrals"
+
+                  },
+                  {
+                    text: "Location"
+
+                  },
+                  {
+                    text: "Postcode"
+
+                  },
+                  {
+                    text: ""
+
+                  }
+                ],
+                rows: [
+                  [
+                    {
+                    html: "<b><a href='job-detail'>Junior exhibition designer</a></b>"
+                    },
+                    {
+                      text: "3"
+                    },
+                    {
+                      html: "<a href='manage/placements'>2</a>"
+                    },
+                    {
+                      html: "<a href='manage/referrals'>43</a>"
+                    },
+                    {
+                      text: "Leeds"
+
+                    },
+                    {
+                      text: "LS1 3AA"
+                    },
+                    {
+                      html: '<strong class="govuk-tag govuk-tag--blue">Live</strong>',
+                      format: "numeric"
+                    }
+                  ],
+
+                  [
+                    {
+                      html: "<b><a href='#'>Junior exhibition designer</a></b>"
+                    },
+                    {
+                      text: "1"
+                    },
+                    {
+                      text: "0"
+                    },
+                    {
+                      html: "<a href='#'>25</a>"
+                    },
+                    {
+                      text: "Wakefield",
+                      classes: "govuk-!-padding-right-1"
+
+                    },
+                    {
+                      text: "WF1 5AW"
+                    },
+                    {
+                      html: '<strong class="govuk-tag govuk-tag--blue">Live</strong>',
+                      format: "numeric"
+                    }
+                  ],
+
+                  [
+                    {
+                      html: "<b><a href='#'>Admissions assistant</a></b>"
+                    },
+                    {
+                      text: "6"
+                    },
+                    {
+                      html: "<a href='#'>2</a>"
+                    },
+                    {
+                      html: "<a href='#'>45</a>"
+                    },
+                    {
+                      text: "Leeds",
+                      classes: "govuk-!-padding-right-1"
+
+                    },
+                    {
+                      text: "LS1 3AA"
+                    },
+                    {
+                      html: '<strong class="govuk-tag govuk-tag--blue">Live</strong>',
+                      format: "numeric"
+                    }
+                  ],
+
+                  [
+                    {
+                      html: "<b><a href='job-detail-rl'>Junior admin clerk</a></b>"
+                    },
+                    {
+                      text: "3"
+                    },
+                    {
+                      text: "0"
+                    },
+                    {
+                      html: "<a href='#'>49</a>"
+                    },
+                    {
+                      text: "Wakefield"
+
+                    },
+                    {
+                      text: "WF1 5AW"
+                    },
+                    {
+                      html: '<strong class="govuk-tag govuk-tag--red">Referral Limit Reached</strong>',
+                      format: "numeric"
+                    }
+                  ],
+
+                  [
+                    {
+                      html: "<b><a href='job-detail-ejs'>Waiter</a></b>"
+                    },
+                    {
+                      text: "9"
+                    },
+                    {
+                      text: "0"
+                    },
+                    {
+                      html: "<a href='#'>18</a>"
+                    },
+                    {
+                      text: "Leeds"
+
+                    },
+                    {
+                      text: "LS1 3AA"
+                    },
+                    {
+                      html: '<strong class="govuk-tag govuk-tag--blue">Live</strong>',
+                      format: "numeric"
+                    }
+                  ],
+
+                  [
+                    {
+                      html: "<b><a href='#'>Waiter</a></b>"
+                    },
+                    {
+                      text: "5"
+                    },
+                    {
+                      html: "<a href='#'>3</a>"
+                    },
+                    {
+                      html: "<a href='#'>58</a>"
+                    },
+                    {
+                      text: "Wakefield",
+                      classes: "govuk-!-padding-right-1"
+
+                    },
+                    {
+                      text: "WF1 5AW"
+                    },
+                    {
+                      html: '<strong class="govuk-tag govuk-tag--blue">Live</strong>',
+                      format: "numeric"
+                    }
+                  ],
+
+                  [
+                    {
+                      html: "<b><a href='job-detail-bl'>Barista</a></b>"
+                    },
+                    {
+                      text: "2"
+                    },
+                    {
+                      html: "<a href='../v01/manage/placements-barista'>2</a>"
+                    },
+                    {
+                      html: "<a href='#'>27</a>"
+                    },
+                    {
+                      text: "Leeds",
+                      classes: "govuk-!-padding-right-1"
+
+                    },
+                    {
+                      text: "LS1 3AA"
+                    },
+                    {
+                      html: '<strong class="govuk-tag govuk-tag--green">Filled</strong>',
+                      format: "numeric"
+                    }
+                  ],
+
+                  [
+                    {
+                      html: "<b><a href='job-detail-pause'>Barista</a></b>"
+                    },
+                    {
+                      text: "1"
+                    },
+                    {
+                      text: "0"
+                    },
+                    {
+                      html: "<a href='#'>18</a>"
+                    },
+                    {
+                      text: "Wakefield",
+                      classes: "govuk-!-padding-right-1"
+
+                    },
+                    {
+                      text: "WF1 5AW"
+                    },
+                    {
+                      html: '<strong class="govuk-tag govuk-tag--blue">Live</strong>',
+                      format: "numeric"
+                    }
+                  ],
+
+                  [
+                    {
+                      html: "<b><a href='job-detail-cd'>Trainee chef<a></b>"
+                    },
+                    {
+                      text: "1"
+                    },
+                    {
+                      html: "<a href='placements-chef-wakefield'>2</a>"
+                    },
+                    {
+                      html: "<a href='#'>37</a>"
+                    },
+                    {
+                      text: "Wakefield",
+                      classes: "govuk-!-padding-right-1"
+
+                    },
+                    {
+                      text: "WF4 4LG"
+                    },
+                    {
+                      html: '<strong class="govuk-tag govuk-tag--red">Date passed</strong>',
+                      format: "numeric"
+                    }
+                  ],
+
+                  [
+                    {
+                      html: "<b><a href='#'>Trainee chef<a></b>"
+                    },
+                    {
+                      text: "2"
+                    },
+                    {
+                      html: "<a href='#'>1</a>"
+                    },
+                    {
+                      html: "<a href='#'>32</a>"
+                    },
+                    {
+                      text: "Leeds",
+                      classes: "govuk-!-padding-right-1"
+
+                    },
+                    {
+                      text: "LS1 3AA"
+                    },
+                    {
+                      html: '<strong class="govuk-tag govuk-tag--grey">Suspended</strong>',
+                      format: "numeric"
+                    }
+                  ],
+                  [
+
+                    {
+                      html: ""
+                    },
+                    {
+                      html: "<b>33 / 34</b>"
+                    },
+                    {
+                      text: ""
+                    },
+                    {
+                      text: ""
+                    },
+                    {
+                      text: ""
+                    },
+                    {
+                      text: ""
+                    }
+                  ]
+                ]
+              }) }}
+
+
+              <!--<form action="vacancies" id="form" method="post" >
+                {{ govukRadios({
+                    idPrefix: "manage-application",
+                    name: "manage-application",
+                    fieldset: {
+                      legend: {
+                        text: "Manage this application",
+                        isPageHeading: false,
+                        classes: "govuk-fieldset__legend--m  govuk-!-margin-top-9"
+                      }
+                    },
+                    items: [
+                      {
+                        value: "application-pause",
+                        text: "Pause application"
+                      },
+                      {
+                        value: "application-cancel",
+                        text: "Cancel application"
+                      }
+                    ]
+                  }) }}
+
+                  {{ govukButton({
+                    text: "Continue"
+                  }) }}
+                </form>-->
+
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}

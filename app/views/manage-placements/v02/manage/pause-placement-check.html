@@ -1,0 +1,173 @@
+{% extends "layout-header-links.html" %}
+
+{% block pageTitle %}
+    Are you sure you want to pause the placement?
+{% endblock %}
+
+{% block beforeContent %}
+    {% include 'includes/back-button.njk' %}
+{% endblock %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <form id="form" method="post" action="pause-placement-check">
+
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <h1 class="govuk-fieldset__heading">
+                        Are you sure you want to pause this placement?</h1>
+                    </legend>
+
+
+                    {% from "govuk/components/radios/macro.njk" import govukRadios %}
+                    {% from "govuk/components/input/macro.njk" import govukInput %}
+
+      {% set yesHtml %}
+      {{ govukDateInput({
+      id: "pause-date",
+      namePrefix: "pause-date",
+      fieldset: {
+          legend: {
+          text: "When do you want to start pausing David White's employment?",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--s"
+          }
+      },
+      hint: {
+          text: "For example, 12 11 2007"
+      }
+      }) }}
+            <div class="govuk-form-group">
+                <label class="govuk-label govuk-label--s" for="more-detail">
+                    Why do you want to pause it?
+                </label>
+                <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+            </div>
+
+
+      {% endset -%}
+
+      {% set noHtml %}
+
+      {{ govukRadios({
+        id: "pause-date-no",
+        namePrefix: "pause-date-no",
+        fieldset: {
+          legend: {
+            text: "",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--s"
+          }
+        }
+
+      }) }}
+      {% endset -%}
+
+      {{ govukRadios({
+        idPrefix: "placement",
+        name: "placement",
+        fieldset: {
+          legend: {
+            text: "",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: ""
+        },
+        items: [
+          {
+            value: "pause-yes",
+            text: "Yes",
+            conditional: {
+              html: yesHtml
+            }
+          },
+          {
+            value: "pause-no",
+            text: "No",
+            conditional: {
+              html: noHtml
+            }
+          }
+        ]
+      }) }}
+
+              <!-- {% set pauseHtml %}
+
+                    {{ govukDateInput({
+                    id: "pause-date",
+                    namePrefix: "pause-date",
+                    fieldset: {
+                        legend: {
+                        text: "When do you want to pause the job?",
+                        isPageHeading: true,
+                        classes: "govuk-fieldset__legend--s"
+                        }
+                    },
+                    hint: {
+                        text: "For example, 12 11 2007"
+                    }
+                    }) }}
+
+                    {{ govukTextarea({
+                    name: "more-detail",
+                    id: "more-detail",
+                    label: {
+                        text: "Enter a reason for pausing the job",
+                        classes: "govuk-label--s",
+                        isPageHeading: true
+                    }
+                    }) }}
+                {% endset -%}
+
+
+                {{ govukRadios({
+                    classes: "govuk-radios",
+                    idPrefix: "pause-role",
+                    name: "pause-role",
+                    fieldset: {
+                        legend: {
+                            text: "Are you sure you want to pause the job?",
+                            isPageHeading: true,
+                            classes: "govuk-fieldset__legend--l"
+                        }
+                    },
+                    hint: {
+                        text: "This will pause the "
+                    },
+
+                    items: [
+                        {
+                            value: "yes",
+                            text: "Yes, pause the job",
+                            conditional: {
+                                html: pauseHtml
+                            }
+                        },
+                        {
+                            value: "no",
+                            text: "No"
+                        }
+                    ]
+                }) }}
+
+                <button type="submit" class="govuk-button govuk-!-margin-right-1" id="submit">Continue</button>
+
+
+                -->
+
+
+
+                <button type="submit" class="govuk-button govuk-!-margin-right-1" id="submit">Continue</button>
+
+              </form>
+
+
+
+        </div>
+    </div>
+{% endblock %}

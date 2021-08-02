@@ -1,0 +1,109 @@
+{% extends "layout-header-links.html" %}
+
+{% block pageTitle %}
+  Placements
+{% endblock %}
+
+{% block beforeContent %}
+    {% include 'includes/back-button.njk' %}
+{% endblock %}
+
+{% block content %}
+        <span class="govuk-caption-l">Junior Exhibition Designer, Leeds</span>
+        <h1 class="govuk-heading-l">Placements</h1>
+
+        <p class="govuk-!-margin-bottom-3">You have <strong>3</strong> vacancies remaining for this job. You can place someone in this job or you can pause or resume their employment if they’ve already started the job.  </p>
+        <p><a href="referrals-place-in-role">Place someone in this job</a></p>
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+        {{ govukTable({
+        firstCellIsHeader: false,
+        head: [
+          {
+            text: "Name"
+          },
+          {
+            text: "Intro ID"
+          },
+          {
+            text: "Start date"
+          },
+          {
+            text: "End date"
+          },
+
+          {
+            text: ""
+          },
+          {
+            text: "Status",
+            format: "numeric"
+          }
+        ],
+        rows: [
+          [
+            {
+              html: "<a href='placement-detail'>David White</a>"
+            },
+            {
+              text: "AS2457"
+            },
+            {
+              text: "11 Jan 21"
+            },
+            {
+              text: "11 Jun 21"
+            },
+
+            {
+              html: "<a href='cancel-placement-check-dw'>End placement early</a>"
+            },
+            {
+              html: '<strong class="govuk-tag govuk-tag--green">Placed</strong>',
+              format: "numeric"
+            }
+          ],
+
+          [
+            {
+              html: "<a href='placement-detail-paused'>Fiona Brown</a>"
+            },
+            {
+              text: "AS1276"
+            },
+            {
+              text: "11 Jan 21"
+            },
+            {
+              text: "11 Jun 21"
+            },
+
+            {
+              html: "<a href='cancel-placement-check-fb'>End placement early</a>"
+            },
+            {
+              html: '<strong class="govuk-tag govuk-tag--red">Awaiting Withdrawal</strong>',
+              format: "numeric"
+            }
+          ]
+
+
+        ]
+        }) }}
+
+                <div class="govuk-button-group">
+                  <a href="../job-list-roles-submitted" class="govuk-button">Return to vacancies</a>
+                </div>
+
+    <p class="govuk-body govuk-!-margin-top-9"><a href="../app-home">Back to home</a></p>
+
+        <!--<p>
+          <a href="../job-list-roles-submitted" class="govuk-link">Back to home</a>
+          </p>-->
+
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends "layout-header-links.html" %}
+
+{% block pageTitle %}
+    Role cancelled
+{% endblock %}
+
+{% block header %}
+    {{ super() }}
+{% endblock %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <form action="referral-detail" method="post">
+            {{ govukPanel({
+                titleText: "Placement confirmed",
+                html: "Mick Brown, Junior Exhibition Designer, Leeds. <br><br>No date added."
+
+            }) }}
+            <p class="govuk-body"></p>
+
+                 <h2 class="govuk-heading-m">What happens next</h2>
+
+                 <p class="govuk-body">
+                   We will review the placement and stop sending you referrals unless you have more vacancies.
+                 </p>
+
+                 <p class="govuk-body">
+                   You will need to update the start date as soon as you have one.
+                 </p>
+
+                 <h2 class="govuk-heading-m">After a start date has been added</h2>
+
+                 <p class="govuk-body">
+                   We will review the placement and send out a letter to the claimant.
+                 </p>
+                 <p class="govuk-body">
+                   We will contact you to explain when you should start receiving payments.
+                 </p>
+
+            <p class="govuk-body govuk-!-margin-top-6"><a href="placements-updated-no-date">View your placements</a></p>
+
+          <!--  <p>
+                <a href="../app-home" class="govuk-link">Back to home</a>
+            </p>-->
+            <p>
+              <a href="../job-list-roles-submitted" class="govuk-link">Back to home</a>
+              </p>
+        </div>
+    </div>
+{% endblock %}

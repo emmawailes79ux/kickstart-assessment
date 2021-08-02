@@ -1,0 +1,68 @@
+{% extends "layout-header-links.html" %}
+
+{% block pageTitle %}
+  Put vacancy live
+{% endblock %}
+
+{% block beforeContent %}
+    {{ govukBackLink({
+      text: "Back",
+      href: "advert-job-start"
+    }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% set referral %}
+      {{ govukInput({
+        label: {
+          text: "Referral limit",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--m"
+        },
+        classes: "govuk-input--width-5",
+        id: "width-5",
+        name: "width-5"
+        }) }}
+        {% endset -%}
+
+        {{ govukRadios({
+          idPrefix: "contact",
+          name: "contact",
+          fieldset: {
+            legend: {
+              html: "<span class='govuk-caption-l'>Put vacancies live</span>Do you want to set a referral limit?",
+              classes: "govuk-fieldset__legend--l",
+              isPageHeading: true
+            }
+          },
+          hint: {
+            text: "A referral is made when we recommend your job placement to a candidate. This does not guarantee the candidate will put in an application."
+          },
+          items: [
+            {
+              value: "yes",
+              text: "Yes",
+              conditional: {
+                html: referral
+              }
+            },
+            {
+              value: "no",
+              text: "No"
+            }
+          ]
+        }) }}
+
+      {{ govukButton({
+        text: "Continue",
+        href: "vacancy-adverts-notification"
+      }) }}
+
+    </div>
+  </div>
+
+{% endblock %}
