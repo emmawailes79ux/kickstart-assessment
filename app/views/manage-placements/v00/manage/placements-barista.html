@@ -1,0 +1,91 @@
+{% extends "layout-header-links.html" %}
+
+{% block pageTitle %}
+  Placements
+{% endblock %}
+
+{% block beforeContent %}
+    {% include 'includes/back-button.njk' %}
+{% endblock %}
+
+{% block content %}
+        <span class="govuk-caption-l">Barista, Leeds</span>
+        <h1 class="govuk-heading-l">Placements</h1>
+
+        <p class="govuk-!-margin-bottom-3">You have <strong>0</strong> vacancies remaining for this job</p>
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+        {{ govukTable({
+        firstCellIsHeader: false,
+        head: [
+          {
+            text: "Name"
+          },
+          {
+            text: "Intro ID"
+          },
+          {
+            text: "Start date"
+          },
+          {
+            text: "End date"
+          },
+
+          {
+            text: "Status"
+          }
+        ],
+        rows: [
+          [
+            {
+              html: "<a href='placement-detail'>Chris Whyte</a>"
+            },
+            {
+              text: "AS2432"
+            },
+            {
+              text: "14 Jan 21"
+            },
+            {
+              text: "14 Jun 21"
+            },
+
+            {
+              html: '<strong class="govuk-tag govuk-tag--green">Placed</strong>'
+            }
+          ],
+
+          [
+            {
+              html: "<a href='placement-detail'>Chris Fairclough</a>"
+            },
+            {
+              text: "AS1284"
+            },
+            {
+              text: "18 Jan 21"
+            },
+            {
+              text: "18 Jun 21"
+            },
+            {
+              html: '<strong class="govuk-tag govuk-tag--green">Placed</strong>'
+            }
+          ]
+
+
+        ]
+        }) }}
+
+                <div class="govuk-button-group">
+                  <a href="../job-list-roles-submitted" class="govuk-button">Return to vacancies</a>
+                </div>
+
+        <p class="govuk-body govuk-!-margin-top-9"><a href="../app-home">Back to home</a></p>
+
+
+    </div>
+  </div>
+
+{% endblock %}

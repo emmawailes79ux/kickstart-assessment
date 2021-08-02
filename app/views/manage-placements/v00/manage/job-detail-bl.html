@@ -1,0 +1,130 @@
+{% extends "layout-header-links.html" %}
+
+{% block pageTitle %}
+  Job details
+{% endblock %}
+
+{% block beforeContent %}
+    {% include 'includes/back-button.njk' %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-0 govuk-!-padding-bottom-2">Barista, Leeds</h1>
+        <p>Employer job ref: AS-B-Leeds	<br>	</p>
+        <strong class="govuk-tag govuk-tag--green govuk-!-margin-bottom-5">Filled</strong>
+
+
+          {{ govukSummaryList({
+            classes: ' ',
+            rows: [
+              
+              {
+                key: {
+                  text: "Vacancies"
+                },
+                value: {
+                  text: "2"
+                }
+              },
+              {
+                key: {
+                  text: "Placements"
+                },
+                value: {
+                  text: "2"
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "placements-barista",
+                      text: "View",
+                      visuallyHiddenText: "name"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "Referrals"
+                },
+                value: {
+                  text: "43"
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "referrals",
+                      text: "View",
+                      visuallyHiddenText: "name"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "Referral limit"
+                },
+                value: {
+                  text: "50"
+                }
+              },
+               {
+                key: {
+                  text: "Closing date for job applications"
+                },
+                value: {
+                  text: "10 February 2021"
+                }
+              }
+              ]
+          }) }}
+
+
+      <form id="form" method="post" action="job-detail-bl">
+
+       {{ govukRadios({
+          idPrefix: "manage-role-filled",
+          name: "manage-role-filled",
+          fieldset: {
+            legend: {
+              text: "Manage this job",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "manage-placements",
+              text: "View the people you have placed in this job"
+            },
+            {
+              value: "pause-role",
+              text: "Pause job"
+            },
+            {
+              value: "cancel-role",
+              text: "Cancel job"
+            }
+            
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+ 
+
+
+        <p class="govuk-body govuk-!-margin-top-9"><a href="../app-home">Back to home</a></p>
+           
+
+    </div>
+  </div>
+
+{% endblock %}

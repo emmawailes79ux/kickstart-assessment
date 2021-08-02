@@ -1,0 +1,36 @@
+{% extends "layout-header-links.html" %}
+
+{% block pageTitle %}
+  Add your vacancies
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/beta-banner.html" %}
+  {% include "includes/header-summary.html" %}
+    <!-- {{ govukBackLink({
+      text: "Back",
+      href: "app-home"
+    }) }} -->
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">
+        Your vacancies
+      </h1>
+
+      <p class="govuk-body">Add your vacancies and submit them. DWP will approve them before they go live.</p>
+
+      {{ govukButton({
+        text: "Add a vacancy",
+        href: "job-add"
+      }) }}
+
+      <!-- <p class="govuk-body govuk-!-margin-top-9"><a href="app-home">Back to home</a></p> -->
+
+    </div>
+  </div>
+
+{% endblock %}

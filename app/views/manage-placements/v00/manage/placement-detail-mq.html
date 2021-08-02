@@ -1,0 +1,110 @@
+{% extends "layout-header-links.html" %}
+
+{% block pageTitle %}
+  Placement detail
+{% endblock %}
+
+{% block beforeContent %}
+    {% include 'includes/back-button.njk' %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <span class="govuk-caption-l">Trainee Chef, Wakefield</span>
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-0 govuk-!-padding-bottom-2">Michael Quinn</h1>
+
+        <strong class="govuk-tag govuk-tag--green govuk-!-margin-bottom-5">Placed</strong>
+
+          {{ govukSummaryList({
+            classes: ' ',
+            rows: [
+              {
+                key: {
+                  text: "Intro ID"
+                },
+                value: {
+                  text: "AS1242"
+                }
+              },
+              {
+                key: {
+                  text: "Date of referral"
+                },
+                value: {
+                  text: "10 December 2020"
+                }
+              },
+              {
+                key: {
+                  text: "Start date in role"
+                },
+                value: {
+                  text: "11 January 2021"
+                }
+              },
+              {
+                key: {
+                  text: "End date"
+                },
+                value: {
+                  text: "14 June 2021"
+                }
+              },
+              {
+                key: {
+                  text: "Email address"
+                },
+                value: {
+                  text: "michael.quinn@yahoo.com"
+                }
+              },
+              {
+                key: {
+                  text: "Phone number"
+                },
+                value: {
+                  text: "07787147323"
+                }
+              }
+              ]
+          }) }}
+
+    
+      <form id="form" method="post" action="placement-detail-mq">
+
+       {{ govukRadios({
+          idPrefix: "manage-placement",
+          name: "manage-placement",
+          fieldset: {
+            legend: {
+              text: "Manage this placement",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "pause-placement",
+              text: "Pause"
+            },
+            {
+              value: "cancel-placement",
+              text: "Cancel"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+
+        <p class="govuk-body govuk-!-margin-top-9"><a href="../app-home">Back to home</a></p>
+       
+    </div>
+  </div>
+
+{% endblock %}

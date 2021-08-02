@@ -1,0 +1,109 @@
+{% extends "layout-header-links.html" %}
+
+{% block pageTitle %}
+  Placements
+{% endblock %}
+
+{% block beforeContent %}
+    {% include 'includes/back-button.njk' %}
+{% endblock %}
+
+{% block content %}
+
+        {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+
+        {% set html %}
+          <p class="govuk-notification-banner__heading">
+            The placement for 'Fiona Brown' has been resumed
+          </p>
+
+        {% endset %}
+
+        {{ govukNotificationBanner({
+          html: html,
+          type: 'success'
+        }) }}
+
+        <span class="govuk-caption-l">Junior Exhibition Designer, Leeds</span>
+        <h1 class="govuk-heading-l">Placements</h1>
+
+        <p class="govuk-!-margin-bottom-3">You have <strong>3</strong> vacancies remaining for this job</p>
+        <p><a href="referrals-place-in-role">Place someone in this job</a></p>
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+        {{ govukTable({
+        firstCellIsHeader: false,
+        head: [
+          {
+            text: "Name"
+          },
+          {
+            text: "Intro ID"
+          },
+          {
+            text: "Start date"
+          },
+          {
+            text: "End date"
+          },
+
+          {
+            text: "Status"
+          }
+        ],
+        rows: [
+          [
+            {
+              html: "<a href='placement-detail'>David White</a>"
+            },
+            {
+              text: "AS2457"
+            },
+            {
+              text: "11 Jan 21"
+            },
+            {
+              text: "11 Jun 21"
+            },
+
+            {
+              html: '<strong class="govuk-tag govuk-tag--green">Placed</strong>'
+            }
+          ],
+
+          [
+            {
+              html: "<a href='placement-detail-paused'>Fiona Brown</a>"
+            },
+            {
+              text: "AS1276"
+            },
+            {
+              text: "11 Jan 21"
+            },
+            {
+              text: "11 Jun 21"
+            },
+
+            {
+              html: '<strong class="govuk-tag govuk-tag--green">Placed</strong>'
+            }
+          ]
+
+
+        ]
+        }) }}
+
+
+                <div class="govuk-button-group">
+                  <a href="../job-list-roles-submitted" class="govuk-button">Return to vacancies</a>
+                </div>
+
+        <p class="govuk-body govuk-!-margin-top-9"><a href="../app-home">Back to home</a></p>
+
+
+    </div>
+  </div>
+
+{% endblock %}

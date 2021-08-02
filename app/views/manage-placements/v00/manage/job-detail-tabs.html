@@ -1,0 +1,100 @@
+{% extends "layout-header-links.html" %}
+
+{% block pageTitle %}
+  Job details
+{% endblock %}
+
+{% block beforeContent %}
+    {% include 'includes/back-button.njk' %}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-l govuk-!-margin-bottom-0 govuk-!-padding-bottom-2">Junior Exhibition Designer, Leeds</h1>
+        <p>Employer job ref: AS-JED-Leeds	<br>	</p>
+        <strong class="govuk-tag govuk-tag--blue govuk-!-margin-bottom-5">Live</strong>
+
+    </div>
+  </div>
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+        {% set detailsHtml %}
+         {% include 'includes/job-details.njk' %}
+        {% endset -%}
+
+        {% set referralsHtml %}
+         {% include 'includes/referrals.njk' %}
+        {% endset -%}
+
+        {% set placementsHtml %}
+          {% include 'includes/placements.njk' %}
+        {% endset -%}
+
+
+
+        {{ govukTabs({
+          items: [
+            {
+              label: "Manage this job",
+              id: "details",
+              panel: {
+                html: detailsHtml
+              }
+            },
+            {
+              label: "Referrals",
+              id: "referrals",
+              panel: {
+                html: referralsHtml
+              }
+            },
+            {
+              label: "Placements",
+              id: "placements",
+              panel: {
+                html: placementsHtml
+              }
+            }
+          ]
+        }) }}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+          
+ 
+
+
+        <p class="govuk-body govuk-!-margin-top-9"><a href="../app-home">Back to home</a></p>
+           
+
+    </div>
+  </div>
+
+{% endblock %}
