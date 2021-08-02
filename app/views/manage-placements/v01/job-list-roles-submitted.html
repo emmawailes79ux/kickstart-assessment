@@ -174,7 +174,7 @@
           <ul class="govuk-list govuk-list--bullet">
             <li>add new vacancies</li>
             <li>view submitted vacancies</li>
-            <li>confirm someone has been placed in a job</li>
+            <li>place someone in a job</li>
 
             {{ govukInsetText({
       text: "New vacancies will be sent to DWP for approval before they go live."
@@ -244,8 +244,7 @@
                     html: "No. of<br>locations"
                   },
                   {
-                    text: "Status",
-                    format: "numeric"
+                    text: ""
                   },
                   {
                     text: ""
@@ -271,7 +270,7 @@
                       text: "2"
                     },
                     {
-                      html: '<strong class="govuk-tag govuk-tag--yellow">Awaiting submission</strong>',
+                      html: '<strong class="govuk-tag govuk-tag--yellow">Ready to submit</strong>',
                       format: "numeric"
                     },
                     {
@@ -376,7 +375,7 @@
                       text: "26/03/2021"
                     },
                     {
-                      html: '<strong class="govuk-tag govuk-tag--yellow">Awaiting approval</strong>',
+                      html: '<strong class="govuk-tag govuk-tag--green">Approved</strong>',
                       format: "numeric"
                     }
                   ],
@@ -397,7 +396,7 @@
                       text: "26/03/2021"
                     },
                     {
-                      html: '<strong class="govuk-tag govuk-tag--red">Withdrawn</strong>',
+                      html: '<strong class="govuk-tag govuk-tag--red">Filled</strong>',
                       format: "numeric"
                     }
                   ],
@@ -418,7 +417,7 @@
                       text: "26/03/2021"
                     },
                     {
-                      html: '<strong class="govuk-tag govuk-tag--grey">Suspended</strong>',
+                      html: '<strong class="govuk-tag govuk-tag--purple">Filled</strong>',
                       format: "numeric"
                     }
                   ],
@@ -460,7 +459,7 @@
                       text: "26/03/2021"
                     },
                     {
-                      html: '<strong class="govuk-tag govuk-tag--yellow">Awaiting approval</strong>',
+                      html: '<strong class="govuk-tag govuk-tag--red">Closing Date Passed</strong>',
                       format: "numeric"
                     }
                   ],
@@ -481,7 +480,7 @@
                       text: "26/03/2021"
                     },
                     {
-                      html: '<strong class="govuk-tag govuk-tag--yellow">Awaiting approval</strong>',
+                      html: '<strong class="govuk-tag govuk-tag--grey">Suspended</strong>',
                       format: "numeric"
                     }
                   ],
@@ -502,7 +501,7 @@
                       text: "23/03/2021"
                     },
                     {
-                      html: '<strong class="govuk-tag govuk-tag--yellow">Awaiting approval</strong>',
+                      html: '<strong class="govuk-tag govuk-tag--green">Approved</strong>',
                       format: "numeric"
                     }
                   ],
