@@ -1,0 +1,108 @@
+{% extends "layout-header-links.html" %}
+
+{% block pageTitle %}
+    Are you sure you want to delete this location?
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/beta-banner.html" %}
+  {% include "includes/header-summary.html" %}
+    {% include 'includes/back-button.njk' %}
+{% endblock %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+                <form id="form" method="post" action="job-add-location-list">
+
+                  {{ govukRadios({
+                  classes: "govuk-radios--inline",
+                  idPrefix: "delete-vacancy",
+                  name: "delete-vacancy",
+                  fieldset: {
+                    legend: {
+                      text: "Are you sure you want to delete this location?",
+                      isPageHeading: true,
+                      classes: "govuk-fieldset__legend--l"
+                    }
+                  },
+                  hint: {
+                    text: "You will not be able to undo it."
+                  },
+                  items: [
+                    {
+                      value: "yes",
+                      text: "Yes"
+                    },
+                    {
+                      value: "no",
+                      text: "No"
+                    }
+                  ]
+                  }) }}
+
+                  <button type="submit" class="govuk-button govuk-!-margin-right-1" id="submit">Continue</button>
+
+              </form>
+
+
+            </div>
+          </div>
+
+
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-full">
+                {{ govukTable({
+                  head: [
+                  {
+                    text: "Town or city",
+                    attributes: {
+                      "aria-sort": "ascending"
+                    }
+                  },
+                  {
+                    text: "Postcode",
+                    attributes: {
+                      "aria-sort": "none"
+                    }
+                  },
+                  {
+                    html: "No. of<br>vacancies",
+                    attributes: {
+                      "aria-sort": "none"
+                    }
+                  },
+                  {
+                    html: "Advertising<br>start date",
+                    attributes: {
+                      "aria-sort": "none"
+                    }
+                  }
+                  ],
+                  rows: [
+                  [
+                    {
+                      text: "Manchester"
+                    },
+                    {
+                      text: "M3 1SH",
+                      attributes: {
+                        "data-sort-value": "M3 1SH"
+                      }
+                    },
+                    {
+                      text: "1"
+                    },
+                    {
+                      text: "15/07/21"
+                    }
+                  ]
+                  ]
+                  }) }}
+              </div>
+            </div>
+
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,113 @@
+{% extends "layout-header-links.html" %}
+{% block pageTitle %}
+  Vacancy advert
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/beta-banner.html" %}
+<!-- {% include "includes/manage-users-link.html" %} -->
+{% include "includes/language-select.njk" %}
+{% include "includes/header-summary-users.html" %}
+  <!--  {{ govukBackLink({
+      text: "Back",
+      href: "job-add"
+    }) }}-->
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h2 class="govuk-fieldset__legend--l"><span class='govuk-caption-l'>Add a vacancy</span>Vacancy advert</h2>
+
+      {% from "govuk/components/character-count/macro.njk" import govukCharacterCount %}
+
+      {{ govukCharacterCount({
+        name: "more-detail",
+        id: "more-detail",
+        maxlength: 3000,
+        label: {
+          text: "About the job",
+          classes: "govuk-label--m",
+          isPageHeading: true
+        },
+        hint: {
+          text: "Enter a brief description of the job and duties."
+        }
+      }) }}
+
+      {{ govukCharacterCount({
+       name: "skills",
+       id: "skills",
+       maxlength: 2000,
+       label: {
+         text: "What are you looking for?",
+         classes: "govuk-label--m",
+         isPageHeading: false
+       },
+       hint: {
+         text: "List the skills, experience and qualifications needed to do this job, if relevant."
+       }
+     }) }}
+
+      {{ govukCharacterCount({
+        name: "about-us",
+        id: "about-us",
+        maxlength: 1000,
+        label: {
+          text: "Tell us about your company",
+          classes: "govuk-label--m",
+          isPageHeading: true
+        },
+        hint: {
+          text: "This is your chance to sell your company to the applicant."
+        }
+      }) }}
+
+      {{ govukCharacterCount({
+        name: "additional-support",
+        id: "additional-support",
+        maxlength: 2000,
+        label: {
+          text: "What can you offer the applicant?",
+          classes: "govuk-label--m",
+          isPageHeading: false
+        },
+        hint: {
+          text: "What support will you provide to help their employability? For example, coaching and mentoring."
+        }
+      }) }}
+
+
+      {{ govukCharacterCount({
+        name: "how-apply",
+        id: "how-apply",
+        maxlength: 1000,
+        label: {
+          text: "How to apply",
+          classes: "govuk-label--m",
+          isPageHeading: false
+        },
+        hint: {
+          text: "For example, whether a CV or covering letter are needed, forms to fill in, and who the application needs to be sent to."
+        }
+      }) }}
+
+
+
+
+
+    <br>
+
+      {{ govukButton({
+        text: "Save and continue",
+        href: "job-add-1"
+      }) }}
+
+      {% include "includes/get-help-link.html" %}
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends "layout-footer.html" %}
+
+{% block pageTitle %}
+  Enter the code from your authenticator app
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/beta-banner.html" %}
+
+{% endblock %}
+
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <form action="job-list-empty-tabs" method="post">
+                <h1 class="govuk-heading-l">Enter the code from your authenticator app</h1>
+
+                <p class="govuk-body">You'll need to enter the one-time code you see in your authenticator app as soon as possible.</p>
+
+                <div class="govuk-form-group govuk-!-margin-top-6">
+                    <label class="govuk-label" for="2fa-code">
+                        One-time code
+                    </label>
+                    <input class="govuk-input govuk-input--width-10" id="signin-code" name="signin-code" type="text">
+                </div>
+
+                {{ govukButton({
+                    text: "Continue"
+                }) }}
+
+
+
+                <!-- <p><a href="account-recovery/access" class="govuk-link">I cannot access the mobile phone number I use to sign in</a></p> -->
+            </form>
+
+            {% include "includes/get-help-link.html" %}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,305 @@
+{% extends "layout-header-links.html" %}
+
+{% block pageTitle %}
+  Vacancy summary
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/beta-banner.html" %}
+{% include "includes/language-select.njk" %}
+<!-- {% include "includes/manage-users-link.html" %} -->
+{% include "includes/header-summary-users.html" %}
+    {{ govukBackLink({
+      text: "Yn ôl",
+      href: "job-add-location-2"
+    }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">Crynodeb o swyddi gwag</h1>
+
+      {{ govukSummaryList({
+              classes: 'govuk-!-margin-bottom-9',
+              rows: [
+                {
+                  key: {
+                    text: "Teitl swydd"
+                  },
+                  value: {
+                    html: "Dylunydd Arddangosfa Iau"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "job-add",
+                        text: "Newid",
+                        visuallyHiddenText: "role"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "Job type"
+                  },
+                  value: {
+                    text: "Travel & Tourism"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "job-add",
+                        text: "Newid",
+                        visuallyHiddenText: "sector"
+                      }
+                    ]
+                  }
+                }
+                ]
+            }) }}
+                <h2 class="govuk-heading-m">Hysbyseb swydd wag</h2>
+                 {{ govukSummaryList({
+              classes: 'govuk-!-margin-bottom-9',
+              rows: [
+                {
+                  key: {
+                    text: "About the job"
+                  },
+                  value: {
+                    text: "Eich rôl fel Dylunydd Arddangosfa Iau yn bennaf fydd cefnogi'r curaduron a'r dylunwyr blaenllaw yn Oriel Gelf Leeds a Sefydliad Henry Moore. Dyma gyfle prin i gael mynediad i un o orielau celf mwyaf blaenllaw'r wlad gyda disgwyliad y byddwch chi'n dysgu yn y swydd. Mae sgiliau coprwyr blaenorol yn angenrheidiol gan y bydd rhywfaint o fewnbynnu data. Mae'r rôl hon yn debygol o fod yn hynod drefnus ar ôl."
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "job-add-b",
+                        text: "Newid",
+                        visuallyHiddenText: "vacancy summary"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "What are you looking for?"
+                  },
+                  value: {
+                    text: "Communication, time keeping, basic computer skills, an appreciation and understanding of art."
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "job-add-b",
+                        text: "Newid",
+                        visuallyHiddenText: "skills"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "Tell us about your company"
+                  },
+                  value: {
+                    text: "Market leader in immersive art anc cultural exhibitions, Arts and Sculpture are at the forefront of the scene in the UK."
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "job-add-b",
+                        text: "Newid",
+                        visuallyHiddenText: "company info"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "What can you offer the applicant?"
+                  },
+                  value: {
+                    text: "We train and support all our employees to grow confidence and knowledge in the world of art and sculpture."
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "job-add-b",
+                        text: "Newid",
+                        visuallyHiddenText: "what you can offer"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "How to apply"
+                  },
+                  value: {
+                    text: "CVs emailed to s.almarez@leedsartgallery.co.uk"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "job-add-b",
+                        text: "Newid",
+                        visuallyHiddenText: "how to apply"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }) }}
+            <h2 class="govuk-heading-m">Hours and pay</h2>
+            {{ govukSummaryList({
+              classes: 'govuk-!-margin-bottom-9',
+              rows: [
+                {
+                  key: {
+                    text: "Total hours per week"
+                  },
+                  value: {
+                    text: "25"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "job-add-1",
+                        text: "Newid",
+                        visuallyHiddenText: "total hours"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "Days or working patterns"
+                  },
+                  value: {
+                    text: "Monday, Tuesday, Wednesday, Friday, Saturday"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "job-add-1",
+                        text: "Newid",
+                        visuallyHiddenText: "days"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "Hours"
+                  },
+                  value: {
+                    text: "Flexible"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "job-add-1",
+                        text: "Newid",
+                        visuallyHiddenText: "hours"
+                      }
+                    ]
+                  }
+                },
+                {
+                  key: {
+                    text: "Hourly pay"
+                  },
+                  value: {
+                    text: "National minimum wage"
+                  },
+                  actions: {
+                    items: [
+                      {
+                        href: "job-add-1",
+                        text: "Newid",
+                        visuallyHiddenText: "pay"
+                      }
+                    ]
+                  }
+                }
+              ]
+            }) }}
+
+      <h2 class="govuk-heading-m">Locations</h2>
+
+      {{ govukTable({
+        head: [
+        {
+          text: "Town or city",
+          attributes: {
+            "aria-sort": "ascending"
+          }
+        },
+        {
+          text: "Postcode",
+          attributes: {
+            "aria-sort": "none"
+          }
+        },
+        {
+          html: "No. of<br>vacancies",
+          attributes: {
+            "aria-sort": "none"
+          }
+        },
+        {
+          html: "Advertising<br>start date",
+          attributes: {
+            "aria-sort": "none"
+          }
+        }
+        ],
+        rows: [
+        [
+          {
+            text: "Leeds"
+          },
+          {
+            text: "LS1 9JA",
+            attributes: {
+              "data-sort-value": "IV1 1BA"
+            }
+          },
+          {
+            text: "1"
+          },
+          {
+            text: "15/07/21"
+          }
+        ],
+        [
+          {
+            text: "Manchester"
+          },
+          {
+            text: "M3 1SH",
+            attributes: {
+              "data-sort-value": "MK10 1SH"
+            }
+          },
+          {
+            text: "1"
+          },
+          {
+            text: "15/07/21"
+          }
+        ]
+        ]
+        }) }}
+
+      <p><a href="job-add-location-list" id="submit">Rheoli lleoliadau</a></p>
+      <p><a href="job-list-role-added" class="govuk-button">Arbed a pharhau</a></p>
+
+      {% include "includes/get-help-link.html" %}
+
+    </div>
+    </div>
+
+
+
+{% endblock %}
