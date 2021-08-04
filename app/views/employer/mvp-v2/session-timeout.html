@@ -1,7 +1,7 @@
 {% extends "layout-footer.html" %}
 
 {% block pageTitle %}
-  Sorry, the service is unavailable
+  Session timed out
 {% endblock %}
 
 {% block beforeContent %}
@@ -12,16 +12,15 @@
   }
   </script>
   <a class="govuk-back-link" onclick="goBack()" style="text-decoration: underline; cursor: pointer;">Back</a>
+
 {% endblock %}
 
 {% block content %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-l">Sorry, the service is unavailable</h1>
-      <p class="govuk-body">
-        You will be able to use the service later.
-      </p>
+      <h1 class="govuk-heading-l">Sorry, your session has timed out</h1>
+      <p class="govuk-body">To use this service you need to <a href="sign-in">sign in.</a></p>
     </div>
   </div>
 
