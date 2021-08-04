@@ -6,10 +6,14 @@
 
 {% block beforeContent %}
   {% include "includes/beta-banner.html" %}
-  {% include "includes/language-select.njk" %}
-  <!-- {% include "includes/manage-users-link.html" %} -->
-  {% include "includes/header-summary-users.html" %}
-  <!--  {{ govukBackLink({
+  {% include "includes/header-summary.html" %}
+  <script>
+    function goBack() {
+      window.history.back();
+    }
+    </script>
+    <a class="govuk-back-link" onclick="goBack()" style="text-decoration: underline; cursor: pointer;">Back</a>
+    <!--  {{ govukBackLink({
       text: "Back",
       href: "job-add-location-2"
     }) }}-->
@@ -18,7 +22,7 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-l">Location details for Junior Exhibition Designer</h1>
+      <h1 class="govuk-heading-l">Vacancy location for Junior Exhibition Designer</h1>
       <!-- <p class="govuk-body">You can add the same vacancy to more than one location.</p> -->
 
 
@@ -154,8 +158,7 @@ name: "address-postcode"
     }
   ]
 }) }}
-<h2 class="govuk-heading-l" style="margin-top: 45px;">Vacancy details</h2>
-
+<h2 class="govuk-heading-l" style="margin-top: 45px;">Location details</h2>
 
 {% set referral %}
 {{ govukInput({
@@ -238,19 +241,6 @@ name: "address-postcode"
     id: "confirm-email",
     name: "confirm-email"
   }) }}
-
-
-  <h3 class="govuk-heading-m">Add a reference for this vacancy </h3>
-
-  {{ govukInput({
-    hint: {
-      text: "This might be a reference your company use to refer to this vacancy (optional)"
-    },
-    classes: "govuk-input--width-20",
-    id: "employerjobreference",
-    name: "Employer Job Reference"
-  }) }}
-
 
   {% set advertisingDate %}
   {{ govukDateInput({
@@ -343,8 +333,6 @@ name: "address-postcode"
    }) }}
 
    <a href="job-add-location-list" type="submit" class="govuk-button govuk-!-margin-right-1" id="submit">Add location</a>
-
-   {% include "includes/get-help-link.html" %}
 </div>
 </div>
 <!-- nasty bit end -->
