@@ -174,7 +174,7 @@
           <ul class="govuk-list govuk-list--bullet">
             <li>add new vacancies</li>
             <li>view submitted vacancies</li>
-            <li>confirm someone has been placed in a job</li>
+            <li>confirm someone has been placed in a vacancy</li>
 
             {{ govukInsetText({
       text: "New vacancies will be sent to DWP for approval before they go live."
@@ -271,7 +271,7 @@
                       text: "2"
                     },
                     {
-                      html: '<strong class="govuk-tag govuk-tag--yellow">Awaiting submission</strong>',
+                      html: '<strong class="govuk-tag govuk-tag--yellow">Ready to submit</strong>',
                       format: "numeric"
                     },
                     {
@@ -546,7 +546,7 @@
                     html: "Total <br>Vacancies"
                   },
                   {
-                    text: "Placements"
+                    html: "Filled <br> Vacancies"
                   },
                   {
                     text: "Referrals"
