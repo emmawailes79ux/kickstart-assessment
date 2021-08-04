@@ -1,0 +1,94 @@
+{% extends "layout-header-links.html" %}
+
+{% block pageTitle %}
+    Submit these vacancies to the Kickstart Scheme
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/beta-banner.html" %}
+{% include "includes/language-select.njk" %}
+<!-- {% include "includes/manage-users-link.html" %} -->
+{% include "includes/header-summary-users.html" %}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+  <h2 class="govuk-error-summary__title" id="error-summary-title">
+    There is a problem
+  </h2>
+  <div class="govuk-error-summary__body">
+    <ul class="govuk-list govuk-error-summary__list">
+      <li>
+        <a href="job-add-location-list-2">Expected start date - This needs to be more than 30 days in the future. </a>
+      </li>
+      <li>
+        <a href="job-add-location-list-2">Closing date - This needs to be more than 60 days in the future. </a>
+      </li>
+    </ul>
+  </div>
+</div>
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+          <h1 class="govuk-heading-l">Submit these vacancies to the Kickstart Scheme</h1>
+          <p class="govuk-body">You will not be able to make any more changes after submitting these vacancies.</p>
+            {{ govukTable({
+              firstCellIsHeader: false,
+              head: [
+                {
+                  text: "Job title"
+                },
+                {
+                  html: "No. of vacancies"
+                },
+                {
+                  html: "No. of locations"
+                },
+                {
+                  text: "Expected Start Date"
+                },
+                {
+                  text: "",
+                  format: "numeric"
+                }
+              ],
+              rows: [
+                [
+                  {
+                    html: "<b>Landscape gardner</b>"
+                  },
+                  {
+                    text: "1"
+                  },
+                  {
+                    text: "1"
+                  },
+                  {
+                    text: "15/07/2021"
+                  }
+                ],
+                [
+                  {
+                    html: "<b>Junior salesperson</b>"
+                  },
+                  {
+                    text: "14"
+                  },
+                  {
+                    text: "7"
+                  },
+                  {
+                    text: "15/07/2021"
+                  }
+                ]
+              ]
+            }) }}
+
+                  <p class="govuk-body"><a href="submit-confirm" class="govuk-button govuk-!-margin-right-1" id="submit">Submit vacancies</a></p>
+                  <p class="govuk-body"><a href="job-list-role-deleted">Back to vacancies</a></p>
+
+                {% include "includes/get-help-link.html" %}
+              </div>
+            </div>
+{% endblock %}
