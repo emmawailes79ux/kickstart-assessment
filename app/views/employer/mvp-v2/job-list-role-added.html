@@ -6,8 +6,12 @@
 
 {% block beforeContent %}
 {% include "includes/beta-banner.html" %}
-{% include "includes/language-select.njk" %}
-<!-- {% include "includes/manage-users-link.html" %} -->
+<script>
+    function goBack() {
+      window.history.back();
+    }
+    </script>
+    <a class="govuk-back-link" onclick="goBack()" style="text-decoration: underline; cursor: pointer;">Back</a>
 {% include "includes/header-summary-users.html" %}
     <style>
       .govuk-table__header, .govuk-table__cell {
