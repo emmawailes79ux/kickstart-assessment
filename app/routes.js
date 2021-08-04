@@ -170,6 +170,18 @@ router.post('/employer/mvp-v3/kc-choose', function (req, res) {
   }
 });
 
+////// mvp-v2 //////////////////////////////////
+
+router.post('/employer/mvp-v2/kc-choose', function (req, res) {
+  const editChoice = req.session.data['2fa-choose']
+
+  if (editChoice === 'authenticator-app') {
+    res.redirect('/employer/mvp-v2/kc-2fa')
+  } else if (editChoice === 'mobile-phone') {
+    res.redirect('/employer/mvp-v2/kc-phone')
+  }
+});
+
 ////// mvp+ //////////////////////////////////
 
 router.post('/employer/mvp-plus/kc-choose', function (req, res) {
