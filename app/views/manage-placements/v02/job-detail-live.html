@@ -16,8 +16,68 @@
 {% block content %}
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-      <h1 class="govuk-heading-l">Vacancy summary</h1>
 
+              <h1 class="govuk-heading-l govuk-!-margin-bottom-0 govuk-!-padding-bottom-2">Junior Exhibition Designer, Leeds</h1>
+              <p>Employer job ref: AS-JED-Leeds	<br>	</p>
+              <strong class="govuk-tag govuk-tag--blue govuk-!-margin-bottom-5">Live</strong>
+
+                      {{ govukSummaryList({
+                        classes: ' ',
+                        rows: [
+
+                          {
+                            key: {
+                              text: "Vacancies"
+                            },
+                            value: {
+                              text: "3"
+                            }
+                          },
+                          {
+                            key: {
+                              text: "Filled Vacancies"
+                            },
+                            value: {
+                              text: "2"
+                            },
+                            actions: {
+                              items: [
+                                {
+                                  href: "../v02/manage/placements",
+                                  text: "View",
+                                  visuallyHiddenText: "name"
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            key: {
+                              text: "Referrals"
+                            },
+                            value: {
+                              text: "43"
+                            },
+                            actions: {
+                              items: [
+                                {
+                                  href: "../v02/manage/referrals",
+                                  text: "View",
+                                  visuallyHiddenText: "name"
+                                }
+                              ]
+                            }
+                          },
+                          {
+                            key: {
+                              text: "Referral limit"
+                            },
+                            value: {
+                              text: "50"
+                            }
+                          }
+
+                          ]
+                      }) }}
 
             {{ govukSummaryList({
                     classes: 'govuk-!-margin-bottom-9',
@@ -292,9 +352,8 @@
         ]
         }) }}
 
-      <p><a href="job-add-location-list" id="submit">Manage locations</a></p>
 
-      <p><a href="job-list-role-added" class="govuk-button">Save and continue</a></p>
+      <p><a href="job-list-role-added" class="govuk-button">Manage vacancies</a></p>
 
     </div>
     </div>
