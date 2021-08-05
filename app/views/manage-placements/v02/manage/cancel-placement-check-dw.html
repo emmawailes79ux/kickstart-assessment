@@ -17,7 +17,7 @@
                     <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
                         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                         <h1 class="govuk-fieldset__heading">
-                            Are you sure you want to end the placement early for David White?
+                            Are you sure you want to withdraw the placement early for David White?
                         </h1>
                         </legend>
 
@@ -37,7 +37,7 @@
                     namePrefix: "cancel-date-yes",
                     fieldset: {
                         legend: {
-                        text: "When do you want end the placement?",
+                        text: "When do you want withdraw the placement?",
                         isPageHeading: true,
                         classes: "govuk-fieldset__legend--s"
                         }
@@ -51,7 +51,9 @@
                                 id: "sort",
                                 name: "sort",
                                 label: {
-                                text: "Select a reason for ending the placement early"
+                                text: "Select a reason for withdrawing the placement early",
+                                classes: "govuk-label--s",
+                                  isPageHeading: true
                                 },
                                       items: [
                                         {
@@ -79,8 +81,17 @@
                                         ]
                                         }) }}
 
+                                        <div class="govuk-form-group">
 
-
+    <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--s" for="more-detail">
+        Provide more detail if required
+      </label>
+    </h1>
+    <div id="more-detail-hint" class="govuk-hint">
+      Do not include personal or financial information.
+    </div>
+    <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+  </div>
                     {% endset -%}
 
                     {% set noHtml %}
@@ -115,7 +126,7 @@
                       items: [
                         {
                           value: "cancel-yes",
-                          text: "Yes, cancel the placement and end their employment early",
+                          text: "Yes, wihthdraw the placement and end their employment early",
                           conditional: {
                             html: yesHtml
                           }

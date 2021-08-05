@@ -18,15 +18,15 @@
                 <div class="govuk-form-group">
                     <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
                         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                        <h1 class="govuk-fieldset__heading">
-                            Are you sure you want to cancel the placement for Fiona Brown?
-                        </h1>
-                        </legend>
+                          <h1 class="govuk-fieldset__heading">
+                              Are you sure you want to withdraw the placement early for Fiona Brown?
+                          </h1>
+                          </legend>
 
-                        {{ govukWarningText({
-                        text: "This action cannot be undone.",
-                        iconFallbackText: "Warning"
-                        }) }}
+                          {{ govukWarningText({
+                          text: "There are still 4 months left of this placement. This action cannot be undone once its actioned by DWP.",
+                          iconFallbackText: "Warning"
+                          }) }}
 
 
                         <form id="form" method="post" action="cancel-placement-fb">
@@ -36,7 +36,7 @@
                                           namePrefix: "cancel-date-yes",
                                           fieldset: {
                                               legend: {
-                                              text: "When do you want cancel the job?",
+                                              text: "When do you want withdraw the placement?",
                                               isPageHeading: true,
                                               classes: "govuk-fieldset__legend--s"
                                               }
@@ -45,7 +45,6 @@
                                               text: "For example, 12 11 2007"
                                           }
                                           }) }}
-
 
                                                     {{ govukSelect({
                                                       classes: "govuk-combo-width-25",
@@ -79,8 +78,6 @@
 
                                                       ]
                                                     }) }}
-
-
 
                                           {% endset -%}
 

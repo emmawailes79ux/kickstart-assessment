@@ -45,9 +45,9 @@ router.post('/manage-placements/v01/manage/pause-placement-check', function (req
 router.post('/manage-placements/v01/manage/referral-detail', function (req, res) {
   const editChoice = req.session.data['placement']
   if (editChoice === 'yes') {
-    res.redirect('/manage-placements/v01/manage/placement-confirm')
+    res.redirect('/manage-placements/v02/manage/placement-confirm')
   } else if (editChoice === 'no') {
-    res.redirect('/manage-placements/v01/manage/placement-confirm-no-date')
+    res.redirect('/manage-placements/v02/manage/placement-confirm-no-date')
   }
 });
 
@@ -64,18 +64,18 @@ router.post('/manage-placements/v02/manage/cancel-placement-fb', function (req, 
 router.post('/manage-placements/v02/manage/cancel-placement-mb', function (req, res) {
   const editChoice = req.session.data['cancel-placement']
   if (editChoice === 'cancel-yes') {
-    res.redirect('/manage-placements/v01/manage/placements-cancel-mb')
+    res.redirect('/manage-placements/v02/manage/placements-cancel-mb')
   } else if (editChoice === 'cancel-no') {
-    res.redirect('/manage-placements/v01/manage/placements-updated')
+    res.redirect('/manage-placements/v02/manage/placements-updated')
   }
 });
 
 router.post('/manage-placements/v02/manage/cancel-placement-dw', function (req, res) {
   const editChoice = req.session.data['cancel-placement']
   if (editChoice === 'cancel-yes') {
-    res.redirect('/manage-placements/v01/manage/placements-updated-dw-cancel')
+    res.redirect('/manage-placements/v02/manage/placements-updated-dw-cancel')
   } else if (editChoice === 'cancel-no') {
-    res.redirect('/manage-placements/v01/manage/placements-updated')
+    res.redirect('/manage-placements/v02/manage/placements-updated')
   }
 });
 
@@ -91,9 +91,9 @@ router.post('/manage-placements/v02/manage/pause-placement-check', function (req
 router.post('/manage-placements/v02/manage/referral-detail', function (req, res) {
   const editChoice = req.session.data['placement']
   if (editChoice === 'yes') {
-    res.redirect('/manage-placements/v01/manage/placement-confirm')
+    res.redirect('/manage-placements/v02/manage/placement-confirm')
   } else if (editChoice === 'no') {
-    res.redirect('/manage-placements/v01/manage/placement-confirm-no-date')
+    res.redirect('/manage-placements/v02/manage/placement-confirm-no-date')
   }
 });
 

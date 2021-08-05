@@ -1,18 +1,18 @@
 {% extends "layout-header-links.html" %}
 
 {% block pageTitle %}
-  Referral detail
-{% endblock %}
+Confirm the vacancy has been filled{% endblock %}
 
 {% block beforeContent %}
-    {% include 'includes/back-button.njk' %}
+{% include "includes/language-select.njk" %}
+
 {% endblock %}
 
 {% block content %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-l">Mick Brown</h1>
+        <h1 class="govuk-heading-l">Confirm Mick Brown has been placed in the vacancy</h1>
 
           {{ govukSummaryList({
             classes: ' ',
@@ -46,10 +46,50 @@
 
 <p> </p>
 
+<!--
 
-
-  <h2 class="govuk-heading-l ">Place this referral in the job</h2>
+  <h2 class="govuk-heading-l ">Place this referral in the job</h2>-->
 <form id="form" method="post" action="referral-detail">
+
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" role="group" aria-describedby="start-date">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+        <h1 class="govuk-fieldset__heading">
+          Enter the start date for Mick Brown?
+        </h1>
+      </legend>
+      <div id="passport-issued-hint" class="govuk-hint">
+        Provide an anticipated start date if you don't have a confirmed date.
+        <br>For example, 01 08 2021
+      </div>
+      <div class="govuk-date-input" id="passport-issued">
+        <div class="govuk-date-input__item">
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-date-input__label" for="start-date-day">
+              Day
+            </label>
+            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="start-date-day" name="start-date-day" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+        </div>
+        <div class="govuk-date-input__item">
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-date-input__label" for="start-date-month">
+              Month
+            </label>
+            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="start-date-month" name="start-date-month" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+        </div>
+        <div class="govuk-date-input__item">
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-date-input__label" for="start-date-year">
+              Year
+            </label>
+            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="start-date-year" name="start-date-year" type="text" pattern="[0-9]*" inputmode="numeric"></div>
+        </div>
+      </div>
+
+    </fieldset>
+  </div>
+
+  <!--
       {% from "govuk/components/radios/macro.njk" import govukRadios %}
   {% from "govuk/components/input/macro.njk" import govukInput %}
 
@@ -111,7 +151,7 @@
     name: "placement",
     fieldset: {
       legend: {
-        text: "Have you got a start date for the placement?",
+        text: "Enter a start date for Mick Brown",
         isPageHeading: true,
         classes: "govuk-fieldset__legend--m"
       }
@@ -136,12 +176,17 @@
       }
     ]
   }) }}
+-->
 
 
 
 <!--if logic for button goes here-->
 
-          <button type="submit" class="govuk-button govuk-!-margin-right-1" id="submit">Continue</button>
+                <div class="govuk-button-group">
+                  <a href="../manage/placement-confirm" class="govuk-button">Continue</a>
+                </div>
+
+        <!--  <button type="submit" class="govuk-button govuk-!-margin-right-1" id="submit">-</button>-->
 
         </form>
 

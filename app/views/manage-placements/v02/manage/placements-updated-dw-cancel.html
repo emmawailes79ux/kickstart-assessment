@@ -10,10 +10,10 @@
 
 {% block content %}
         <span class="govuk-caption-l">Junior Exhibition Designer, Leeds</span>
-        <h2 class="govuk-heading-l">Placements</h2>
+        <h1 class="govuk-heading-l">Filled Vacancies</h1>
 
-        <p class="govuk-!-margin-bottom-3">You have <strong>3</strong> vacancies remaining for this job</p>
-        <p><a href="referrals-place-in-role">Place someone in this job</a></p>
+        <p class="govuk-!-margin-bottom-3">You can place someone in this vacancy or you can withdraw them from the placement.  </p>
+        <p><a href="referrals-place-in-role">Confirm a placement </a> for this vacancy</p>
 
         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
@@ -56,7 +56,6 @@
             {
               text: "13 October 22"
             },
-
             {
               html: "<a href='cancel-placement-check-mb'>End placement early</a>"
             },
@@ -80,13 +79,36 @@
             },
 
             {
-              html: "<a>End placement early</a>"
+              html: "<a href='cancel-placement-check-dw'>End placement early</a>"
             },
             {
               html: '<strong class="govuk-tag govuk-tag--red">Awaiting withdrawal</strong>',
               format: "numeric"
             }
+          ],
+          [
+           {
+              html: "<a href='placement-detail-paused'>Fiona Brown</a>"
+            },
+            {
+              text: "AS1276"
+            },
+            {
+              text: "11 Jan 21"
+            },
+            {
+              text: "11 October 21"
+            },
+
+            {
+              html: "<a href='cancel-placement-check-fb'>End placement early</a>"
+            },
+            {
+              html: '<strong class="govuk-tag govuk-tag--red">Withdrawal</strong>',
+              format: "numeric"
+            }
           ]
+
 
 
         ]
