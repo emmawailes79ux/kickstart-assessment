@@ -455,6 +455,7 @@
                       html: "<span class='govuk-!-font-size-16'><a href='delete-vacancy'>Delete</a></span>"
                     }
                   ]
+
                 ]
               }) }}
 
@@ -477,15 +478,28 @@
                     <a class="moj-pagination__link" href="">Next<span class="govuk-visually-hidden"> set of pages</span></a>
                 </li>
                 </ul>
-                <!-- <p class="moj-pagination__results">Showing <b>10</b> to <b>20</b> of <b>30</b> results</p> -->
+                <p class="moj-pagination__results">Showing <b>1</b> to <b>4</b> of <b>4</b> results</p>
+
               </nav>
-
-
+              <nav>
+                <nav style="float:right">
+                    <ul class="govuk-form-group">
+                        <p class="govuk-label" for="sort">
+                          Results per page
+                          <select class="govuk-select" id="sort" name="sort">
+                            <option value="10">10</option>
+                            <option value="20" >20</option>
+                            <option value="30">30</option>
+                            <option value="40">40</option>
+                            <option value="50">50</option>
+                          </select>  </p>
+                  </nav>
               {{ govukButton({
                 text: "Submit vacancies",
                 href: "submit-vacancy",
                 classes: "govuk-button--secondary"
               }) }}
+
             </div>
           </div>
 
@@ -640,10 +654,32 @@
                       html: '<strong class="govuk-tag govuk-tag--green">Approved</strong>',
                       format: "numeric"
                     }
+                  ],
+                  [
+
+                    {
+                      html: "<b>Page total (vacancies)<b>"
+                    },
+                    {
+                      html: "<b>13 / 17</b>"
+                    },
+                    {
+                      text: ""
+                    },
+                    {
+                      text: ""
+                    },
+                    {
+                      text: ""
+                    },
+                    {
+                      text: ""
+                    }
                   ]
 
                 ]
               }) }}
+
               <nav class="moj-pagination" id="pagination-label">
 
                 <p class="govuk-visually-hidden" aria-labelledby="pagination-label">Pagination navigation</p>
@@ -653,7 +689,7 @@
                     <a class="moj-pagination__link" href="">Previous<span class="govuk-visually-hidden"> set of pages</span></a>
                   </li>
 
-                  <li class="moj-pagination__item"><a class="moj-pagination__link" href="/page=1">1</a></li>
+                  <li class="moj-pagination__item"><a class="moj-pagination__link" href="/employer/mvp-v2/job-list-role-added-1">1</a></li>
 
                   <li class="moj-pagination__item moj-pagination__item--active">2</li>
 
@@ -662,9 +698,26 @@
                   <li class="moj-pagination__item  moj-pagination__item--next">
                     <a class="moj-pagination__link" href="">Next<span class="govuk-visually-hidden"> set of pages</span></a>
                   </li>
-                </ul>
-                <p class="moj-pagination__results">Showing <b>10</b> to <b>20</b> of <b>34</b> vacancies</p>
+
+
+      <!--          </ul>
+                <p class="moj-pagination__results">Showing <b>11</b> to <b>20</b> of <b>34</b> vacancies</p>
               </nav>
+              <nav>
+                <nav style="float:right">
+                    <ul class="govuk-form-group">
+                        <p class="govuk-label" for="sort">
+                          Results per page
+                          <select class="govuk-select" id="sort" name="sort">
+                            <option value="10">10</option>
+                            <option value="20" >20</option>
+                            <option value="30">30</option>
+                            <option value="40">40</option>
+                            <option value="50">50</option>
+                          </select>  </p>-->
+                  </nav>
+              </div>
+
 
     <!--          <nav class="moj-pagination" id="pagination-label">
 

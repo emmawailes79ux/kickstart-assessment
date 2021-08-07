@@ -270,32 +270,14 @@
 
 {% block content %}
 
-{% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
-
-{{ govukErrorSummary({
-  titleText: "There is a problem",
-  errorList: [
-    {
-      text: "Landscape gardener - The date needs to be more than 30 days",
-      href: "#passport-issued-day"
-    },
-    {
-      text: "Junior Salesperson - The date needs to be more than 60 days,",
-      href: "job-add-location-list"
-    }
-  ]
-}) }}
-
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-l">
         Your vacancies
       </h1>
+
       <p class="govuk-body">Add your vacancies and submit them. DWP will approve them before they go live.</p>
-
-
-
 
       {{ govukButton({
         text: "Add a vacancy",
@@ -366,9 +348,6 @@
                     html: "No. of<br>locations"
                   },
                   {
-                    html: "Advertising <br> start date"
-                  },
-                  {
                     text: "",
                     format: "numeric"
                   },
@@ -389,9 +368,6 @@
                     },
                     {
                       text: "1"
-                    },
-                    {
-                      text: "09/08/2021"
                     },
                     {
                       html: '<strong class="govuk-tag govuk-tag--grey">Incomplete</strong>',
@@ -420,10 +396,7 @@
                       text: "1"
                     },
                     {
-                      text: "15/07/2021"
-                    },
-                    {
-                      html: '<strong class="govuk-tag govuk-tag--red">Update start date</strong>',
+                      html: '<strong class="govuk-tag govuk-tag--yellow">Ready to submit</strong>',
                       format: "numeric"
                     },
                     {
@@ -449,10 +422,7 @@
                       text: "7"
                     },
                     {
-                      text: "15/07/2021"
-                    },
-                    {
-                      html: '<strong class="govuk-tag govuk-tag--red">Update closing date</strong>',
+                      html: '<strong class="govuk-tag govuk-tag--yellow">Ready to submit</strong>',
                       format: "numeric"
                     },
                     {
@@ -478,9 +448,6 @@
                       text: "2"
                     },
                     {
-                      text: "01/09/2021"
-                    },
-                    {
                       html: '<strong class="govuk-tag govuk-tag--yellow">Ready to submit</strong>',
                       format: "numeric"
                     },
@@ -488,6 +455,7 @@
                       html: "<span class='govuk-!-font-size-16'><a href='delete-vacancy'>Delete</a></span>"
                     }
                   ]
+
                 ]
               }) }}
 
@@ -502,23 +470,36 @@
 
                   <li class="moj-pagination__item moj-pagination__item--active"><span class="moj-pagination__link">1</span></li>
 
-                  <li class="moj-pagination__item moj-pagination__item--active"><a class="moj-pagination__link" href="#">2</a></li>
 
-                  <li class="moj-pagination__item"><a class="moj-pagination__link" href="#">3</a></li>
+
+
 
                   <li class="moj-pagination__item  moj-pagination__item--next">
                     <a class="moj-pagination__link" href="">Next<span class="govuk-visually-hidden"> set of pages</span></a>
                 </li>
                 </ul>
-                <!-- <p class="moj-pagination__results">Showing <b>10</b> to <b>20</b> of <b>30</b> results</p> -->
+                <p class="moj-pagination__results">Showing <b>19</b> out of <b>19</b> vacancies</p>
+
               </nav>
-
-
+              <nav>
+                <nav style="float:right">
+                    <ul class="govuk-form-group">
+                        <p class="govuk-label" for="sort">
+                          Results per page
+                          <select class="govuk-select" id="sort" name="sort">
+                            <option value="10">10</option>
+                            <option value="20"selected >20</option>
+                            <option value="30">30</option>
+                            <option value="40">40</option>
+                            <option value="50">50</option>
+                          </select>  </p>
+                  </nav>
               {{ govukButton({
                 text: "Submit vacancies",
                 href: "submit-vacancy",
                 classes: "govuk-button--secondary"
               }) }}
+
             </div>
           </div>
 
@@ -553,7 +534,7 @@
                       html: "<b><a href='job-summary'>Junior salesperson</a></b>"
                     },
                     {
-                      text: "2"
+                      text: "1"
                     },
                     {
                       text: "Leeds"
@@ -574,7 +555,7 @@
                       html: "<b><a href='job-summary'>Junior salesperson</a></b>"
                     },
                     {
-                      text: "2"
+                      text: "1"
                     },
                     {
                       text: "Manchester"
@@ -595,28 +576,7 @@
                       html: "<b><a href='job-summary'>Junior salesperson</a></b>"
                     },
                     {
-                      text: "2"
-                    },
-                    {
-                      text: "Peterborough"
-                    },
-                    {
-                      text: "PE1 1EJ"
-                    },
-                    {
-                      text: "26/03/2021"
-                    },
-                    {
-                      html: '<strong class="govuk-tag govuk-tag--green">Approved</strong>',
-                      format: "numeric"
-                    }
-                  ],
-                  [
-                    {
-                      html: "<b><a href='job-summary'>Junior salesperson</a></b>"
-                    },
-                    {
-                      text: "2"
+                      text: "1"
                     },
                     {
                       text: "Rotherham"
@@ -658,7 +618,7 @@
                       html: "<b><a href='job-summary'>Part-time auditor</a></b>"
                     },
                     {
-                      text: "3"
+                      text: "2"
                     },
                     {
                       text: "Leeds"
@@ -674,7 +634,6 @@
                       format: "numeric"
                     }
                   ]
-
                 ]
               }) }}
               <nav class="moj-pagination" id="pagination-label">
@@ -686,18 +645,33 @@
                     <a class="moj-pagination__link" href="">Previous<span class="govuk-visually-hidden"> set of pages</span></a>
                   </li>
 
-                  <li class="moj-pagination__item"><a class="moj-pagination__link" href="/page=1">1</a></li>
+                  <li class="moj-pagination__item"><a class="moj-pagination__link" href="/employer/mvp-v2/job-list-role-added-total-row-1">1</a></li>
 
                   <li class="moj-pagination__item moj-pagination__item--active">2</li>
 
-                  <li class="moj-pagination__item"><a class="moj-pagination__link" href="/page=3">3</a></li>
+                <!--  <li class="moj-pagination__item"><a class="moj-pagination__link" href="/page=3">3</a></li>-->
 
                   <li class="moj-pagination__item  moj-pagination__item--next">
                     <a class="moj-pagination__link" href="">Next<span class="govuk-visually-hidden"> set of pages</span></a>
                   </li>
                 </ul>
-                <p class="moj-pagination__results">Showing <b>10</b> to <b>20</b> of <b>34</b> vacancies</p>
+                <p class="moj-pagination__results">Showing  <!--<b>11</b> to <b>17</b>--> <b>7</b> out of <b>17</b> vacancies</p>
               </nav>
+              <nav><!--
+                <nav style="float:right">
+                    <ul class="govuk-form-group">
+                        <p class="govuk-label" for="sort">
+                          Results per page
+                          <select class="govuk-select" id="sort" name="sort">
+                            <option value="10" selected>10</option>
+                            <option value="20" >20</option>
+                            <option value="30">30</option>
+                            <option value="40">40</option>
+                            <option value="50">50</option>
+                          </select>  </p>
+                  </nav>-->
+              </div>
+
 
     <!--          <nav class="moj-pagination" id="pagination-label">
 
