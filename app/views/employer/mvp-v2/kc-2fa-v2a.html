@@ -36,7 +36,7 @@
                   <li>Even if someone else finds out your password, it won't be enough for them to sign into your account</li>
                 </ul>-->
                 <h2 class="govuk-heading-m">
-                To get started
+                Getting started
                 </h2>
 
                 <h2 class="govuk-heading-s">
@@ -48,28 +48,38 @@
                 <li>Download the app (FreeOTP or Google Authenticator)</li>
                 </ol>
                 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+                <h2 class="govuk-heading-m">
+                Next steps
+                </h2>
                 <h3 class="govuk-heading-s">
                 After you have downloaded the app
                 </h3>
                 <p class="govuk-body"></p>
-                <ol class="govuk-list govuk-list--number">
-                <li> Use the app to scan the QR code below </li>
+                <p> Use the app to scan the QR code below </p>
 
                 <br> <p class="govuk-body"><img src="/public/images/randomQR.png" alt="random qr code" style="height: 200px;"></p>
 
-
-                <div class="govuk-inset-text"> <p class="govuk-body"> If you can't scan the image enter the code below</p>
+                <div class="govuk-warning-text">
+                  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                  <strong class="govuk-warning-text__text">
+                    <span class="govuk-warning-text__assistive">Warning</span>
+                    If you can't scan the image enter the code below <br>
+                  </strong>
+                </div>
+              <h3 class="govuk-heading-s">JJIU SSRZ NESH URZW M5TT QTKD NRSH ILYV</h3>
+            <!--    <div class="govuk-inset-text"> <p class="govuk-body"> If you can't scan the image enter the code below</p>
                 <b>JJIU SSRZ NESH URZW M5TT QTKD NRSH ILYV</b></div>
+-->
+<div>
+              <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
-<hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-                <h2 class="govuk-heading-s">
-                Complete the process using the app
-                </h2>
+              <h2 class="govuk-heading-m">
+                Add the code
+                  </h2>
 
                   {{ govukInput({
                     label: {
-                        text: "Enter the verification code showing on your device to continue
-"
+                        text: "Enter the verification code showing on your device to continue"
                     },
                     id: "one-time-code",
                     name: "one-time-code",
@@ -77,49 +87,6 @@
                 }) }}
 
 
-                                <!-- <p class="govuk-body">Secret key: <b>dvrw qdd4 dfgh erty kj3b</b></p>
-<p class="govuk-body">Continue setting up your Kickstart account</p>
-            <ol class="govuk-list govuk-list--number">
-                  <li>Download and install an authenticator app, for example:
-                    <ul class="govuk-list govuk-list--bullet">
-                      <li>FreeOTP</li>
-                      <li>Google Authenticator</li>
-                    </ul></li>
-                  <li>Open the app and scan this QR code:</li>
-
-                <h3 class="govuk-heading-m">
-                  What do I do now?
-                </h3>
-
-  <p class="govuk-body">Download .</p>
-                  <p class="govuk-body"><img src="/public/images/randomQR.png" alt="random qr code" style="height: 200px;"></p>
-                  <!-- <p class="govuk-body">Secret key: <b>dvrw qdd4 dfgh erty kj3b</b></p> -->
-
-          <!--        {{ govukDetails({
-                      summaryText: "Unable to scan?",
-                      html: '<p class="govuk-body">Open the app and enter this key:<br><b>JJIU SSRZ NESH URZW M5TT QTKD NRSH ILYV</b></p>'
-                    }) }}
- -->
-
-
-                <!-- {{ govukInput({
-                    label: {
-                        text: "Device name"
-                    },
-                    id: "device-name",
-                    name: "device-name",
-                    classes: "govuk-!-width-two-thirds"
-                }) }}-->
-
-            <!--    <div class="govuk-button-group">
-                  <button class="govuk-button" data-module="govuk-button">
-                    Create my password
-                  </button>
-
-                  <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
-                  Setup SMS instead
-                  </button>
-                </div>-->
 
   {{ govukButton({
                     text: "Create my password"
