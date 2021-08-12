@@ -6,7 +6,7 @@
 
 {% block beforeContent %}
 {% include "includes/beta-banner.html" %}
-  {% include "includes/header-summary.html" %}
+    {% include "includes/header-summary-manage.html" %}
     {{ govukBackLink({
       text: "Back",
       href: "job-list-roles-submitted"
@@ -66,15 +66,8 @@
                                 }
                               ]
                             }
-                          },
-                          {
-                            key: {
-                              text: "Referral limit"
-                            },
-                            value: {
-                              text: "50"
-                            }
                           }
+
 
                           ]
                       }) }}
@@ -312,7 +305,14 @@
           attributes: {
             "aria-sort": "none"
           }
+        },
+        {
+          html: "",
+          attributes: {
+            "aria-sort": "none"
+          }
         }
+
         ],
         rows: [
         [
@@ -330,6 +330,12 @@
           },
           {
             text: "15/07/21"
+          },
+          
+          {
+            href: "../v02/manage/referrals",
+            text: "View",
+            visuallyHiddenText: "name"
           }
         ],
         [
@@ -347,6 +353,11 @@
           },
           {
             text: "15/07/21"
+          },
+          {
+            href: "../v02/manage/referrals",
+            text: "View",
+            visuallyHiddenText: "name"
           }
         ]
         ]
