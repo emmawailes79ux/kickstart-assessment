@@ -158,6 +158,20 @@ router.post('/gateway/v02/kc-choose', function (req, res) {
   }
 });
 
+
+
+////// pb-v1 //////////////////////////////////
+
+router.post('/employer/pb-v1/kc-choose', function (req, res) {
+  const editChoice = req.session.data['2fa-choose']
+
+  if (editChoice === 'authenticator-app') {
+    res.redirect('/employer/pb-v1/kc-2fa')
+  } else if (editChoice === 'mobile-phone') {
+    res.redirect('/employer/pb-v1/kc-phone')
+  }
+});
+
 ////// mvp-v3 //////////////////////////////////
 
 router.post('/employer/mvp-v3/kc-choose', function (req, res) {
@@ -290,100 +304,98 @@ router.post('/employer/v07/job-add-3b-locally', function (req, res) {
 
 ////// v07 //////////////////////////////////
 
-
-
-router.post('/employer/v05/manage/vacancies', function (req, res) {
+router.post('/employer/archive-old-v05/manage/vacancies', function (req, res) {
   const editChoice = req.session.data['manage-application']
 
   if (editChoice === 'application-cancel') {
-    res.redirect('/employer/v04/manage/cancel-application-check')
+    res.redirect('/employer/archive-old-v04/manage/cancel-application-check')
   } else if (editChoice === 'application-pause') {
-    res.redirect('/employer/v04/manage/pause-application-check')
+    res.redirect('/employer/archive-old-v04/manage/pause-application-check')
   }
 });
 
 
-router.post('/employer/v04/manage/cancel-application-check', function (req, res) {
+router.post('/employer/archive-old-v04/manage/cancel-application-check', function (req, res) {
   const editChoice = req.session.data['cancel-application']
 
   if (editChoice === 'yes') {
-    res.redirect('/employer/v04/manage/cancel-application-confirm')
+    res.redirect('/employer/archive-old-v04/manage/cancel-application-confirm')
   } else if (editChoice === 'no') {
-    res.redirect('/employer/v04/manage/pause-application-no-go-back')
+    res.redirect('/employer/archive-old-v04/manage/pause-application-no-go-back')
   }
 });
 
 
-router.post('/employer/v04/manage/pause-application-check', function (req, res) {
+router.post('/employer/archive-old-v04/manage/pause-application-check', function (req, res) {
   const editChoice = req.session.data['pause-application']
 
   if (editChoice === 'yes') {
-    res.redirect('/employer/v04/manage/pause-application-confirm')
+    res.redirect('/employer/archive-old-v04/manage/pause-application-confirm')
   } else if (editChoice === 'no') {
-    res.redirect('/employer/v04/manage/pause-application-no-go-back')
+    res.redirect('/employer/archive-old-v04/manage/pause-application-no-go-back')
   }
 });
 
 
-router.post('/employer/v04/manage/job-detail', function (req, res) {
+router.post('/employer/archive-old-v04/manage/job-detail', function (req, res) {
   const editChoice = req.session.data['manage-role']
 
   if (editChoice === 'edit-role') {
-    res.redirect('/employer/v04/manage/edit-job-detail')
+    res.redirect('/employer/archive-old-v04/manage/edit-job-detail')
   } else if (editChoice === 'pause-role') {
-    res.redirect('/employer/v04/manage/pause-role-check')
+    res.redirect('/employer/archive-old-v04/manage/pause-role-check')
   } else if (editChoice === 'cancel-role') {
-    res.redirect('/employer/v04/manage/cancel-role-check')
+    res.redirect('/employer/archive-old-v04/manage/cancel-role-check')
   } else if (editChoice === 'place-referral') {
-    res.redirect('/employer/v04/manage/referrals')
+    res.redirect('/employer/archive-old-v04/manage/referrals')
   } else if (editChoice === 'closing-date') {
-    res.redirect('/employer/v04/manage/closing-date')
+    res.redirect('/employer/archive-old-v04/manage/closing-date')
   } else if (editChoice === 'referral-limit') {
-    res.redirect('/employer/v04/manage/referral-limit')
+    res.redirect('/employer/archive-old-v04/manage/referral-limit')
   }
 });
 
 
-router.post('/employer/v04/manage/cancel-role-check', function (req, res) {
+router.post('/employer/archive-old-v04/manage/cancel-role-check', function (req, res) {
   const editChoice = req.session.data['cancel-role']
 
   if (editChoice === 'yes') {
-    res.redirect('/employer/v04/manage/cancel-role-confirm')
+    res.redirect('/employer/archive-old-v04/manage/cancel-role-confirm')
   } else if (editChoice === 'no') {
-    res.redirect('/employer/v04/manage/job-detail')
+    res.redirect('/employer/archive-old-v04/manage/job-detail')
   }
 });
 
 
-router.post('/employer/v04/manage/pause-role-check', function (req, res) {
+router.post('/employer/archive-old-v04/manage/pause-role-check', function (req, res) {
   const editChoice = req.session.data['pause-role']
 
   if (editChoice === 'yes') {
-    res.redirect('/employer/v04/manage/pause-role-confirm')
+    res.redirect('/employer/archive-old-v04/manage/pause-role-confirm')
   } else if (editChoice === 'no') {
-    res.redirect('/employer/v04/manage/job-detail')
+    res.redirect('/employer/archive-old-v04/manage/job-detail')
   }
 });
 
-router.post('/employer/v03/job-add-3a', function (req, res) {
+router.post('/employer/archive-old-v03/job-add-3a', function (req, res) {
   const editChoice = req.session.data['remote-role']
 
   if (editChoice === 'yes') {
-    res.redirect('/employer/v03/job-add-4')
+    res.redirect('/employer/archive-old-v03/job-add-4')
   } else if (editChoice === 'part') {
-    res.redirect('/employer/v03/job-add-3b')
+    res.redirect('/employer/archive-old-v03/job-add-3b')
   } else if (editChoice === 'not') {
-    res.redirect('/employer/v03/job-add-3b')
+    res.redirect('/employer/archive-old-v03/job-add-3b')
   }
 });
 
-router.post('/employer/v03/job-add-3b', function (req, res) {
+router.post('/employer/archive-old-v03/job-add-3b', function (req, res) {
   const editChoice = req.session.data['multiple-locations']
 
   if (editChoice === 'multiple') {
-    res.redirect('/employer/v03/job-add-3d')
+    res.redirect('/employer/archive-old-v03/job-add-3d')
   } else if (editChoice === 'one-location') {
-    res.redirect('/employer/v03/job-add-3c')
+    res.redirect('/employer/archive-old-v03/job-add-3c')
   }
 });
 
@@ -393,110 +405,110 @@ router.post('/employer/v03/job-add-3b', function (req, res) {
 ////// v05 //////////////////////////////////
 
 
-router.post('/employer/v05/manage/vacancies', function (req, res) {
+router.post('/employer/archive-old-v05/manage/vacancies', function (req, res) {
   const editChoice = req.session.data['manage-application']
 
   if (editChoice === 'application-cancel') {
-    res.redirect('/employer/v05/manage/cancel-application-check')
+    res.redirect('/employer/archive-old-v05/manage/cancel-application-check')
   } else if (editChoice === 'application-pause') {
-    res.redirect('/employer/v05/manage/pause-application-check')
+    res.redirect('/employer/archive-old-v05/manage/pause-application-check')
   }
 });
 
 
-router.post('/employer/v05/manage/cancel-application-check', function (req, res) {
+router.post('/employer/archive-old-v05/manage/cancel-application-check', function (req, res) {
   const editChoice = req.session.data['cancel-application']
 
   if (editChoice === 'yes') {
-    res.redirect('/employer/v05/manage/cancel-application-confirm')
+    res.redirect('/employer/archive-old-v05/manage/cancel-application-confirm')
   } else if (editChoice === 'no') {
-    res.redirect('/employer/v05/manage/pause-application-no-go-back')
+    res.redirect('/employer/archive-old-v055/manage/pause-application-no-go-back')
   }
 });
 
 
-router.post('/employer/v05/manage/pause-application-check', function (req, res) {
+router.post('/employer/archive-old-v05/manage/pause-application-check', function (req, res) {
   const editChoice = req.session.data['pause-application']
 
   if (editChoice === 'yes') {
-    res.redirect('/employer/v05/manage/pause-application-confirm')
+    res.redirect('/employer/archive-old-v05/manage/pause-application-confirm')
   } else if (editChoice === 'no') {
-    res.redirect('/employer/v05/manage/pause-application-no-go-back')
+    res.redirect('/employer/archive-old-v05/manage/pause-application-no-go-back')
   }
 });
 
 
-router.post('/employer/v05/manage/job-detail', function (req, res) {
+router.post('/employer/archive-old-v05/manage/job-detail', function (req, res) {
   const editChoice = req.session.data['manage-role']
 
   if (editChoice === 'edit-role') {
-    res.redirect('/employer/v05/manage/edit-job-detail')
+    res.redirect('/employer/archive-old-v05/manage/edit-job-detail')
   } else if (editChoice === 'pause-role') {
-    res.redirect('/employer/v05/manage/pause-role-check')
+    res.redirect('/employer/archive-old-v05/manage/pause-role-check')
   } else if (editChoice === 'cancel-role') {
-    res.redirect('/employer/v05/manage/cancel-role-check')
+    res.redirect('/employer/archive-old-v05/manage/cancel-role-check')
   } else if (editChoice === 'place-referral') {
-    res.redirect('/employer/v05/manage/referrals-place-in-role')
+    res.redirect('/employer/archive-old-v05/manage/referrals-place-in-role')
   } else if (editChoice === 'closing-date') {
-    res.redirect('/employer/v05/manage/closing-date')
+    res.redirect('/employer/archive-old-v05/manage/closing-date')
   } else if (editChoice === 'referral-limit') {
-    res.redirect('/employer/v05/manage/referral-limit')
+    res.redirect('/employer/archive-old-v05/manage/referral-limit')
   } else if (editChoice === 'change-vacancies') {
-    res.redirect('/employer/v05/manage/vacancies')
+    res.redirect('/employer/archive-old-v05/manage/vacancies')
   }
 });
 
 
-router.post('/employer/v05/manage/cancel-role-check', function (req, res) {
+router.post('/employer/archive-old-v05/manage/cancel-role-check', function (req, res) {
   const editChoice = req.session.data['cancel-role']
 
   if (editChoice === 'yes') {
-    res.redirect('/employer/v05/manage/cancel-role-confirm')
+    res.redirect('/employer/archive-old-v05/manage/cancel-role-confirm')
   } else if (editChoice === 'no') {
-    res.redirect('/employer/v05/manage/job-detail')
+    res.redirect('/employer/archive-old-v05/manage/job-detail')
   }
 });
 
 
-router.post('/employer/v05/manage/pause-role-check', function (req, res) {
+router.post('/employer/archive-old-v05/manage/pause-role-check', function (req, res) {
   const editChoice = req.session.data['pause-role']
 
   if (editChoice === 'yes') {
-    res.redirect('/employer/v05/manage/pause-role-confirm')
+    res.redirect('/employer/archive-old-v05/manage/pause-role-confirm')
   } else if (editChoice === 'no') {
-    res.redirect('/employer/v05/manage/job-detail')
+    res.redirect('/employer/archive-old-v05/manage/job-detail')
   }
 });
 
-router.post('/employer/v05/job-add-3a', function (req, res) {
+router.post('/employer/archive-old-v05/job-add-3a', function (req, res) {
   const editChoice = req.session.data['remote-role']
 
   if (editChoice === 'yes') {
-    res.redirect('/employer/v05/job-add-4')
+    res.redirect('/employer/archive-old-v05/job-add-4')
   } else if (editChoice === 'part') {
-    res.redirect('/employer/v05/job-add-3b-locally')
+    res.redirect('/employer/archive-old-v05/job-add-3b-locally')
   } else if (editChoice === 'not') {
-    res.redirect('/employer/v05/job-add-3b')
+    res.redirect('/employer/archive-old-v05/job-add-3b')
   }
 });
 
-router.post('/employer/v05/job-add-3b', function (req, res) {
+router.post('/employer/archive-old-v05/v05/job-add-3b', function (req, res) {
   const editChoice = req.session.data['multiple-locations']
 
   if (editChoice === 'multiple') {
-    res.redirect('/employer/v05/job-add-3d')
+    res.redirect('/employer/archive-old-v05/job-add-3d')
   } else if (editChoice === 'one-location') {
-    res.redirect('/employer/v05/job-add-3c')
+    res.redirect('/employer/archive-old-v05/job-add-3c')
   }
 });
 
-router.post('/employer/v05/job-add-3b-locally', function (req, res) {
+router.post('/employer/archive-old-v05/job-add-3b-locally', function (req, res) {
   const editChoice = req.session.data['multiple-locations']
 
   if (editChoice === 'multiple') {
-    res.redirect('/employer/v05/job-add-3d')
+    res.redirect('/employer/archive-old-v05/job-add-3d')
   } else if (editChoice === 'one-location') {
-    res.redirect('/employer/v05/job-add-3c')
+    res.redirect('/employer/archive-old-v05/job-add-3c')
   }
 });
 

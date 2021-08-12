@@ -6,7 +6,12 @@
 {% block beforeContent %}
 {% include "includes/beta-banner.html" %}
 <!-- {% include "includes/manage-users-link.html" %} -->
-{% include "includes/language-select.njk" %}
+ <script>
+    function goBack() {
+      window.history.back();
+    }
+    </script>
+    <a class="govuk-back-link" onclick="goBack()" style="text-decoration: underline; cursor: pointer;">Back</a>
 {% include "includes/header-summary-users.html" %}
   <!--  {{ govukBackLink({
       text: "Back",

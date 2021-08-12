@@ -6,7 +6,15 @@
 
 {% block beforeContent %}
 {% include "includes/beta-banner.html" %}
+<script>
+  function goBack() {
+    window.history.back();
+  }
+  </script>
+  <a class="govuk-back-link" onclick="goBack()" style="text-decoration: underline; cursor: pointer;">Back</a>
 
+
+<!--
   <nav class="hmrc-language-select" aria-label="Language switcher">
       <ul class="hmrc-language-select__list">
         <li class="hmrc-language-select__list-item">
@@ -20,7 +28,7 @@
         </li>
       </ul>
         <a href="kc-choose" class="govuk-back-link">Back</a>
-    </nav>
+    </nav>-->
 {% endblock %}
 
 {% block content %}

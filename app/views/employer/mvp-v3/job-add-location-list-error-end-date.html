@@ -1,0 +1,197 @@
+{% extends "layout-header-links.html" %}
+
+{% block pageTitle %}
+  Vacancy locations for [job title]
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/beta-banner.html" %}
+<script>
+  function goBack() {
+    window.history.back();
+  }
+  </script>
+  <a class="govuk-back-link" onclick="goBack()" style="text-decoration: underline; cursor: pointer;">Back</a>
+  <!-- {% include "includes/manage-users-link.html" %} -->
+{% include "includes/header-summary-users.html" %}
+  <!--  {{ govukBackLink({
+      text: "Back",
+      href: "job-add-location-2"
+    }) }}-->
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+  <h2 class="govuk-error-summary__title" id="error-summary-title">
+    There is a problem
+  </h2>
+  <div class="govuk-error-summary__body">
+    <ul class="govuk-list govuk-error-summary__list">
+      <li>
+        <a href="job-add-location-list-2">Expected closing date - This should be 60 days from today or later. </a>
+      </li>
+
+    </ul>
+  </div>
+</div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Vacancy locations for Junior Exhibition Designer</h1>
+      <p class="govuk-body">List all the locations for this job. Each location can have different numbers of vacancies and advertising start dates.</p>
+
+      <a href="job-add-location-list-2" class="govuk-button govuk-button--secondary govuk-!-margin-right-1" id="submit">Add a location</a>
+</div>
+</div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <!-- <h2 class="govuk-heading-l">Locations</h2> -->
+
+
+      <table class="govuk-table">
+        <caption class="govuk-table__caption govuk-table__caption--m"></caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Town or city</th>
+            <th scope="col" class="govuk-table__header">Postcode</th>
+            <th scope="col" class="govuk-table__header">No of vacancies</th>
+            <th scope="col" class="govuk-table__header">Advertising start date</th>
+            <th scope="col" class="govuk-table__header">Employer job ref</th>
+            <th scope="col" class="govuk-table__header"></th>
+            <th scope="col" class="govuk-table__header"></th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Leeds</td>
+            <td class="govuk-table__cell">LS1 9JA</td>
+            <td class="govuk-table__cell">1</td>
+            <td class="govuk-table__cell">15/07/2021</td>
+            <td class="govuk-table__cell">LSJUEDes</td>
+            <td class="govuk-table__cell"><a href="/../employer/mvp-v2/job-add-location-list-2"</a>Change</td>
+            <td class="govuk-table__cell"><a href="/../employer/mvp-v2/delete-location-leeds"</a>Delete</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Manchester</td>
+            <td class="govuk-table__cell">LS1 9JA</td>
+            <td class="govuk-table__cell">1</td>
+            <td class="govuk-table__cell">15/07/2021</td>
+            <td class="govuk-table__cell">LSJUEDes</td>
+            <td class="govuk-table__cell"><a href="/../employer/mvp-v2/job-add-location-list-2"</a>Change</td>
+            <td class="govuk-table__cell"><a href="/../employer/mvp-v2/delete-location-manchester"</a>Delete</td>
+          </tr>
+        </tbody>
+      </table>
+<!--  {{ govukTable({
+    head: [
+    {
+      text: "Town or city",
+      attributes: {
+        "aria-sort": "ascending"
+      }
+    },
+    {
+      text: "Postcode",
+      attributes: {
+        "aria-sort": "none"
+      }
+    },
+    {
+      html: "No. of<br>vacancies",
+      attributes: {
+        "aria-sort": "none"
+      }
+    },
+    {
+      html: "Advertising<br>start date",
+      attributes: {
+        "aria-sort": "none"
+      }
+    },
+    {
+      html: "Employer <br>Job Reference ",
+      attributes: {
+        "aria-sort": "none"
+      }
+    },
+    {
+      text: "",
+      attributes: {
+        "aria-sort": "none"
+      }
+    },
+    {
+      text: "",
+      attributes: {
+        "aria-sort": "none"
+      }
+    }
+    ],
+    rows: [
+    [
+      {
+        text: "Leeds"
+      },
+      {
+        text: "LS1 9JA",
+        attributes: {
+          "data-sort-value": "LS1 9JA"
+        }
+      },
+      {
+        text: "1"
+      },
+      {
+        text: "15/07/21"
+
+      },
+      {
+        text: "LSJUEDes"
+      },
+      {
+        html: "<a href='job-add-location-list-2'>Change</a>"
+      },
+      {
+        html: "<a href='delete-location-leeds'>Delete</a>"
+      }
+    ],
+    [
+      {
+        text: "Manchester"
+      },
+      {
+        text: "M3 1SH",
+        attributes: {
+          "data-sort-value": "M3 1SH"
+        }
+      },
+      {
+        text: "1"
+      },
+      {
+        text: "15/07/21"
+      },
+      {
+        text: "ABC12345"
+      },
+      {
+        html: "<a href='job-add-location-list-2'>Change</a>"
+      },
+      {
+        html: "<a href='delete-location'>Delete</a>"
+      }
+    ]
+    ]
+    }) }}-->
+
+      <p><a href="job-detail" class="govuk-button">Save and continue</a></p>
+
+      {% include "includes/get-help-link.html" %}
+
+    </div>
+    </div>
+
+
+
+{% endblock %}
