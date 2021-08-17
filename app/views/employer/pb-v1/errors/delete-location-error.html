@@ -13,7 +13,15 @@
 {% block content %}
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-
+          {{ govukErrorSummary({
+            "titleText": "There is a problem",
+            "errorList": [
+              {
+                "text": "Select whether your want to delete this location",
+                "href": "#delete-vacancy"
+              }
+            ]
+          }) }}
                 <form id="form" method="post" action="job-add-location-list">
 
                   {{ govukRadios({
@@ -39,7 +47,10 @@
                       value: "no",
                       text: "No"
                     }
-                  ]
+                  ],
+                  errorMessage: {
+                    html: "Select yes if you want to delete the location <br> Select no if you don't want to delete the location "
+                  }
                   }) }}
 
                   <button type="submit" class="govuk-button govuk-!-margin-right-1" id="submit">Continue</button>
