@@ -6,7 +6,13 @@
 
 {% block beforeContent %}
 {% include "includes/beta-banner.html" %}
-
+<script>
+  function goBack() {
+    window.history.back();
+  }
+  </script>
+  <a class="govuk-back-link" onclick="goBack()" style="text-decoration: underline; cursor: pointer;">Back</a>
+  
 {% endblock %}
 
 {% block content %}
