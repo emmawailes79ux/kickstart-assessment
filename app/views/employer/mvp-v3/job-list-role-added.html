@@ -470,30 +470,15 @@
 
                   <li class="moj-pagination__item moj-pagination__item--active"><span class="moj-pagination__link">1</span></li>
 
-                  <li class="moj-pagination__item moj-pagination__item--active"><a class="moj-pagination__link" href="#">2</a></li>
-
-                  <li class="moj-pagination__item"><a class="moj-pagination__link" href="#">3</a></li>
 
                   <li class="moj-pagination__item  moj-pagination__item--next">
                     <a class="moj-pagination__link" href="">Next<span class="govuk-visually-hidden"> set of pages</span></a>
                 </li>
                 </ul>
-                <p class="moj-pagination__results">Showing <b>1</b> to <b>4</b> of <b>4</b> results</p>
-<!--
+                  <p class="moj-pagination__results">Page 1 showing <b>1</b> of <b>19</b> in progress vacancies</p>
+
               </nav>
-              <nav>
-                <nav style="float:right">
-                    <ul class="govuk-form-group">
-                        <p class="govuk-label" for="sort">
-                          Results per page
-                          <select class="govuk-select" id="sort" name="sort">
-                            <option value="10">10</option>
-                            <option value="20" >20</option>
-                            <option value="30">30</option>
-                            <option value="40">40</option>
-                            <option value="50">50</option>
-                          </select>  </p>-->
-                  </nav>
+
               {{ govukButton({
                 text: "Submit vacancies",
                 href: "submit-vacancy",
@@ -654,27 +639,6 @@
                       html: '<strong class="govuk-tag govuk-tag--green">Approved</strong>',
                       format: "numeric"
                     }
-                  ],
-                  [
-
-                    {
-                      html: "<b>Page total (vacancies)<b>"
-                    },
-                    {
-                      html: "<b>13 / 17</b>"
-                    },
-                    {
-                      text: ""
-                    },
-                    {
-                      text: ""
-                    },
-                    {
-                      text: ""
-                    },
-                    {
-                      text: ""
-                    }
                   ]
 
                 ]
@@ -689,17 +653,19 @@
                     <a class="moj-pagination__link" href="">Previous<span class="govuk-visually-hidden"> set of pages</span></a>
                   </li>
 
-                  <li class="moj-pagination__item"><a class="moj-pagination__link" href="/employer/mvp-v2/job-list-role-added-1">1</a></li>
+                  <li class="moj-pagination__item"><a class="moj-pagination__link" href="/employer/mvp-v3/job-list-role-added-page-1">1</a></li>
 
                   <li class="moj-pagination__item moj-pagination__item--active">2</li>
 
-                  <li class="moj-pagination__item"><a class="moj-pagination__link" href="/page=3">3</a></li>
+                <!--  <li class="moj-pagination__item"><a class="moj-pagination__link" href="/page=3">3</a></li>-->
 
                   <li class="moj-pagination__item  moj-pagination__item--next">
                     <a class="moj-pagination__link" href="">Next<span class="govuk-visually-hidden"> set of pages</span></a>
                   </li>
-
-
+                </ul>
+                <p class="moj-pagination__results">Page 2 showing  <!--<b>11</b> to <b>17</b>--> <b>7</b> out of <b>17</b> submitted vacancies</p>
+              </nav>
+              <nav>
       <!--          </ul>
                 <p class="moj-pagination__results">Showing <b>11</b> to <b>20</b> of <b>34</b> vacancies</p>
               </nav>
