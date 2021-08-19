@@ -198,7 +198,7 @@ name: "address-postcode"
     ]
   }) }}
 
-  <h3 class="govuk-heading-m">Contact for this location</h3>
+  <h3 class="govuk-heading-m">Who should we contact about this location/vacancy?</h3>
 
   {{ govukInput({
     label: {
@@ -212,6 +212,9 @@ name: "address-postcode"
   {{ govukInput({
     label: {
       text: "Telephone"
+    },
+    hint: {
+      text: "This is a number you would like DWP to contact you about the vacancy."
     },
     classes: "govuk-input--width-20",
     id: "telephone",
