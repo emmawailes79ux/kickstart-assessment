@@ -17,23 +17,29 @@
 
 {% block content %}
 
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+
+            <h1 class="govuk-fieldset__legend--l"><span class='govuk-caption-l'></span>Add a vacancy</h1>
+            <p class="govuk-body-l">Kickstart Scheme vacancies must only require basic training. </p>
+
       <form action="job-add-b" method="post" class="form">
       {% call govukFieldset({
         legend: {
-          html: "<span class='govuk-caption-l'>Add a vacancy</span>Vacancy details",
+
           classes: "govuk-fieldset__legend--l",
           isPageHeading: true
         }
       }) %}
 
+
       <div class="govuk-form-group">
-        <h1 class="govuk-label-wrapper">
+        <h2 class="govuk-label-wrapper">
           <label class="govuk-label govuk-label--m" for="job-title">
             Job title
           </label>
-        </h1>
+        </h2>
         <input class="govuk-input govuk-input--width-20" id="job-title" name="job-title" value="{{ data['job-title'] }}" type="text">
       </div>
 
@@ -156,6 +162,16 @@
           }
         ]
       }) }}
+      <div class="govuk-form-group">
+        <h2 class="govuk-label-wrapper"><label class="govuk-label govuk-label--m" for="event-name">
+            Vacancy reference
+          </label>
+        </h2>
+        <div id="event-name-hint" class="govuk-hint">
+          If you are advertising your vacancy externally, give the job reference you are using (optional).
+         </div>
+          <input class="govuk-input govuk-input--width-20" id="job-title" name="job-title" value="{{ data['job-title'] }}" type="text">
+      </div>
 
 
 

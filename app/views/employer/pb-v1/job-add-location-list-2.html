@@ -204,6 +204,9 @@ name: "address-postcode"
     label: {
       text: "Full name"
     },
+      hint: {
+        text: "This is who DWP will contact about the vacancy."
+    },
     classes: "govuk-input--width-20",
     id: "contact-name",
     name: "full-name"
@@ -240,18 +243,6 @@ name: "address-postcode"
     classes: "govuk-input--width-20",
     id: "confirm-email",
     name: "confirm-email"
-  }) }}
-
-
-  <h3 class="govuk-heading-m">Add a reference for this vacancy </h3>
-
-  {{ govukInput({
-    hint: {
-      text: "If you are advertising your vacancy externally, give the job reference you are using (optional)."
-    },
-    classes: "govuk-input--width-20",
-    id: "employerjobreference",
-    name: "Employer Job Reference"
   }) }}
 
 
