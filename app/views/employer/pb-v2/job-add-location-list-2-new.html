@@ -1,0 +1,356 @@
+{% extends "layout-header-links.html" %}
+
+{% block pageTitle %}
+  Vacancy location details for [job title]
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/beta-banner.html" %}
+  {% include "includes/language-select.njk" %}
+  <!-- {% include "includes/manage-users-link.html" %} -->
+  {% include "includes/header-summary-users.html" %}
+  <!--  {{ govukBackLink({
+      text: "Back",
+      href: "job-add-location-2"
+    }) }}-->
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Location details for Junior Exhibition Designer</h1>
+      <!-- <p class="govuk-body">You can add the same vacancy to more than one location.</p> -->
+
+
+<!-- nasty bit-->
+{{ govukInput({
+  label: {
+    html: "Number of vacancies for this location",
+    classes: "govuk-label--m",
+    isPageHeading: false
+  },
+  classes: "govuk-input--width-4",
+  id: "width-4",
+  name: "width-4"
+}) }}
+
+{% set jobref %}
+{{ govukRadios({
+  classes: "govuk-radios",
+  idPrefix: "local-national",
+  name: "local-national",
+  fieldset: {
+    legend: {
+      html: "Do you want to advertise this job locally?",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+  {
+    value: "local",
+    text: "Yes, I only want to employ people who live close to this location"
+  },
+  {
+      value: "national",
+      text: "No, I can employ people from all over the UK for this job"
+    }
+  ]
+}) }}
+  {% endset -%}
+
+{{ govukRadios({
+idPrefix: "remote-role",
+name: "remote-role",
+fieldset: {
+  legend: {
+    html: "Where will this job be based?",
+    isPageHeading: true,
+    classes: "govuk-fieldset__legend--m"
+  }
+},
+hint: {
+  text: "Think about whether this job can be done remotely and what flexibility you can offer."
+},
+items: [
+  {
+    value: "part",
+    text: "On-site at all times"
+  },
+  {
+    value: "not",
+    text: "A mix of remote and on-site",
+    conditional: {
+      html: jobref
+    }
+  },
+  {
+    value: "yes",
+    text: "Remotely/at home at all times"
+  }
+]
+}) }}
+
+
+
+<h3 class="govuk-heading-m">Location address</h3>
+
+{{ govukInput({
+label: {
+  html: 'Building and street <span class="govuk-visually-hidden">line 1 of 2</span>'
+},
+id: "address-line-1",
+name: "address-line-1"
+}) }}
+
+{{ govukInput({
+label: {
+  html: '<span class="govuk-visually-hidden">Building and street line 2 of 2</span>'
+},
+id: "address-line-2",
+name: "address-line-2"
+}) }}
+
+{{ govukInput({
+label: {
+  text: "Town or city"
+},
+classes: "govuk-!-width-two-thirds",
+id: "address-town",
+name: "address-town"
+}) }}
+
+{{ govukInput({
+label: {
+  text: "Postcode"
+},
+classes: "govuk-input--width-10",
+id: "address-postcode",
+name: "address-postcode"
+}) }}
+
+{{ govukRadios({
+  idPrefix: "public-transport",
+  name: "public-transport",
+  fieldset: {
+    legend: {
+      text: "Is this location accessible via public transport?",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--m"
+    }
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes"
+    },
+    {
+      value: "no",
+      text: "No"
+    },
+    {
+      value: "do not know",
+      text: "Do not know"
+    }
+  ]
+}) }}
+<h2 class="govuk-heading-l" style="margin-top: 45px;">Vacancy details</h2>
+
+
+{% set referral %}
+{{ govukInput({
+  label: {
+    text: "Referral limit",
+    isPageHeading: false,
+    classes: "govuk-fieldset__legend--m"
+  },
+  classes: "govuk-input--width-5",
+  id: "width-5",
+  name: "width-5"
+  }) }}
+  {% endset -%}
+
+ {{ govukRadios({
+    idPrefix: "contact",
+    name: "contact",
+    fieldset: {
+      legend: {
+        text: "Do you want us to limit the number of applicants we recommend this vacancy to (referrals)?",
+        isPageHeading: false,
+        classes: "govuk-fieldset__legend--m"
+      }
+    },
+    hint: {
+      html: "We can not control how many applicants will apply for the role as they will send their applications to you directly."
+    },
+    items: [
+      {
+        value: "yes",
+        text: "Yes",
+        conditional: {
+          html: referral
+        }
+      },
+      {
+        value: "no",
+        text: "No"
+      }
+    ]
+  }) }}
+
+  <h3 class="govuk-heading-m">Who should we contact about this location/vacancy?</h3>
+
+  {{ govukInput({
+    label: {
+      text: "Full name"
+    },
+    classes: "govuk-input--width-20",
+    id: "contact-name",
+    name: "full-name"
+  }) }}
+
+  {{ govukInput({
+    label: {
+      text: "Telephone"
+    },
+    hint: {
+      text: "This is a number you would like DWP to contact you about the vacancy."
+    },
+    classes: "govuk-input--width-20",
+    id: "telephone",
+    name: "telephone"
+  }) }}
+
+  {{ govukInput({
+    label: {
+      text: "Email address"
+    },
+    hint: {
+      text: "You must enter the correct email address. If you do not, you may not receive any referrals."
+    },
+    classes: "govuk-input--width-20",
+    id: "email",
+    name: "email"
+  }) }}
+
+  {{ govukInput({
+    label: {
+      text: "Confirm email address"
+    },
+    classes: "govuk-input--width-20",
+    id: "confirm-email",
+    name: "confirm-email"
+  }) }}
+
+
+  <h3 class="govuk-heading-m">Add a reference for this vacancy </h3>
+
+  {{ govukInput({
+    hint: {
+      text: "This might be a reference your company use to refer to this vacancy (optional)"
+    },
+    classes: "govuk-input--width-20",
+    id: "employerjobreference",
+    name: "Employer Job Reference"
+  }) }}
+
+
+  {% set advertisingDate %}
+  {{ govukDateInput({
+    id: "advertising-date",
+    namePrefix: "advertising-date",
+    fieldset: {
+      legend: {
+        text: "What date do you want the vacancy advert to go live?",
+        isPageHeading: false,
+        classes: "govuk-fieldset__legend--m"
+      }
+    },
+    hint: {
+      text: "For example, 12 03 2021"
+    }
+  }) }}
+  {% endset -%}
+
+  {{ govukRadios({
+     idPrefix: "contact",
+     name: "contact",
+     fieldset: {
+       legend: {
+         text: "When do you want to start advertising this vacancy?",
+         isPageHeading: false,
+         classes: "govuk-fieldset__legend--m"
+       }
+     },
+     hint: {
+       text: "It is taking up to one month to process vacancies."
+     },
+     items: [
+       {
+         value: "asap",
+         text: "As soon as it has been processed"
+       },
+       {
+         value: "setDate",
+         text: "A date in the future",
+         conditional: {
+           html: advertisingDate
+         }
+       }
+     ]
+   }) }}
+
+  {% set closingDate %}
+  {{ govukDateInput({
+    id: "closing-date",
+    namePrefix: "closing-date",
+    fieldset: {
+      legend: {
+        text: "Closing date for applications",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--s"
+      }
+    },
+    hint: {
+      text: "For example, 12 03 2021"
+    }
+  }) }}
+  {% endset -%}
+
+  {{ govukRadios({
+     idPrefix: "closing-date",
+     name: "closing-date",
+     fieldset: {
+       legend: {
+         text: "Do you want to set a closing date for applications?",
+         isPageHeading: false,
+         classes: "govuk-fieldset__legend--m"
+       }
+     },
+     hint: {
+       html: "<p class='govuk-hint'>Once the closing date has passed you will not receive any more referrals or applications.</p><p class='govuk-hint'>It is taking up to one month to process vacancies. If you want to set a closing date, make sure you set one at least 2 months from now.</p>"
+     },
+     items: [
+       {
+         value: "yes",
+         text: "Yes",
+         conditional: {
+           html: closingDate
+         }
+       },
+       {
+         value: "no",
+         text: "No"
+       }
+     ]
+   }) }}
+
+   <a href="job-add-location-list" type="submit" class="govuk-button govuk-!-margin-right-1" id="submit">Add location</a>
+
+   {% include "includes/get-help-link.html" %}
+</div>
+</div>
+<!-- nasty bit end -->
+
+
+{% endblock %}
