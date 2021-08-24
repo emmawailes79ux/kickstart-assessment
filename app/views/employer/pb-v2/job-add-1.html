@@ -36,7 +36,7 @@
           isPageHeading: false
         },
         hint: {
-          text: "The Kickstart Scheme requires a minimum of 25 hours per week."
+          text: "The Kickstart Scheme requires a minimum of 25 hours per week. "
         },
         classes: "govuk-input--width-5",
         id: "total-hours",
@@ -226,6 +226,9 @@
         }) }}
         {% endset -%}
 
+
+
+
         {{ govukRadios({
            idPrefix: "pay",
            name: "pay",
@@ -235,7 +238,11 @@
                isPageHeading: false,
                classes: "govuk-fieldset__legend--m"
              }
-           },
+         },
+         hint: {
+           text: "DWP pay upto 25 hours per week at National Minimum Wage."
+         },
+
            items: [
              {
                value: "minimum-wage",
