@@ -14,60 +14,81 @@
             <form action="kc-password" method="post">
                 {{ govukFieldset({
                     legend: {
-                        html: "Set up a mobile authenticator",
+                        html: "Set up your mobile authentication",
                         classes: "govuk-fieldset__legend--l",
                         isPageHeading: true
                     }
                 })}}
 
-                <p class="govuk-body">You must set up a mobile authenticator for security reasons before you can use your Kickstart account.</p>
-                <p class="govuk-body">You’ll need to:</p>
+                <p class="govuk-body">Using a mobile authentication app means you can still access your account even if your phone is offline.</p>
+                <p class="govuk-body"><a href="kc-choose">Prefer to use SMS text messages as security? </a></p>
 
+      <!--          <h2 class="govuk-heading-m">
+                  Why use an Authentication app.
+                </h2>
+                  <ul class="govuk-list govuk-list--bullet">
+                  <li> Using an authenticator app means you can still access your account even if your phone is offline.</li>
+                  <li>Even if someone else finds out your password, it won't be enough for them to sign into your account</li>
+                </ul>-->
+                <h2 class="govuk-heading-m">
+                Getting started
+                </h2>
+
+                <h2 class="govuk-heading-s">
+                  Download the authenticator app
+                </h2>
                 <ol class="govuk-list govuk-list--number">
-                  <li>Download and install an authenticator app, for example:
-                    <ul class="govuk-list govuk-list--bullet">
-                      <li>FreeOTP</li>
-                      <li>Google Authenticator</li>
-                    </ul></li>
-                  <li>Open the app and scan this QR code:</li>
-                  <p class="govuk-body"><img src="/public/images/randomQR.png" alt="random qr code" style="height: 200px;"></p>
-                  <!-- <p class="govuk-body">Secret key: <b>dvrw qdd4 dfgh erty kj3b</b></p> -->
-
-                  {{ govukDetails({
-                      summaryText: "Unable to scan?",
-                      html: '<p class="govuk-body">Open the app and enter this key:<br><b>JJIU SSRZ NESH URZW M5TT QTKD NRSH ILYV</b></p>'
-                    }) }}
-
-                  <li>Enter the one-time code showing on the app</li>
-                  {{ govukInput({
-                      label: {
-                          text: ""
-                      },
-                      id: "one-time-code",
-                      name: "one-time-code",
-                      classes: "govuk-!-width-two-thirds"
-                  }) }}
-                  <!-- <li>Submit to finish setting up the app</li> -->
+                <li> Go to your mobile device's app store.
+                <li>Search for 'Authenticator App'</li>
+                <li>Download the app (FreeOTP or Google Authenticator)</li>
                 </ol>
+                <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+                <h2 class="govuk-heading-m">
+                Next steps
+                </h2>
+                <h3 class="govuk-heading-s">
+                After you have downloaded the app
+                </h3>
+                <p class="govuk-body"></p>
+                <p> Use the app to scan the QR code below </p>
 
+                <br> <p class="govuk-body"><img src="/public/images/randomQR.png" alt="random qr code" style="height: 200px;"></p>
 
-                <!-- {{ govukInput({
+                <div class="govuk-warning-text">
+                  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                  <strong class="govuk-warning-text__text">
+                    <span class="govuk-warning-text__assistive">Warning</span>
+                    If you can't scan the image enter the code below <br>
+                  </strong>
+                </div>
+              <h3 class="govuk-heading-s">JJIU SSRZ NESH URZW M5TT QTKD NRSH ILYV</h3>
+            <!--    <div class="govuk-inset-text"> <p class="govuk-body"> If you can't scan the image enter the code below</p>
+                <b>JJIU SSRZ NESH URZW M5TT QTKD NRSH ILYV</b></div>
+-->
+<div>
+              <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+              <h2 class="govuk-heading-m">
+                Add the code
+                  </h2>
+
+                  {{ govukInput({
                     label: {
-                        text: "Device name"
+                        text: "Enter the verification code showing on your device to continue"
                     },
-                    id: "device-name",
-                    name: "device-name",
+                    id: "one-time-code",
+                    name: "one-time-code",
                     classes: "govuk-!-width-two-thirds"
-                }) }}-->
-
-                {{ govukButton({
-                    text: "Save and continue"
                 }) }}
 
-            </form>
 
-            <p class="govuk-body"><a href="kc-choose">Prefer to set up your security using SMS text message?</a></p>
 
+  {{ govukButton({
+                    text: "Create my password"
+                }) }}
+
+
+  </form>
             {% include "includes/get-help-link.html" %}
         </div>
     </div>
