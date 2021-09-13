@@ -7,6 +7,7 @@
 {% block beforeContent %}
 {% include "includes/beta-banner.html" %}
 {% include "includes/language-select.njk" %}
+<!-- {% include "includes/manage-users-link.html" %} -->
 {% include "includes/header-summary-users.html" %}
     <style>
       .govuk-table__header, .govuk-table__cell {
@@ -343,13 +344,9 @@
                     html: "No. of<br>locations"
                   },
                   {
-                    html: "Expected <br>start date"
-                  },
-                  {
                     text: "",
                     format: "numeric"
                   },
-
                   {
                     text: ""
                   }
@@ -363,13 +360,10 @@
                       html: "<b>Admin clerk</b> <span class='govuk-!-font-size-14'>(<a href='job-detail'>Edit</a>)</span>"
                     },
                     {
-                      text: "3"
+                      text: "2"
                     },
                     {
                       text: "1"
-                    },
-                    {
-                      text: "12/03/2021"
                     },
                     {
                       html: '<strong class="govuk-tag govuk-tag--grey">Incomplete</strong>',
@@ -392,128 +386,10 @@
                       html: "<b>Landscape gardener</b> <span class='govuk-!-font-size-14'>(<a href='job-detail'>Edit</a>)</span>"
                     },
                     {
-                      text: "3"
-                    },
-                    {
-                      text: "1"
-                    },
-                    {
-                      html: "As soon <br>as possible"
-                    },
-                    {
-                      html: '<strong class="govuk-tag govuk-tag--yellow">Ready to submit</strong>',
-                      format: "numeric"
-                    },
-                    {
-                      html: "<span class='govuk-!-font-size-16'><a href='delete-vacancy'>Delete</a></span>"
-                    }
-                  ],[
-                    {
-                      html: "<div class='govuk-checkboxes govuk-checkboxes--small'>
-                              <div class='govuk-checkboxes__item'>
-                                <input class='govuk-checkboxes__input' id='box1' name='box' type='checkbox' value='box1'>
-                                <label class='govuk-label govuk-checkboxes__label' for='box1'></label>
-                              </div>
-                            </div>"
-                    },
-                    {
-                      html: "<b>Landscape gardener</b> <span class='govuk-!-font-size-14'>(<a href='job-detail'>Edit</a>)</span>"
-                    },
-                    {
-                      text: "10"
-                    },
-                    {
-                      text: "1"
-                    },
-                    {
-                      text: "23/09/2021"
-                    },
-                    {
-                      html: '<strong class="govuk-tag govuk-tag--yellow">Ready to submit</strong>',
-                      format: "numeric"
-                    },
-                    {
-                      html: "<span class='govuk-!-font-size-16'><a href='delete-vacancy'>Delete</a></span>"
-                    }
-                  ],
-                  [
-                    {
-                      html: "<div class='govuk-checkboxes govuk-checkboxes--small'>
-                              <div class='govuk-checkboxes__item'>
-                                <input class='govuk-checkboxes__input' id='box1' name='box' type='checkbox' value='box1'>
-                                <label class='govuk-label govuk-checkboxes__label' for='box1'></label>
-                              </div>
-                            </div>"
-                    },
-                    {
-                      html: "<b>Landscape gardener</b> <span class='govuk-!-font-size-14'>(<a href='job-detail'>Edit</a>)</span>"
-                    },
-                    {
-                      text: "1"
-                    },
-                    {
-                      text: "2"
-                    },
-                    {
-                      text: "28/09/2021"
-                    },
-                    {
-                      html: '<strong class="govuk-tag govuk-tag--yellow">Ready to submit</strong>',
-                      format: "numeric"
-                    },
-                    {
-                      html: "<span class='govuk-!-font-size-16'><a href='delete-vacancy'>Delete</a></span>"
-                    }
-                  ],
-                  [
-                    {
-                      html: "<div class='govuk-checkboxes govuk-checkboxes--small'>
-                              <div class='govuk-checkboxes__item'>
-                                <input class='govuk-checkboxes__input' id='box1' name='box' type='checkbox' value='box1'>
-                                <label class='govuk-label govuk-checkboxes__label' for='box1'></label>
-                              </div>
-                            </div>"
-                    },
-                    {
-                      html: "<b>Landscape gardener</b> <span class='govuk-!-font-size-14'>(<a href='job-detail'>Edit</a>)</span>"
-                    },
-                    {
                       text: "1"
                     },
                     {
                       text: "1"
-                    },
-                    {
-                      text: "12/10/2021"
-                    },
-                    {
-                      html: '<strong class="govuk-tag govuk-tag--yellow">Ready to submit</strong>',
-                      format: "numeric"
-                    },
-                    {
-                      html: "<span class='govuk-!-font-size-16'><a href='delete-vacancy'>Delete</a></span>"
-                    }
-                  ],
-                  [
-                    {
-                      html: "<div class='govuk-checkboxes govuk-checkboxes--small'>
-                              <div class='govuk-checkboxes__item'>
-                                <input class='govuk-checkboxes__input' id='box1' name='box' type='checkbox' value='box1'>
-                                <label class='govuk-label govuk-checkboxes__label' for='box1'></label>
-                              </div>
-                            </div>"
-                    },
-                    {
-                      html: "<b>Landscape gardener</b> <span class='govuk-!-font-size-14'>(<a href='job-detail'>Edit</a>)</span>"
-                    },
-                    {
-                      text: "1"
-                    },
-                    {
-                      text: "1"
-                    },
-                    {
-                      text: "20/10/2021"
                     },
                     {
                       html: '<strong class="govuk-tag govuk-tag--yellow">Ready to submit</strong>',
@@ -536,13 +412,10 @@
                       html: "<b>Junior salesperson</b> <span class='govuk-!-font-size-14'>(<a href='job-detail'>Edit</a>)</span>"
                     },
                     {
-                      text: "1"
+                      text: "14"
                     },
                     {
                       text: "7"
-                    },
-                    {
-                      text: "10/12/2021"
                     },
                     {
                       html: '<strong class="govuk-tag govuk-tag--yellow">Ready to submit</strong>',
@@ -571,9 +444,6 @@
                       text: "2"
                     },
                     {
-                      text: "03/09/2021"
-                    },
-                    {
                       html: '<strong class="govuk-tag govuk-tag--yellow">Ready to submit</strong>',
                       format: "numeric"
                     },
@@ -581,7 +451,6 @@
                       html: "<span class='govuk-!-font-size-16'><a href='delete-vacancy'>Delete</a></span>"
                     }
                   ]
-
                 ]
               }) }}
 
@@ -596,21 +465,23 @@
 
                   <li class="moj-pagination__item moj-pagination__item--active"><span class="moj-pagination__link">1</span></li>
 
+                  <li class="moj-pagination__item moj-pagination__item--active"><a class="moj-pagination__link" href="#">2</a></li>
+
+                  <li class="moj-pagination__item"><a class="moj-pagination__link" href="#">3</a></li>
 
                   <li class="moj-pagination__item  moj-pagination__item--next">
                     <a class="moj-pagination__link" href="">Next<span class="govuk-visually-hidden"> set of pages</span></a>
                 </li>
                 </ul>
-                  <p class="moj-pagination__results">Page 1 showing <b>1</b> of <b>19</b> in progress vacancies</p>
-
+                <!-- <p class="moj-pagination__results">Showing <b>10</b> to <b>20</b> of <b>30</b> results</p> -->
               </nav>
+
 
               {{ govukButton({
                 text: "Submit vacancies",
                 href: "submit-vacancy",
                 classes: "govuk-button--secondary"
               }) }}
-
             </div>
           </div>
 
@@ -678,7 +549,7 @@
                       text: "26/03/2021"
                     },
                     {
-                      html: '<strong class="govuk-tag govuk-tag--blue">Live</strong>',
+                      html: '<strong class="govuk-tag govuk-tag--yellow">Awaiting approval</strong>',
                       format: "numeric"
                     }
                   ],
@@ -699,7 +570,7 @@
                       text: "26/03/2021"
                     },
                     {
-                      html: '<strong class="govuk-tag govuk-tag--red">Referral limit reached</strong>',
+                      html: '<strong class="govuk-tag govuk-tag--green">Approved</strong>',
                       format: "numeric"
                     }
                   ],
@@ -741,7 +612,7 @@
                       text: "26/03/2021"
                     },
                     {
-                      html: '<strong class="govuk-tag govuk-tag--grey">Paused</strong>',
+                      html: '<strong class="govuk-tag govuk-tag--grey">Suspended</strong>',
                       format: "numeric"
                     }
                   ],
@@ -765,32 +636,10 @@
                       html: '<strong class="govuk-tag govuk-tag--green">Approved</strong>',
                       format: "numeric"
                     }
-                  ],
-                  [
-                    {
-                      html: "<b><a href='job-summary'>Part-time auditor</a></b>"
-                    },
-                    {
-                      text: "3"
-                    },
-                    {
-                      text: "Leeds"
-                    },
-                    {
-                      text: "LS2 6YT"
-                    },
-                    {
-                      text: "23/03/2021"
-                    },
-                    {
-                      html: '<strong class="govuk-tag govuk-tag--purple">Filled</strong>',
-                      format: "numeric"
-                    }
                   ]
 
                 ]
               }) }}
-
               <nav class="moj-pagination" id="pagination-label">
 
                 <p class="govuk-visually-hidden" aria-labelledby="pagination-label">Pagination navigation</p>
@@ -800,36 +649,39 @@
                     <a class="moj-pagination__link" href="">Previous<span class="govuk-visually-hidden"> set of pages</span></a>
                   </li>
 
-                  <li class="moj-pagination__item"><a class="moj-pagination__link" href="/employer/mvp-v3/job-list-role-added-page-1">1</a></li>
+                  <li class="moj-pagination__item"><a class="moj-pagination__link" href="/page=1">1</a></li>
 
                   <li class="moj-pagination__item moj-pagination__item--active">2</li>
 
-                <!--  <li class="moj-pagination__item"><a class="moj-pagination__link" href="/page=3">3</a></li>-->
+                  <li class="moj-pagination__item"><a class="moj-pagination__link" href="/page=3">3</a></li>
 
                   <li class="moj-pagination__item  moj-pagination__item--next">
                     <a class="moj-pagination__link" href="">Next<span class="govuk-visually-hidden"> set of pages</span></a>
                   </li>
                 </ul>
-                <p class="moj-pagination__results">Page 2 showing  <b>7</b> out of <b>17</b> submitted vacancies</p>
+                <p class="moj-pagination__results">Showing <b>10</b> to <b>20</b> of <b>34</b> vacancies</p>
               </nav>
-              <nav>
-      <!--          </ul>
-                <p class="moj-pagination__results">Showing <b>11</b> to <b>20</b> of <b>34</b> vacancies</p>
-              </nav>
-              <nav>
-                <nav style="float:right">
-                    <ul class="govuk-form-group">
-                        <p class="govuk-label" for="sort">
-                          Results per page
-                          <select class="govuk-select" id="sort" name="sort">
-                            <option value="10">10</option>
-                            <option value="20" >20</option>
-                            <option value="30">30</option>
-                            <option value="40">40</option>
-                            <option value="50">50</option>
-                          </select>  </p>-->
-                  </nav>
-              </div>
+
+    <!--          <nav class="moj-pagination" id="pagination-label">
+
+                <p class="govuk-visually-hidden" aria-labelledby="pagination-label">Pagination navigation</p>
+
+                <ul class="moj-pagination__list">
+                  <li class="moj-pagination__item  moj-pagination__item--prev">
+                    <a class="moj-pagination__link" href="">Previous<span class="govuk-visually-hidden"> set of pages</span></a>
+                  </li>
+
+                  <li class="moj-pagination__item moj-pagination__item--active"><span class="moj-pagination__link">1</span></li>
+
+                  <li class="moj-pagination__item moj-pagination__item--active"><a class="moj-pagination__link" href="#">2</a></li>
+
+                  <li class="moj-pagination__item"><a class="moj-pagination__link" href="#">3</a></li>
+
+                  <li class="moj-pagination__item  moj-pagination__item--next">
+                    <a class="moj-pagination__link" href="">Next<span class="govuk-visually-hidden"> set of pages</span></a>
+                </li>
+                </ul>
+                <!-- <p class="moj-pagination__results">Showing <b>10</b> to <b>20</b> of <b>30</b> results</p> -->
 
 
             </div>
