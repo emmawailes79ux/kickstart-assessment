@@ -10,7 +10,7 @@
 
 <!-- {% include "includes/manage-users-link.html" %} -->
 {% include "includes/header-summary-users.html" %}
-  
+
 {% endblock %}
 
 {% block content %}
@@ -214,6 +214,7 @@
 
 
 
+
         {% set otherpayShow %}
         {{ govukInput({
           hint: {
@@ -246,7 +247,11 @@
                isPageHeading: false,
                classes: "govuk-fieldset__legend--m"
              }
-           },
+         },
+         hint: {
+           text: "DWP pay upto 25 hours per week at National Minimum Wage."
+         },
+
            items: [
              {
                value: "minimum-wage",
@@ -268,10 +273,6 @@
              }
            ]
          }) }}
-
-
-
-
 
 
 
