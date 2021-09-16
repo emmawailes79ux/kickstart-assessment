@@ -1,0 +1,64 @@
+{% extends "layout-header-links.html" %}
+
+{% block pageTitle %}
+  An editor has been invited
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/beta-banner.html" %}
+<!-- {% include "includes/manage-users-link.html" %} -->
+{% include "includes/language-select.njk" %}
+{% include "includes/header-summary-users.html" %}
+<style>
+  .guidance-layout {
+    word-wrap: break-word;
+    background-color: #005EA5;
+    padding: 50px 30px 30px;
+    display: block;
+    }
+    .guidance-layout h1, .guidance-layout p, .guidance-layout ul, .guidance-layout h2, .guidance-layout .govuk-summary-list, .guidance-layout .govuk-caption-m{
+        color:#fff;
+    }
+    .guidance-layout .govuk-button, .guidance-layout .drop-area__btn, .guidance-layout .js-enabled .dft-fu__add-file-btn, .js-enabled .guidance-layout .dft-fu__add-file-btn {
+        color: #005EA5;
+        background-color: #fff;
+    }
+    .guidance-layout .govuk-warning-text{
+        color:#fff;
+    }
+    .guidance-layout .govuk-warning-text__icon{
+        border: 3px solid #fff;
+        border-radius: 50%;
+        color: #005EA5;
+        background: #fff;
+    }
+    </style>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row guidance-layout" style="margin-right:0; margin-left:0">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">You've successfully invited an editor to the account</h1>
+
+      <h2 class="govuk-heading-m">What happens next</h2>
+
+      <p class="govuk-body">We have sent out an email to <b>emma.wailes@hippodigital.co.uk</b>. They will need to follow the instructions in the email to set up their account as an editor. </p>
+      <p class="govuk-body">This means they will be able to add, update, delete and submit vacancies. They will not be able to add other editors to the account.</p>
+
+<h2 class="govuk-heading-m">If they don't receive an email</h2>
+      <p class="govuk-body">The email may take up to 24 hours to arrive. If they don't see a message in their inbox, make sure the email address listed above is correct and check their span or junk mail folder.</p>
+      <p class="govuk-body">If they haven't received an email contact us at <b>kickstart.support@dwp.gov.uk</b></p>
+      <p class="govuk-body"><a href="job-list-roles-submitted" style="font-weight: bold; text-decoration: underline; color: white;">Return to previous screen</a>
+
+
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full" style="margin-top: 25px;">
+      {% include "includes/get-help-link.html" %}
+    </div>
+  </div>
+
+{% endblock %}
