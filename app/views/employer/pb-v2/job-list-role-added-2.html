@@ -12,6 +12,8 @@
       .govuk-table__header, .govuk-table__cell {
         padding: 8px 10px 8px 0px;
         vertical-align: middle;
+
+          overflow-x:auto;
         }
       }
 
@@ -321,6 +323,7 @@
 
               <div class='govuk-checkboxes govuk-checkboxes--small'>
                 <div class='govuk-checkboxes__item' style='min-height:1;'>
+                    <div class="table-responsive">
                   <input class='govuk-checkboxes__input' id='select-all' name='box' type='checkbox' value='select-all'  onClick='toggle(this)'>
                   <label class='govuk-label govuk-checkboxes__label' for='select-all'>Select all
                   </label>
@@ -329,6 +332,7 @@
 
               {{ govukTable({
                 firstCellIsHeader: false,
+
                 head: [
                   {
                     text: ""
