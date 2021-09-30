@@ -12,6 +12,8 @@
       .govuk-table__header, .govuk-table__cell {
         padding: 8px 10px 8px 0px;
         vertical-align: middle;
+
+          overflow-x:auto;
         }
       }
 
@@ -29,7 +31,7 @@
       .visually-hidden,
       .visuallyhidden {
         position: absolute;
-        overflow-x: auto;
+        overflow: auto;
         clip: rect(0 0 0 0);
         height: 1px;
         width: 1px;
@@ -329,6 +331,7 @@
 
               {{ govukTable({
                 firstCellIsHeader: false,
+
                 head: [
                   {
                     text: ""
@@ -339,11 +342,9 @@
                   {
                     html: "No. of<br>vacancies"
                   },
+
                   {
-                    html: "Town/City"
-                  },
-                  {
-                    html: "Postcode"
+                    html: "Location"
                   },
                   {
                     html: "Expected <br>start date"
@@ -368,11 +369,9 @@
                     {
                       text: "3"
                     },
+
                     {
-                      text: "Leeds"
-                    },
-                    {
-                      text: "LS3 5AG"
+                      html: "Leeds <br>LS3 5AG"
                     },
                     {
                       text: "12/03/2021"
@@ -400,11 +399,9 @@
                     {
                       text: "3"
                     },
+
                     {
-                      text: "Leeds"
-                    },
-                    {
-                      text: "BD11 1ND"
+                      html: "Leeds <br>BD11 1ND"
                     },
                     {
                       html: "As soon <br>as possible"
@@ -431,11 +428,9 @@
                     {
                       text: "10"
                     },
+
                     {
-                      text: "Manchester"
-                    },
-                    {
-                      text: "M1 1AH"
+                      html: "Manchester <br>M1 1AH"
                     },
                     {
                       text: "23/09/2021"
@@ -464,10 +459,7 @@
                       text: "1"
                     },
                     {
-                      text: "Kirby"
-                    },
-                    {
-                      text: "L32 4AF"
+                      html: "Kirby <br>L32 4AF"
                     },
                     {
                       text: "28/09/2021"
@@ -495,11 +487,9 @@
                     {
                       text: "1"
                     },
+
                     {
-                      html: "Newcastle <br>upon Tyne"
-                    },
-                    {
-                      text: "NE48 3RQ"
+                      html: "Newcastle upon <br>Tyne <br>NE48 3RQ"
                     },
                     {
                       text: "12/10/2021"
@@ -527,11 +517,9 @@
                     {
                       text: "1"
                     },
+
                     {
-                      text: "Southport"
-                    },
-                    {
-                      text: "PR8 1AP"
+                      html: "Southport <br> PR8 1AP"
                     },
                     {
                       text: "20/10/2021"
@@ -559,11 +547,9 @@
                     {
                       text: "1"
                     },
+
                     {
-                      text: "Sevenoaks"
-                    },
-                    {
-                      text: "TN13 1AX"
+                      html: "Sevenoaks<br>TN13 1AX"
                     },
                     {
                       text: "10/12/2021"
@@ -591,11 +577,9 @@
                     {
                       text: "2"
                     },
+
                     {
-                      text: "Northampton"
-                    },
-                    {
-                      text: "NN1 1BQ"
+                      html: "Northampton <br> NN1 1BQ"
                     },
                     {
                       text: "03/09/2021"
@@ -653,11 +637,9 @@
                     html: "No. of<br>vacancies"
                   },
                   {
-                    html: "Town/city"
+                    html: "Location"
                   },
-                  {
-                    html: "Postcode"
-                  },
+
                   {
                     html: "Date<br>submitted"
                   },
@@ -675,11 +657,9 @@
                       text: "2"
                     },
                     {
-                      text: "Leeds"
+                      html: "Leeds <br> LS2 6YT"
                     },
-                    {
-                      text: "LS2 6YT"
-                    },
+
                     {
                       text: "26/03/2021"
                     },
@@ -696,11 +676,9 @@
                       text: "2"
                     },
                     {
-                      text: "Manchester"
+                      html: "Manchester <br> M2 6HD"
                     },
-                    {
-                      text: "M2 6HD"
-                    },
+
                     {
                       text: "26/03/2021"
                     },
@@ -717,11 +695,9 @@
                       text: "2"
                     },
                     {
-                      text: "Peterborough"
+                      html: "Peterborough <br>PE1 1EJ"
                     },
-                    {
-                      text: "PE1 1EJ"
-                    },
+
                     {
                       text: "26/03/2021"
                     },
@@ -738,11 +714,9 @@
                       text: "2"
                     },
                     {
-                      text: "Rotherham"
+                      html: "Rotherham <br>S60 1FD"
                     },
-                    {
-                      text: "S60 1FD"
-                    },
+
                     {
                       text: "26/03/2021"
                     },
@@ -759,11 +733,9 @@
                       text: "2"
                     },
                     {
-                      text: "Sheffield"
+                      html: "Sheffield <br>S1 1XZ"
                     },
-                    {
-                      text: "S1 1XZ"
-                    },
+
                     {
                       text: "26/03/2021"
                     },
@@ -780,11 +752,9 @@
                       text: "3"
                     },
                     {
-                      text: "Leeds"
+                      html: "Leeds <br>LS2 6YT"
                     },
-                    {
-                      text: "LS2 6YT"
-                    },
+
                     {
                       text: "23/03/2021"
                     },
@@ -801,11 +771,9 @@
                       text: "3"
                     },
                     {
-                      text: "Leeds"
+                      html: "Leeds <br>LS2 6YT"
                     },
-                    {
-                      text: "LS2 6YT"
-                    },
+
                     {
                       text: "23/03/2021"
                     },
