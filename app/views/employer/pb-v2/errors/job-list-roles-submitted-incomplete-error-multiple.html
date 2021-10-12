@@ -151,19 +151,25 @@
 
 {% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
 
+{% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
+
 {{ govukErrorSummary({
   titleText: "There is a problem",
   errorList: [
     {
-      html: "Junior exhibition designer - Add a location to the vacancy",
+      html: "Landscape gardener (Manchester M1 1AH) - Advertising start date must be more than 1 month from todays date",
       href: "../job-add-location-list"
     },
     {
-      html: "Junior exhibition designer - Advertising start date must be more than 1 month from todays date",
+      html: "Site labourer (Newcastle upon Tyne, NE45 3RQ) - Closing date must be more than 2 months from todays date",
       href: "../job-add-location-list"
     },
     {
-      text: "Junior Salesperson - Add a location before submitting the vacancy",
+      text: "Kitchen dishwasher and General domestic assistant (Northampton NN1 1BQ) - Advertising start date must be more than 1 month from todays date AND Closing date must be more than 2 months from todays date",
+      href: "../job-add-location-list"
+    },
+    {
+      text: "Landscape gardener (Northampton NN1 1BQ) - Add a location before submitting the vacancy",
       href: "../job-add-location-list-empty"
     }
   ]
@@ -264,9 +270,7 @@
                   {
                     html: "No. of<br>locations"
                   },
-                  {
-                    html: "Advertising <br> start date"
-                  },
+
                   {
                     text: "Status",
                     format: "numeric"
@@ -287,13 +291,11 @@
                       text: "2"
                     },
                     {
-                      text: "0"
+                      text: "1"
                     },
+
                     {
-                      text: "01/09/2021"
-                    },
-                    {
-                      html: '<strong class="govuk-tag govuk-tag--red">Action Required</strong>',
+                      html: '<strong class="govuk-tag govuk-tag--grey">Incomplete</strong>',
                       format: "numeric"
                     },
                     {
@@ -302,12 +304,7 @@
                   ],
                   [
                   {
-                    html: "<div class='govuk-checkboxes govuk-checkboxes--small'>
-                            <div class='govuk-checkboxes__item'>
-                              <input class='govuk-checkboxes__input' id='box1' name='box' type='checkbox' value='box1'>
-                              <label class='govuk-label govuk-checkboxes__label' for='box1'></label>
-                            </div>
-                          </div>"
+                    html: ""
                   },
                     {
                       html: "<b>Landscape gardener</b> <span class='govuk-!-font-size-14'>(<a href='job-detail'>Edit</a>)</span>"
@@ -318,11 +315,9 @@
                     {
                       text: "1"
                     },
+
                     {
-                      text: "15/07/2021"
-                    },
-                    {
-                      html: '<strong class="govuk-tag govuk-tag--yellow">Ready to submit</strong>',
+                      html: '<strong class="govuk-tag govuk-tag--red">Action Required</strong>',
                       format: "numeric"
                     },
                     {
@@ -342,11 +337,133 @@
                     {
                       text: "0"
                     },
+
                     {
-                      text: "15/07/2021"
+                      html: '<strong class="govuk-tag govuk-tag--grey">Incomplete</strong>',
+                      format: "numeric"
                     },
                     {
+                      html: "<span class='govuk-!-font-size-16'><a href='delete-vacancy'>Delete</a></span>"
+                    }
+                  ],
+                  [
+                    {
+                      html: ""
+                    },
+                    {
+                      html: "<b>Site labourer</b> <span class='govuk-!-font-size-14'>(<a href='job-detail'>Edit</a>)</span>"
+                    },
+                    {
+                      text: "1"
+                    },
+                    {
+                      text: "1"
+                    },
+
+                    {
+                      html: '<strong class="govuk-tag govuk-tag--red">Action required</strong>',
+                      format: "numeric"
+                    },
+                    {
+                      html: "<span class='govuk-!-font-size-16'><a href='delete-vacancy'>Delete</a></span>"
+                    }
+                  ],
+                  [
+                    {
+                      html: "<div class='govuk-checkboxes govuk-checkboxes--small'>
+                              <div class='govuk-checkboxes__item'>
+                                <input class='govuk-checkboxes__input' id='box1' name='box' type='checkbox' value='box1'>
+                                <label class='govuk-label govuk-checkboxes__label' for='box1'></label>
+                              </div>
+                            </div>"
+                    },
+                    {
+                      html: "<b>Data Entry Assistant</b> <span class='govuk-!-font-size-14'>(<a href='job-detail'>Edit</a>)</span>"
+                    },
+                    {
+                      text: "1"
+                    },
+                    {
+                      text: "5"
+                    },
+                    {
+                      html: '<strong class="govuk-tag govuk-tag--yellow">Ready to submit</strong>',
+                      format: "numeric"
+                    },
+                    {
+                      html: "<span class='govuk-!-font-size-16'><a href='delete-vacancy'>Delete</a></span>"
+                    }
+                  ],
+                  [
+                    {
+                      html: "<div class='govuk-checkboxes govuk-checkboxes--small'>
+                              <div class='govuk-checkboxes__item'>
+                                <input class='govuk-checkboxes__input' id='box1' name='box' type='checkbox' value='box1'>
+                                <label class='govuk-label govuk-checkboxes__label' for='box1'></label>
+                              </div>
+                            </div>"
+                    },
+                    {
+                      html: "<b>Kitchen dishwasher and General domestic assistant</b> <span class='govuk-!-font-size-14'>(<a href='job-detail'>Edit</a>)</span>"
+                    },
+                    {
+                      text: "1"
+                    },
+                    {
+                      text: "3"
+                    },
+
+                    {
                       html: '<strong class="govuk-tag govuk-tag--red">Action Required</strong>',
+                      format: "numeric"
+                    },
+                    {
+                      html: "<span class='govuk-!-font-size-16'><a href='delete-vacancy'>Delete</a></span>"
+                    }
+                  ],
+                  [
+                  {
+                    html: ""
+                  },
+                    {
+                      html: "<b>Landscape gardener</b> <span class='govuk-!-font-size-14'>(<a href='job-detail'>Edit</a>)</span>"
+                    },
+                    {
+                      text: "2"
+                    },
+                    {
+                      text: "2"
+                    },
+
+                    {
+                      html: '<strong class="govuk-tag govuk-tag--red">Action Required</strong>',
+                      format: "numeric"
+                    },
+                    {
+                      html: "<span class='govuk-!-font-size-16'><a href='delete-vacancy'>Delete</a></span>"
+                    }
+                    ],
+                  [
+                    {
+                      html: "<div class='govuk-checkboxes govuk-checkboxes--small'>
+                              <div class='govuk-checkboxes__item'>
+                                <input class='govuk-checkboxes__input' id='box1' name='box' type='checkbox' value='box1'>
+                                <label class='govuk-label govuk-checkboxes__label' for='box1'></label>
+                              </div>
+                            </div>"
+                    },
+                    {
+                      html: "<b>Digital and Community Cycling Co-Collaborator<br> Active Travel Social Enterprise</b> <span class='govuk-!-font-size-14'>(<a href='job-detail'>Edit</a>)</span>"
+                    },
+                    {
+                      text: "5"
+                    },
+                    {
+                      text: "1"
+                    },
+
+                    {
+                      html: '<strong class="govuk-tag govuk-tag--yellow">Ready to Submit</strong>',
                       format: "numeric"
                     },
                     {
@@ -602,6 +719,7 @@
                       text: ""
                     }
                   ]
+
 
                 ]
               }) }}

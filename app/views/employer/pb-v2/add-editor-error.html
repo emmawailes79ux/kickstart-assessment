@@ -20,17 +20,15 @@
 
       <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
         <h2 class="govuk-error-summary__title" id="error-summary-title">
-          This email already exists in our system
+          There is a problem
         </h2>
         <div class="govuk-error-summary__body">
           <ul class="govuk-list govuk-error-summary__list">
 
             <li>
-              <a href="#user-email">Enter a different email address or</a>
+              <a href="#user-email">Enter an email address that has not been used before</a>
             </li>
-            <li>
-              <a href=mailto:kickstart.support@dwp.gov.uk">contact our support team at kickstart.support@dwp.gov.uk</a>
-            </li>
+
           </ul>
         </div>
       </div>
@@ -38,7 +36,9 @@
   <p class="govuk-body">You have <b>4</b> remaining spaces for editors on this account. </p>
 
 
-  <p class="govuk-body">Make sure the information you enter is correct as we cannot change it once submitted. If you need to remove an editor, email our support team on <a href="mailto:Kickstart.support@dwp.gov.uk"> Kickstart.support@dwp.co.uk.</a></p>
+  <p class="govuk-body">Make sure the information you enter is correct as we cannot change it once submitted. For more information on removing an editor go to our <a href="../../get-help/v03/get-help">help page</a>.
+
+  <!--  email our support team on <a href="mailto:Kickstart.support@dwp.gov.uk"> Kickstart.support@dwp.co.uk.</a></p>-->
       {{ govukInput({
         label: {
           text: "First name"
@@ -68,7 +68,7 @@
       name: "user-email",
       autocomplete: "email",
       errorMessage: {
-    "text": "Enter a different email for this editor"
+    "text": "Enter an email address that has not been used before"
   }
     }) }}
 
