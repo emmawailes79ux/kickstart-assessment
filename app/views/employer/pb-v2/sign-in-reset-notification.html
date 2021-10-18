@@ -6,7 +6,6 @@
 
 {% block beforeContent %}
 {% include "includes/beta-banner.html" %}
-{% include "includes/language-select-no-back.njk" %}
 
 <style>
   .alert, .multi-file-upload__status-message--alert {
@@ -80,9 +79,14 @@
                       isPageHeading: true
                   }
               })}}
+              <p class="govuk-body">Enter your details to sign in to your Kickstart Scheme account. You'll need to use the same email address you've been invited to sign in with.</p>
 
-              <p class="govuk-body">Enter your details to sign in to your Kickstart account. You'll need to use the same email address you've been invited to sign in with.</p>
+              {{ govukInsetText({
+              html: "<p class='govuk-body'>The online service is also available in <a href='#'>Welsh (Cymraeg)</a></p>"
+              }) }}
 
+              <!--<p class="govuk-body">Enter your details to sign in to your Kickstart account. You'll need to use the same email address you've been invited to sign in with.</p>
+-->
               {{ govukInput({
                   label: {
                       text: "Email address"
@@ -106,6 +110,7 @@
                   text: "Continue"
               }) }}
 
+<!--<p class='govuk-body'>The online service is also available in <a href='#'>Welsh (Cymraeg)</p>-->
               <p><a href="forgotten-password">Forgotten your password?</a></p>
 
             </form>
