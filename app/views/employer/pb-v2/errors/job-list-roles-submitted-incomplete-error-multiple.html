@@ -237,6 +237,7 @@
                   }
                 }
               </script>
+
             <!--  {{ govukButton({
                 text: "Submit vacancies",
                 href: "submit-vacancy",
@@ -278,7 +279,13 @@
                 rows: [
                   [
                     {
-                      html: ""
+                      html: "<div class='govuk-checkboxes govuk-checkboxes--small'>
+                              <div class='govuk-checkboxes__item'>
+                                <input class='govuk-checkboxes__input' id='box1' name='box' type='checkbox' value='box1'>
+                                <label class='govuk-label govuk-checkboxes__label' for='box1'></label>
+
+                              </div>
+                            </div>"
                     },
                     {
                       html: "<b>Junior exhibition designer</b> <span class='govuk-!-font-size-14'>(<a href='job-detail'>Edit</a>)</span>"
@@ -300,7 +307,12 @@
                   ],
                   [
                   {
-                    html: ""
+                    html: "<div class='govuk-checkboxes govuk-checkboxes--small'>
+                            <div class='govuk-checkboxes__item'>
+                              <input class='govuk-checkboxes__input' id='box1' name='box' type='checkbox' value='box1'>
+                              <label class='govuk-label govuk-checkboxes__label' for='box1'></label>
+                            </div>
+                          </div>"
                   },
                     {
                       html: "<b>Landscape gardener</b> <span class='govuk-!-font-size-14'>(<a href='job-detail'>Edit</a>)</span>"
@@ -349,7 +361,12 @@
                   ],
                   [
                     {
-                      html: ""
+                      html: "<div class='govuk-checkboxes govuk-checkboxes--small'>
+                              <div class='govuk-checkboxes__item'>
+                                <input class='govuk-checkboxes__input' id='box1' name='box' type='checkbox' value='box1'>
+                                <label class='govuk-label govuk-checkboxes__label' for='box1'></label>
+                              </div>
+                            </div>"
                     },
                     {
                       html: "<b>Site labourer</b> <span class='govuk-!-font-size-14'>(<a href='job-detail'>Edit</a>)</span>"
@@ -424,7 +441,12 @@
                   ],
                   [
                   {
-                    html: ""
+                    html: "<div class='govuk-checkboxes govuk-checkboxes--small'>
+                            <div class='govuk-checkboxes__item'>
+                              <input class='govuk-checkboxes__input' id='box1' name='box' type='checkbox' value='box1'>
+                              <label class='govuk-label govuk-checkboxes__label' for='box1'></label>
+                            </div>
+                          </div>"
                   },
                     {
                       html: "<b>Landscape gardener</b> <span class='govuk-!-font-size-14'>(<a href='job-detail'>Edit</a>)</span>"
@@ -479,7 +501,7 @@
 
               {{ govukButton({
                 text: "Submit vacancies",
-                href: "submit-vacancy",
+                href: "../submit-vacancy",
                 classes: "govuk-button--secondary"
               }) }}
             </div>
