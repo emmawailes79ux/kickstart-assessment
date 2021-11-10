@@ -1,0 +1,71 @@
+{% extends "layout-header-links.html" %}
+
+{% block pageTitle %}
+  Add a user
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/beta-banner.html" %}
+  {% include "includes/language-select.njk" %}
+
+  <!-- {% include "includes/manage-users-link.html" %} -->
+  {% include "includes/header-summary-users.html" %}
+
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Invite an editor</h1>
+  <p class="govuk-body">You have <b>4</b> remaining spaces for editors on this account. </p>
+
+
+    <p class="govuk-body">Make sure the information you enter is correct as we cannot change it once submitted. For more information on removing an editor go to our <a href="../../get-help/v03/get-help">help page</a>.
+
+      {{ govukInput({
+        label: {
+          text: "First name"
+        },
+        classes: "govuk-input--width-20",
+        id: "first-name",
+        name: "first-name"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Surname"
+        },
+        classes: "govuk-input--width-20",
+        id: "surname",
+        name: "surname"
+      }) }}
+
+    {{ govukInput({
+      label: {
+        text: "Email address"
+      },
+      classes: "govuk-input--width-20",
+
+      id: "user-email",
+      name: "user-email"
+    }) }}
+
+    {{ govukInput({
+      label: {
+        text: "Confirm email address"
+      },
+      classes: "govuk-input--width-20",
+      id: "confirm-email",
+      name: "confirm-email"
+    }) }}
+
+      <p><a href="submit-new-editor" class="govuk-button">Submit request</a></p>
+      <!-- <p class="govuk-body"><a href="manage-users">Back to manage users</a></p> -->
+      {% include "includes/get-help-link.html" %}
+
+    </div>
+    </div>
+
+
+
+{% endblock %}
