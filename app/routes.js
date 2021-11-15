@@ -158,7 +158,33 @@ router.post('/gateway/v02/kc-choose', function (req, res) {
   }
 });
 
-////// pb-v1 //////////////////////////////////
+////// pb-v2-closedown-v2 //////////////////////////////////
+
+router.post('/employer/pb-v2-closedown-v2/kc-choose', function (req, res) {
+  const editChoice = req.session.data['2fa-choose']
+
+  if (editChoice === 'authenticator-app') {
+    res.redirect('/employer/pb-v2-closedown-v2/kc-2fa')
+  } else if (editChoice === 'mobile-phone') {
+    res.redirect('/employer/pb-v2-closedown-v2/kc-phone')
+  }
+});
+
+
+////// pb-v2-closedown-v1 //////////////////////////////////
+
+router.post('/employer/pb-v2-closedown-v1/kc-choose', function (req, res) {
+  const editChoice = req.session.data['2fa-choose']
+
+  if (editChoice === 'authenticator-app') {
+    res.redirect('/employer/pb-v2-closedown-v1/kc-2fa')
+  } else if (editChoice === 'mobile-phone') {
+    res.redirect('/employer/pb-v2-closedown-v1/kc-phone')
+  }
+});
+
+
+////// pb-v2 //////////////////////////////////
 
 router.post('/employer/pb-v2/kc-choose', function (req, res) {
   const editChoice = req.session.data['2fa-choose']
