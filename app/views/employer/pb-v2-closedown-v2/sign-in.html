@@ -1,0 +1,64 @@
+{% extends "layout-footer.html" %}
+
+{% block pageTitle %}
+  Sign in to your Kickstart Scheme account
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/beta-banner.html" %}
+
+
+{% endblock %}
+
+
+{% block content %}
+  {% include "includes/close-down-start-info.html" %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <form action="phone-code" method="post">
+              {{ govukFieldset({
+                  legend: {
+                      html: 'Sign in to your Kickstart Scheme account',
+                      classes: "govuk-fieldset__legend--l",
+                      isPageHeading: true
+                  }
+              })}}
+
+              <p class="govuk-body">Enter your details to sign in to your Kickstart Scheme account. You'll need to use the same email address you've been invited to sign in with.</p>
+
+              {{ govukInsetText({
+              html: "<p class='govuk-body'>The online service is also available in <a href='#'>Welsh (Cymraeg)</a></p>"
+            }) }}
+              <!--      <p class="govuk-body">The online service is also available in <a class="govuk-link" href="#">Welsh (Cymraeg)</a>.</p>-->
+
+
+              {{ govukInput({
+                  label: {
+                      text: "Email address"
+                  },
+                  id: "email-address",
+                  name: "email-address",
+                  classes: "govuk-!-width-two-thirds"
+              }) }}
+
+              {{ govukInput({
+                  label: {
+                      text: "Password"
+                  },
+                  id: "password",
+                  name: "password",
+                  classes: "govuk-!-width-two-thirds",
+                  type: "password"
+              }) }}
+
+              {{ govukButton({
+                  text: "Continue"
+              }) }}
+
+              <p><a href="forgotten-password">Forgotten your password?</a></p>
+              {% include "includes/get-help-link.html" %}
+
+            </form>
+        </div>
+    </div>
+{% endblock %}

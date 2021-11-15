@@ -1,0 +1,94 @@
+{% extends "layout-header-links.html" %}
+
+{% block pageTitle %}
+  Add a user
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/beta-banner.html" %}
+  {% include "includes/language-select.njk" %}
+
+  <!-- {% include "includes/manage-users-link.html" %} -->
+  {% include "includes/header-summary-users.html" %}
+
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+        <h2 class="govuk-error-summary__title" id="error-summary-title">
+          There is a problem
+        </h2>
+        <div class="govuk-error-summary__body">
+          <ul class="govuk-list govuk-error-summary__list">
+
+            <li>
+              <a href="#user-email">Enter an email address that has not been used before</a>
+            </li>
+
+          </ul>
+        </div>
+      </div>
+  <h1 class="govuk-heading-l">Invite an editor</h1>
+  <p class="govuk-body">You have <b>4</b> remaining spaces for editors on this account. </p>
+
+
+  <p class="govuk-body">Make sure the information you enter is correct as we cannot change it once submitted. For more information on removing an editor go to our <a href="../../get-help/v03/get-help">help page</a>.
+
+  <!--  email our support team on <a href="mailto:Kickstart.support@dwp.gov.uk"> Kickstart.support@dwp.co.uk.</a></p>-->
+      {{ govukInput({
+        label: {
+          text: "First name"
+        },
+        classes: "govuk-input--width-20",
+        id: "first-name",
+        name: "first-name"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Surname"
+        },
+        classes: "govuk-input--width-20",
+        id: "surname",
+        name: "surname",
+        autocomplete: "surname"
+      }) }}
+
+    {{ govukInput({
+      label: {
+        text: "Email address"
+      },
+      classes: "govuk-input--width-20",
+
+      id: "user-email",
+      name: "user-email",
+      autocomplete: "email",
+      errorMessage: {
+    "text": "Enter an email address that has not been used before"
+  }
+    }) }}
+
+    {{ govukInput({
+      label: {
+        text: "Confirm email address"
+      },
+      classes: "govuk-input--width-20",
+      id: "confirm-email",
+      name: "confirm-email",
+      autocomplete: "email"
+    }) }}
+
+      <p><a href="submit-new-editor" class="govuk-button">Submit request</a></p>
+      <!-- <p class="govuk-body"><a href="manage-users">Back to manage users</a></p> -->
+      {% include "includes/get-help-link.html" %}
+
+    </div>
+    </div>
+
+
+
+{% endblock %}
