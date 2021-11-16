@@ -1,0 +1,123 @@
+{% extends "layout-header-links.html" %}
+
+{% block pageTitle %}
+  Confirm vacancy details
+{% endblock %}
+
+{% block beforeContent %}
+  {% include "includes/beta-banner.html" %}
+  {% include "includes/language-select.njk" %}
+  <!-- {% include "includes/manage-users-link.html" %} -->
+  {% include "includes/header-summary-users.html" %}
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Invite editors</h1>
+    <p class="govuk-body">You have administrator (admin) access to this account and can request access, for up to 5 other members of staff, as editors.</p>
+    <p class="govuk-body">Editors can add, update, delete or submit vacancies.</p>
+      <p class="govuk-body">You have <b>0</b> editor accounts remaining. If you need to change, remove or add more users then go to our <a href="../../get-help/v03/get-help">help page</a>.</p>
+
+</div>
+</div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <!-- <h2 class="govuk-heading-l">Locations</h2> -->
+
+  {{ govukTable({
+    attributes: {
+    'data-module': 'moj-sortable-table'
+    },
+    head: [
+    {
+      text: "Name"
+    },
+    {
+      text: "Email"
+    },
+    {
+      html: "Date Invited"
+    },
+    {
+      text: ""
+    },
+    {
+      text: ""
+    }
+    ],
+    rows: [
+    [
+      {
+        text: "James Williams"
+      },
+      {
+        text: "james.williams@artandsculpture.co.uk"
+      },
+      {
+        text: "Editor"
+      },
+      {
+        html: ""
+      },
+      {
+        html: ""
+      }
+    ],
+    [
+      {
+        text: "Ian Bartlett"
+      },
+      {
+        text: "ian.bartlett@artandsculpture.co.uk"
+      },
+      {
+        text: "Editor"
+      }
+    ],
+    [
+      {
+        text: "Cheryl Dawlish"
+      },
+      {
+        text: "cheryl.dawlish@artandsculpture.co.uk"
+      },
+      {
+        text: "Editor"
+      }
+    ],
+    [
+      {
+        text: "Annie Leech"
+      },
+      {
+        text: "annie.leech@artandsculpture.co.uk"
+      },
+      {
+        text: "Editor"
+      }
+    ],
+    [
+      {
+        text: "Mary Kleinman"
+      },
+      {
+        text: "mary.kleinman@artandsculpture.co.uk"
+      },
+      {
+        text: "Editor"
+      }
+    ]
+    ]
+    }) }}
+    <p><a href="job-list-roles-submitted" id="submit">Return to your vacancies</a></p>
+      {% include "includes/get-help-link.html" %}
+
+    </div>
+    </div>
+
+
+
+{% endblock %}

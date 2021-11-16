@@ -1,0 +1,120 @@
+{% extends "layout-header-links.html" %}
+
+{% block pageTitle %}
+    Error: Are you sure you want to delete this vacancy?
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/beta-banner.html" %}
+{% include "includes/language-select.njk" %}
+
+<!-- {% include "includes/manage-users-link.html" %} -->
+{% include "includes/header-summary-users.html" %}
+{% endblock %}
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+                <form id="form" method="post" action="job-list-role-deleted">
+
+                  {{ govukErrorSummary({
+                    "titleText": "There is a problem",
+                    "errorList": [
+                      {
+                        "text": "Select whether your want to delete this vacancy",
+                        "href": "#delete-vacancy"
+                      }
+                    ]
+                  }) }}
+
+                <!--  <h1 class="govuk-heading-l">Are you sure you want to delete this vacancy</h1>
+-->
+
+                  {{ govukRadios({
+                  classes: "govuk-radios--inline",
+                  idPrefix: "delete-vacancy",
+                  name: "delete-vacancy",
+                  fieldset: {
+                    legend: {
+                      text: "Are you sure you want to delete this vacancy?",
+                      isPageHeading: true,
+                      classes: "govuk-fieldset__legend--l"
+                    }
+                  },
+                  hint: {
+                    text: "You will not be able to undo it."
+                  },
+                  items: [
+                    {
+                      value: "yes",
+                      text: "Yes",
+                      errorMessage: {
+                        "text": "Enter your full name"
+                      }
+                    },
+                    {
+                      value: "no",
+                      text: "No"
+                    }
+                  ],
+                  errorMessage: {
+                    html: "Select whether your want to delete this vacancy"
+                  }
+                  }) }}
+
+
+
+                  <button type="submit" class="govuk-button govuk-!-margin-right-1" id="submit">Continue</button>
+
+              </form>
+
+
+            </div>
+          </div>
+
+
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-full">
+                {{ govukTable({
+                  firstCellIsHeader: false,
+                  head: [
+                    {
+                      text: "Job title"
+                    },
+                    {
+                      html: "No. of vacancies"
+                    },
+                    {
+                      html: "No. of locations"
+                    },
+                    {
+                      text: "",
+                      format: "numeric"
+                    }
+                  ],
+                  rows: [
+                    [
+                      {
+                        html: "<b>Admin clerk</b>"
+                      },
+                      {
+                        text: "2"
+                      },
+                      {
+                        text: "1"
+                      },
+                      {
+                        html: '<strong class="govuk-tag govuk-tag--grey">Incomplete</strong>',
+                        format: "numeric"
+                      }
+                    ]
+                  ]
+                }) }}
+
+                {% include "includes/get-help-link.html" %}
+              </div>
+            </div>
+
+{% endblock %}

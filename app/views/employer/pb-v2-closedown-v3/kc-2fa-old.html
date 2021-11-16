@@ -1,0 +1,74 @@
+{% extends "layout-footer.html" %}
+
+{% block pageTitle %}
+  Set up a mobile authenticator
+{% endblock %}
+
+{% block beforeContent %}
+{% include "includes/beta-banner.html" %}
+{% include "includes/language-select-no-back.njk" %}
+{% endblock %}
+{% block content %}
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <form action="kc-password" method="post">
+                {{ govukFieldset({
+                    legend: {
+                        html: "Set up a mobile authenticator",
+                        classes: "govuk-fieldset__legend--l",
+                        isPageHeading: true
+                    }
+                })}}
+
+                <p class="govuk-body">You must set up a mobile authenticator for security reasons before you can use your Kickstart account.</p>
+                <p class="govuk-body">You’ll need to:</p>
+
+                <ol class="govuk-list govuk-list--number">
+                  <li>Download and install an authenticator app, for example:
+                    <ul class="govuk-list govuk-list--bullet">
+                      <li>FreeOTP</li>
+                      <li>Google Authenticator</li>
+                    </ul></li>
+                  <li>Open the app and scan this QR code:</li>
+                  <p class="govuk-body"><img src="/public/images/randomQR.png" alt="random qr code" style="height: 200px;"></p>
+                  <!-- <p class="govuk-body">Secret key: <b>dvrw qdd4 dfgh erty kj3b</b></p> -->
+
+                  {{ govukDetails({
+                      summaryText: "Unable to scan?",
+                      html: '<p class="govuk-body">Open the app and enter this key:<br><b>JJIU SSRZ NESH URZW M5TT QTKD NRSH ILYV</b></p>'
+                    }) }}
+
+                  <li>Enter the one-time code showing on the app</li>
+                  {{ govukInput({
+                      label: {
+                          text: ""
+                      },
+                      id: "one-time-code",
+                      name: "one-time-code",
+                      classes: "govuk-!-width-two-thirds"
+                  }) }}
+                  <!-- <li>Submit to finish setting up the app</li> -->
+                </ol>
+
+
+                <!-- {{ govukInput({
+                    label: {
+                        text: "Device name"
+                    },
+                    id: "device-name",
+                    name: "device-name",
+                    classes: "govuk-!-width-two-thirds"
+                }) }}-->
+
+                {{ govukButton({
+                    text: "Save and continue"
+                }) }}
+
+            </form>
+
+            <p class="govuk-body"><a href="kc-choose">Prefer to set up your security using SMS text message?</a></p>
+
+            {% include "includes/get-help-link.html" %}
+        </div>
+    </div>
+{% endblock %}
